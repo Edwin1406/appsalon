@@ -18,12 +18,12 @@ class LoginController
     public static function crear(Router $router)
     {
        $router->render('auth/crear-cuenta',[
-        
+
        ]);
     }
     public static function olvide(Router $router)
     {
-        echo "Desde el Controlador olvide contraseña";
+       $router->render('auth/olvide');
     }
    
 }
