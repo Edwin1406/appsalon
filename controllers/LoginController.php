@@ -20,6 +20,6 @@ class LoginController
     }
     public static function recuperar(Router $router)
     {
-        echo "Desde el Controlador recuperar ";
+        echo "Desde el Controlador recuperar contraseña ";
     }
 }
