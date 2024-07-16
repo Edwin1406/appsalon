@@ -21,7 +21,7 @@ class Router {
 
         // arreglo de rutas protegidas
         // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
-        $currentUrl = $_SERVER['PATH_INFO'] ?? './';
+        $currentUrl = $_SERVER['PATH_INFO'] ?? '/public_html';
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
