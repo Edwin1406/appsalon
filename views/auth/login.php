@@ -22,3 +22,7 @@
     </div>
     <input type="submit" class="boton boton-verde" value="Iniciar Sesión">
 </form>
+<div class="acciones">
+    <a href="/crear-cuenta">¿No tienes cuenta? Regístrate</a>
+    <a href="/olvide">¿Olvidaste tu contraseña?</a>
+</div>
