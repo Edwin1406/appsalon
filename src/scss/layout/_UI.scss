@@ -8,7 +8,13 @@
         min-height: 100vh;
     } 
     .imagen{
+        height: 20rem;
         background: url('/public/build/img/1.jpg');
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+            height: auto;
+        }
     }
         
     
