@@ -57,8 +57,11 @@ class Usuario extends ActiveRecord{
 
     public function existeUsuario(){
         $query = "SELECT * FROM ".self::$tabla." WHERE email = '".$this->email."' LIMIT 1";
-       
-        debuguear($query);
+        $resultado = self::$db->query($query);
+        if($resultado->num_rows){
+            return true;
+        }
+        return false;
     }
 
     
