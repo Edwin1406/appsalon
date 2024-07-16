@@ -21,10 +21,10 @@ class LoginController
         //instanciar Usuario
         $usuario = new Usuario;
         //arreglo con mensajes de errores
-        // $errores = Usuario::getErrores();
+        $alertas = Usuario::getAlertas();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            
+
            $usuario ->sincronizar($_POST);
 
         }
@@ -33,6 +33,7 @@ class LoginController
 
        $router->render('auth/crear-cuenta',[
         'usuario' => $usuario,
+        'alertas' => $alertas
        
        ]);
     }

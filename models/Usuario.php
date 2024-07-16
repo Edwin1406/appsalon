@@ -27,25 +27,27 @@ class Usuario extends ActiveRecord{
         $this->confirmado = $args['confirmado'] ?? null;
         $this->token = $args['token'] ?? '';
     }
-    // public function validar()
-    // {
-    //     if(!$this->nombre){
-    //         self::$errores[] = "Debes añadir un nombre";
-    //     }
-    //     if(!$this->apellido){
-    //         self::$errores[] = "Debes añadir un apellido";
-    //     }
-    //     if(!$this->email){
-    //         self::$errores[] = "Debes añadir un email";
-    //     }
-    //     if(!$this->password){
-    //         self::$errores[] = "Debes añadir un password";
-    //     }
-    //     if(!$this->telefono){
-    //         self::$errores[] = "Debes añadir un telefono";
-    //     }
-    //     return self::$errores;
-    // }
+    // mensaje de validacion para crear cuenta
+
+    public function validar()
+    {
+        if(!$this->nombre){
+            self::$alertas[] = "Debes añadir un nombre";
+        }
+        if(!$this->apellido){
+            self::$alertas[] = "Debes añadir un apellido";
+        }
+        if(!$this->email){
+            self::$alertas[] = "Debes añadir un email";
+        }
+        if(!$this->password){
+            self::$alertas[] = "Debes añadir un password";
+        }
+        if(!$this->telefono){
+            self::$alertas[] = "Debes añadir un telefono";
+        }
+        return self::$alertas;
+    }
 
     
 
