@@ -9,6 +9,7 @@ class LoginController
     public static function login(Router $router)
     {
        $router->render('auth/login');
+       echo ($router);
     }
     public static function logout(Router $router)
     {
