@@ -32,7 +32,7 @@ class LoginController
             if(empty($alertas)){
                 //crear la cuenta
                 // $usuario->crear();
-                echo "Creando cuenta";
+              $usuario->existeUsuario();
 
             }
           
