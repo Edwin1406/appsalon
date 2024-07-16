@@ -28,6 +28,13 @@ class LoginController
 
            $usuario ->sincronizar($_POST);
            $alertas = $usuario->validar();
+        //revisar que el arreglo de errores este vacio
+            if(empty($alertas)){
+                //crear la cuenta
+                // $usuario->crear();
+                echo "Creando cuenta";
+
+            }
           
 
         }

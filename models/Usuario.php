@@ -52,10 +52,6 @@ class Usuario extends ActiveRecord{
             self::$alertas['error'][] = "El password debe tener al menos 6 caracteres";
         }
 
-        
-
-
-
         return self::$alertas;
     }
 
