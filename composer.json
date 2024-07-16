@@ -1,0 +1,19 @@
+{
+    "name": "edwin/appsalon",
+    "description": "Proyecto PHP 8, MVC , SSQL , SASS , ACTIVE RECORD",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "controllers/",
+            "Model\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edwin1406",
+            "email": "117423831+Edwin1406@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
