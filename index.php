@@ -1,7 +1,7 @@
 <?php 
 
 require_once __DIR__ . '/includes/app.php';
-// echo 'Ruta actual (index.php): ' .__DIR__ . '/includes/app.php'. '<br>';
+echo 'Ruta actual (index.php): ' .__DIR__ . '/includes/app.php'. '<br>';
 
 use Controllers\LoginController;
 use MVC\Router;
