@@ -9,7 +9,7 @@ class LoginController
     public static function login(Router $router)
     {
        $router->render('auth/login');
-    echo "Desde el Controlador login";
+ 
 
 
     }
