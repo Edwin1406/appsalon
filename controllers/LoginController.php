@@ -14,12 +14,13 @@ class LoginController
     {
         echo "Desde el Controlador logout";
     }
+    public static function crear(Router $router)
+    {
+        echo "Desde el Controlador olvide contraseña";
+    }
     public static function olvide(Router $router)
     {
         echo "Desde el Controlador olvide contraseña";
     }
-    public static function recuperar(Router $router)
-    {
-        echo "Desde el Controlador recuperar contraseña ";
-    }
+   
 }
