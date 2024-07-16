@@ -18,13 +18,14 @@ class LoginController
     // crea una cuenta de usuario
     public static function crear(Router $router)
     {
+        //instanciar Usuario
         $usuario = new Usuario;
         //arreglo con mensajes de errores
         // $errores = Usuario::getErrores();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-          //instanciar Usuario
-            debuguear($usuario);
+            
+           $usuario ->sincronizar($_POST);
 
         }
 
