@@ -14,9 +14,10 @@ class LoginController
     {
         echo "Desde el Controlador logout";
     }
+    // crea una cuenta de usuario
     public static function crear(Router $router)
     {
-       $router->render('auth/crear');
+       $router->render('auth/crear-cuenta');
     }
     public static function olvide(Router $router)
     {
