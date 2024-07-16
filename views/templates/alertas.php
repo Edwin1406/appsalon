@@ -1,12 +1,15 @@
 <?php
 
-foreach( $alertas as $key => $alerta){
-    foreach($alerta as $mensaje){
-        echo "<div class='alerta $key'>";
-        echo $mensaje;
-        echo "</div>";
-    }
+foreach( $alertas as $key => $mensajes):
+    foreach($mensajes as $mensaje):
+?>
+    <div class="alerta <?php echo $key;?>">
+        <?php echo $mensaje;?>
+    </div>
 
-}
+
+<?php
+    endforeach;
+endforeach;
 
 ?>
