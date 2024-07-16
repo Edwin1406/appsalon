@@ -6,13 +6,10 @@
     margin-top: v.$separacion;
   
 
-    @include m.desktop{
-        display: flex;
-        justify-content: center;
-    }
+    
     @include m.tablet{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     a{
