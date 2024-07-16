@@ -17,7 +17,9 @@ class LoginController
     // crea una cuenta de usuario
     public static function crear(Router $router)
     {
-       $router->render('auth/crear-cuenta');
+       $router->render('auth/crear-cuenta',[
+        
+       ]);
     }
     public static function olvide(Router $router)
     {
