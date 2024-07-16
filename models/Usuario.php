@@ -42,13 +42,17 @@ class Usuario extends ActiveRecord{
         if(!$this->email){
             self::$alertas['error'][] = "Debes añadir un email";
         }
+        if(!$this->telefono){
+            self::$alertas['error'][] = "Debes añadir un telefono";
+        }
         if(!$this->password){
             self::$alertas['error'][] = "Debes añadir un password";
         }
-        if(!$this->telefono){
-            self::$alertas['error'][] = "Debes añadir un telefono";
-
+        if(strlen($this->password) < 6){
+            self::$alertas['error'][] = "El password debe tener al menos 6 caracteres";
         }
+
+        
 
 
 
