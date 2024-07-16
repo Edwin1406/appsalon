@@ -25,9 +25,9 @@ class Router {
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
-            $fn = $this->getRoutes[$currentUrl] ?? null;
+            $fn = $this->rutasGET[$currentUrl] ?? null;
         } else {
-            $fn = $this->postRoutes[$currentUrl] ?? null;
+            $fn = $this->rutasPOST[$currentUrl] ?? null;
         }
 
 
