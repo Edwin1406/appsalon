@@ -22,12 +22,13 @@ class LoginController
         $usuario = new Usuario;
         //arreglo con mensajes de errores
         $alertas = Usuario::getAlertas();
+        $alertas = []; //porque cuando inicia la pagina no hay errores
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
            $usuario ->sincronizar($_POST);
            $alertas = $usuario->validar();
-           debuguear($alertas);
+          
 
         }
 
