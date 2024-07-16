@@ -1,6 +1,12 @@
 <h1 class="nombre-pagina">Crear cuenta</h1>
 <p class="descripcion-pagina">LLena el siguiente formulario para crear una cuenta</p>
 
+
+<!-- alertas -->
+ <?php
+ include_once __DIR__. 'views/templates/alertas.php';
+ ?>
+
 <form class="formulario" method="POST" action="/crear-cuenta">
     <div class="campo">
         <label for="nombre">Nombre</label>
@@ -49,7 +55,7 @@
             id="password" 
             placeholder="Tu Password" 
             name="password"
-            
+
             />
     </div>
     <input type="submit" class="boton boton-verde" value="Crear Cuenta">
