@@ -1,6 +1,8 @@
 <?php 
 namespace Model;
 
+use Error;
+
 class Usuario extends ActiveRecord{
     protected static $tabla = 'usuarios';
     protected static $columnasDB =['id','nombre','apellido','email','password','telefono','admin','confirmado','token'];
@@ -32,20 +34,24 @@ class Usuario extends ActiveRecord{
     public function validar()
     {
         if(!$this->nombre){
-            self::$alertas[] = "Debes añadir un nombre";
+            self::$alertas['error'][] = "Debes añadir un nombre";
         }
         if(!$this->apellido){
-            self::$alertas[] = "Debes añadir un apellido";
+            self::$alertas['error'][] = "Debes añadir un apellido";
         }
         if(!$this->email){
-            self::$alertas[] = "Debes añadir un email";
+            self::$alertas['error'][] = "Debes añadir un email";
         }
         if(!$this->password){
-            self::$alertas[] = "Debes añadir un password";
+            self::$alertas['error'][] = "Debes añadir un password";
         }
         if(!$this->telefono){
-            self::$alertas[] = "Debes añadir un telefono";
+            self::$alertas['error'][] = "Debes añadir un telefono";
+
         }
+
+
+
         return self::$alertas;
     }
 
