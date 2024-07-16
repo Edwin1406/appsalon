@@ -2,6 +2,7 @@
 
 namespace Controllers;
 use MVC\Router;
+use Model\Usuario;
  
 
 class LoginController
@@ -18,7 +19,10 @@ class LoginController
     public static function crear(Router $router)
     {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-           echo 'enviando datos';
+          //instanciar Usuario
+            $usuario = new Usuario($_POST);
+            debuguear($usuario);
+
         }
 
 
