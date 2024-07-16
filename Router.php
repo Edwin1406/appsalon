@@ -1,65 +1,74 @@
 <?php
-
 namespace MVC;
 
-class Router
-{
-    public array $getRoutes = [];
-    public array $postRoutes = [];
+class Router {
+    public $rutasGET = [];
+    public $rutasPOST = [];
 
-    public function get($url, $fn)
-    {
-        $this->getRoutes[$url] = $fn;
+    public function get($url, $fn) {
+        $this->rutasGET[$url] = $fn;
     }
-
-    public function post($url, $fn)
-    {
-        $this->postRoutes[$url] = $fn;
+    public function post($url, $fn) {
+        $this->rutasPOST[$url] = $fn;
     }
+    
 
-    public function comprobarRutas()
-    {
-        
-        // Proteger Rutas...
-        session_start();
-
-        // Arreglo de rutas protegidas...
-        // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
-
+    public function comprobarRutas() {
+        // session_start();
         // $auth = $_SESSION['login'] ?? null;
+        // debuguear($auth);
+      
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
-        $method = $_SERVER['REQUEST_METHOD'];
+        // arreglo de rutas protegidas
+        // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
 
-        if ($method === 'GET') {
-            $fn = $this->getRoutes[$currentUrl] ?? null;
+        $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+        $urlActual = str_replace('/public_html', '', $urlActual);
+        $urlActual = strtok($urlActual, '?');
+        $metodo= $_SERVER['REQUEST_METHOD'];
+      
+
+        if($metodo === 'GET') {
+            $fn = $this->rutasGET[$urlActual] ?? null;
         } else {
-            $fn = $this->postRoutes[$currentUrl] ?? null;
+            // debuguear($_POST);
+            $fn = $this->rutasPOST[$urlActual] ?? null;
         }
 
+        // // Proteger las rutas inarray me devuelve true si la url actual esta en el arreglo de rutas protegidas
+        // if(in_array($urlActual,$rutas_protegidas) && !$auth){
+           
+        //     header('Location:/appsalon/login');
 
-        if ( $fn ) {
-            // Call user fn va a llamar una función cuando no sabemos cual sera
-            call_user_func($fn, $this); // This es para pasar argumentos
-        } else {
-            echo "Página No Encontrada o Ruta no válida";
+        // }
+ 
+          if($fn) {
+              
+                // si la ruta existe, llamar al callback con la instancia del router
+              call_user_func($fn, $this);
+                
+          } else {
+               echo 'Página no encontrada';
+          }
+       
+        
+     } 
+        //  Muestra una vista
+     public function render($view,$datos=[]) {
+
+        // acceder a la llave valor del arreglo
+        foreach($datos as $key => $value){
+            // $$ variable de variable
+            $$key = $value;
+
         }
-    }
 
-    public function render($view, $datos = [])
-    {
+        ob_start(); //inicia el almacenamiento en el memoria
+         include __DIR__ . "/views/$view.php";
+         $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
+         include __DIR__ . "/views/template/layout.php";
 
-        // Leer lo que le pasamos  a la vista
-        foreach ($datos as $key => $value) {
-            $$key = $value;  // Doble signo de dolar significa: variable variable, básicamente nuestra variable sigue siendo la original, pero al asignarla a otra no la reescribe, mantiene su valor, de esta forma el nombre de la variable se asigna dinamicamente
-        }
-
-        ob_start(); // Almacenamiento en memoria durante un momento...
-
-        // entonces incluimos la vista en el layout
-        include_once __DIR__ . "/views/$view.php";
-        $contenido = ob_get_clean(); // Limpia el Buffer
-        include_once __DIR__ . '/views/layout.php';
-    }
+     }
 }
+?>
 
