@@ -16,7 +16,7 @@ class LoginController
     }
     public static function crear(Router $router)
     {
-        echo "Desde el Controlador olvide contraseña";
+        echo "Desde el Controlador crear cuenta";
     }
     public static function olvide(Router $router)
     {
