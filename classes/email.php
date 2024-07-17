@@ -1,7 +1,7 @@
 <?php
 namespace Classes;
 
-class envioemail {
+class correo{
     public $email;
     public $nombre;
     public $apellido;
