@@ -82,7 +82,13 @@ class LoginController
 
     public static function confirmar(Router $router)
     {
-        $router->render('auth/confirmar-cuenta');
+        $alertas = [];
+        $token = s($_GET['token']) ?? null;
+        $usuario = Usuario::where('token', $token);
+        $router->render('auth/confirmar-cuenta',[
+            'alertas' => $alertas,
+            'usuario' => $usuario
+        ]);
     }
    
 }
