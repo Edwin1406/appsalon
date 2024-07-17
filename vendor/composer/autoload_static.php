@@ -30,7 +30,7 @@ class ComposerStaticInitcff3e9ab3b293ea963cb13344d749094
         ),
         'Model\\' => 
         array (
-            0 => '/models',
+            0 => __DIR__ . '/../..' . '/models',
         ),
         'MVC\\' => 
         array (
@@ -38,11 +38,11 @@ class ComposerStaticInitcff3e9ab3b293ea963cb13344d749094
         ),
         'Controllers\\' => 
         array (
-            0 => '/controllers',
+            0 => __DIR__ . '/../..' . '/controllers',
         ),
         'Classes\\' => 
         array (
-            0 => '/classes',
+            0 => __DIR__ . '/../..' . '/classes',
         ),
     );
 
