@@ -10,5 +10,4 @@ return array(
     'Model\\' => array($baseDir . '/models'),
     'MVC\\' => array($baseDir . '/'),
     'Controllers\\' => array($baseDir . '/controllers'),
-    'Classes\\' => array($baseDir . '/classes'),
 );
