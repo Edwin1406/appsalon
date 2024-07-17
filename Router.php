@@ -22,10 +22,10 @@ class Router {
         // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
         $urlActual = strtok($urlActual, '?');
-        $metodo = $_SERVER['REQUEST_METHOD'];
+        $method = $_SERVER['REQUEST_METHOD'];
         // debuguear($urlActual);
         
-        if ($metodo === 'GET') {
+        if ($method === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
         } else {
             // debuguear($_POST);
