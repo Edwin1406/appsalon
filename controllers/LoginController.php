@@ -44,14 +44,14 @@ class LoginController
                     $usuario->crearToken();
                     // enviar email
 
-                    // $email = new Email($usuario->email,$usuario->nombre,$usuario->token);
+                    $email = new Email();
 
 
 
 
 
                     // debuguear($usuario);
-                    // debuguear($email);
+                    debuguear($email);
                 }
             }
           
