@@ -74,9 +74,15 @@ class LoginController
     {
        $router->render('auth/olvide');
     }
+    // mensaje de confirmacion de cuenta
     public static function mensaje(Router $router)
     {
        $router->render('auth/mensaje');
+    }
+
+    public static function confirmar(Router $router)
+    {
+        $router->render('auth/confirmar-cuenta');
     }
    
 }
