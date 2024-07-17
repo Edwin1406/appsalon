@@ -1,9 +1,18 @@
 <?php
 namespace Classes;
-echo 'Desde Email.php';
+
 class Email {
-    public function __construct() {
-        echo "Desde la clase Email";
+    public $email;
+    public $nombre;
+    public $apellido;
+    public $token;
+    public function __construct($email,$nombre,$apellido,$token)
+    {
+        $this->email = $email;
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
+        $this->token = $token;
+      
     }
 
 }
