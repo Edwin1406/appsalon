@@ -10,5 +10,5 @@ return array(
     'Model\\' => array($baseDir . '/models'),
     'MVC\\' => array($baseDir . '/'),
     'Controllers\\' => array($baseDir . '/controllers'),
-    'Classes\\' => array($baseDir . '/path/to/classes'),
+    'Classes\\' => array($baseDir . '/classes'),
 );
