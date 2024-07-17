@@ -44,7 +44,7 @@ class LoginController
                     $usuario->crearToken();
                     // enviar email
 
-                    $email = new Email($usuario->email,$usuario->nombre,$usuario->apellido,$usuario->token);
+                    $email = new Email($usuario->email, $usuario->nombre, $usuario->apellido, $usuario->token);
 
 
 
