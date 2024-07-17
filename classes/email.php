@@ -41,8 +41,6 @@ class email {
         $contenido .= '<p>Hola ' . $this->nombre . '</p>';
         $contenido .= '<p>Para confirmar tu cuenta por favor haz clic en el siguiente enlace</p>';
         $contenido = '<a href="https://serviacrilico.com/confirmar?token='.$this->token.'">Confirmar cuenta</a>';
-        error_log("Enlace de confirmación: " . $contenido); // Añade esta línea para depurar
-
         $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
         $contenido .= '</html>';
         $mail->Body = $contenido;
