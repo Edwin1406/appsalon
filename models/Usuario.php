@@ -1,8 +1,6 @@
 <?php 
 namespace Model;
 
-use Error;
-
 class Usuario extends ActiveRecord{
     protected static $tabla = 'usuarios';
     protected static $columnasDB =['id','nombre','apellido','email','password','telefono','admin','confirmado','token'];
