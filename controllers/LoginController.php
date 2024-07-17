@@ -1,74 +1,60 @@
 <?php
 namespace Controllers;
 
-
 use Classes\Email;
 use MVC\Router;
 use Model\Usuario;
- 
 
-class LoginController
-{
-    public static function login(Router $router)
-    {
-       $router->render('auth/login');
+class LoginController {
+    public static function login(Router $router) {
+        $router->render('auth/login');
     }
-    public static function logout(Router $router)
-    {
+
+    public static function logout(Router $router) {
         echo "Desde el Controlador logout";
     }
+
     // crea una cuenta de usuario
-    public static function crear(Router $router)
-    {
-        //instanciar Usuario
+    public static function crear(Router $router) {
+        // Instanciar Usuario
         $usuario = new Usuario;
-        //arreglo con mensajes de errores
+        // Arreglo con mensajes de errores
         $alertas = Usuario::getAlertas();
-        $alertas = []; //porque cuando inicia la pagina no hay errores
+        $alertas = []; // Porque cuando inicia la página no hay errores
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $usuario->sincronizar($_POST);
+            $alertas = $usuario->validar();
+            // Revisar que el arreglo de errores esté vacío
+            if (empty($alertas)) {
+                // Existe Usuario
+                $resultado = $usuario->existeUsuario();
 
-           $usuario ->sincronizar($_POST);
-           $alertas = $usuario->validar();
-        //revisar que el arreglo de errores este vacio
-            if(empty($alertas)){
-                // existeUsuario
-              $resultado=$usuario->existeUsuario();
-
-                if($resultado->num_rows){
-                    $alertas=Usuario::getAlertas();
-                }else{
+                if ($resultado->num_rows) {
+                    $alertas = Usuario::getAlertas();
+                } else {
                     // Hashear el password
                     $usuario->hashPassword();
                     // Generar un token
                     $usuario->crearToken();
-                    // enviar email
+                    // Enviar email
 
+                    // Instancia la clase Email
                     $email = new Email($usuario->email, $usuario->nombre, $usuario->apellido, $usuario->token);
 
-
-
-
-
-                    // debuguear($usuario);
+                    // Debuguear para verificar
                     debuguear($email);
                 }
             }
-          
-
         }
 
-
-
-       $router->render('auth/crear-cuenta',[
-        'usuario' => $usuario,
-        'alertas' => $alertas
-       
-       ]);
+        $router->render('auth/crear-cuenta', [
+            'usuario' => $usuario,
+            'alertas' => $alertas
+        ]);
     }
-    public static function olvide(Router $router)
-    {
-       $router->render('auth/olvide');
+
+    public static function olvide(Router $router) {
+        $router->render('auth/olvide');
     }
-   
 }
