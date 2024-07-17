@@ -1,5 +1,7 @@
 <?php
 namespace Classes;
+namespace Controllers;
+
 echo 'Desde Email.php';
 class Email{
     public $email;
