@@ -51,7 +51,7 @@ class LoginController
                     $resultado = $usuario->guardar();
 
                     if($resultado){
-                        echo "Usuario creado correctamente";
+                       header('Location: /mensaje');
                     }
 
                     // debuguear($usuario);
@@ -73,6 +73,10 @@ class LoginController
     public static function olvide(Router $router)
     {
        $router->render('auth/olvide');
+    }
+    public static function mensaje(Router $router)
+    {
+       $router->render('auth/mensaje');
     }
    
 }
