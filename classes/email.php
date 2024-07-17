@@ -1,6 +1,6 @@
 <?php
 namespace Classes;
-
+echo 'Desde Email.php';
 class Email{
     public $email;
     public $nombre;
