@@ -44,16 +44,18 @@ class LoginController
                     // Generar un token
                     $usuario->crearToken();
                     // enviar email
-
                     $email = new email($usuario->email, $usuario->nombre, $usuario->token);
                     $email->enviarConfirmacion();
 
+                    // Almacenar el usuario en la base de datos
+                    $resultado = $usuario->guardar();
 
-
-
+                    if($resultado){
+                        echo "Usuario creado correctamente";
+                    }
 
                     // debuguear($usuario);
-                    debuguear($email);
+                   
                 }
             }
           
