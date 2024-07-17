@@ -1,0 +1,20 @@
+# Ignorar la carpeta vendor donde se instalan las dependencias de Composer
+/vendor/
+
+# Ignorar archivos de configuración específicos del entorno
+.env
+
+# Ignorar archivos de caché
+/cache/
+*.log
+
+# Ignorar archivos de sesiones
+/sessions/
+
+# Ignorar archivos de configuración de IDE
+.idea/
+.vscode/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
