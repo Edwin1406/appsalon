@@ -3,8 +3,8 @@
 require 'funciones.php';
 require 'database.php';
 require_once __DIR__ . '/../vendor/autoload.php';
-// echo __DIR__;
-echo __DIR__ . '/../vendor/autoload.php';
+echo __DIR__.'</br>';
+// echo __DIR__ . '/../vendor/autoload.php';
 
 // Conectarnos a la base de datos
 use Model\ActiveRecord;
