@@ -21,35 +21,35 @@ class Router {
         // arreglo de rutas protegidas
         // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
 
-        // $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
-        // $urlActual = str_replace('/Appsalon', '', $urlActual);
-        // $urlActual = strtok($urlActual, '?');
-        // $metodo= $_SERVER['REQUEST_METHOD'];
-      
+        $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+        $urlActual = str_replace('/Appsalon', '', $urlActual);
+        $urlActual = strtok($urlActual, '?');
+        $metodo= $_SERVER['REQUEST_METHOD'];
+        echo $urlActual;
 
-        // if($metodo === 'GET') {
-        //     $fn = $this->rutasGET[$urlActual] ?? null;
-        // } else {
-        //     // debuguear($_POST);
-        //     $fn = $this->rutasPOST[$urlActual] ?? null;
-        // }
-        
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        $method = $_SERVER['REQUEST_METHOD'];
-
-        if ($method === 'GET') {
+        if($metodo === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
         } else {
+            // debuguear($_POST);
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
+        
+        // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        // $method = $_SERVER['REQUEST_METHOD'];
+
+        // if ($method === 'GET') {
+        //     $fn = $this->rutasGET[$urlActual] ?? null;
+        // } else {
+        //     $fn = $this->rutasPOST[$urlActual] ?? null;
+        // }
 
 
-        if ( $fn ) {
-            // Call user fn va a llamar una función cuando no sabemos cual sera
-            call_user_func($fn, $this); // This es para pasar argumentos
-        } else {
-            echo "Página No Encontrada o Ruta no válida";
-        }
+        // if ( $fn ) {
+        //     // Call user fn va a llamar una función cuando no sabemos cual sera
+        //     call_user_func($fn, $this); // This es para pasar argumentos
+        // } else {
+        //     echo "Página No Encontrada o Ruta no válida";
+        // }
 
         // // Proteger las rutas inarray me devuelve true si la url actual esta en el arreglo de rutas protegidas
         // if(in_array($urlActual,$rutas_protegidas) && !$auth){
