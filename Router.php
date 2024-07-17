@@ -25,7 +25,7 @@ class Router {
         $urlActual = str_replace('/Appsalon', '', $urlActual);
         $urlActual = strtok($urlActual, '?');
         $metodo= $_SERVER['REQUEST_METHOD'];
-        echo $urlActual;
+        debuguear($urlActual);
 
         if($metodo === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
