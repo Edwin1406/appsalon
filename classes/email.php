@@ -1,6 +1,7 @@
 <?php
 namespace Classes;
 
+
 class Email {
     public $email;
     public $nombre;
@@ -14,6 +15,6 @@ class Email {
         $this->token = $token;
       
     }
-    
+
 
 }
