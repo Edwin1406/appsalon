@@ -80,42 +80,16 @@ class LoginController
        $router->render('auth/mensaje');
     }
 
-    // public static function confirmar(Router $router)
-    // {
-    //     $alertas = [];
-    //     $token = s($_GET['token']) ?? null;
-    //     $usuario = Usuario::where('token', $token);
-    //     $router->render('auth/confirmar-cuenta',[
-    //         'alertas' => $alertas,
-    //         'usuario' => $usuario
-    //     ]);
-    // }
-
     public static function confirmar(Router $router)
-{
-    $alertas = [];
-    // Verificar si el token está presente en la URL
-    $token = isset($_GET['token']) ? s($_GET['token']) : null;
-
-    if ($token) {
-        // Buscar al usuario con el token proporcionado
+    {
+        $alertas = [];
+        $token = s($_GET['token']) ?? null;
         $usuario = Usuario::where('token', $token);
-        
-        if ($usuario) {
-            // Procesar la confirmación de la cuenta
-            // (agrega tu lógica aquí)
-        } else {
-            $alertas[] = 'Token inválido o usuario no encontrado';
-        }
-    } else {
-        $alertas[] = 'Token no proporcionado';
+        $router->render('auth/confirmar-cuenta',[
+            'alertas' => $alertas,
+            'usuario' => $usuario,
+            'token' => $token
+        ]);
     }
-
-    $router->render('auth/confirmar-cuenta', [
-        'alertas' => $alertas,
-        'usuario' => $usuario
-    ]);
-}
-
    
 }
