@@ -30,10 +30,11 @@ class LoginController
            $alertas = $usuario->validar();
         //revisar que el arreglo de errores este vacio
             if(empty($alertas)){
-                //crear la cuenta
-                // $usuario->crear();
-              $usuario->existeUsuario();
-
+                // existeUsuario
+              $resultado=$usuario->existeUsuario();
+                if($resultado->num_rows){
+                    $alertas['error'][] = 'El usuario ya existe';
+                }
             }
           
 
