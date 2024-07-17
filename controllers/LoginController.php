@@ -32,12 +32,15 @@ class LoginController
             if(empty($alertas)){
                 // existeUsuario
               $resultado=$usuario->existeUsuario();
+
                 if($resultado->num_rows){
                     $alertas=Usuario::getAlertas();
                 }else{
-                    // hashear el password
+                    // Hashear el password
                     $usuario->hashPassword();
-                    // debuguear($usuario);
+                    // Generar un token
+                    $usuario->crearToken();
+                    debuguear($usuario);
                 }
             }
           

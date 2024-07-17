@@ -69,6 +69,11 @@ class Usuario extends ActiveRecord{
         $this->password = password_hash($this->password,PASSWORD_BCRYPT);
     }
 
+    // Generar un token
+    public function crearToken(){
+        $this->token = md5(uniqid(mt_rand(),true));
+    }
+
     
 
 
