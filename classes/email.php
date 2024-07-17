@@ -13,7 +13,7 @@ class Email{
         $this->token = $token;
         
     }
-    
+
 
 
 }
