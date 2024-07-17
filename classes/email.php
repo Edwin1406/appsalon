@@ -43,7 +43,6 @@ class email {
         $contenido .= '<a href="https://serviacrilico.com/confirmar?token='.$this->token.'">Confirmar cuenta</a>';
         $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
         $contenido .= '</html>';
-
         $mail->Body = $contenido;
 
         // enviar el email
