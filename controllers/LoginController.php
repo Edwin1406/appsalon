@@ -34,6 +34,8 @@ class LoginController
               $resultado=$usuario->existeUsuario();
                 if($resultado->num_rows){
                     $alertas=Usuario::getAlertas();
+                }else{
+                    debuguear($usuario);
                 }
             }
           
