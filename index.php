@@ -30,3 +30,4 @@ $router->post('/crear-cuenta', [LoginController::class, 'crear']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
+debuguear($router->comprobarRutas());
