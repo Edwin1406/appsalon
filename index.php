@@ -9,10 +9,7 @@ use Controllers\LoginController;
 use MVC\Router;
 
 $router = new Router();
-// index.php
-if (isset($_GET['test'])) {
-    error_log("Test recibido en index.php: " . $_GET['test']);
-}
+
 // Rutas de inicio de sesión
 $router->get('/', [LoginController::class, 'login']);
 $router->post('/', [LoginController::class, 'login']);
