@@ -20,24 +20,19 @@ class Router {
 
         // arreglo de rutas protegidas
         // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
+
         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+        $urlActual = str_replace('/Appsalon', '', $urlActual);
         $urlActual = strtok($urlActual, '?');
-        $method = $_SERVER['REQUEST_METHOD'];
-        // debuguear($urlActual);
-        
-        if ($method === 'GET') {
+        $metodo= $_SERVER['REQUEST_METHOD'];
+        debuguear($urlActual);
+
+        if($metodo === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
         } else {
             // debuguear($_POST);
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
-        
-        if ($fn) {
-            call_user_func($fn, $this);
-        } else {
-            echo "Página no encontrada";
-        }
-        
         
         // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         // $method = $_SERVER['REQUEST_METHOD'];
