@@ -83,11 +83,11 @@ class LoginController
     public static function confirmar(Router $router)
     {
         $alertas = [];
-        $token= validarORedireccionar('/');
-        $usuario = Usuario::where('token', $token);
+        // $token= validarORedireccionar('/');
+        // $usuario = Usuario::where('token', $token);
         $router->render('auth/confirmar',[
             'alertas' => $alertas,
-            'usuario' => $usuario
+            // 'usuario' => $usuario
          
         ]);
     }
