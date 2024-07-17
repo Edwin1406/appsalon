@@ -88,7 +88,7 @@ class LoginController
         $router->render('auth/confirmar',[
             'alertas' => $alertas,
             // 'usuario' => $usuario
-        
+         
         ]);
     }
    
