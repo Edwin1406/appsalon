@@ -40,7 +40,7 @@ class email {
         $contenido = '<html>';
         $contenido .= '<p>Hola ' . $this->nombre . '</p>';
         $contenido .= '<p>Para confirmar tu cuenta por favor haz clic en el siguiente enlace</p>';
-        $contenido .= '<a href="https://serviacrilico.com/confirmar-cuenta?token='.$this->token.'">Confirmar cuenta</a>';
+        $contenido .= '<a href="https://serviacrilico.com/confirmar?token='.$this->token.'">Confirmar cuenta</a>';
         $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
         $contenido .= '</html>';
 
