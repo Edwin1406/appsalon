@@ -1,6 +1,6 @@
 <?php
-
 namespace Controllers;
+echo 'Desde LoginController.php';
 
 use Classes\Email;
 use MVC\Router;
