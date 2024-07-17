@@ -23,7 +23,7 @@ class Router {
         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
         $urlActual = strtok($urlActual, '?');
         $metodo = $_SERVER['REQUEST_METHOD'];
-        debuguear($urlActual);
+        // debuguear($urlActual);
         
         if ($metodo === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
