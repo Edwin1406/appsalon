@@ -33,7 +33,7 @@ class LoginController
                 // existeUsuario
               $resultado=$usuario->existeUsuario();
                 if($resultado->num_rows){
-                    $alertas['error'][] = 'El usuario ya existe';
+                    $alertas=Usuario::getAlertas();
                 }
             }
           
