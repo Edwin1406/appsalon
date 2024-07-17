@@ -37,7 +37,7 @@ class LoginController
                 }else{
                     // hashear el password
                     $usuario->hashPassword();
-                    debuguear($usuario);
+                    // debuguear($usuario);
                 }
             }
           
