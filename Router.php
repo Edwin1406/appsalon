@@ -35,7 +35,7 @@ class Router {
                 // }
                 
                 $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
-                // $urlActual = strtok($urlActual, '?');
+                $urlActual = strtok($urlActual, '?');
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
