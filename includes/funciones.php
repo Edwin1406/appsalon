@@ -14,3 +14,12 @@ function s($html) : string {
 }
 
 
+// ver si existe el token en la url 
+function validarORedireccionar($url){
+    if(isset($_GET['token'])){
+        $token = $_GET['token'];
+        return $token;
+    }else{
+        header('Location : '.$url);
+    }
+}
