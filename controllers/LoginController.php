@@ -123,7 +123,7 @@ class LoginController
                    $usuario->crearToken();
                    $usuario->guardar();
                     // TODO:enviar email
-                    $email = new email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email = new email($usuario->email, $usuario->nombre, $usuario->token);
                     $email->enviarRecuperacion();
 
                     // alertas
