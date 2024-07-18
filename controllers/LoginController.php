@@ -117,6 +117,14 @@ class LoginController
             $alertas = $auth->validarEmail();
             if(empty($alertas)){
                 $usuario = Usuario::where('email', $auth->email);
+                // verificar si el usuario existe
+                if($usuario && $usuario->confirmado ==='1'){
+                    debuguear('usuario existe');
+
+                }else{
+                    debuguear('usuario no existe o no confrimado');
+                }
+
 
                 debuguear($usuario);
             }   
