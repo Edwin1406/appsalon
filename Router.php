@@ -26,15 +26,16 @@ class Router {
         // $urlActual = strtok($urlActual, '?');
         // $metodo= $_SERVER['REQUEST_METHOD'];
         // // debuguear($urlActual);
-
-        // if($metodo === 'GET') {
-        //     $fn = $this->rutasGET[$urlActual] ?? null;
-        // } else {
-        //     // debuguear($_POST);
-        //     $fn = $this->rutasPOST[$urlActual] ?? null;
-        // }
         
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        // if($metodo === 'GET') {
+            //     $fn = $this->rutasGET[$urlActual] ?? null;
+            // } else {
+                //     // debuguear($_POST);
+                //     $fn = $this->rutasPOST[$urlActual] ?? null;
+                // }
+                
+                $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+                $urlActual = strtok($urlActual, '?');
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
