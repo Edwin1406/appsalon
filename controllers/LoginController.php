@@ -45,7 +45,7 @@ class LoginController
                     // Generar un token
                     $usuario->crearToken();
                     // enviar email
-                    $email = new email($usuario->nombre,$usuario->email, $usuario->token);
+                    $email = new email($usuario->nombre, $usuario->email, $usuario->token);
                     $email->enviarConfirmacion();
 
                     // Almacenar el usuario en la base de datos
