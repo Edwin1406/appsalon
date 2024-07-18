@@ -187,8 +187,10 @@ class LoginController
             // mostrar mensaje de error
             Usuario::setAlerta('error', 'Token no valido');
             $error=true;
-        }else{
-            
+        }
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+            debuguear($_POST);
+
         }
         // para se que se muestre antes de renderizar
         $alertas = Usuario::getAlertas();
