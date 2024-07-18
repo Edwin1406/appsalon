@@ -93,7 +93,7 @@ class LoginController
             $usuario->confirmado = "1";
             $usuario->token = '';
             $usuario->guardar();
-            Usuario::setAlerta('success', 'Cuenta confirmada correctamente');
+            Usuario::setAlerta('exito', 'Cuenta confirmada correctamente');
             // debuguear($usuario);
         }
         // para se que se muestre antes de renderizar
