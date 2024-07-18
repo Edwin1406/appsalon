@@ -23,8 +23,8 @@ class Usuario extends ActiveRecord{
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->telefono = $args['telefono'] ?? '';
-        $this->admin = $args['admin'] ?? 0;
-        $this->confirmado = $args['confirmado'] ?? 0;
+        $this->admin = $args['admin'] ?? '0';
+        $this->confirmado = $args['confirmado'] ?? '0';
         $this->token = $args['token'] ?? '';
     }
     // mensaje de validacion para crear cuenta
@@ -68,13 +68,9 @@ class Usuario extends ActiveRecord{
     }
 
     // Generar un token
-    // public function crearToken(){
-    //     $this->token = md5(uniqid(mt_rand(),true));
-    // }
-    public function crearToken() {
-        $this->token = bin2hex(random_bytes(16));
+    public function crearToken(){
+        $this->token = md5(uniqid(mt_rand(),true));
     }
-    
 
     
 

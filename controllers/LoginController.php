@@ -20,103 +20,56 @@ class LoginController
     }
 
     // crea una cuenta de usuario
-    // public static function crear(Router $router)
-    // {
-    //     //instanciar Usuario
-    //     $usuario = new Usuario;
-    //     //arreglo con mensajes de errores
-    //     $alertas = Usuario::getAlertas();
-    //     $alertas = []; //porque cuando inicia la pagina no hay errores
-
-    //     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-    //        $usuario ->sincronizar($_POST);
-    //        $alertas = $usuario->validar();
-    //     //revisar que el arreglo de errores este vacio
-    //         if(empty($alertas)){
-    //             // existeUsuario
-    //           $resultado=$usuario->existeUsuario();
-
-    //             if($resultado->num_rows){
-    //                 $alertas=Usuario::getAlertas();
-    //             }else{
-    //                 // Hashear el password
-    //                 $usuario->hashPassword();
-    //                 // Generar un token
-    //                 $usuario->crearToken();
-    //                 // enviar email
-    //                 $email = new email($usuario->email, $usuario->nombre, $usuario->token);
-    //                 $email->enviarConfirmacion();
-
-    //                 // Almacenar el usuario en la base de datos
-    //                 $resultado = $usuario->guardar();
-
-    //                 if($resultado){
-    //                    header('Location: /mensaje');
-    //                 }
-
-    //                 // debuguear($usuario);
-                   
-    //             }
-    //         }
-          
-
-    //     }
-
-
-
-    //    $router->render('auth/crear-cuenta',[
-    //     'usuario' => $usuario,
-    //     'alertas' => $alertas
-       
-    //    ]);
-    // }
-    
     public static function crear(Router $router)
-{
-    $usuario = new Usuario;
-    $alertas = Usuario::getAlertas();
-    $alertas = [];
+    {
+        //instanciar Usuario
+        $usuario = new Usuario;
+        //arreglo con mensajes de errores
+        $alertas = Usuario::getAlertas();
+        $alertas = []; //porque cuando inicia la pagina no hay errores
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $usuario->sincronizar($_POST);
-        $alertas = $usuario->validar();
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        if (empty($alertas)) {
-            $resultado = $usuario->existeUsuario();
+           $usuario ->sincronizar($_POST);
+           $alertas = $usuario->validar();
+        //revisar que el arreglo de errores este vacio
+            if(empty($alertas)){
+                // existeUsuario
+              $resultado=$usuario->existeUsuario();
 
-            if ($resultado->num_rows) {
-                $alertas = Usuario::getAlertas();
-            } else {
-                $usuario->hashPassword();
-                $usuario->crearToken();
+                if($resultado->num_rows){
+                    $alertas=Usuario::getAlertas();
+                }else{
+                    // Hashear el password
+                    $usuario->hashPassword();
+                    // Generar un token
+                    $usuario->crearToken();
+                    // enviar email
+                    $email = new email($usuario->nombre,$usuario->email, $usuario->token);
+                    $email->enviarConfirmacion();
 
-                // Depuración del token
-                echo "Token generado: " . $usuario->token;
+                    // Almacenar el usuario en la base de datos
+                    $resultado = $usuario->guardar();
 
-                $email = new email($usuario->email, $usuario->nombre, $usuario->token);
-                $email->enviarConfirmacion();
+                    if($resultado){
+                       header('Location: /mensaje');
+                    }
 
-                $resultado = $usuario->guardar();
-
-                // Depuración del token guardado
-                echo "Token guardado en la base de datos: " . $usuario->token;
-
-                if ($resultado) {
-                    header('Location: /mensaje');
+                    // debuguear($usuario);
                 }
             }
+          
         }
-    }
 
-    $router->render('auth/crear-cuenta', [
+       $router->render('auth/crear-cuenta',[
         'usuario' => $usuario,
         'alertas' => $alertas
-    ]);
-}
+       
+       ]);
+    }
 
 
-
+    
     public static function olvide(Router $router)
     {
        $router->render('auth/olvide');
