@@ -179,6 +179,12 @@ class LoginController
         $alertas = [];
         $token= s($_GET['token']);
         $usuario = Usuario::where('token', $token);
+        if(empty($usuario)){
+            // mostrar mensaje de error
+          debuguear('Token no valido');
+        }else{
+            debuguear('Token valido');
+        }
         debuguear($usuario);
         $router->render('auth/recuperar-password',[
             'alertas' => $alertas
