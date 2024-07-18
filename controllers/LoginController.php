@@ -90,7 +90,8 @@ class LoginController
             // mostrar mensaje de error
             Usuario::setAlerta('error', 'Token no valido');
         }else{
-            echo "Usuario encontrado";
+            // $usuario->c=1;
+            debuguear($usuario);
         }
         // para se que se muestre antes de renderizar
         $alertas = Usuario::getAlertas();
