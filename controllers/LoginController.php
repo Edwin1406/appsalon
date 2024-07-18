@@ -173,5 +173,10 @@ class LoginController
          
         ]);
     }
+
+    public static function recuperar(Router $router)
+    {
+        echo "Desde el Controlador recuperar";
+    }
    
 }
