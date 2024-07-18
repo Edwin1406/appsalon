@@ -34,8 +34,8 @@ class Router {
                 //     $fn = $this->rutasPOST[$urlActual] ?? null;
                 // }
                 
-                $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-                $urlActual = strtok($urlActual, '?');
+                $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+                // $urlActual = strtok($urlActual, '?');
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
