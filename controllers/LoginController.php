@@ -26,9 +26,19 @@ class LoginController
                         // autenticar el usuario
                         session_start();
                         $_SESSION['usuario'] = $usuario->id;
+                        $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
+                        $_SESSION['email'] = $usuario->email;
+                        $_SESSION['login'] = true;
                         debuguear($_SESSION);
-                       
-                        
+
+                        // redireccionar
+                        if($usuario->admin){
+                            echo "eres admin";
+
+                        }else{
+                            echo "eres usuario";
+                        }
+                         
                     }
 
                 }else{
