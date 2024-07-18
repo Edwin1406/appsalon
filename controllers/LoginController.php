@@ -33,10 +33,11 @@ class LoginController
 
                         // redireccionar
                         if($usuario->admin){
-                            echo "eres admin";
-
+                            debuguear("eres admin") ;
+                            
                         }else{
-                            echo "eres usuario";
+                            debuguear("eres usuario") ;
+                            // echo "eres usuario";
                         }
                          
                     }
