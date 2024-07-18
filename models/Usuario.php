@@ -86,6 +86,13 @@ class Usuario extends ActiveRecord{
         $this->token = uniqid();
     }
 
+
+    // COMPROBAR EL PASSWORD
+    public function comprobarPasswordAndVerificado($password){
+        $resultado= password_verify($password, $this->password);
+        return $resultado;
+    }
+
     
 
 
