@@ -29,16 +29,17 @@ class LoginController
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
-                        // debuguear($_SESSION);
-
+                        
                         // redireccionar
-                        if($usuario->admin){
-                            debuguear("eres admin") ;
+                        if($usuario->admin==='1'){
+                            $_SESSION['admin'] = $usuario->admin ?? null;
+                            header('Location: /admin');
                             
                         }else{
-                            debuguear("eres usuario") ;
-                            // echo "eres usuario";
+                            header('Location: /cita');
+                            
                         }
+                        // debuguear($_SESSION);
                          
                     }
 
