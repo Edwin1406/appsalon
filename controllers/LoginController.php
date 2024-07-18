@@ -173,10 +173,13 @@ class LoginController
          
         ]);
     }
-
+    // recuperar contraseña
     public static function recuperar(Router $router)
     {
-        $router->render('auth/recuperar-password');
+        $alertas = [];
+        $router->render('auth/recuperar-password',[
+            'alertas' => $alertas
+        ]);
     }
    
 }
