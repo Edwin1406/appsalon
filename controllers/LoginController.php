@@ -115,7 +115,11 @@ class LoginController
         if($_SERVER['REQUEST_METHOD']==='POST'){
             $auth = new Usuario($_POST);
             $alertas = $auth->validarEmail();
-            // debuguear($auth);
+            if(empty($alertas)){
+                $usuario = Usuario::where('email', $auth->email);
+
+                debuguear($usuario);
+            }   
 
         }
 
