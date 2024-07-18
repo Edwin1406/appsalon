@@ -86,7 +86,7 @@ class LoginController
         $token= validarORedireccionar('/');
 
         $usuario = Usuario::where('token', $token);
-        debuguear($usuario);
+        // debuguear($usuario);
         $router->render('auth/confirmar',[
             'alertas' => $alertas,
             'usuario' => $usuario
