@@ -88,11 +88,12 @@ class LoginController
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){
             // mostrar mensaje de error
-            echo "Usuario no encontrado";
+            Usuario::setAlerta('error', 'Token no valido');
         }else{
             echo "Usuario encontrado";
         }
-
+        // para se que se muestre antes de renderizar
+        $alertas = Usuario::getAlertas();
         $router->render('auth/confirmar',[
             'alertas' => $alertas,
             'usuario' => $usuario
