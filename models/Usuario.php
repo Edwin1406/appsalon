@@ -87,10 +87,10 @@ class Usuario extends ActiveRecord{
     }
 
 
-    // COMPROBAR EL PASSWORD
+    // COMPROBAR EL  y VERIFICAR el confirmado
     public function comprobarPasswordAndVerificado($password){
         $resultado= password_verify($password, $this->password);
-        return $resultado;
+        debuguear($resultado);
     }
 
     
