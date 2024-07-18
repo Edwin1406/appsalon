@@ -90,9 +90,11 @@ class LoginController
             // mostrar mensaje de error
             Usuario::setAlerta('error', 'Token no valido');
         }else{ 
-            $usuario->confirmado = 1;
-            $usuario->token = '';
-            debuguear($usuario);
+            $usuario->confirmado = "1";
+            $usuario->token = null;
+            $usuario->guardar();
+            Usuario::setAlerta('success', 'Cuenta confirmada correctamente');
+            // debuguear($usuario);
         }
         // para se que se muestre antes de renderizar
         $alertas = Usuario::getAlertas();
