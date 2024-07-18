@@ -29,7 +29,7 @@ class LoginController
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
-                        debuguear($_SESSION);
+                        // debuguear($_SESSION);
 
                         // redireccionar
                         if($usuario->admin){
