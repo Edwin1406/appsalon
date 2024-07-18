@@ -23,6 +23,10 @@ class LoginController
                 if($usuario){
                     // verificar si el password es correcto
                     if($usuario->comprobarPasswordAndVerificado($auth->password)){
+                        // autenticar el usuario
+                        session_start();
+                        $_SESSION['usuario'] = $usuario->id;
+                        debuguear($_SESSION);
                        
                         
                     }
