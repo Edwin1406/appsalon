@@ -185,7 +185,7 @@ class LoginController
         }else{
             debuguear('Token valido');
         }
-        debuguear($usuario);
+        // debuguear($usuario);
         $router->render('auth/recuperar-password',[
             'alertas' => $alertas
         ]);
