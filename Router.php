@@ -21,27 +21,27 @@ class Router {
         // arreglo de rutas protegidas
         // $rutas_protegidas= ['/admin', '/admin/propiedades/crear', '/admin/propiedades/actualizar', '/admin/propiedades/eliminar', '/admin/vendedores/crear', '/admin/vendedores/actualizar', '/admin/vendedores/eliminar'];
 
-        $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
-        // $urlActual = str_replace('/Appsalon', '', $urlActual);
-        $urlActual = strtok($urlActual, '?');
-        $metodo= $_SERVER['REQUEST_METHOD'];
-        // debuguear($urlActual);
+        // $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+        // // $urlActual = str_replace('/Appsalon', '', $urlActual);
+        // $urlActual = strtok($urlActual, '?');
+        // $metodo= $_SERVER['REQUEST_METHOD'];
+        // // debuguear($urlActual);
 
-        if($metodo === 'GET') {
-            $fn = $this->rutasGET[$urlActual] ?? null;
-        } else {
-            // debuguear($_POST);
-            $fn = $this->rutasPOST[$urlActual] ?? null;
-        }
-        
-        // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        // $method = $_SERVER['REQUEST_METHOD'];
-
-        // if ($method === 'GET') {
+        // if($metodo === 'GET') {
         //     $fn = $this->rutasGET[$urlActual] ?? null;
         // } else {
+        //     // debuguear($_POST);
         //     $fn = $this->rutasPOST[$urlActual] ?? null;
         // }
+        
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if ($method === 'GET') {
+            $fn = $this->rutasGET[$urlActual] ?? null;
+        } else {
+            $fn = $this->rutasPOST[$urlActual] ?? null;
+        }
 
 
         // if ( $fn ) {
