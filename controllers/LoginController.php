@@ -177,17 +177,24 @@ class LoginController
     public static function recuperar(Router $router)
     {
         $alertas = [];
+        // quitar el formulario
+        $error=false;
+
         $token= s($_GET['token']);
+        // buscar el usuario por el token
         $usuario = Usuario::where('token', $token);
         if(empty($usuario)){
             // mostrar mensaje de error
-          debuguear('Token no valido');
+            Usuario::setAlerta('error', 'Token no valido');
+            $error=true;
         }else{
-            debuguear('Token valido');
+            
         }
-        // debuguear($usuario);
+        // para se que se muestre antes de renderizar
+        $alertas = Usuario::getAlertas();
         $router->render('auth/recuperar-password',[
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'error' => $error
         ]);
     }
    
