@@ -86,7 +86,13 @@ class LoginController
         $token= s($_GET['token']);
 
         $usuario = Usuario::where('token', $token);
-        debuguear($usuario);
+        if(empty($usuario)){
+            // mostrar mensaje de error
+            echo "Usuario no encontrado";
+        }else{
+            echo "Usuario encontrado";
+        }
+
         $router->render('auth/confirmar',[
             'alertas' => $alertas,
             'usuario' => $usuario
