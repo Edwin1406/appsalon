@@ -121,21 +121,20 @@ class LoginController
                 if($usuario && $usuario->confirmado ==='1'){
                     // generar token
                    $usuario->crearToken();
-                    // debuguear('usuario existe');
-                    debuguear($usuario);
+                   $usuario->guardar();
+                    // enviar email
+                    $alertas = Usuario::setAlerta('exito', 'Revisa tu email para cambiar tu contraseña');
 
                 }else{
                     $alertas = Usuario::setAlerta('error', 'El usuario no existe o no ha confirmado su cuenta');
-                    $alertas = Usuario::getAlertas();
+                
                 }
-
-
                 
             }   
 
         }
 
-
+        $alertas = Usuario::getAlertas();
        $router->render('auth/olvide',[
             'alertas' => $alertas
        ]);
