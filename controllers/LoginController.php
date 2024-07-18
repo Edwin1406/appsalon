@@ -177,6 +177,9 @@ class LoginController
     public static function recuperar(Router $router)
     {
         $alertas = [];
+        $token= s($_GET['token']);
+        $usuario = Usuario::where('token', $token);
+        debuguear($usuario);
         $router->render('auth/recuperar-password',[
             'alertas' => $alertas
         ]);
