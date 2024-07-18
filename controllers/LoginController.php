@@ -12,7 +12,15 @@ class LoginController
 {
     public static function login(Router $router)
     {
-       $router->render('auth/login');
+        $alertas = [];
+
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+            echo 'estas aqui post';
+
+        }
+       $router->render('auth/login',[
+            'alertas' => $alertas
+       ]);
     }
     public static function logout(Router $router)
     {
