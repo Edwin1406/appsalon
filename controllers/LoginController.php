@@ -119,8 +119,10 @@ class LoginController
                 $usuario = Usuario::where('email', $auth->email);
                 // verificar si el usuario existe
                 if($usuario && $usuario->confirmado ==='1'){
-                //    $usuario->crearToken();
-                    debuguear('usuario existe');
+                    // generar token
+                   $usuario->crearToken();
+                    // debuguear('usuario existe');
+                    debuguear($usuario);
 
                 }else{
                     $alertas = Usuario::setAlerta('error', 'El usuario no existe o no ha confirmado su cuenta');
@@ -128,7 +130,7 @@ class LoginController
                 }
 
 
-                // debuguear($usuario);
+                
             }   
 
         }
