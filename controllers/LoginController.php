@@ -15,7 +15,11 @@ class LoginController
         $alertas = [];
 
         if($_SERVER['REQUEST_METHOD']==='POST'){
-            echo 'estas aqui post';
+            $auth = new Usuario($_POST);
+            // $alertas = $auth->validar();
+            debuguear($auth);
+
+
 
         }
        $router->render('auth/login',[
