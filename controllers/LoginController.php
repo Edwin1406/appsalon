@@ -53,6 +53,7 @@ class LoginController
             'alertas' => $alertas
        ]);
     }
+
     public static function logout(Router $router)
     {
         echo "Desde el Controlador logout";
@@ -107,11 +108,20 @@ class LoginController
        ]);
     }
 
-
-    
+    // recuperar contraseña
     public static function olvide(Router $router)
     {
-       $router->render('auth/olvide');
+       $alertas = [];
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+            $auth = new Usuario($_POST);
+            debuguear($auth);
+
+        }
+
+
+       $router->render('auth/olvide',[
+            'alertas' => $alertas
+       ]);
     }
     // mensaje de confirmacion de cuenta
     public static function mensaje(Router $router)
