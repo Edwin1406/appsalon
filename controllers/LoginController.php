@@ -123,13 +123,12 @@ class LoginController
                     debuguear('usuario existe');
 
                 }else{
-                    debuguear('usuario no existe');
-                    // $alertas = Usuario::setAlerta('error', 'El usuario no existe o no ha confirmado su cuenta');
-                    // $alertas = Usuario::getAlertas();
+                    $alertas = Usuario::setAlerta('error', 'El usuario no existe o no ha confirmado su cuenta');
+                    $alertas = Usuario::getAlertas();
                 }
 
 
-                debuguear($usuario);
+                // debuguear($usuario);
             }   
 
         }
