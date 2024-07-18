@@ -50,4 +50,39 @@ class email {
 
        
     }
+
+    public function enviarRecuperacion() {
+        
+        
+        //  creamos una instancia de PHPMailer
+        $mail = new PHPMailer();
+        // configurar el SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'agrolecc@gmail.com';
+        $mail->Password = 'fkbavwbfpyqikmws';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+          // configurar el contenido del email
+        $mail->setFrom('agrolecc@gmail.com');
+        $mail->addAddress('edwin.ed948@gmail.com','AppSalon.com'); //correo de destino
+        $mail->Subject = 'Restablece tu contraseña';
+
+        // set HTML
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';
+        $contenido = '<html>';
+        $contenido .= '<p>Hola ' . $this->nombre . '</p>';
+        $contenido .= '<p>Haz solicitado reestablecer tu password,sigue el enlance para hacerlo</p>';
+        $contenido .= '<p><a href="https://serviacrilico.com/recuperar?token=' . $this->token . '">Reestablecer Password</a></p>';
+        $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
+        $contenido .= '</html>';
+        $mail->Body = $contenido;
+
+        // enviar el email
+        $mail->send();
+
+    }
 }

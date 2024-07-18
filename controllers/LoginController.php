@@ -122,7 +122,11 @@ class LoginController
                     // generar token
                    $usuario->crearToken();
                    $usuario->guardar();
-                    // enviar email
+                    // TODO:enviar email
+                    $email = new email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email->enviarRecuperacion();
+
+                    // alertas
                     $alertas = Usuario::setAlerta('exito', 'Revisa tu email para cambiar tu contraseña');
 
                 }else{
