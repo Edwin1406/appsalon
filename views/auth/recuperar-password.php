@@ -24,3 +24,8 @@
     <input type="submit" class="boton boton-verde" value="Cambiar Password">
 
 </form>
+
+<div class="acciones">
+    <a href="/">¿Ya tienes cuenta? Inicia Sessión</a>
+    <a href="/crear-cuenta">¿Aún no tienes una cuenta? Crea una</a>
+</div>
