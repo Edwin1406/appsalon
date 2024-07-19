@@ -44,10 +44,22 @@
                 placeholder="Tu hora"
             />
         </div>
-
-
-
     </form>
+    <div class="paginacion">
+        <button
+        id="anterior"
+        type="button"
+        class="boton"
+        >
+         &laquo; Anterior</button>
+         
+        <button 
+        id="siguiente"
+        type="button"
+        class="boton"
+        >&raquo; Siguiente</button>
+
+    </div>
 
     </div>
     <div id="paso-3" class="seccion">
