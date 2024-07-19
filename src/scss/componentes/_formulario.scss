@@ -20,6 +20,8 @@
         border-radius: 10px;
         &:disabled{
             background-color: lighten(v.$negro,70%);
+            color: v.$blanco;
+            cursor: not-allowed;
         }
     }
 }
