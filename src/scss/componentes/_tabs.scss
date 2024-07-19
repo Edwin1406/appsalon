@@ -12,12 +12,15 @@
         border: none;
         color: v.$blanco;
         padding: 1rem;
-        cursor: pointer;
         border-radius: 0.5rem;
         display: block;
         width: 100%;
         margin-bottom: 1rem;
         text-transform: uppercase;
         font-weight: v.$bold;
+        &:hover{
+            background-color: v.$verde;
+            cursor: pointer;
+        }
     }
 }
