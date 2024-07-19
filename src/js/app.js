@@ -9,5 +9,5 @@ function inciarApp() {
 
 function tabs(){
     const botones = document.querySelectorAll('.tabs button');
-    console.log(botones.length);
+    console.log(botones.length.children);
 }
