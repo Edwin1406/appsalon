@@ -9,6 +9,12 @@
     <div id="paso-2">
     <h2>Tus datos y cita</h2>
     <p>Coloca tus datos y fecha de tu cita</p>
+    <form  class="formulario">
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre">
+        </div>
+    </form>
 
     </div>
     <div id="paso-3">
