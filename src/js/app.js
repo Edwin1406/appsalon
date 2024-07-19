@@ -73,7 +73,6 @@ function paginaSiguiente(){
     const paginaAnterior = document.querySelector('#anterior');
     paginaAnterior.addEventListener('click', ()=>{
         paso--;
-        console.log(paso);
         mostrarSeccion();
         botonesPaginador();
     });
@@ -83,7 +82,6 @@ function paginaAnterior(){
     const paginaSiguiente = document.querySelector('#siguiente');
     paginaSiguiente.addEventListener('click', ()=>{
         paso++;
-        console.log(paso);
         mostrarSeccion();
         botonesPaginador();
 
