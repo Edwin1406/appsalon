@@ -70,5 +70,5 @@
 
 </div>
 <?php
-    $script = '<script src="public/build/js/bundle.js"></script>';
+    $script = '<script src="public/build/js/app.js"></script>';
 ?>
