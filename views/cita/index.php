@@ -69,3 +69,6 @@
 
 
 </div>
+<?php
+    $script = '<script src="public/build/js/bundle.js"></script>';
+?>
