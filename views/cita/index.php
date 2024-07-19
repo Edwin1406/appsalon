@@ -12,8 +12,32 @@
     <form  class="formulario">
         <div class="campo">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Tu nombre">
+            <input 
+                type="text" 
+                id="nombre" 
+                placeholder="Tu nombre"
+            />
         </div>
+        <div class="campo">
+            <label for="fecha">Fecha</label>
+            <input 
+                type="date" 
+                id="fecha" 
+                placeholder="Tu fecha"
+            />
+        </div>
+
+        <div class="campo">
+            <label for="hora">Hora</label>
+            <input 
+                type="time" 
+                id="hora" 
+                placeholder="Tu hora"
+            />
+        </div>
+
+        
+
     </form>
 
     </div>
