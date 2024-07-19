@@ -32,7 +32,7 @@ $router->get('/confirmar', [LoginController::class, 'confirmar']);
 $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 // Rutas de administrador
-$router->get('/admin', [CitaController::class, 'index']);
+$router->get('/cita', [CitaController::class, 'index']);
 
 
 
