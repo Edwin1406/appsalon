@@ -1,1 +1,1 @@
-let paso=1;function inciarApp(){tabs()}function tabs(){const n=document.querySelectorAll(".tabs button");console.log(n.length.children)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
+let paso=1;function inciarApp(){tabs()}function tabs(){const n=document.querySelectorAll(".tabs button");console.log(n.children)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
