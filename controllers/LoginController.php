@@ -63,7 +63,6 @@ class LoginController
     {
         echo "Desde el Controlador logout";
     }
-   
 
     // crea una cuenta de usuario
     public static function crear(Router $router)

@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/app.php';
 
 // require_once __DIR__ . '/appsalon/includes/app.php';
 
+use Controllers\CitaController;
 use Controllers\LoginController;
 use MVC\Router;
 
@@ -28,9 +29,10 @@ $router->post('/crear-cuenta', [LoginController::class, 'crear']);
 
 // Confirmar cuenta
 $router->get('/confirmar', [LoginController::class, 'confirmar']);
-// $router->post('/confirmar-cuenta', [LoginController::class, 'confirmar']);
-
 $router->get('/mensaje', [LoginController::class, 'mensaje']);
+
+// Rutas de administrador
+$router->get('/admin', [CitaController::class, 'index']);
 
 
 
