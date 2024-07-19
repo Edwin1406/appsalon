@@ -11,6 +11,7 @@ function mostrarSeccion(paso){
     const seccionAnterior = document.querySelector('.mostrar');
     if(seccionAnterior){
     seccionAnterior.classList.remove('mostrar');
+    console.log('removiendo la clase mostrar');
     }
 
     // seleccionar la seccion con el paso
