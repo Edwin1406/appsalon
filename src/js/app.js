@@ -9,8 +9,9 @@ function inciarApp() {
 function mostrarSeccion(paso){
     //ocultar la seccion anterior
     const seccionAnterior = document.querySelector('.mostrar');
+    if(seccionAnterior){
     seccionAnterior.classList.remove('mostrar');
-  
+    }
 
     // seleccionar la seccion con el paso
     const pasoSelector= `#paso-${paso}`;
