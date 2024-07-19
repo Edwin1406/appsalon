@@ -52,8 +52,8 @@ function tabs(){
 
 
 function botonesPaginador(){
-    const paginaSiguiente = document.querySelector('#siguiente');
     const paginaAnterior = document.querySelector('#anterior');
+    const paginaSiguiente = document.querySelector('#siguiente');
     if(paso === 1){
         paginaAnterior.classList.add('ocultar');
     } else if(paso === 3){
