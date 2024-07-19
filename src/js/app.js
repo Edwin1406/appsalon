@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function inciarApp() { 
     mostrarSeccion(); //mostrar la seccion actual
     tabs(); //cambiar la seccion cuando se da click en un tab
+    botonesPaginador(); //agrega o quita botones del paginador
 }
 
 
@@ -45,5 +46,16 @@ function tabs(){
         });
     });
 
+
+}
+
+
+
+function botonesPaginador(){
+    const paginaSiguiente = document.querySelector('#siguiente');
+    const paginaAnterior = document.querySelector('#anterior');
+    if(paso === 1){
+        paginaAnterior.classList.add('ocultar');
+    }
 
 }
