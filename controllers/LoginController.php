@@ -197,15 +197,16 @@ class LoginController
                 $usuario->password = $password->password;
                 $usuario->hashPassword();
                 $usuario->token = '';
-                debuguear($usuario);
+                $resultado= $usuario->guardar();
+                if($resultado)
+                {
+                    Usuario::setAlerta('exito', 'Password actualizado correctamente');
+                    // redireccionar
+                    header('Location: /');
 
-
+                }
+                // debuguear($usuario);
             }
-            
-          
-      
-
-
         }
         // para se que se muestre antes de renderizar
         $alertas = Usuario::getAlertas();
