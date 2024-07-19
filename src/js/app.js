@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function inciarApp() { 
     tabs(); //cambiar la seccion cuando se da click en un tab
 }
+
+
 function mostrarSeccion(){
     //ocultar la seccion anterior
     const seccionAnterior = document.querySelector('.mostrar');
@@ -23,13 +25,14 @@ function mostrarSeccion(){
 
 }
 
+
 function tabs(){
     const botones = document.querySelectorAll('.tabs button');
     botones.forEach(boton =>{
         boton.addEventListener('click', (e) =>{
             paso = parseInt(e.target.dataset.paso);
+            mostrarSeccion();
         });
-        mostrarSeccion();
     });
 
 
