@@ -69,7 +69,15 @@ class Usuario extends ActiveRecord{
         return self::$alertas;
     }
 
+    public function validarPassword(){
+        if(!$this->password){
+            self::$alertas['error'][] = "Debes añadir un password";
 
+        }
+        if(strlen($this->password) < 6){
+            self::$alertas['error'][] = "El password debe tener al menos 6 caracteres";
+        }
+    }
 
 
 
