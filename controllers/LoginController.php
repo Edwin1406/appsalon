@@ -12,7 +12,7 @@ class LoginController
 {
     public static function paginaNoEncontrada(Router $router)
     {
-        $router->render('template/paginaNoEncontrada');
+        $router->render('auth/paginaNoEncontrada');
     }
 
     public static function login(Router $router)
