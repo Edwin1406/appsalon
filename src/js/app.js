@@ -7,18 +7,18 @@ function inciarApp() {
     tabs(); //cambiar la seccion cuando se da click en un tab
 }
 function mostrarSeccion(){
-    // //ocultar la seccion anterior
-    // const seccionAnterior = document.querySelector('.mostrar');
-    // if(seccionAnterior){
-    // seccionAnterior.classList.remove('mostrar');
-    // // console.log('removiendo la clase mostrar');
-    // }
+    //ocultar la seccion anterior
+    const seccionAnterior = document.querySelector('.mostrar');
+    if(seccionAnterior){
+    seccionAnterior.classList.remove('mostrar');
+    // console.log('removiendo la clase mostrar');
+    }
 
-    // // seleccionar la seccion con el paso
-    // const pasoSelector= `#paso-${paso}`;
-    // const seccion = document.querySelector(pasoSelector);
-    // seccion.classList.add('mostrar');
-    console.log('mostrar seccion', paso);
+    // seleccionar la seccion con el paso
+    const pasoSelector= `#paso-${paso}`;
+    const seccion = document.querySelector(pasoSelector);
+    seccion.classList.add('mostrar');
+    // console.log('mostrar seccion', paso);
 
 
 }
