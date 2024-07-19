@@ -7,18 +7,18 @@
         grid-template-columns: repeat(2, 1fr);
         min-height: 100vh;
     } 
-  
-    .imagen{
+    .imagen {
         height: 20rem;
         background: url('/public/build/img/2.jpg');
         background-size: cover;
         background-position: center center;
-        @include m.tablet{
-           
-            height: auto;
-            
+    
+        @include m.tablet {
+            height: 30rem; // Ajusta la altura según sea necesario
+            background-size: contain; // Cambia a `contain` si prefieres que la imagen se ajuste dentro del contenedor sin recortarse
         }
     }
+    
     .app{
         width: 95%;
         margin: 0 auto;
