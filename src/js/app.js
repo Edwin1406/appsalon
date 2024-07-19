@@ -28,7 +28,7 @@ function tabs(){
     botones.forEach(boton =>{
         boton.addEventListener('click', (e) =>{
             paso = parseInt(e.target.dataset.paso);
-            mostrarSeccion();
+            // mostrarSeccion();
         });
     });
 
