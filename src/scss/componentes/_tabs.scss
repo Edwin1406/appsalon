@@ -1,0 +1,17 @@
+@use 'base/variables' as v;//immv
+@use 'base/mixins' as m; //imm
+
+.tabs{
+
+    button{
+        background-color: v.$azul;
+        border: none;
+        color: v.$blanco;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
