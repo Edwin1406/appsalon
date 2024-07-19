@@ -7,6 +7,8 @@ function inciarApp() {
     mostrarSeccion(); //mostrar la seccion actual
     tabs(); //cambiar la seccion cuando se da click en un tab
     botonesPaginador(); //agrega o quita botones del paginador
+    paginaSiguiente(); //cambia a la pagina siguiente
+    paginaAnterior(); //cambia a la pagina anterior
 }
 
 
@@ -65,5 +67,23 @@ function botonesPaginador(){
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.remove('ocultar');
     }
+
+}
+function paginaSiguiente(){
+    const paginaAnterior = document.querySelector('#anterior');
+    paginaAnterior.addEventListener('click', ()=>{
+        paso--;
+        mostrarSeccion();
+        botonesPaginador();
+    });
+
+}
+function paginaAnterior(){  
+    const paginaSiguiente = document.querySelector('#siguiente');
+    paginaSiguiente.addEventListener('click', ()=>{
+        paso++;
+        mostrarSeccion();
+        botonesPaginador();
+    });
 
 }
