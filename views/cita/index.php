@@ -12,6 +12,8 @@
 
     </div>
     <div id="paso-3">
+    <h2>Resumen</h2>
+    <p>Verifica si la información sea correcta</p>
 
     </div>
 
