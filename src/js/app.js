@@ -57,6 +57,7 @@ function botonesPaginador(){
     const paginaSiguiente = document.querySelector('#siguiente');
     if(paso === 1){
         paginaAnterior.classList.add('ocultar');
+        paginaSiguiente.classList.remove('ocultar');
     } else if(paso === 3){
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.add('ocultar');
