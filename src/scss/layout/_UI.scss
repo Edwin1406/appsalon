@@ -14,10 +14,12 @@
         background-position: center center;
     
         @include m.tablet {
-            height: 30rem; // Ajusta la altura según sea necesario
-            background-size: contain; // Cambia a `contain` si prefieres que la imagen se ajuste dentro del contenedor sin recortarse
+            height: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
+    
     
     .app{
         width: 95%;
