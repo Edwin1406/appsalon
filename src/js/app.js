@@ -43,6 +43,7 @@ function tabs(){
         boton.addEventListener('click', (e) =>{
             paso = parseInt(e.target.dataset.paso);
             mostrarSeccion();
+            botonesPaginador();
         });
     });
 
