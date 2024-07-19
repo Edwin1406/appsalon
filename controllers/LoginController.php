@@ -194,7 +194,7 @@ class LoginController
             $alertas = $password->validarPassword();  
             
           
-          debuguear($password);
+        //   debuguear($password);
 
 
         }
