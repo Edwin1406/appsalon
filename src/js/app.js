@@ -21,7 +21,10 @@ function mostrarSeccion(){
     const pasoSelector= `#paso-${paso}`;
     const seccion = document.querySelector(pasoSelector);
     seccion.classList.add('mostrar');
-    // console.log('mostrar seccion', paso);
+
+    // resaltar el tab actual
+    const tab = document.querySelector(`[data-paso="${paso}"]`);
+    tab.classList.add('actual');
 
 
 }
