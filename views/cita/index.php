@@ -8,15 +8,17 @@
         <button type="button" data-paso="3">Resumen</button>
 
     </nav>
+
     <div id="paso-1" class="seccion">
         <h2>servicios</h2>
         <p class="text-center">Elige tus servicios a continuación</p>
         <div id="servicios" class="lista-servicios"></div>
     </div>
+
     <div id="paso-2" class="seccion">
-    <h2>Tus datos y cita</h2>
-    <p class="text-center">Coloca tus datos y fecha de tu cita</p>
-    <form  class="formulario">
+        <h2>Tus datos y cita</h2>
+        <p class="text-center">Coloca tus datos y fecha de tu cita</p>
+        <form  class="formulario">
         <div class="campo">
             <label for="nombre">Nombre</label>
             <input 
@@ -44,14 +46,15 @@
                 placeholder="Tu hora"
             />
         </div>
-    </form>
+        </form>
     </div>
 
-        <div id="paso-3" class="seccion">
-        <h2>Resumen</h2>
-        <p class="text-center" >Verifica si la información sea correcta</p>
+    <div id="paso-3" class="seccion">
+            <h2>Resumen</h2>
+            <p class="text-center" >Verifica si la información sea correcta</p>
 
     </div>
+
     <div class="paginacion">
         <button
         id="anterior"
