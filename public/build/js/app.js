@@ -1,1 +1,1 @@
-alert("hola");
+let paso=1;function inciarApp(){mostrarPaso()}function mostrarPaso(){console.log(paso)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
