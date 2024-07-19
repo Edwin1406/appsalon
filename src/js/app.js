@@ -61,6 +61,9 @@ function botonesPaginador(){
     } else if(paso === 3){
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.add('ocultar');
+    }else{
+        paginaAnterior.classList.remove('ocultar');
+        paginaSiguiente.classList.remove('ocultar');
     }
 
 }
