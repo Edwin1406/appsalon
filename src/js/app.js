@@ -22,10 +22,16 @@ function mostrarSeccion(){
     const seccion = document.querySelector(pasoSelector);
     seccion.classList.add('mostrar');
 
+    // limpiar la clase actual en el tab anterior
+    const tabAnterior = document.querySelector('.tabs .actual');
+    if(tabAnterior){
+        tabAnterior.classList.remove('actual');
+    }
+
     // resaltar el tab actual
     const tab = document.querySelector(`[data-paso="${paso}"]`);
     tab.classList.add('actual');
-
+   
 
 }
 
