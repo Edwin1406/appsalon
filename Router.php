@@ -39,7 +39,8 @@ class Router {
               call_user_func($fn, $this);
                 
           } else {
-               header('/template/paginaNoEncontrada');
+              
+               header('Location: /paginaNoEncontrada');
           }
        
         
