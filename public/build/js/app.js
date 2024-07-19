@@ -1,1 +1,1 @@
-let paso=1;function inciarApp(){tabs()}function tabs(){const n=document.querySelectorAll(".tabs button");console.log(n.childen)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
+let paso=1;function inciarApp(){tabs()}function tabs(){document.querySelectorAll(".tabs button").forEach((t=>{t.addEventListener("click",(t=>{console.log(t.target.dataset.paso)}))}))}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));

@@ -9,5 +9,11 @@ function inciarApp() {
 
 function tabs(){
     const botones = document.querySelectorAll('.tabs button');
-    console.log(botones.childen);
+    botones.forEach(boton =>{
+        boton.addEventListener('click', (e) =>{
+            console.log(e.target.dataset.paso);
+        });
+    });
+
+
 }
