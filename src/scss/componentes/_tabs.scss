@@ -2,6 +2,10 @@
 @use 'base/mixins' as m; //imm
 
 .tabs{
+    @include m.tablet{
+        // el display flex es para que los elementos se alineen en el centro
+        display: flex;
+    }
 
     button{
         background-color: v.$azul;
@@ -13,8 +17,7 @@
         display: block;
         width: 100%;
         margin-bottom: 1rem;
-        :hover{
-            background-color: v.$verde;
-        }
+        text-transform: uppercase;
+        font-weight: v.$bold;
     }
 }
