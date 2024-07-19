@@ -19,7 +19,7 @@
         text-transform: uppercase;
         font-weight: v.$bold;
         &:hover{
-            background-color: v.$verde;
+            background-color: darken(v.$azul, 10%);
             cursor: pointer;
         }
     }
