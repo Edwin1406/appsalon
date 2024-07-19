@@ -16,6 +16,7 @@
                 type="text" 
                 id="nombre" 
                 placeholder="Tu nombre"
+                value="<?php echo $nombre; ?>"
             />
         </div>
         <div class="campo">
@@ -36,7 +37,7 @@
             />
         </div>
 
-        
+
 
     </form>
 
