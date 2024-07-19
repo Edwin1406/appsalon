@@ -8,6 +8,6 @@ function inciarApp() {
 }
 
 function tabs(){
-    const botones = document.querySelectorAll('.tab button');
+    const botones = document.querySelectorAll('.tabs button');
     console.log(botones.length);
 }
