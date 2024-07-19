@@ -40,7 +40,7 @@ class Router {
                 
           } else {
               
-               header('Location: /paginaNoEncontrada');
+               header('Location: template/paginaNoEncontrada');
           }
        
         
