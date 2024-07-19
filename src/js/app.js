@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function inciarApp() { 
     tabs(); //cambiar la seccion cuando se da click en un tab
 }
-function mostrarSeccion(paso){
+function mostrarSeccion(){
     //ocultar la seccion anterior
     const seccionAnterior = document.querySelector('.mostrar');
     if(seccionAnterior){
