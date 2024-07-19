@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function inciarApp() { 
+    mostrarSeccion(); //mostrar la seccion actual
     tabs(); //cambiar la seccion cuando se da click en un tab
 }
 
