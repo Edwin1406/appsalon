@@ -10,6 +10,11 @@ use Model\Usuario;
 
 class LoginController
 {
+    public static function paginaNoEncontrada(Router $router)
+    {
+        $router->render('template/paginaNoEncontrada');
+    }
+
     public static function login(Router $router)
     {
         $alertas = [];
@@ -58,6 +63,7 @@ class LoginController
     {
         echo "Desde el Controlador logout";
     }
+   
 
     // crea una cuenta de usuario
     public static function crear(Router $router)

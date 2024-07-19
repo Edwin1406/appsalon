@@ -11,6 +11,7 @@ use MVC\Router;
 $router = new Router();
 
 // Rutas de inicio de sesión
+$router->get('/paginaNoEncontrada', [LoginController::class, 'paginaNoEncontrada']);
 $router->get('/', [LoginController::class, 'login']);
 $router->post('/', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
