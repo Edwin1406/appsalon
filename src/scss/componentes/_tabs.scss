@@ -5,6 +5,8 @@
     @include m.tablet{
         // el display flex es para que los elementos se alineen en el centro
         display: flex;
+        justify-content: center;
+        gap: 1rem;
     }
 
     button{
@@ -13,7 +15,6 @@
         color: v.$blanco;
         padding: 1rem;
         border-radius: 0.5rem;
-        gap: 1rem;
         display: block;
         width: 100%;
         margin-bottom: 1rem;
