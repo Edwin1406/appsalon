@@ -191,10 +191,19 @@ class LoginController
         if($_SERVER['REQUEST_METHOD']==='POST'){
             // leer el buevo password y guardarlo
           $password= new Usuario($_POST);
-            $alertas = $password->validarPassword();  
+          $alertas = $password->validarPassword();  
+            if(empty($alertas)){
+                $usuario->password = null;
+                $usuario->password = $password->password;
+                $usuario->hashPassword();
+                $usuario->token = '';
+                debuguear($usuario);
+
+
+            }
             
           
-        //   debuguear($password);
+      
 
 
         }
