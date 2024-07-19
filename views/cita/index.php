@@ -17,6 +17,7 @@
                 id="nombre" 
                 placeholder="Tu nombre"
                 value="<?php echo $nombre; ?>"
+                disabled
             />
         </div>
         <div class="campo">
