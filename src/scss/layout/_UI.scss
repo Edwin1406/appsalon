@@ -15,7 +15,7 @@
         background-position: center center;
         @include m.tablet{
             width: 50%;
-            height: 100%;
+            height: auto;
             
         }
     }
