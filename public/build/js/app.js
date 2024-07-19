@@ -1,1 +1,1 @@
-let paso=1;function inciarApp(){mostrarPaso()}function mostrarPaso(){console.log(paso)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
+let paso=1;function inciarApp(){tabs()}function tabs(){const n=document.querySelectorAll(".tab button");console.log(n.length)}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));

@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function inciarApp() { 
-    mostrarPaso();
+    tabs(); //cambiar la seccion cuando se da click en un tab
 }
 
-function mostrarPaso(){
-    console.log(paso);
+function tabs(){
+    const botones = document.querySelectorAll('.tab button');
+    console.log(botones.length);
 }
