@@ -41,8 +41,8 @@ function mostrarServicios(servicios){
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
-        
-        console.log(servicioDiv);
+
+        document.querySelector('#servicios').appendChild(servicioDiv);
 
 
         
