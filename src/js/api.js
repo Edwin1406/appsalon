@@ -35,7 +35,10 @@ function mostrarServicios(servicios){
         precioServicio.textContent = `$ ${precio}`;
 
         // contenedor de servicios
-
+        const servicioDiv = document.createElement('DIV');
+        servicioDiv.classList.add('servicio');
+        servicioDiv.dataset.idServicio = id;
+        console.log(servicioDiv);
 
 
         
