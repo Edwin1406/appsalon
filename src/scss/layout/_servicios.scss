@@ -9,6 +9,15 @@
         
     }
     .servicio{
+        background-color: v.$blanco;
+
+        p{
+            color: v.$negro;
+        }
+        .precio-servicio{ 
+            color: v.$azul;
+            font-weight: v.$bold;
+        }
 
 
     }
