@@ -11,7 +11,7 @@ function inciarApp() {
 
 async function mostrarServicios(){
     try {
-        const url = 'http://localhost:3000/servicios';
+        const url = 'https://serviacrilico.com/api/servicios';
         const resultado = await fetch(url);
         const json = await resultado.json();
         console.log(json);
