@@ -10,16 +10,19 @@
         
     }
     .servicio{
-        padding: 2rem;
-        border-radius: 5px;
+        padding: 3rem;
+        border-radius: 1rem;
         background-color: v.$blanco;
+        box-shadow: 0 0 1rem rgba(v.$negro, 0.1);
 
         p{
             color: v.$negro;
+            margin: 0 0 calc(v.$separacion / 4) 0;
         }
         .precio-servicio{ 
             color: v.$azul;
             font-weight: v.$bold;
+            margin: 0;
         }
 
 
