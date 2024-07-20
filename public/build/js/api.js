@@ -1,1 +1,1 @@
-console.log("removiendo la clase mostrar");
+function inciarApp(){mostrarServicios()}async function mostrarServicios(){try{const o="http://localhost:3000/servicios",t=await fetch(o),n=await t.json();console.log(n)}catch(o){console.log(o)}}document.addEventListener("DOMContentLoaded",(function(){inciarApp()}));
