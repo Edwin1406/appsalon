@@ -5,12 +5,12 @@
     display: grid;
     gap: 2rem;
     border-radius: 5px;
-    padding: 1rem;
     @include m.tablet {
         @include m.grid(2,2rem);
         
     }
     .servicio{
+        padding: 1rem;
         background-color: v.$blanco;
 
         p{
