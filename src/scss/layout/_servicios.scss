@@ -4,6 +4,8 @@
 .lista-servicios{
     display: grid;
     gap: 2rem;
+    border-radius: 5px;
+    padding: 1rem;
     @include m.tablet {
         @include m.grid(2,2rem);
         
