@@ -36,7 +36,7 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 $router->get('/cita', [CitaController::class, 'index']);
 
 // api de citas
-$router->get('/api/servicios', [ApiController::class, 'servicios']);
+$router->get('/api/servicios', [ApiController::class, 'index']);
 
 
 

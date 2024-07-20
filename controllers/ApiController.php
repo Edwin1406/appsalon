@@ -1,10 +1,14 @@
 <?php
 namespace Controllers;
 
+use MVC\Router;
 
 class ApiController {
-    public static function servicios(){
-        echo 'Desde el controlador API';
+    public static function index(Router $router) {
+        
+        $router->render('api/index',[
+            
+        ]);
     }
 }
 
