@@ -4,13 +4,14 @@
 .lista-servicios{
     display: grid;
     gap: 2rem;
-    border-radius: 5px;
+    
     @include m.tablet {
         @include m.grid(2,2rem);
         
     }
     .servicio{
-        padding: 1rem;
+        padding: 2rem;
+        border-radius: 5px;
         background-color: v.$blanco;
 
         p{
