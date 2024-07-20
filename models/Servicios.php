@@ -9,8 +9,9 @@ class Servicio extends ActiveRecord{
     public $nombre;
     public $precio;
 
-    public function __destruct()
+    public function __construct()
     {
+        // areglos asociativos
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
         $this->precio = $args['precio'] ?? '';
@@ -27,7 +28,7 @@ class Servicio extends ActiveRecord{
         return self::$alertas;
     }
 
-    
+
 
 
 
