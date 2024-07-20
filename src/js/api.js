@@ -25,7 +25,20 @@ async function ApiServicios(){
 function mostrarServicios(servicios){
     servicios.forEach(servicio => {
         const {id,nombre,precio} =servicio;
-        console.log(id,nombre,precio);
+        // scripting de los servicios
+        const nombreServicio = document.createElement('P');
+        nombreServicio.classList.add('nombre-servicio');
+        nombreServicio.textContent = nombre;
+       
+        const precioServicio =document.createElement('P');
+        precioServicio.classList.add('precio-servicio');
+        precioServicio.textContent = `$ ${precio}`;
+
+        // contenedor de servicios
+
+
+
+        
     });
 
 }
