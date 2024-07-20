@@ -37,7 +37,11 @@ function mostrarServicios(servicios){
         // contenedor de servicios
         const servicioDiv = document.createElement('DIV');
         servicioDiv.classList.add('servicio');
-        servicioDiv.dataset.idServicio = id;
+        servicioDiv.dataset.idServicio = id; //creamos un atributo personalizado
+        
+        servicioDiv.appendChild(nombreServicio);
+        servicioDiv.appendChild(precioServicio);
+        
         console.log(servicioDiv);
 
 
