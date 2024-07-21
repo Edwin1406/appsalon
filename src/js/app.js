@@ -152,6 +152,7 @@ function mostrarServicios(servicios){
 }
 
 function seleccionarServicio (servicio){
-    const {id,nombre,precio} = servicio; //destructuring
-    console.log(servicio);
+    const {servicios} = cita; //destructuring
+    cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
+    console.log(cita);
 }
