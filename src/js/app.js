@@ -1,4 +1,15 @@
 let paso = 1;
+const cita = {
+    nombre: '',
+    fecha: '',
+    hora: '',
+    servicios: []
+
+} 
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     inciarApp();
 });
@@ -124,6 +135,8 @@ function mostrarServicios(servicios){
         const servicioDiv = document.createElement('DIV');
         servicioDiv.classList.add('servicio');
         servicioDiv.dataset.idServicio = id; //creamos un atributo personalizado
+        // seleccionar un servicio para la cita
+        servicioDiv.onclick = seleccionarServicio();
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
@@ -134,4 +147,8 @@ function mostrarServicios(servicios){
         
     });
 
+}
+
+function seleccionarServicio (){
+    alert('seleccionando servicio');
 }
