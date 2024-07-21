@@ -60,13 +60,13 @@ class email {
         $mail->isSMTP();
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'proyecto@serviacrilico.com';
-        $mail->Password = 'Edwin19982.';
+        $mail->Username = 'agrolecc@gmail.com';
+        $mail->Password = 'fkbavwbfpyqikmws';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
           // configurar el contenido del email
-        $mail->setFrom('proyecto@serviacrilico.com');
+        $mail->setFrom('agrolecc@gmail.com');
         $mail->addAddress($this->email); //correo de destino
         $mail->Subject = 'Restablece tu contraseña';
 
