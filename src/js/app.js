@@ -136,7 +136,7 @@ function mostrarServicios(servicios){
         servicioDiv.classList.add('servicio');
         servicioDiv.dataset.idServicio = id; //creamos un atributo personalizado
         // seleccionar un servicio para la cita
-        servicioDiv.onclick = seleccionarServicio();
+        servicioDiv.onclick = seleccionarServicio;
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
