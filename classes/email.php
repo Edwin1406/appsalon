@@ -31,7 +31,7 @@ class email {
 
           // configurar el contenido del email
         $mail->setFrom('agrolecc@gmail.com');
-        $mail->addAddress('edwin.ed948@gmail.com','AppSalon.com'); //correo de destino
+        $mail->addAddress($this->email,'AppSalon.com'); //correo de destino
         $mail->Subject = 'Confirma tu cuenta';
 
         // set HTML
@@ -67,7 +67,7 @@ class email {
 
           // configurar el contenido del email
         $mail->setFrom('agrolecc@gmail.com');
-        $mail->addAddress('edwin.ed948@gmail.com','AppSalon.com'); //correo de destino
+        $mail->addAddress($this->email,'AppSalon.com'); //correo de destino
         $mail->Subject = 'Restablece tu contraseña';
 
         // set HTML
