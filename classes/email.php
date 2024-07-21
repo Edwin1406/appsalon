@@ -58,15 +58,15 @@ class email {
         $mail = new PHPMailer();
         // configurar el SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'agrolecc@gmail.com';
+        $mail->Username = 'proyecto@serviacrilico.com';
         $mail->Password = 'fkbavwbfpyqikmws';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
           // configurar el contenido del email
-        $mail->setFrom('agrolecc@gmail.com');
+        $mail->setFrom('proyecto@serviacrilico.com');
         $mail->addAddress($this->email); //correo de destino
         $mail->Subject = 'Restablece tu contraseña';
 
