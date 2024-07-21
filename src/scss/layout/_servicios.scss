@@ -20,8 +20,10 @@
 
         // si el servicio esta seleccionado
         &.seleccionado{
-            color: v.$negro;
-            background-color: v.$azul; 
+            background-color: v.$azul;
+            p{
+                color: v.$blanco;
+            } 
         }
 
         &:hover{
