@@ -17,6 +17,13 @@
         transition-property: transform;
         transition-duration: 300ms;
         text-align: center;
+
+        // si el servicio esta seleccionado
+        &.seleccionado{
+            background-color: v.$azul; 
+            color: v.$blanco;
+        }
+
         &:hover{
            transform: scale(1.05);
         }

@@ -152,7 +152,15 @@ function mostrarServicios(servicios){
 }
 
 function seleccionarServicio (servicio){
+
+    const {id} = servicio;
     const {servicios} = cita; //destructuring
     cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
+
+    const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
+    servicioDiv.classList.add('seleccionado');
+    
+
+
     console.log(cita);
 }
