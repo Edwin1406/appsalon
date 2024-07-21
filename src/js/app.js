@@ -136,7 +136,9 @@ function mostrarServicios(servicios){
         servicioDiv.classList.add('servicio');
         servicioDiv.dataset.idServicio = id; //creamos un atributo personalizado
         // seleccionar un servicio para la cita
-        servicioDiv.onclick = seleccionarServicio;
+        servicioDiv.onclick = function (){ // ejecuta una funcion al hacer click una funcion callback
+            seleccionarServicio(servicio);
+        }; 
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
@@ -149,6 +151,6 @@ function mostrarServicios(servicios){
 
 }
 
-function seleccionarServicio (){
-    alert('seleccionando servicio');
+function seleccionarServicio (servicio){
+    console.log(servicio)
 }
