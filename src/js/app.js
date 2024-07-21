@@ -155,6 +155,7 @@ function seleccionarServicio (servicio){
 
     const {id} = servicio;
     const {servicios} = cita; //destructuring
+    const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
     // comprabar si un servicio ya esta agregado
     if(servicios.some(agregado=>{ agregado.id=== id })){ //arrow function
         // eliminar el servicio del arreglo
@@ -162,12 +163,11 @@ function seleccionarServicio (servicio){
     } else{
         // agregar el servicio al arreglo
         cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
+        servicioDiv.classList.add('seleccionado');
     }
 
 
 
-    const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
-    servicioDiv.classList.add('seleccionado');
 
 
 
