@@ -165,11 +165,6 @@ function seleccionarServicio (servicio){
         cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
         servicioDiv.classList.add('seleccionado');
     }
-
-
-
-
-
-
+    
     console.log(cita);
 }
