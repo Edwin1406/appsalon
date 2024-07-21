@@ -61,7 +61,7 @@ class email {
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'proyecto@serviacrilico.com';
-        $mail->Password = 'fkbavwbfpyqikmws';
+        $mail->Password = 'Edwin19982.';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
