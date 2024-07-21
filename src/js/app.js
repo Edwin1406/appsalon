@@ -152,5 +152,6 @@ function mostrarServicios(servicios){
 }
 
 function seleccionarServicio (servicio){
-    console.log(servicio)
+    const {id,nombre,precio} = servicio; //destructuring
+    console.log(servicio);
 }
