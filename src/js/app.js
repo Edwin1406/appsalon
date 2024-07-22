@@ -329,7 +329,7 @@ function mostrarResumen (){
 
 
     resumen.appendChild(nombreCliente);
-    resumen.appendChild(fechaCita);
+    resumen.appendChild(fechaFormateada);
     resumen.appendChild(horaCita);
 
 
