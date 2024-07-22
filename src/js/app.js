@@ -350,10 +350,11 @@ function mostrarResumen (){
 async function reservarCita(){
     // destructuring
     const {nombre,fecha,hora,servicios} = cita;
-   const datos =  new FormData();
-   datos.append('nombre',nombre);
+    const datos =  new FormData();
+    datos.append('nombre',nombre);
     datos.append('fecha',fecha);
     datos.append('hora',hora);
+    datos.append('servicios',JSON.stringify(servicios));
 
     const url = 'https://serviacrilico.com/api/citas';
     const respuesta = await fetch(url,{
