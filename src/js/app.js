@@ -256,6 +256,11 @@ function mostrarAlerta(mensaje,tipo,elemento,desparece=true){
 
 function mostrarResumen (){
     const resumen = document.querySelector('.contenido-resumen');
+    // limpiar el html previo
+    while(resumen.firstChild){
+        resumen.removeChild(resumen.firstChild);
+    }
+
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
