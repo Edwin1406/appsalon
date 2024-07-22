@@ -269,6 +269,22 @@ function mostrarResumen (){
     }
     // formatear el Div
     const {nombre,fecha,hora,servicios} = cita;
-    console.log(cita);
+    const headingCita = document.createElement('H3');
+    headingCita.textContent = 'Resumen de Cita';
+    const nombreCita = document.createElement('P');
+    nombreCita.innerHTML = `<span>Nombre:</span> ${nombre}`;
+    const fechaCita = document.createElement('P');
+    fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
+    const horaCita = document.createElement('P');
+    horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
+    const serviciosCita = document.createElement('DIV');
+    serviciosCita.innerHTML = '<span>Servicios:</span>';
+    const ul = document.createElement('UL');
+    servicios.forEach(servicio =>{
+        const {nombre,precio} = servicio;
+        const li = document.createElement('LI');
+        li.textContent = `${nombre} - $ ${precio}`;
+        ul.appendChild(li);
+    });
 
 }
