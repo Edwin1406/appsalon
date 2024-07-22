@@ -48,7 +48,7 @@
                     placeholder="Tu hora"
                 />
             </div>
-            <input type="hidden" id="id" value="<?php echo $id ?>"> 
+            <input type="hiden" id="id" value="<?php echo $id ?>"> 
         </form>
 
     </div>
