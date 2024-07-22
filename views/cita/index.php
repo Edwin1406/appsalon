@@ -57,7 +57,6 @@
             <h2>Resumen</h2>
             <p class="text-center" >Verifica si la información sea correcta</p>
             
-           
     </div>
 
     <div class="paginacion">
