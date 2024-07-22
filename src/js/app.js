@@ -189,7 +189,7 @@ function seleccionarFecha(){
         const dia = new Date(e.target.value).getUTCDay();
         if([6,0].includes(dia)){
             e.target.value = '';
-            alert('No se pueden agendar citas los fines de semana');
+            mostrarAlerta('No se puede agendar en fin de semana','error');
            
         }else{
             cita.fecha = e.target.value;
@@ -198,4 +198,13 @@ function seleccionarFecha(){
         }
 
     });
+}
+
+function mostrarAlerta(mensaje,tipo){
+    const alerta = document.createElement('DIV');
+    alerta.textContent = mensaje;
+    alerta.classList.add('alerta');
+    alerta.classList.add(tipo);
+    const formulario = document.querySelector('.formulario');
+    formulario.appendChild(alerta);
 }
