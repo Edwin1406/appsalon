@@ -276,6 +276,25 @@ function mostrarResumen (){
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
 
+    // para los servicios foreach
+    servicios.forEach(servicio =>{
+        // destructuring
+        const {id,nombre,precio} = servicio;
+        const contenedorServicio = document.createElement('DIV');
+        contenedorServicio.classList.add('contenedor-servicio');
+
+        const textoServicio = document.createElement('P');
+        textoServicio.textContent = nombre;
+
+        const precioServicio = document.createElement('P');
+        precioServicio.innerHTML = `<span>Precio:</span> $${precio}`;
+
+        contenedorServicio.appendChild(textoServicio);
+        contenedorServicio.appendChild(precioServicio);
+        resumen.appendChild(contenedorServicio);
+
+    })
+
 
     resumen.appendChild(nombreCliente);
     resumen.appendChild(fechaCita);
