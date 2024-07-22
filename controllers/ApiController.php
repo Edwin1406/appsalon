@@ -14,7 +14,7 @@ class ApiController {
 
     public static function guardar(){
         $respuesta = [
-            'mensaje' => 'Cita guardada',
+            'datos' => $_POST,
 
         ]; // Arreglo para la respuesta asocitiva
         echo json_encode($respuesta);
