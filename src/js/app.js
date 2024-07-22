@@ -176,6 +176,6 @@ function seleccionarServicio (servicio){
 
 function nombreCita(){
     const nombre=document.querySelector('#nombre');
-    cita.nombre = nombre.value;
+    cita.nombre = nombre;
     console.log(cita);
 }
