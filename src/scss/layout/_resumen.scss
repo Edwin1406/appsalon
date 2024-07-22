@@ -21,6 +21,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+
+    &:last-of-type{
+        margin-bottom: v.$separacion;
+    }
  
 
 }
