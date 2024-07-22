@@ -274,9 +274,9 @@ function mostrarResumen (){
     const headingServicios = document.createElement('H3');
     headingServicios.textContent = 'Resumen de Servicios';
     const tituloServicios = document.createElement('P');
-    tituloServicios.textContent = 'Servicios';
+    tituloServicios.innerHTML = `<span>Servicio:</span>`;
     const tituloPrecio = document.createElement('P');
-    tituloPrecio.textContent = 'Precio';
+    tituloPrecio.innerHTML = `<span>Precio:</span>`;
     resumen.appendChild(headingServicios);
     resumen.appendChild(tituloServicios);
     resumen.appendChild(tituloPrecio);
