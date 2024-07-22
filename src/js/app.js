@@ -205,7 +205,14 @@ function seleccionarFecha(){
 function seleccionarHora(){
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
-        console.log(e.target.value);
+    const hora = horaCita.split(":");
+
+    if(hora[0] < 10 || hora[0] > 18){
+        mostrarAlerta('Hora no disponible','error');
+        setTimeout(()=>{
+            inputHora.value = '';
+        },2000);
+    }
     })
 }
 
