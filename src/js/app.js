@@ -175,7 +175,7 @@ function seleccionarServicio (servicio){
 
 
 function nombreCita(){
-    const nombre=document.querySelector('#nombre');
+    const nombre=document.querySelector('#nombre').value;
     cita.nombre = nombre;
     console.log(cita);
 }
