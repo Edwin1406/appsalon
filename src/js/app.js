@@ -157,7 +157,7 @@ function seleccionarServicio (servicio){
     const {servicios} = cita; //destructuring
     const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
     // comprabar si un servicio ya esta agregado
-    if(servicios.some(agregado=>{ agregado.id=== id })){ //arrow function
+    if(servicios.some(agregado=>agregado.id=== id )){ //arrow function
         // eliminar el servicio del arreglo
         cita.servicios = servicios.filter(agregado => agregado.id !== id);
     } else{
