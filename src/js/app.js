@@ -207,4 +207,7 @@ function mostrarAlerta(mensaje,tipo){
     alerta.classList.add(tipo);
     const formulario = document.querySelector('.formulario');
     formulario.appendChild(alerta);
+    setTimeout(()=>{
+        alerta.remove();
+    },3000);
 }
