@@ -291,18 +291,9 @@ function mostrarResumen (){
         const precioServicio = document.createElement('P');
         precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
 
-        const x = document.createElement('P');
-        x.textContent = 'X';
-        x.classList.add('eliminar');
-        x.onclick = function(){
-            cita.servicios = cita.servicios.filter(servicio => servicio.id !== id);
-            servicioDiv.classList.remove('seleccionado');
-            mostrarResumen();
-
-        }
+    
 
         contenedorServicio.appendChild(textoServicio);
-        contenedorServicio.appendChild(x);
         contenedorServicio.appendChild(precioServicio);
         resumen.appendChild(contenedorServicio);
 
