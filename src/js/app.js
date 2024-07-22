@@ -350,6 +350,9 @@ function mostrarResumen (){
 async function reservarCita(){
     // destructuring
     const {nombre,fecha,hora,servicios} = cita;
+    const idServicio = servicios.map(servicio => servicio.id);
+    console.log(idServicio);
+    return;
     const datos =  new FormData();
     datos.append('nombre',nombre);
     datos.append('fecha',fecha);
