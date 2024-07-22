@@ -193,6 +193,7 @@ function seleccionarFecha(){
            
         }else{
             cita.fecha = e.target.value;
+            console.log(cita);
            
         }
 
