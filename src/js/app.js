@@ -341,6 +341,7 @@ function mostrarResumen (){
     resumen.appendChild(nombreCliente);
     resumen.appendChild(fechaCita);
     resumen.appendChild(horaCita);
+    resumen.appendChild(botonReservar);
 
 
 }
