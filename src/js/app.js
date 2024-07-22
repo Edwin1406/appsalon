@@ -201,6 +201,12 @@ function seleccionarFecha(){
 }
 
 function mostrarAlerta(mensaje,tipo){
+    // si hay una alerta previa no crear otra
+    const alertaPrevia = document.querySelector('.alerta');
+    if(alertaPrevia){
+        return
+    }
+    // crear la alerta
     const alerta = document.createElement('DIV');
     alerta.textContent = mensaje;
     alerta.classList.add('alerta');
