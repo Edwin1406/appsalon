@@ -347,7 +347,7 @@ function mostrarResumen (){
 
 // -------------------------------------------  FETCH API ----------------------------------------------    
 
-function reservarCita(){
+async function reservarCita(){
     // destructuring
     const {nombre,fecha,hora,servicios} = cita;
    const datos =  new FormData();
@@ -355,6 +355,10 @@ function reservarCita(){
     datos.append('fecha',fecha);
     datos.append('hora',hora);
 
+    const url = 'https://serviacrilico.com/api/citas';
+    const respuesta = await fetch(url);
+    const json = await respuesta.json();
+    console.log(json);
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
 }
