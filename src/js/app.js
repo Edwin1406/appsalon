@@ -333,7 +333,7 @@ function mostrarResumen (){
     const botonReservar = document.createElement('BUTTON');
     botonReservar.classList.add('boton');
     botonReservar.textContent = 'Reservar Cita';
-    botonReservar.onclick = reservarCita(); // agregamos la funcion de reservar cita
+    botonReservar.onclick = reservarCita; // agregamos la funcion de reservar cita
 
 
 
@@ -342,7 +342,6 @@ function mostrarResumen (){
     resumen.appendChild(fechaCita);
     resumen.appendChild(horaCita);
     resumen.appendChild(botonReservar);
-
 
 }
 
