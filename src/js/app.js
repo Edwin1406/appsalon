@@ -354,6 +354,8 @@ function reservarCita(){
    datos.append('nombre',nombre);
     datos.append('fecha',fecha);
     datos.append('hora',hora);
-    console.log(datos);
+
+    // sprend operator para los servicios
+    console.log([...datos]);
 }
 
