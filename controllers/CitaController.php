@@ -8,8 +8,8 @@ class CitaController {
         session_start();
     // Imprimir los valores de la sesión
     
+            debuguear($_SESSION['id']);
          debuguear($_SESSION['nombre']);
-         debuguear($_SESSION['id']);
 
         $router->render('cita/index',[
             'id' => $_SESSION['id'],
