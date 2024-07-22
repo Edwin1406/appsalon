@@ -259,7 +259,7 @@ function mostrarResumen (){
     // limpiar el html previo
     while(resumen.firstChild){
         resumen.removeChild(resumen.firstChild);
-        console.log('limpiando resumen');
+        console.log('limpiando resumen1');
     }
 
     //  iteramos sobre el objeto cita para mostrar el resumen
