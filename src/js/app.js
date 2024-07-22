@@ -193,7 +193,7 @@ function seleccionarFecha(){
         const dia = new Date(e.target.value).getUTCDay();
         if([6,0].includes(dia)){
             e.target.value = '';
-            mostrarAlerta('No se puede agendar en fin de semana','error');
+            mostrarAlerta('No se puede agendar en fin de semana','error','.formulario');
            
         }else{
             cita.fecha = e.target.value;
@@ -214,7 +214,7 @@ function seleccionarHora(){
 
     if(hora[0] < 10 || hora[0] > 18){
         e.target.value = '';
-       mostrarAlerta('Hora no valida','error');
+       mostrarAlerta('Hora no valida','error','.formulario');
     }else{
         cita.hora = horaCita;
         console.log(cita);
@@ -227,7 +227,7 @@ function seleccionarHora(){
 
 
 
-function mostrarAlerta(mensaje,tipo){
+function mostrarAlerta(mensaje,tipo,desparece=true){
     // si hay una alerta previa no crear otra
     const alertaPrevia = document.querySelector('.alerta');
     if(alertaPrevia){
@@ -239,12 +239,15 @@ function mostrarAlerta(mensaje,tipo){
     alerta.textContent = mensaje;
     alerta.classList.add('alerta');
     alerta.classList.add(tipo);
-    const formulario = document.querySelector('.formulario');
-    formulario.appendChild(alerta);
-    // eliminar la alerta despues de 3 segundos
-    setTimeout(()=>{
-        alerta.remove();
-    },3000);
+    const referencia = document.querySelector(elemento);
+    referencia.appendChild(alerta);
+    if(desparece){
+        // eliminar la alerta despues de 3 segundos
+        setTimeout(()=>{
+            alerta.remove();
+        },3000);
+    }
+   
 }
 
 
@@ -255,7 +258,9 @@ function mostrarResumen (){
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
-        console.log('hacen falta datos');
+       
+        mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
+        return;
     }else{
         console.log('mostrando resumen');
     }
