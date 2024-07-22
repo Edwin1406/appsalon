@@ -189,10 +189,11 @@ function seleccionarFecha(){
         const dia = new Date(e.target.value).getUTCDay();
         if([6,0].includes(dia)){
             e.target.value = '';
-            mostrarAlerta('No se pueden agendar citas en fines de semana', 'error');
+            alert('No se pueden agendar citas los fines de semana');
+           
         }else{
             cita.fecha = e.target.value;
-            console.log(cita);
+           
         }
 
     });
