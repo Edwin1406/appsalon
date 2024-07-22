@@ -272,16 +272,20 @@ function mostrarResumen (){
   
     // heading para el resumen de Servicios
     const headingServicios = document.createElement('H3');
+
     headingServicios.textContent = 'Resumen de Servicios';
+    const titulo =document.querySelector('.titulo');
     const tituloServicios = document.createElement('P');
     tituloServicios.classList.add('titulo');
     tituloServicios.innerHTML = `<span>Servicio:</span>`;
     const tituloPrecio = document.createElement('P');
     tituloPrecio.classList.add('titulo');
     tituloPrecio.innerHTML = `<span>Precio:</span>`;
+    titulo.appendChild(tituloServicios);
+    titulo.appendChild(tituloPrecio);
     resumen.appendChild(headingServicios);
-    resumen.appendChild(tituloServicios);
-    resumen.appendChild(tituloPrecio);
+    resumen.appendChild(titulo);
+
 
     // Iterar sobre el arreglo de servicios y mostrar el resumen
     servicios.forEach(servicio =>{
