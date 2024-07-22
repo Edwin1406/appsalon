@@ -268,7 +268,7 @@ function mostrarResumen (){
         mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
      
     }else{
-        console.log('mostrando resumen');
+        console.log('mostrando resumenf');
     }
 
 }
