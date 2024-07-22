@@ -230,9 +230,10 @@ function seleccionarHora(){
 function mostrarAlerta(mensaje,tipo,elemento,desparece=true){
     // si hay una alerta previa no crear otra
     const alertaPrevia = document.querySelector('.alerta');
-    if(alertaPrevia){
-        return
-    }
+    if(alertaPrevia) {
+        alertaPrevia.remove();
+    };
+    
     // scriptin de la alerta
     // crear la alerta
     const alerta = document.createElement('DIV');
