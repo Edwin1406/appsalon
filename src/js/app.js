@@ -205,6 +205,8 @@ function seleccionarFecha(){
 function seleccionarHora(){
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
+    
+    const horaCita = e.target.value
     const hora = horaCita.split(":");
 
     if(hora[0] < 10 || hora[0] > 18){
