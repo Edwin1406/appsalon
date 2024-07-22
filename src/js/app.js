@@ -1,5 +1,6 @@
 let paso = 1;
 const cita = {
+    id: '',
     nombre: '',
     fecha: '',
     hora: '',
