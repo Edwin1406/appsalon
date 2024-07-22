@@ -308,8 +308,7 @@ function mostrarResumen (){
     const nombreCliente = document.createElement('P');
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
 
-    const fechaCita = document.createElement('P');
-    fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
+
     // formatear la fecha en español
     const fechaObj = new Date(fecha);
     const mes = fechaObj.getMonth();
@@ -324,12 +323,15 @@ function mostrarResumen (){
         day:'numeric'
     });
 
+    const fechaCita = document.createElement('P');
+    fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
+
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora} Horas`;
 
 
     resumen.appendChild(nombreCliente);
-    resumen.appendChild(fechaFormateada);
+    resumen.appendChild(fechaCita);
     resumen.appendChild(horaCita);
 
 
