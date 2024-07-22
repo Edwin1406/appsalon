@@ -227,7 +227,7 @@ function seleccionarHora(){
 
 
 
-function mostrarAlerta(mensaje,tipo,desparece=true){
+function mostrarAlerta(mensaje,tipo,elemento,desparece=true){
     // si hay una alerta previa no crear otra
     const alertaPrevia = document.querySelector('.alerta');
     if(alertaPrevia){
@@ -260,7 +260,7 @@ function mostrarResumen (){
        
        
         mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
-        return;
+     
     }else{
         console.log('mostrando resumen');
     }
