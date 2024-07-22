@@ -13,11 +13,12 @@ class ApiController {
     }
 
     public static function guardar(){
-        $respuesta = [
-            'mensaje' => 'Cita guardada',
+        // $respuesta = [
+        //     'mensaje' => 'Cita guardada',
 
-        ]; // Arreglo para la respuesta asocitiva
-        echo json_encode($respuesta);
+        // ]; // Arreglo para la respuesta asocitiva
+        // echo json_encode($respuesta);
+        echo 'Cita guardada';
     }
 
 
