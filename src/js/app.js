@@ -63,6 +63,9 @@ function tabs(){
             paso = parseInt(e.target.dataset.paso);
             mostrarSeccion();
             botonesPaginador();
+            if(paso === 3){
+                mostrarResumen();
+            }
         });
     });
 
@@ -253,7 +256,7 @@ function mostrarResumen (){
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('')){
         mostrarAlerta('Todos los campos son obligatorios','error');
-        return;
+       
     }
 
 }
