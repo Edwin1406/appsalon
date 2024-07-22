@@ -296,7 +296,9 @@ function mostrarResumen (){
         x.classList.add('eliminar');
         x.onclick = function(){
             cita.servicios = cita.servicios.filter(servicio => servicio.id !== id);
+            servicioDiv.classList.remove('seleccionado');
             mostrarResumen();
+
         }
 
         contenedorServicio.appendChild(textoServicio);
