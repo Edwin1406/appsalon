@@ -257,6 +257,8 @@ function mostrarResumen (){
     if(Object.values(cita).includes('')){
         mostrarAlerta('Todos los campos son obligatorios','error');
        
+    }else{
+        console.log('mostrando resumen');
     }
 
 }
