@@ -273,6 +273,14 @@ function mostrarResumen (){
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
     const fechaCita = document.createElement('P');
     fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
-    console.log(nombreCliente);
-    console.log(fechaCita);
+    const horaCita = documnet.querySelector('P');
+    horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
+    const serviciosCita = document.createElement('DIV');
+    serviciosCita.classList.add('resumen-servicios');
+
+    resumen.appendChild(nombreCliente);
+    resumen.appendChild(fechaCita);
+    resumen.appendChild(horaCita);
+    
+
 }
