@@ -348,6 +348,7 @@ function mostrarResumen (){
 // -------------------------------------------  FETCH API ----------------------------------------------    
 
 function reservarCita(){
+    // destructuring
     const {nombre,fecha,hora,servicios} = cita;
    const datos =  new FormData();
    datos.append('nombre',nombre);
