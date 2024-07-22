@@ -300,6 +300,7 @@ function mostrarResumen (){
         }
 
         contenedorServicio.appendChild(textoServicio);
+        contenedorServicio.appendChild(x);
         contenedorServicio.appendChild(precioServicio);
         resumen.appendChild(contenedorServicio);
 
