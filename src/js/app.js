@@ -21,7 +21,9 @@ function inciarApp() {
     paginaSiguiente(); //cambia a la pagina siguiente
     paginaAnterior(); //cambia a la pagina anterior
     ApiServicios(); //consultando la api de servicios
-    nombreCita(); //validar el nombre de la cita
+    nombreCita(); //añade el nombre del cliente al objeto cita
+    seleccionarFecha(); // añade la fecha al objeto cita
+    
 }
 
 
@@ -177,5 +179,12 @@ function seleccionarServicio (servicio){
 function nombreCita(){
     const nombre=document.querySelector('#nombre').value;
     cita.nombre = nombre;
+    console.log(cita);
+}
+
+
+function seleccionarFecha(){
+    const inputFecha = document.querySelector('#fecha').value;
+    cita.fecha = fecha;
     console.log(cita);
 }
