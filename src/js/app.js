@@ -345,8 +345,10 @@ function mostrarResumen (){
 
 }
 
-
+// -------------------------------------------  FETCH API ----------------------------------------------    
 
 function reservarCita(){
-    console.log('reservando cita...');
+   const datos =  new FormData();
+   console.log(resumen);
 }
+
