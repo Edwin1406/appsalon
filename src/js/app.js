@@ -310,9 +310,17 @@ function mostrarResumen (){
 
     const fechaCita = document.createElement('P');
     fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
+    // formatear la fecha en español
+    const fechaObj = new Date(fecha);
+    const mes = fechaObj.getMonth();
+    const dia = fechaObj.getDate();
+    const year = fechaObj.getFullYear();
+
+    const fechaUTC = new Date(Date.UTC(year,mes,dia));
+    console.log(fechaUTC);  
 
     const horaCita = document.createElement('P');
-    horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
+    horaCita.innerHTML = `<span>Hora:</span> ${hora} Horas`;
 
 
     resumen.appendChild(nombreCliente);
