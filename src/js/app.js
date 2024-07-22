@@ -208,10 +208,10 @@ function seleccionarHora(){
     const hora = horaCita.split(":");
 
     if(hora[0] < 10 || hora[0] > 18){
-        mostrarAlerta('Hora no disponible','error');
-        setTimeout(()=>{
-            inputHora.value = '';
-        },2000);
+        console.log('hora no valida');
+    }else{
+        cita.hora = horaCita;
+        console.log(cita);
     }
     })
 }
