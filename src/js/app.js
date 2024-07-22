@@ -24,6 +24,7 @@ function inciarApp() {
     nombreCita(); //añade el nombre del cliente al objeto cita
     seleccionarFecha(); // añade la fecha al objeto cita
     seleccionarHora(); //añade la hora al objeto cita
+    mostrarResumen(); //muestra el resumen de la cita
     
 }
 
@@ -245,3 +246,14 @@ function mostrarAlerta(mensaje,tipo){
 }
 
 
+
+
+function mostrarResumen (){
+    const resumen = document.querySelector('.contenido-resumen');
+    //  iteramos sobre el objeto cita para mostrar el resumen
+    if(Object.values(cita).includes('')){
+        mostrarAlerta('Todos los campos son obligatorios','error');
+        return;
+    }
+
+}
