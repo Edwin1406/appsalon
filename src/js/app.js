@@ -21,6 +21,7 @@ function inciarApp() {
     paginaSiguiente(); //cambia a la pagina siguiente
     paginaAnterior(); //cambia a la pagina anterior
     ApiServicios(); //consultando la api de servicios
+    nombreCita(); //validar el nombre de la cita
 }
 
 
@@ -155,6 +156,7 @@ function seleccionarServicio (servicio){
 
     const {id} = servicio;
     const {servicios} = cita; //destructuring
+    // identificar al elemento que se le dio click
     const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
     // comprabar si un servicio ya esta agregado
     if(servicios.some(agregado=>agregado.id=== id )){ //arrow function
@@ -167,5 +169,13 @@ function seleccionarServicio (servicio){
         servicioDiv.classList.add('seleccionado');
     }
 
+    console.log(cita);
+}
+
+
+
+function nombreCita(){
+    const nombre=document.querySelector('#nombre');
+    cita.nombre = nombre.value;
     console.log(cita);
 }
