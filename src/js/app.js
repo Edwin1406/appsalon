@@ -317,7 +317,12 @@ function mostrarResumen (){
     const year = fechaObj.getFullYear();
 
     const fechaUTC = new Date(Date.UTC(year,mes,dia));
-    console.log(fechaUTC);  
+    const fechaFormateada = fechaUTC.toLocaleDateString('es-ES',{
+        weekday:'long',
+        year:'numeric',
+        month:'long',
+        day:'numeric'
+    });
 
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora} Horas`;
