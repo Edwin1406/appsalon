@@ -184,6 +184,7 @@ function seleccionarServicio (servicio){
 function nombreCita(){
     const nombre=document.querySelector('#nombre').value;
     cita.nombre = nombre;
+    cita.id=id;
     console.log(cita);
 }
 
