@@ -161,7 +161,7 @@ function seleccionarServicio (servicio){
     // identificar al elemento que se le dio click
     const servicioDiv = document.querySelector(`[data-id-servicio="${id}"]`);
     // comprabar si un servicio ya esta agregado
-    if(servicios.some(agregado=>agregado.id=== id )){ //arrow function
+    if(servicios.some(agregado=>agregado.id=== id )){ //arrow mehtods
         // eliminar el servicio del arreglo
         cita.servicios = servicios.filter(agregado => agregado.id !== id);
         servicioDiv.classList.remove('seleccionado');
@@ -187,7 +187,13 @@ function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
-        console.log(dia);
+        if([6,0].includes(dia)){
+            e.target.value = '';
+            mostrarAlerta('No se pueden agendar citas en fines de semana', 'error');
+        }else{
+            cita.fecha = e.target.value;
+            console.log(cita);
+        }
 
     });
 }
