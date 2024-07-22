@@ -23,6 +23,7 @@ function inciarApp() {
     ApiServicios(); //consultando la api de servicios
     nombreCita(); //añade el nombre del cliente al objeto cita
     seleccionarFecha(); // añade la fecha al objeto cita
+    seleccionarHora(); //añade la hora al objeto cita
     
 }
 
@@ -200,6 +201,19 @@ function seleccionarFecha(){
     });
 }
 
+
+function seleccionarHora(){
+    const inputHora = document.querySelector('#hora');
+    inputHora.addEventListener('input',function(e){
+        console.log(e.target.value);
+    })
+}
+
+
+
+
+
+
 function mostrarAlerta(mensaje,tipo){
     // si hay una alerta previa no crear otra
     const alertaPrevia = document.querySelector('.alerta');
@@ -219,3 +233,5 @@ function mostrarAlerta(mensaje,tipo){
         alerta.remove();
     },3000);
 }
+
+
