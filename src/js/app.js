@@ -185,6 +185,9 @@ function nombreCita(){
 
 function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha').value;
-    cita.fecha = fecha;
-    console.log(cita);
+    inputFecha.addEventListener('input',e=>{
+        const dia = new Date(e.target.value).getUTCDay();
+        console.log(dia);
+
+    });
 }
