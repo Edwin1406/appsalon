@@ -159,12 +159,12 @@ function seleccionarServicio (servicio){
     // comprabar si un servicio ya esta agregado
     if(servicios.some(agregado=>{ agregado.id=== id })){ //arrow function
         // eliminar el servicio del arreglo
-        cita.servicios = servicios.filter(servicio => servicio.id !== id);
+        cita.servicios = servicios.filter(agregado => agregado.id !== id);
     } else{
         // agregar el servicio al arreglo
         cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
         servicioDiv.classList.add('seleccionado');
     }
-    
+
     console.log(cita);
 }
