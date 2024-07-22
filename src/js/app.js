@@ -210,7 +210,7 @@ function seleccionarHora(){
     const hora = horaCita.split(":");
 
     if(hora[0] < 10 || hora[0] > 18){
-        console.log('hora no valida');
+       mostrarAlerta('Hora no valida','error');
     }else{
         cita.hora = horaCita;
         console.log(cita);
