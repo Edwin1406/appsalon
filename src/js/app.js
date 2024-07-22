@@ -298,6 +298,12 @@ function mostrarResumen (){
 
     })
 
+      
+    // heading para el resumen de Servicios
+    const headingCitas = document.createElement('H3');
+    headingCitas.textContent = 'Resumen de Cita';
+    resumen.appendChild(headingCitas);
+
     // scriptin del resumen
     const nombreCliente = document.createElement('P');
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
