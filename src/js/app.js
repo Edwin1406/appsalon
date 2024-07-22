@@ -265,7 +265,6 @@ function mostrarResumen (){
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
-       
         mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
      
     }else{
