@@ -275,8 +275,12 @@ function mostrarResumen (){
     fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
+    // heading para el resumen de Servicios
+    const headingServicios = document.createElement('H3');
+    headingServicios.textContent = 'Resumen de Servicios';
+    resumen.appendChild(headingServicios);
 
-    // para los servicios foreach
+    // Iterar sobre el arreglo de servicios y mostrar el resumen
     servicios.forEach(servicio =>{
         // destructuring
         const {id,nombre,precio} = servicio;
