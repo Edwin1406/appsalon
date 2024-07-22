@@ -282,17 +282,15 @@ function mostrarResumen (){
         const {id,nombre,precio} = servicio;
         const contenedorServicio = document.createElement('DIV');
         contenedorServicio.classList.add('contenedor-servicio');
-        // titulos
-        
 
+    
         const textoServicio = document.createElement('P');
-        textoServicio.textContent = nombre;
+        textoServicio.innerHTML = `<span>Servicio:</span>${nombre}`;
+
 
         const precioServicio = document.createElement('P');
-        precioServicio.textContent = `$ ${precio}`;
+        precioServicio.innerHTML = `<span>Precio:</span> $${precio}`;
 
-        contenedorServicio.appendChild(tituloServicio);
-        contenedorServicio.appendChild(tituloPrecio);
         contenedorServicio.appendChild(textoServicio);
         contenedorServicio.appendChild(precioServicio);
         resumen.appendChild(contenedorServicio);

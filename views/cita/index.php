@@ -56,18 +56,7 @@
     <div id="paso-3" class="seccion contenido-resumen">
             <h2>Resumen</h2>
             <p class="text-center" >Verifica si la información sea correcta</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Servicio</th>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  
-                </tbody>
-            </table>
+           
     </div>
 
     <div class="paginacion">
