@@ -273,7 +273,7 @@ function mostrarResumen (){
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
     const fechaCita = document.createElement('P');
     fechaCita.innerHTML = `<span>Fecha:</span> ${fecha}`;
-    const horaCita = document.querySelector('P');
+    const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora}`;
 
 
