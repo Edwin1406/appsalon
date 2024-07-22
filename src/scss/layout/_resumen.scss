@@ -16,6 +16,7 @@
     // dos columnas
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     justify-content: center center;
 
 }
