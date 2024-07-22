@@ -11,6 +11,16 @@ class ApiController {
         echo json_encode($servicios);
         
     }
+
+    public static function guardar(){
+        $respuesta = [
+            'mensaje' => 'Cita guardada',
+
+        ]; // Arreglo para la respuesta asocitiva
+        echo json_encode($respuesta);
+    }
+
+
 }
 
 

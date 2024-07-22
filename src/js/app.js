@@ -356,6 +356,6 @@ function reservarCita(){
     datos.append('hora',hora);
 
     // sprend operator para los servicios
-    console.log([...datos]);
+    // console.log([...datos]); // para ver los datos que se envian
 }
 
