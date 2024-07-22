@@ -160,6 +160,7 @@ function seleccionarServicio (servicio){
     if(servicios.some(agregado=>agregado.id=== id )){ //arrow function
         // eliminar el servicio del arreglo
         cita.servicios = servicios.filter(agregado => agregado.id !== id);
+        servicioDiv.classList.remove('seleccionado');
     } else{
         // agregar el servicio al arreglo
         cita.servicios = [...servicios, servicio]; //agregar el servicio al arreglo de servicios
