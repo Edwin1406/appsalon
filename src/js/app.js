@@ -356,9 +356,11 @@ async function reservarCita(){
     datos.append('hora',hora);
 
     const url = 'https://serviacrilico.com/api/citas';
-    const respuesta = await fetch(url);
-    const json = await respuesta.json();
-    console.log(json);
+    const respuesta = await fetch(url,{
+        method:'POST',
+        body:datos
+    });
+    console.log(respuesta);
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
 }
