@@ -12,13 +12,9 @@ class ApiController {
         
     }
 
-    public static function guardar(){
-        // $respuesta = [
-        //     'mensaje' => 'Cita guardada',
-
-        // ]; // Arreglo para la respuesta asocitiva
-        // echo json_encode($respuesta);
-        echo 'Cita guardada';
+    public static function guardar()
+    {
+        echo "Desde el Controlador logout";
     }
 
 
