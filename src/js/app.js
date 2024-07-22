@@ -348,7 +348,8 @@ function mostrarResumen (){
 // -------------------------------------------  FETCH API ----------------------------------------------    
 
 function reservarCita(){
+    const {nombre,fecha,hora,servicios} = cita;
    const datos =  new FormData();
-   console.log(resumen);
+   console.log(nombre);
 }
 
