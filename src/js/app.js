@@ -350,15 +350,17 @@ function mostrarResumen (){
 async function reservarCita(){
     // destructuring
     const {nombre,fecha,hora,servicios} = cita;
-    const idServicio = servicios.map(servicio => servicio.id);
+    const idServicio = servicios.map(servicio => servicio.id); //map para extraer los id de los servicios
     console.log(idServicio);
-    return;
+
+    // enviar la peticion a la api
     const datos =  new FormData();
     datos.append('nombre',nombre);
     datos.append('fecha',fecha);
     datos.append('hora',hora);
-    datos.append('servicios',JSON.stringify(servicios));
-
+    datos.append('servicios',idServicio);
+    
+    //conexion a la api 
     const url = 'https://serviacrilico.com/api/citas';
     const respuesta = await fetch(url,{
         method:'POST',
