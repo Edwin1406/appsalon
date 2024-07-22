@@ -284,7 +284,8 @@ function mostrarResumen (){
         contenedorServicio.classList.add('contenedor-servicio');
 
         const textoServicio = document.createElement('P');
-        textoServicio.textContent = nombre;
+        textoServicio.textContent = `<span>Servicio:</span> ${servicio}`;
+
 
         const precioServicio = document.createElement('P');
         precioServicio.innerHTML = `<span>Precio:</span> $${precio}`;
