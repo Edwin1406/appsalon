@@ -36,6 +36,7 @@
                     type="date" 
                     id="fecha" 
                     placeholder="Tu fecha"
+                    min="<?php echo date('Y-m-d'); ?>"
                 />
             </div>
 

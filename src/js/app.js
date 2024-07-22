@@ -206,6 +206,7 @@ function mostrarAlerta(mensaje,tipo){
     if(alertaPrevia){
         return
     }
+    // scriptin de la alerta
     // crear la alerta
     const alerta = document.createElement('DIV');
     alerta.textContent = mensaje;
@@ -213,6 +214,7 @@ function mostrarAlerta(mensaje,tipo){
     alerta.classList.add(tipo);
     const formulario = document.querySelector('.formulario');
     formulario.appendChild(alerta);
+    // eliminar la alerta despues de 3 segundos
     setTimeout(()=>{
         alerta.remove();
     },3000);
