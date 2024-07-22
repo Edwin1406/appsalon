@@ -360,7 +360,8 @@ async function reservarCita(){
         method:'POST',
         body:datos
     });
-    console.log(respuesta);
+    const resultado = await respuesta.json();
+    console.log(resultado);
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
 }
