@@ -285,11 +285,11 @@ function mostrarResumen (){
 
     
         const textoServicio = document.createElement('P');
-        textoServicio.innerHTML = `<span>Servicio:</span>${nombre}`;
+        textoServicio.innerHTML = `<span>Servicio:</span> ${nombre}`;
 
 
         const precioServicio = document.createElement('P');
-        precioServicio.innerHTML = `<span>Precio:</span> $${precio}`;
+        precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
 
         contenedorServicio.appendChild(textoServicio);
         contenedorServicio.appendChild(precioServicio);
