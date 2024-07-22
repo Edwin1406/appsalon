@@ -350,6 +350,9 @@ function mostrarResumen (){
 function reservarCita(){
     const {nombre,fecha,hora,servicios} = cita;
    const datos =  new FormData();
-   console.log(nombre);
+   datos.append('nombre',nombre);
+    datos.append('fecha',fecha);
+    datos.append('hora',hora);
+    console.log(datos);
 }
 
