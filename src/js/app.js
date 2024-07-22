@@ -259,16 +259,16 @@ function mostrarResumen (){
     // limpiar el html previo
     while(resumen.firstChild){
         resumen.removeChild(resumen.firstChild);
-        console.log('limpiando resumen1');
     }
 
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
         mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
-     
-    }else{
-        console.log('mostrando resumenf');
+     return;
     }
+    // formatear el Div
+    const {nombre,fecha,hora,servicios} = cita;
+    console.log(cita);
 
 }
