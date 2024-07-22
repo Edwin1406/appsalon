@@ -63,9 +63,7 @@ function tabs(){
             paso = parseInt(e.target.dataset.paso);
             mostrarSeccion();
             botonesPaginador();
-            if(paso === 3){
-                mostrarResumen();
-            }
+            
         });
     });
 
@@ -83,6 +81,7 @@ function botonesPaginador(){
     } else if(paso === 3){
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.add('ocultar');
+        mostrarResumen();
     }else{
         paginaAnterior.classList.remove('ocultar');
         paginaSiguiente.classList.remove('ocultar');
@@ -254,9 +253,9 @@ function mostrarAlerta(mensaje,tipo){
 function mostrarResumen (){
     const resumen = document.querySelector('.contenido-resumen');
     //  iteramos sobre el objeto cita para mostrar el resumen
-    if(Object.values(cita).includes('')){
-        mostrarAlerta('Todos los campos son obligatorios','error');
+    if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
+        console.log('hacen falta datos');
     }else{
         console.log('mostrando resumen');
     }
