@@ -46,6 +46,8 @@
                     type="time" 
                     id="hora" 
                     placeholder="Tu hora"
+                    min="09:00"
+                    max="18:00"
                 />
             </div>
 
