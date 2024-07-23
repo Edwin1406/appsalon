@@ -384,7 +384,11 @@ async function reservarCita(){
             title: "Cita Registrada",
             showConfirmButton: false,
             timer: 1500
-          });
+          }).then(()=>{
+            window.location.href = reload();
+          }); // creamos un callback para que se ejecute despues de que se cierre el alert
+
+       
 
     }
 
