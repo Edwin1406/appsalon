@@ -369,36 +369,34 @@ async function reservarCita(){
     datos.append('usuarioId',id);
     datos.append('servicios',idServicio);
     
-    
+  
 
     try {
-    //conexion a la api 
-    const url = 'https://serviacrilico.com/api/cita';
-    const respuesta = await fetch(url,{
-        method:'POST',
-        body:datos
-    });    
+
+         //conexion a la api 
+      const url = 'https://serviacrilico.com/api/citas';
+      const respuesta = await fetch(url,{
+          method:'POST',
+          body:datos
+      });
+
+        const resultado = await respuesta.json();
+        console.log(resultado.resultado);
+        if(resultado.resultado){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Cita Registrada",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(()=>{
+                window.location.reload(); 
+            }) // creamos un callback para que se ejecute despues de que se cierre el alert
+        }
+        
     } catch (error) {
             console.log('error en la peticion');
     }
-
-    const resultado = await respuesta.json();
-    console.log(resultado.resultado);
-    if(resultado.resultado){
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Cita Registrada",
-            showConfirmButton: false,
-            timer: 1500
-          }).then(()=>{
-            window.location.reload(); 
-          }) // creamos un callback para que se ejecute despues de que se cierre el alert
-
-       
-
-    }
-
 
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
