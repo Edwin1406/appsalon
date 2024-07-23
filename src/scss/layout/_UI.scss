@@ -38,9 +38,8 @@
         align-items: center;
     }
 
-    .boton{
+    .boton {
         @include m.boton(v.$negro, v.$blanco);
-        // margin: 0;
     }
 
 }
