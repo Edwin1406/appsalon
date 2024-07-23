@@ -2,6 +2,7 @@
 namespace Controllers;
 
 use Model\Cita;
+use Model\CitaServicio;
 use Model\Servicio;
 
 
@@ -16,14 +17,25 @@ class ApiController {
     public static function guardar(){
         
         // almacena la cita y devuelve el ID
-        // $cita= new Cita($_POST);
-        // $respuesta = $cita->guardar();
+        $cita= new Cita($_POST);
+        $resultado = $cita->guardar();
 
-        // Almacena la Cita y el Servicio
-         $idServicio = explode(',', $_POST['servicios']);
+        $id = $resultado->id;
 
+        // Almacena los servicios con el ID de la cita
+         $idServicios = explode(',', $_POST['servicios']);
+         foreach($idServicios as $idServicio):
+            $args = [
+                'citaId' => $id,
+                'servicioId' => $idServicio
+            ];
+            $citaServicio = new CitaServicio($args);
+            $citaServicio->guardar();
+         endforeach;
+        //  retronamos una respuesta
         $respuesta = [
-            'servicios' => $idServicio,
+            'resultado' => $resultado,
+
 
         ]; // Arreglo para la respuesta asocitiva
 
