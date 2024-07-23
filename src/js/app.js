@@ -185,7 +185,7 @@ function nombreCita(){
     const nombre=document.querySelector('#nombre').value;
     cita.nombre = nombre;
     cita.id=id.value;
-    console.log(cita);
+    // console.log(cita);
 }
 
 
