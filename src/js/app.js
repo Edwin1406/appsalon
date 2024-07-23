@@ -402,7 +402,7 @@ async function reservarCita(){
             icon: "error",
             title: "Error en la API",
             showConfirmButton: false,
-            timer: 1500
+            timer: 3000
         })
     }
 
