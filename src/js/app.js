@@ -317,23 +317,23 @@ function mostrarResumen (){
     const nombreCliente = document.createElement('P');
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
 
-// Asumiendo que 'fecha' es una cadena de fecha en el formato 'YYYY-MM-DD'
-const fechaObj = new Date(fecha);
 
-// Ajustar la zona horaria a Ecuador (GMT-5)
-const opciones = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'America/Guayaquil' // Especificar la zona horaria de Ecuador
-};
+    // formatear la fecha en español
+    const fechaObj = new Date(fecha);
+    const mes = fechaObj.getMonth();
+    const dia = fechaObj.getDate()+2;
+    const year = fechaObj.getFullYear();
 
-const fechaFormateada = fechaObj.toLocaleDateString('es-ES', opciones);
+    const fechaUTC = new Date(Date.UTC(year,mes,dia));
+    const fechaFormateada = fechaUTC.toLocaleDateString('es-ES',{
+        weekday:'long',
+        year:'numeric',
+        month:'long',
+        day:'numeric',
+    });
 
-const fechaCita = document.createElement('P');
-fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
-
+    const fechaCita = document.createElement('P');
+    fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
 
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora} Horas`;
