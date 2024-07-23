@@ -390,9 +390,9 @@ async function reservarCita(){
                 showConfirmButton: false,
                 timer: 3000
             }).then(()=>{ // creamos un callback para que se ejecute despues de que se cierre el alert
-                setTimeout(()=>{
-                    window.location.reload(); 
-                },3000);
+                // setTimeout(()=>{
+                // },3000);
+                window.location.reload(); 
             })
         }
         
