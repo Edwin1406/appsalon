@@ -2,6 +2,7 @@
 <p class="descripcion-pagina">Elige tus servicios y coloca tus datos</p>
 <div class="barra">
     <p>Bienvenido: <?php echo $nombre ?? ''; ?></p>
+    <a href="/logout">Cerrar Session</a>
 </div>
 <div id="app">
     <nav class="tabs">
