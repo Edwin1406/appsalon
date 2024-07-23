@@ -376,7 +376,7 @@ async function reservarCita(){
         body:datos
     });
     const resultado = await respuesta.json();
-    console.log(resultado);
+    console.log(resultado.resultado);
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
 }
