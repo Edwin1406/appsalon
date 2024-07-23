@@ -377,6 +377,18 @@ async function reservarCita(){
     });
     const resultado = await respuesta.json();
     console.log(resultado.resultado);
+    if(resultado.resultado){
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Cita Registrada",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+    }
+
+
     // sprend operator para los servicios
     // console.log([...datos]); // para ver los datos que se envian
 }
