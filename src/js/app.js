@@ -374,7 +374,7 @@ async function reservarCita(){
     try {
 
          //conexion a la api 
-      const url = 'https://serviacrilico.com/api/citas';
+      const url = 'https://serviacrilico.com/api/cita';
       const respuesta = await fetch(url,{
           method:'POST',
           body:datos
