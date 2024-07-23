@@ -369,12 +369,19 @@ async function reservarCita(){
     datos.append('usuarioId',id);
     datos.append('servicios',idServicio);
     
+    
+
+    try {
     //conexion a la api 
-    const url = 'https://serviacrilico.com/api/citas';
+    const url = 'https://serviacrilico.com/api/cita';
     const respuesta = await fetch(url,{
         method:'POST',
         body:datos
-    });
+    });    
+    } catch (error) {
+            console.log('error en la peticion');
+    }
+
     const resultado = await respuesta.json();
     console.log(resultado.resultado);
     if(resultado.resultado){
