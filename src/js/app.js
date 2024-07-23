@@ -388,7 +388,7 @@ async function reservarCita(){
                 icon: "success",
                 title: "Cita Registrada",
                 showConfirmButton: false,
-                // timer: 1500
+                timer: 3000
             }).then(()=>{ // creamos un callback para que se ejecute despues de que se cierre el alert
                 setTimeout(()=>{
                     window.location.reload(); 
