@@ -385,8 +385,8 @@ async function reservarCita(){
             showConfirmButton: false,
             timer: 1500
           }).then(()=>{
-            window.location = reload(); 
-          }); // creamos un callback para que se ejecute despues de que se cierre el alert
+            window.location.reload(); 
+          }) // creamos un callback para que se ejecute despues de que se cierre el alert
 
        
 
