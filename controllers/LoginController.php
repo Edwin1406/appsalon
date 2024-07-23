@@ -61,7 +61,9 @@ class LoginController
 
     public static function logout(Router $router)
     {
-        echo "Desde el Controlador logout";
+        // session_start();
+        session_destroy();
+        header('Location: /');
     }
 
     // crea una cuenta de usuario
