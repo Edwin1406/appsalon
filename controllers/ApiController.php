@@ -14,14 +14,24 @@ class ApiController {
     }
 
     public static function guardar(){
-    
-        $cita= new Cita($_POST);
-        $respuesta = $cita->guardar();
-        echo json_encode($respuesta);
-        //     $respuesta = [
-        //     'cita' => $cita
+        
+        // almacena la cita y devuelve el ID
+        // $cita= new Cita($_POST);
+        // $respuesta = $cita->guardar();
 
-        // ]; // Arreglo para la respuesta asocitiva
+        // Almacena la Cita y el Servicio
+
+
+        $respuesta = [
+            'servicio' => $_POST['servicio'],
+
+        ]; // Arreglo para la respuesta asocitiva
+
+        echo json_encode($respuesta);
+
+
+
+
 
     }
 
