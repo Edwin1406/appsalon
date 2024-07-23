@@ -386,7 +386,7 @@ async function reservarCita(){
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "Cita Registrada",
+                title: `Gracias ${nombre} tu cita ha sido registrada`,
                 showConfirmButton: false,
                 timer: 3000
             }).then(()=>{ // creamos un callback para que se ejecute despues de que se cierre el alert
