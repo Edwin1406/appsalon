@@ -389,13 +389,21 @@ async function reservarCita(){
                 title: "Cita Registrada",
                 showConfirmButton: false,
                 timer: 1500
-            }).then(()=>{
-                window.location.reload(); 
-            }) // creamos un callback para que se ejecute despues de que se cierre el alert
+            }).then(()=>{ // creamos un callback para que se ejecute despues de que se cierre el alert
+                setTimeout(()=>{
+                    window.location.reload(); 
+                },3000);
+            })
         }
         
     } catch (error) {
-            console.log('error en la peticion');
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Error en la API",
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     // sprend operator para los servicios
