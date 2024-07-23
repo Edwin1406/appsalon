@@ -319,18 +319,28 @@ function mostrarResumen (){
 
 
     // formatear la fecha en español
-    const fechaObj = new Date(fecha);
-    const mes = fechaObj.getMonth();
-    const dia = fechaObj.getDate();
-    const year = fechaObj.getFullYear();
+    // const fechaObj = new Date(fecha);
+    // const mes = fechaObj.getMonth();
+    // const dia = fechaObj.getDate();
+    // const year = fechaObj.getFullYear();
 
-    const fechaUTC = new Date(Date.UTC(year,mes,dia));
-    const fechaFormateada = fechaUTC.toLocaleDateString('es-ES',{
-        weekday:'long',
-        year:'numeric',
-        month:'long',
-        day:'numeric'
-    });
+    // const fechaUTC = new Date(Date.UTC(year,mes,dia));
+    // const fechaFormateada = fechaUTC.toLocaleDateString('es-ES',{
+    //     weekday:'long',
+    //     year:'numeric',
+    //     month:'long',
+    //     day:'numeric'
+    // });
+    // formatear la fecha en español
+        const fechaObj = new Date(fecha);
+        const fechaFormateada = fechaObj.toLocaleDateString('es-ES',{
+            weekday:'long',
+            year:'numeric',
+            month:'long',
+            day:'numeric'
+        });
+
+
 
     const fechaCita = document.createElement('P');
     fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
