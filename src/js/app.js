@@ -358,15 +358,15 @@ function mostrarResumen (){
 
 async function reservarCita(){
     // destructuring
-    const {nombre,fecha,hora,servicios} = cita;
+    const {nombre,fecha,hora,servicios,id} = cita;
     const idServicio = servicios.map(servicio => servicio.id); //map para extraer los id de los servicios
     console.log(idServicio);
 
     // enviar la peticion a la api
     const datos =  new FormData();
-    datos.append('nombre',nombre);
     datos.append('fecha',fecha);
     datos.append('hora',hora);
+    datos.append('usuarioId',id);
     datos.append('servicios',idServicio);
     
     //conexion a la api 
