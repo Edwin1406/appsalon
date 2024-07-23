@@ -33,17 +33,13 @@ class ApiController {
             $citaServicio->guardar();
          endforeach;
         //  retronamos una respuesta
-        $respuesta = [
-            'resultado' => $resultado,
-
-
-        ]; // Arreglo para la respuesta asocitiva
-
-        echo json_encode($respuesta);
-
-
-
-
+        
+        echo json_encode(['resultado' => $resultado]);
+        
+        // $respuesta = [
+        //     'resultado' => $resultado,
+        // ]; // Arreglo para la respuesta asocitiva
+        // echo json_encode($respuesta);
 
     }
 
