@@ -317,24 +317,19 @@ function mostrarResumen (){
     const nombreCliente = document.createElement('P');
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
 
-// formatear la fecha en español
+// Asumiendo que 'fecha' es una cadena de fecha en el formato 'YYYY-MM-DD'
 const fechaObj = new Date(fecha);
 
-// obtener los componentes de la fecha sin ajustar la hora
-const year = fechaObj.getUTCFullYear();
-const month = fechaObj.getUTCMonth();
-const day = fechaObj.getUTCDate();
-
-// crear una nueva fecha con los componentes en UTC
-const fechaSinHora = new Date(Date.UTC(year, month, day));
-
-// formatear la fecha en español
-const fechaFormateada = fechaSinHora.toLocaleDateString('es-ES', {
+// Ajustar la zona horaria a Ecuador (GMT-5)
+const opciones = {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
-});
+    day: 'numeric',
+    timeZone: 'America/Guayaquil' // Especificar la zona horaria de Ecuador
+};
+
+const fechaFormateada = fechaObj.toLocaleDateString('es-ES', opciones);
 
 const fechaCita = document.createElement('P');
 fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
