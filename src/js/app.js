@@ -400,7 +400,7 @@ async function reservarCita(){
         Swal.fire({
             position: "top-end",
             icon: "error",
-            title: "Error en la API",
+            title: "Error no se pudo registrar la cita",
             showConfirmButton: false,
             timer: 3000
         })
