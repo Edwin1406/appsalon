@@ -2,7 +2,7 @@
 namespace Model;
 
 class  CitaServicio extends ActiveRecord{
-    protected static $tabla = 'citas_servicios';
+    protected static $tabla = 'citasservicios';
     protected static $columnasDB = ['id','citaId','servicioId'];
     
     public $id;
@@ -15,5 +15,5 @@ class  CitaServicio extends ActiveRecord{
         $this->citaId = $args['citaId'] ?? '';
         $this->servicioId = $args['servicioId'] ?? '';
     }
-    
+
 }
