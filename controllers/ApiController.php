@@ -20,10 +20,10 @@ class ApiController {
         // $respuesta = $cita->guardar();
 
         // Almacena la Cita y el Servicio
-
+         $idServicio = explode(',', $_POST['servicio']);
 
         $respuesta = [
-            'servicio' => $_POST['servicio'],
+            'servicio' => $idServicio,
 
         ]; // Arreglo para la respuesta asocitiva
 
