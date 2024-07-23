@@ -23,6 +23,7 @@ function inciarApp() {
     paginaAnterior(); //cambia a la pagina anterior
     ApiServicios(); //consultando la api de servicios
     nombreCita(); //añade el nombre del cliente al objeto cita
+    idCliente(); //añade el id del cliente al objeto cita
     seleccionarFecha(); // añade la fecha al objeto cita
     seleccionarHora(); //añade la hora al objeto cita
     mostrarResumen(); //muestra el resumen de la cita
@@ -179,12 +180,18 @@ function seleccionarServicio (servicio){
     console.log(cita);
 }
 
+// id del cliente agregado al objeto cita
+function idCliente(){
+    const id = document.querySelector('#id').value;
+    cita.id=id;
+    console.log(cita);
 
-
+}
+// nombre del cliente agregado al objeto cita
 function nombreCita(){
     const nombre=document.querySelector('#nombre').value;
     cita.nombre = nombre;
-    cita.id=id.value;
+
     // console.log(cita);
 }
 
