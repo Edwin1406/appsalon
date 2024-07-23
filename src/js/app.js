@@ -317,25 +317,28 @@ function mostrarResumen (){
     const nombreCliente = document.createElement('P');
     nombreCliente.innerHTML = `<span>Nombre:</span> ${nombre}`;
 
+// formatear la fecha en español
+const fechaObj = new Date(fecha);
 
-    // formatear la fecha en español
-    const fechaObj = new Date(fecha);
-    const mes = fechaObj.getMonth();
-    const dia = fechaObj.getDate();
-    const year = fechaObj.getFullYear();
+// obtener los componentes de la fecha sin ajustar la hora
+const year = fechaObj.getUTCFullYear();
+const month = fechaObj.getUTCMonth();
+const day = fechaObj.getUTCDate();
 
-    const fechaUTC = new Date(Date.UTC(year,mes,dia));
-    const fechaFormateada = fechaUTC.toLocaleDateString('es-ES',{
-        weekday:'long',
-        year:'numeric',
-        month:'long',
-        day:'numeric',
-        timeZone: 'America/Guayaquil' // Especificar la zona horaria de Ecuador
+// crear una nueva fecha con los componentes en UTC
+const fechaSinHora = new Date(Date.UTC(year, month, day));
 
-    });
+// formatear la fecha en español
+const fechaFormateada = fechaSinHora.toLocaleDateString('es-ES', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
 
-    const fechaCita = document.createElement('P');
-    fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
+const fechaCita = document.createElement('P');
+fechaCita.innerHTML = `<span>Fecha:</span> ${fechaFormateada}`;
+
 
     const horaCita = document.createElement('P');
     horaCita.innerHTML = `<span>Hora:</span> ${hora} Horas`;
