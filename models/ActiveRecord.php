@@ -122,6 +122,7 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);//array_shift para que no devuelva un el primer elemento de un array
     }
+    
     // consulta plana utilizar cuando los metodos no son suficientes para la consulta
     public static function SQL($query) {
         $resultado = self::consultarSQL($query);
