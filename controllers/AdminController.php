@@ -21,7 +21,7 @@ class AdminController
         $consulta .= " ON servicios.id=citasservicios.servicioId ";
         // $consulta .= " WHERE fecha =  '${fecha}' ";
         $citas=AdminCita::SQL($consulta);
-        debuguear($citas);
+        // debuguear($citas);
      
       $router->render('admin/index',[
         'nombre' => $_SESSION['nombre'],
