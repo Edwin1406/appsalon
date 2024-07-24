@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/app.php';
 
 // require_once __DIR__ . '/appsalon/includes/app.php';
 
+use Controllers\AdminController;
 use Controllers\ApiController;
 use Controllers\CitaController;
 use Controllers\LoginController;
@@ -34,7 +35,7 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 // Rutas de administrador
 $router->get('/cita', [CitaController::class, 'index']);
-$router->get('/admin', [CitaController::class, 'index']);
+$router->get('/admin', [AdminController::class, 'index']);
 
 
 
