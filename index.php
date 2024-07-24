@@ -34,6 +34,8 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 // Rutas de administrador
 $router->get('/cita', [CitaController::class, 'index']);
+$router->get('/admin', [CitaController::class, 'index']);
+
 
 
 // api de citas
