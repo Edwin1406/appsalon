@@ -1,1 +1,1 @@
-<h1>hola como estas </h1>
+<h1 class="nombre-pagina">Panel de Adminsitración</h1>
