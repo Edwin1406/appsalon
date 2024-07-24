@@ -1,7 +1,7 @@
 <?php
 namespace Controllers;
 
-use model\AdminCita;
+use Model\AdminCita;
 use MVC\Router;
 
 class AdminController
