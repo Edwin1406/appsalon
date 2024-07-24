@@ -1,11 +1,13 @@
 <?php
 namespace Controllers;
 
+use MVC\Router;
+
 class AdminController
 {
-    public static function index()
+    public static function index(Router $router)
     {
-        echo 'Index de Admin';
+      $router->render('admin/index');
     }
 }
 
