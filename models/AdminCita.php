@@ -1,7 +1,6 @@
 <?php
-namespace model;
+namespace Model;
 
-use Model\ActiveRecord;
 // con relacion a la tabla citaServicios
 class AdminCita extends ActiveRecord{
     public static $tabla = 'citaServicios';
