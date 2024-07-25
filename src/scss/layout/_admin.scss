@@ -9,6 +9,7 @@
         border-top: 1px solid v.$blanco;
         p{
             font-weight: v.$bold;
+            color: v.$azul;
 
         }
     }
@@ -16,5 +17,8 @@
     span,
     .servicio{
         font-weight: v.$regular;
+        color: v.$blanco;
     }
+
+   
 }
