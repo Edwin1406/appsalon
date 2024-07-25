@@ -27,6 +27,7 @@ use Model\Cita;
         $idCita = $cita->id;
     ?>
         <li class="cita">
+            <h3>Información del Cliente</h3>
             <p class="cita-titulo">ID:<?php echo $cita->id?></p>
             <p><span>Cliente:</span> <?php echo $cita->cliente?></p>
             <p><span>Email:</span> <?php echo $cita->email?></p>
