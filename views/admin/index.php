@@ -13,4 +13,7 @@
 
     </form>
 </div>
-<div id="citas-admin"></div>
+<div id="citas-admin">
+    <ul class="citas"></ul>
+    <?php debuguear($citas) ?>
+</div>
