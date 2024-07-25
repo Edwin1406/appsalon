@@ -30,8 +30,8 @@ use Model\Cita;
             <p class="cita-titulo">ID:<?php echo $cita->id?></p>
             <p><span>Cliente:</span> <?php echo $cita->cliente?></p>
             <p><span>Email:</span> <?php echo $cita->email?></p>
-            <h3>Servicios</h3>
             <p><span>Telefono:</span> <?php echo $cita->telefono?></p>
+            <h3>Servicios</h3>
             <p><span>Servicio:</span> <?php echo $cita->servicio?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
             <p><span>Precio:</span> $<?php echo $cita->precio?></p>
