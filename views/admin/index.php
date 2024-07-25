@@ -21,7 +21,7 @@ use Model\Cita;
     <ul class="citas">
     <?php foreach($citas  as $cita):?>
         <li class="cita">
-            <p class="cita-titulo">Cita #<?php echo $cita->id?></p>
+            <p class="cita-titulo">ID:<?php echo $cita->id?></p>
             <p><span>Cliente:</span> <?php echo $cita->cliente?></p>
             <p><span>Email:</span> <?php echo $cita->email?></p>
             <p><span>Telefono:</span> <?php echo $cita->telefono?></p>
