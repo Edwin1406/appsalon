@@ -21,6 +21,7 @@ use Model\Cita;
     <ul class="citas">
     <?php foreach($citas  as $cita):
     if($idCita != $cita->id):
+        $idCita = $cita->id;
         
     ?>
         <li class="cita">
