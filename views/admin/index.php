@@ -19,10 +19,12 @@ use Model\Cita;
 </div>
 <div id="citas-admin">
     <ul class="citas">
-    <?php foreach($citas  as $cita):
+    <?php 
+    $idCita=0;
+    foreach($citas  as $cita):
     if($idCita != $cita->id):
-        $idCita = $cita->id;
         
+        $idCita = $cita->id;
     ?>
         <li class="cita">
             <p class="cita-titulo">ID:<?php echo $cita->id?></p>
