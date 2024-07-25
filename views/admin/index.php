@@ -36,9 +36,8 @@ use Model\Cita;
            
         <?php $idCita = $cita->id; 
         endif;?>
-         <p><span>Servicio:</span> <?php echo $cita->servicio?></p>
+         <p><span>Servicio:</span> <?php echo $cita->servicio .' '.$cita->precio ?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
-            <p><span>Precio:</span> $<?php echo $cita->precio?></p>
         </li>
     <?php endforeach;?>
     </ul>
