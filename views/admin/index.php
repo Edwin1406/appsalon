@@ -19,7 +19,10 @@ use Model\Cita;
 </div>
 <div id="citas-admin">
     <ul class="citas">
-    <?php foreach($citas  as $cita):?>
+    <?php foreach($citas  as $cita):
+    if($idCita != $cita->id):
+        
+    ?>
         <li class="cita">
             <p class="cita-titulo">ID:<?php echo $cita->id?></p>
             <p><span>Cliente:</span> <?php echo $cita->cliente?></p>
@@ -28,6 +31,7 @@ use Model\Cita;
             <p><span>Servicio:</span> <?php echo $cita->servicio?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
             <p><span>Precio:</span> $<?php echo $cita->precio?></p>
+        <?php endif;?>
         </li>
     <?php endforeach;?>
     </ul>
