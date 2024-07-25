@@ -38,7 +38,7 @@ use Model\Cita;
         endif;?>
          <p><span>Servicio:</span> <?php echo $cita->servicio .' '.$cita->precio ?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
-        </li>
+        
     <?php endforeach;?>
     </ul>
     
