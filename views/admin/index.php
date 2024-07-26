@@ -41,7 +41,7 @@ use Model\Cita;
         endif;
         $total += $cita->precio;
         ?>
-         <p class="servicio"> - <?php echo $cita->servicio .' '.$cita->precio ?></p>
+         <p> - <?php echo $cita->servicio .' '.$cita->precio ?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
 
         <?php 
