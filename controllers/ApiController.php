@@ -45,7 +45,7 @@ class ApiController {
 
 
     public static function eliminar(){
-        echo 'Eliminando...';
+        debuguear($_POST);
     }
 
 
