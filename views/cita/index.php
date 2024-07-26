@@ -56,7 +56,7 @@
     </div>
     <?php 
     if(count($citas)===0){
-        echo '<p class="text-center">No hay citas</p>';
+        echo '<h2 class="text-center">No hay citas</h2>';
     }
     ?>
 
