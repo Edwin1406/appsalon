@@ -9,6 +9,9 @@ class AdminController
     public static function index(Router $router)
     {
         session_start();
+
+        $fecha = date('Y-m-d');
+        debuguear($fecha);
         // consultar la base de datos
         $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio, servicios.precio  ";
