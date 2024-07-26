@@ -45,7 +45,12 @@ class ApiController {
 
 
     public static function eliminar(){
-        debuguear($_POST);
+       if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $id = $_POST['id'];
+        $cita = Cita::find($id);
+        $cita->eliminar();
+        echo json_encode(['resultado' => 'Cita eliminada']);
+       }
     }
 
 
