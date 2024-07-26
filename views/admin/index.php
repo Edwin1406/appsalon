@@ -21,7 +21,9 @@ use Model\Cita;
     <ul class="citas">
     <?php 
     $idCita=0;
-    foreach($citas  as $cita):
+    foreach($citas as $key => $cita):
+        debuguear($key);
+
     if($idCita != $cita->id):
         
 
