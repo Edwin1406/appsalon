@@ -44,8 +44,9 @@ use Model\Cita;
         <?php 
         $actual = $cita->id;
         $proximo = $citas[$key+1]->id ?? 0;
-        echo $actual;
-        echo $proximo; 
+        if(esUltimo($actual,$proximo)):?>
+            </li>
+        <?php endif;
         
         ?>
         
