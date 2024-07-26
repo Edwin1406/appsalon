@@ -22,7 +22,7 @@ use Model\Cita;
     <?php 
     $idCita=0;
     foreach($citas as $key => $cita):
-        debuguear($key);
+        // debuguear($key);
 
     if($idCita != $cita->id):
         
@@ -40,6 +40,14 @@ use Model\Cita;
         endif;?>
          <p> - <?php echo $cita->servicio .' '.$cita->precio ?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
+
+        <?php 
+        $actual = $cita->id;
+        $proximo = $citas[$key+1]->id ?? 0;
+        echo $actual;
+        echo $proximo; 
+        
+        ?>
         
     <?php endforeach;?>
     </ul>
