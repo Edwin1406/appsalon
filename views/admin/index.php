@@ -48,7 +48,7 @@ use Model\Cita;
         $actual = $cita->id;
         $proximo = $citas[$key+1]->id ?? 0;
         if(esUltimo($actual,$proximo)):?>
-            <p class="total"><span>Total:</span> <?php echo  $ $total?></p>
+            <p class="total"><span>Total:</span> <?php echo '$'.$total?></p>
         <?php endif;?>
         
     <?php endforeach;?>
