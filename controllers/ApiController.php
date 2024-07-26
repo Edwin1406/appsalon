@@ -48,7 +48,7 @@ class ApiController {
        if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id = $_POST['id'];
         $cita = Cita::find($id);
-        $cita->eliminar();
+        $cita->eliminarCita();
         header('Location: '.$_SERVER['HTTP_REFERER']);
        }
     }
