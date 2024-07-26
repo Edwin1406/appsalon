@@ -44,6 +44,11 @@ class ApiController {
     }
 
 
+    public static function eliminar(){
+        echo 'Eliminando...';
+    }
+
+
 }
 
 
