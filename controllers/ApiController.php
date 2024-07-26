@@ -49,7 +49,7 @@ class ApiController {
         $id = $_POST['id'];
         $cita = Cita::find($id);
         $cita->eliminar();
-        echo json_encode(['resultado' => 'Cita eliminada']);
+        header('Location: '.$_SERVER['HTTP_REFERER']);
        }
     }
 
