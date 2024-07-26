@@ -38,15 +38,17 @@ use Model\Cita;
             <h3>Servicios</h3>
            
         <?php $idCita = $cita->id; 
-        endif;?>
-         <p> - <?php echo $cita->servicio .' '.$cita->precio ?></p>
+        endif;
+        $total += $cita->precio;
+        ?>
+         <p class="servicio"> - <?php echo $cita->servicio .' '.$cita->precio ?></p>
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
 
         <?php 
         $actual = $cita->id;
         $proximo = $citas[$key+1]->id ?? 0;
         if(esUltimo($actual,$proximo)):?>
-            <p><span>Total:</span> <?php echo $cita->total?></p>
+            <p><span>Total:</span> <?php echo $total?></p>
         <?php endif;?>
         
     <?php endforeach;?>
