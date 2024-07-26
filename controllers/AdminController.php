@@ -28,7 +28,8 @@ class AdminController
         // debuguear($citas);     
       $router->render('admin/index',[
         'nombre' => $_SESSION['nombre'],
-        'citas' => $citas
+        'citas' => $citas,
+        'fecha' => $fecha
 
       ]);
     }
