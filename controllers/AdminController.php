@@ -9,13 +9,13 @@ class AdminController
     public static function index(Router $router)
     {
         session_start();
-        $fecha = $_GET['fecha'] ?? '';
-        $fecha= explode('-',$fecha);
-        if(!checkdate($fecha[1],$fecha[2],$fecha[0])){
+        $fecha = $_GET['fecha'] ??  date('Y-m-d');
+        $fechas= explode('-',$fecha);
+        if(!checkdate($fechas[1],$fechas[2],$fechas[0])){
           header('Location: /paginaNoEncontrada');
         }
 
-        $fecha = date('Y-m-d');
+    
         // debuguear($fecha);
         // consultar la base de datos
         $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
