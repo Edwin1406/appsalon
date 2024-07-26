@@ -25,6 +25,7 @@ use Model\Cita;
         // debuguear($key);
 
     if($idCita != $cita->id):
+        $total=0;
         
 
     ?>
@@ -45,10 +46,8 @@ use Model\Cita;
         $actual = $cita->id;
         $proximo = $citas[$key+1]->id ?? 0;
         if(esUltimo($actual,$proximo)):?>
-            </li>
-        <?php endif;
-        
-        ?>
+            <p><span>Total:</span> <?php echo $cita->total?></p>
+        <?php endif;?>
         
     <?php endforeach;?>
     </ul>
