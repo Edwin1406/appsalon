@@ -180,9 +180,18 @@ class ActiveRecord {
         $resultado = self::$db->query($query);
         return $resultado;
     }
+    protected function eliminarDependientes() {
+        // Solo ejecutar si la tabla actual es 'citas'
+        if (static::$tabla === 'citas') {
+            $query = "DELETE FROM citasservicios WHERE citaId = " . self::$db->escape_string($this->id);
+            self::$db->query($query);
+        }
+    }
 
     // Eliminar un Registro por su ID
     public function eliminar() {
+        $this->eliminarDependientes();
+
         $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         return $resultado;
