@@ -9,8 +9,9 @@ class AdminController
     public static function index(Router $router)
     {
         session_start();
-        $fecha = $_GET['fecha'] ??  date('Y-m-d');
+        $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas= explode('-',$fecha);
+        debuguear($fechas);
         if(!checkdate($fechas[1],$fechas[2],$fechas[0])){
           header('Location: /paginaNoEncontrada');
         }
