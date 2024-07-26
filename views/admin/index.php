@@ -1,7 +1,7 @@
 <h1 class="nombre-pagina">Panel de Adminsitración</h1>
 <?php
 
-use Model\Cita;
+
 
  include_once __DIR__.'/../templates/barra.php' ?>
 <h2>Buscar Citas</h2>

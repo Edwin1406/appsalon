@@ -54,6 +54,11 @@
         </form>
 
     </div>
+    <?php 
+    if(count($citas)===0){
+        echo '<p class="text-center">No hay citas</p>';
+    }
+    ?>
 
     <div id="paso-3" class="seccion contenido-resumen">
             <h2>Resumen</h2>
