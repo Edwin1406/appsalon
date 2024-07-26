@@ -12,7 +12,7 @@ class AdminController
         $fecha = $_GET['fecha'] ?? '';
         $fecha= explode('-',$fecha);
         if(!checkdate($fecha[1],$fecha[2],$fecha[0])){
-          header('Location: /404');
+          header('Location: /paginaNoEncontrada');
         }
 
         $fecha = date('Y-m-d');
