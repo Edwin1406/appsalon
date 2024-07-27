@@ -1,5 +1,5 @@
 <?php
-if(is_array($alertas)){
+
 foreach( $alertas as $key => $mensajes):
     foreach($mensajes as $mensaje):
 ?>
@@ -11,7 +11,5 @@ foreach( $alertas as $key => $mensajes):
 <?php
     endforeach;
 endforeach;
-}else{
-    echo $alertas;
-}
+
 ?>
