@@ -17,6 +17,16 @@ class Servicio extends ActiveRecord{
         $this->precio = $args['precio'] ?? '';
     }
 
+    public function validar(){
+        if(!$this->nombre){
+            self::$alertas[] = "Debes añadir un nombre";
+        }
+        if(!$this->precio){
+            self::$alertas[] = "Debes añadir un precio";
+        }
+        return self::$alertas;
+    }
+
    
 
 
