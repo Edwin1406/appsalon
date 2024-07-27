@@ -255,7 +255,7 @@ function mostrarHoras(horas) {
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
 
-    inputFecha.addEventListener('input',function(e){
+    inputHora,inputFecha.addEventListener('input',function(e){
         const fechaCita = e.target.value;
         const fechacorta = fechaCita.split("-");
         console.log(fechacorta);
@@ -263,10 +263,10 @@ function mostrarHoras(horas) {
 
         const horaCita = e.target.value
         const hora = horaCita.split(":");
-        // const horaReservada = horasReservadas.includes(horaCita);
+        const horaReservada = horasReservadas.includes(horaCita);
         const fechaReservadad = fechaReservada.includes(fechacorta);
         console.log(`fecha reservada: ${fechaReservadad}`);
-        // console.log(`hora reservada: ${horaReservada}`);
+        console.log(`hora reservada: ${horaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
