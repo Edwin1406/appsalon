@@ -237,7 +237,10 @@ async function ApiHoras(){
 
 
 function mostrarHoras(horas) {
-    const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
+    const horasReservadas = horas.map(horaReservada => {
+        const [hora, minuto, segundo] = horaReservada.hora.split(":");
+        return `${hora}:${minuto}`;  // Formato HH:MM
+    });
     console.log(horasReservadas);
     return horasReservadas;
 }
