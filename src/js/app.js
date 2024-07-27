@@ -238,17 +238,24 @@ async function ApiHoras(){
 
 
 function mostrarHoras(horas) {
-
     let fechaCita = '';
 
     const inputFecha = document.querySelector('#fecha');
-    inputFecha.addEventListener('input', function(e){
+    inputFecha.addEventListener('input', function(e) {
         fechaCita = e.target.value;
-        console.log(`fechaCita: ${fechaCita}`);
+        console.log(`fechaCita dentro del evento: ${fechaCita}`);
     });
-    console.log(fechaCita);
-
-
+    
+    // Función para obtener el valor actualizado de fechaCita
+    function obtenerFechaCita() {
+        return fechaCita;
+    }
+    
+    // Llamada a la función después de que el usuario haya interactuado con el input
+    inputFecha.addEventListener('change', function() {
+        console.log(`fechaCita fuera del evento: ${obtenerFechaCita()}`);
+    });
+    
 
 
 
