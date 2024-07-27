@@ -9,6 +9,7 @@ use Controllers\AdminController;
 use Controllers\ApiController;
 use Controllers\CitaController;
 use Controllers\LoginController;
+use Controllers\ServicioController;
 use MVC\Router;
 
 $router = new Router();
@@ -43,6 +44,9 @@ $router->get('/admin', [AdminController::class, 'index']);
 $router->get('/api/servicios', [ApiController::class, 'index']);
 $router->post('/api/citas',[ApiController::class,'guardar']);
 $router->post('/api/eliminar',[ApiController::class,'eliminar']);
+
+// Rutas de administrador
+$router->get('/servicios', [ServicioController::class, 'index']);
 
 
 
