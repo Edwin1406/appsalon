@@ -245,7 +245,8 @@ async function ApiHoras(){
 
 
 function seleccionarHora(horas){
-   console.log(horas);
+    const {hora} = horas;
+    console.log(hora);
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
     
