@@ -243,21 +243,43 @@ function mostrarHoras(horas) {
 }
 
 
-function seleccionarHora(){
-    const inputHora = document.querySelector('#hora');
-    inputHora.addEventListener('input',function(e){
+// function seleccionarHora(){
+//     const inputHora = document.querySelector('#hora');
+//     inputHora.addEventListener('input',function(e){
     
-    const horaCita = e.target.value
-    const hora = horaCita.split(":");
+//     const horaCita = e.target.value
+//     const hora = horaCita.split(":");
 
-    if(hora[0] < 10 || hora[0] > 18){
-        e.target.value = '';
-       mostrarAlerta('Hora no valida','error','.formulario');
-    }else{
-        cita.hora = horaCita;
-        console.log(cita);
-    }
-    })
+//     if(hora[0] < 10 || hora[0] > 18){
+//         e.target.value = '';
+//        mostrarAlerta('Hora no valida','error','.formulario');
+//     }else{
+//         cita.hora = horaCita;
+//         console.log(cita);
+//     }
+//     })
+// }
+
+function seleccionarHora(horasReservadas) {
+    const inputHora = document.querySelector('#hora');
+    inputHora.addEventListener('input', function(e) {
+        const horaCita = e.target.value;
+        const hora = horaCita.split(":");
+
+        // Convertir la hora a un formato que facilite la comparación
+        const horaCompleta = parseInt(hora[0], 10);
+
+        if (horaCompleta < 10 || horaCompleta > 18) {
+            e.target.value = '';
+            mostrarAlerta('Hora no valida', 'error', '.formulario');
+        } else if (horasReservadas.includes(horaCita)) {
+            e.target.value = '';
+            mostrarAlerta('Hora ya reservada', 'error', '.formulario');
+        } else {
+            cita.hora = horaCita;
+            console.log(cita);
+        }
+    });
 }
 
 
