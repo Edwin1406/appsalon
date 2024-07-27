@@ -245,7 +245,7 @@ function mostrarHoras(horas) {
 
 
 function seleccionarHora(horasReservadas){
-   console.log(horasReservadas);
+
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
@@ -253,7 +253,7 @@ function seleccionarHora(horasReservadas){
     const horaCita = e.target.value
     const hora = horaCita.split(":");
 
-    if(hora[0] < 10 || hora[0] > 18){
+    if(hora[0] < 10 || hora[0] > 18|| horasReservadas.includes(horaCita)){
         e.target.value = '';
        mostrarAlerta('Hora no valida','error','.formulario');
     }else{
