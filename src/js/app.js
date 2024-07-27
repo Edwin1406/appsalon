@@ -237,17 +237,16 @@ async function ApiHoras(){
 }
 
 
-// function mostrarHoras(horas) {
-//     const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
-//     console.log(horasReservadas);
-//     // return horasReservadas;
-// }
+function mostrarHoras(horas) {
+    const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
+    seleccionarHora(horasReservadas);
+    // return horasReservadas;
+}
 
 
-function seleccionarHora(horas){
-   horas.forEach(hora => {
-    console.log(hora.hora);
-   });
+function seleccionarHora(horasReservadas){
+   console.log(horasReservadas);
+   
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
     
