@@ -250,7 +250,7 @@ function mostrarHoras(horas) {
     function obtenerFechaCita(fechaCita) {
         return fechaCita;
     }
-    obtenerFechaCita();
+    obtenerFechaCita(fechaCita);
 
     console.log(`fechaCita fuera del evento: ${fechaCita}`);
     
