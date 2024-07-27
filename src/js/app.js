@@ -272,7 +272,11 @@ function mostrarResumen (){
 
     //  iteramos sobre el objeto cita para mostrar el resumen
     if(Object.values(cita).includes('') || cita.servicios.length === 0){
+        if(Object.values(cita).includes('') || cita.servicios.length === 0){
        
+            mostrarAlerta('Ya esta agendada','error','.contenido-resumen',false);
+         return;
+        }
         mostrarAlerta('Faltan datos de servicios, hora, fecha o nombre','error','.contenido-resumen',false);
      return;
     }
