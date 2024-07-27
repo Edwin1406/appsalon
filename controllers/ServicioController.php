@@ -29,7 +29,7 @@ class ServicioController{
             $servicio->sincronizar($_POST);
             // validacion
             $alertas = $servicio->validar();
-            debuguear($alertas);
+            // debuguear($alertas);
         }
 
         $router->render('servicios/crear',[
