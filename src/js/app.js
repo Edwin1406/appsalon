@@ -252,9 +252,11 @@ function mostrarHoras(horas) {
         const horaReservada = horasReservadas.includes(horaCita);
         // console.log(`hora reservada: ${horaReservada}`);
     
-        if(hora[0] < 10 || hora[0] > 18 || horaReservada){
+        if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
-           mostrarAlerta('Hora no valida o esa Hora ya fue reservada','error','.formulario');
+           mostrarAlerta('Hora no valida','error','.formulario');
+        }else if(horaReservada){
+            mostrarAlerta('Hora ya reservada','error','.formulario');
         }else{
             cita.hora = horaCita;
             console.log(cita);
