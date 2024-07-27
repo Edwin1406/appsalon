@@ -257,13 +257,14 @@ function mostrarHoras(horas) {
 
     inputHora,inputFecha.addEventListener('input',function(e){
         const fechaCita = e.target.value;
+        console.log(fechaCita);
        
 
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        const fechaReservada = fechaReservada.includes(fechaCita);
-        console.log(`fecha reservada: ${fechaReservada}`);
+        // const fechaReservada = fechaReservada.includes(fechaReservada);
+        // console.log(`fecha reservada: ${fechaReservada}`);
         // console.log(`hora reservada: ${horaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
