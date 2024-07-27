@@ -256,6 +256,7 @@ function seleccionarHora(){
     }else{
         cita.hora = horaCita;
         console.log(cita);
+        console.log(horasReservadas);
     }
     })
 }
