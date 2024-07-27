@@ -45,7 +45,7 @@ $router->get('/admin', [AdminController::class, 'index']);
 $router->get('/api/servicios', [ApiController::class, 'index']);
 $router->post('/api/citas',[ApiController::class,'guardar']);
 $router->post('/api/eliminar',[ApiController::class,'eliminar']);
-$router->get('/api/Horas',[ApiHoraController::class,'index']);
+$router->get('/api/horas',[ApiHoraController::class,'index']);
 
 // Crud de servicios
 // CREAR
