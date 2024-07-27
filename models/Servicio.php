@@ -19,16 +19,16 @@ class Servicio extends ActiveRecord{
 
     public function validar(){
         if(!$this->nombre){
-            self::$alertas[] = "Debes añadir un nombre de servicio"; 
+            self::$alertas['error'][] = "Debes añadir un nombre de servicio"; 
         }
         if(!$this->precio){
-            self::$alertas[] = "Debes añadir un precio al servicio";
+            self::$alertas['error'][] = "Debes añadir un precio al servicio";
         }
         if($this->precio < 0){
-            self::$alertas[] = "El precio debe ser mayor a 0";
+            self::$alertas['error'][] = "El precio debe ser mayor a 0";
         }
         if(!is_numeric($this->precio)){
-            self::$alertas[] = "El precio debe ser un numero";
+            self::$alertas['error'][] = "El precio debe ser un numero";
         }
         return self::$alertas;
     }
