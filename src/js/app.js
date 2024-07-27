@@ -240,6 +240,21 @@ async function ApiHoras(){
 function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
     console.log(horasReservadas);
+    const inputHora = document.querySelector('#hora');
+    inputHora.addEventListener('input',function(e){
+    
+        const horaCita = e.target.value
+        const hora = horaCita.split(":");
+    
+        if(hora[0] < 10 || hora[0] > 18|| horasReservadas.includes(horaCita)){
+            e.target.value = '';
+           mostrarAlerta('Hora no valida','error','.formulario');
+        }else{
+            cita.hora = horaCita;
+            console.log(cita);
+          
+        }
+        })
    
     
 }
