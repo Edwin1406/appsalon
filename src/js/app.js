@@ -242,13 +242,11 @@ function mostrarHoras(horas) {
     let fechaCita = '';
 
     const inputFecha = document.querySelector('#fecha');
-    inputFecha.addEventListener('input',function(e){
+    inputFecha.addEventListener('input', function(e){
         fechaCita = e.target.value;
-        return fechaCita;
+        console.log(`fechaCita: ${fechaCita}`);
     });
-    console.log(`fechaCita: ${fechaCita}`);
-
-
+    console.log(fechaCita);
 
 
 
