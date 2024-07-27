@@ -199,7 +199,7 @@ function nombreCita(){
 
 
 
-function seleccionarFecha(citaFecha){
+function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
@@ -210,7 +210,7 @@ function seleccionarFecha(citaFecha){
         }else{
             cita.fecha = e.target.value;
             let citaFecha= cita.fecha = e.target.value;
-            return citaFecha;
+           mostrarHoras(citaFecha);
     
            
         }
@@ -218,7 +218,7 @@ function seleccionarFecha(citaFecha){
     });
 }
 
-console.log(citaFecha);
+
 
 
 // API DE HORAS SELECCIONADAS PARA LA CITA
@@ -239,7 +239,7 @@ async function ApiHoras(){
 }
 
 
-function mostrarHoras(horas) {
+function mostrarHoras(horas,citaFecha) {
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
@@ -249,6 +249,7 @@ function mostrarHoras(horas) {
         return fechaReservada.fecha;
    });
     console.log(fechaReservada);
+    console.log(citaFecha);
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
@@ -256,8 +257,8 @@ function mostrarHoras(horas) {
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        const fechaReservada = fechaReservada.includes(citaFecha);
-
+        // const fechaReservada = fechaReservada.includes(horaCita);
+        
         console.log(`hora reservada: ${horaReservada}`);
         console.log(`fecha reservada: ${fechaReservada}`);
         if(hora[0] < 10 || hora[0] > 18){
