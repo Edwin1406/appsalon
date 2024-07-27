@@ -267,15 +267,15 @@ function seleccionarHora(horasReservadas) {
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input', function(e) {
         const horaCita = e.target.value;
-        const [hora, minuto, segundo] = horaCita.split(":");
-        const horaFormateada = `${hora}:${minuto}`;  // Formato HH:MM
+        const hora = horaCita.split(":");
 
-        // Validar el rango de hora
-        const horaCompleta = parseInt(hora, 10);
+        // Convertir la hora a un formato que facilite la comparación
+        const horaCompleta = parseInt(hora[0], 10);
+
         if (horaCompleta < 10 || horaCompleta > 18) {
             e.target.value = '';
             mostrarAlerta('Hora no válida', 'error', '.formulario');
-        } else if (horasReservadas.includes(horaFormateada)) {
+        } else if (horasReservadas.includes(horaCita)) {
             e.target.value = '';
             mostrarAlerta('Hora ya reservada', 'error', '.formulario');
         } else {
@@ -284,6 +284,7 @@ function seleccionarHora(horasReservadas) {
         }
     });
 }
+
 
 
 
