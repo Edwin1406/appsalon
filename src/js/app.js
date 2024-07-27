@@ -199,7 +199,7 @@ function nombreCita(){
 
 
 
-function seleccionarFecha(cita){
+function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
