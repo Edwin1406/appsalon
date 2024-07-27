@@ -45,7 +45,7 @@ $router->get('/api/servicios', [ApiController::class, 'index']);
 $router->post('/api/citas',[ApiController::class,'guardar']);
 $router->post('/api/eliminar',[ApiController::class,'eliminar']);
 
-// Rutas de administrador
+// Crud de servicios
 $router->get('/servicios', [ServicioController::class, 'index']);
 
 

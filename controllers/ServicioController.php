@@ -2,7 +2,7 @@
 namespace Controllers;
 
 class ServicioController{
-    public function index(){
+    public static function index(){
         echo "Desde el controlador de servicios";
     }
 }
