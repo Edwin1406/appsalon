@@ -245,6 +245,8 @@ function mostrarHoras(horas) {
     
         const horaCita = e.target.value
         const hora = horaCita.split(":");
+        const reserva = horasReservadas.split(":");
+        console.log(reserva);
         const horaReservada = horasReservadas.includes(horaCita);
         console.log(`hora reservada ${horaReservada}`);
         console.log(hora);
