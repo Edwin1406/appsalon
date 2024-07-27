@@ -244,7 +244,9 @@ function mostrarHoras(horas) {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
     
-   const fechaReservada = cita.fecha;
+   const fechaReservada = horas.map(fechaReservada => {
+        return fechaReservada.fecha;
+   });
     console.log(fechaReservada);
 
     const inputHora = document.querySelector('#hora');
