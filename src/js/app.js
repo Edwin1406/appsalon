@@ -283,7 +283,7 @@ inputFecha.addEventListener('change', function() {
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
         const fechaReservada = fechaReservada.includes(fechaCita);
-        // console.log(`hora reservada: ${horaReservada}`);
+        console.log(`hora reservada: ${horaReservada}`);
         console.log(`fecha reservada: ${fechaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
