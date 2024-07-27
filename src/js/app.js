@@ -238,30 +238,6 @@ async function ApiHoras(){
 
 
 function mostrarHoras(horas) {
-let fechaCita = '';
-
-const inputFecha = document.querySelector('#fecha');
-inputFecha.addEventListener('input', function(e) {
-    fechaCita = e.target.value;
-    console.log(`fechaCita dentro del evento: ${fechaCita}`);
-});
-
-// Función para obtener el valor actualizado de fechaCita
-function obtenerFechaCita() {
-    return fechaCita;
-}
-
-// Llamada a la función después de que el usuario haya interactuado con el input
-inputFecha.addEventListener('change', function() {
-    console.log(`fechaCita fuera del evento: ${obtenerFechaCita()}`);
-});
-
-
-
-
-
-
-
 
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
@@ -277,14 +253,16 @@ inputFecha.addEventListener('change', function() {
 
 
     const inputHora = document.querySelector('#hora');
-    inputHora.addEventListener('input',function(e){
-    
+    const inputFecha = document.querySelector('#fecha');
+
+    inputHora,inputFecha.addEventListener('input',function(e){
+        const fechaCita = e.target.value;
+        console.log(fechaCita);
+        
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        const fechaReservada = fechaReservada.includes(fechaCita);
-        console.log(`hora reservada: ${horaReservada}`);
-        console.log(`fecha reservada: ${fechaReservada}`);
+        // console.log(`hora reservada: ${horaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
