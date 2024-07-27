@@ -225,7 +225,12 @@ async function ApiHoras(){
     const url = 'https://serviacrilico.com/api/horas';
     const resultado = await fetch(url);
     const horas = await resultado.json();
-    console.log(horas);
+    mostrarHoras(horas);
+}
+
+function mostrarHoras(){
+    const {hora} =  horas ; //destructuring
+    console.log(hora);
 }
 
 function seleccionarHora(){
