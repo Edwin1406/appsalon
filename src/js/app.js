@@ -227,7 +227,7 @@ async function ApiHoras(){
         const resultado = await fetch(url);
         const horas = await resultado.json();
         // mostrarHoras(horas);
-        console.log(horas);
+        return horas;
         
     } catch (error) {
         console.log(error);
@@ -244,8 +244,9 @@ async function ApiHoras(){
 // }
 
 
-function seleccionarHora(){
+function seleccionarHora(horas){
    
+    console.log(horas);
     
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
