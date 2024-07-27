@@ -252,7 +252,8 @@ function seleccionarHora(horasReservadas) {
 }
 
 
-
+// Llamar a la función para obtener las horas al cargar la página
+document.addEventListener('DOMContentLoaded', ApiHoras);
 
 
 
