@@ -28,6 +28,7 @@ class ServicioController{
             $servicio->sincronizar($_POST);
             // validacion
             $alertas = $servicio::getAlertas();
+            debuguear($alertas);
         }
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
