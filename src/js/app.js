@@ -260,7 +260,7 @@ function mostrarHoras(horas) {
         // const fechaReservada = fechaReservada.includes(horaCita);
         
         console.log(`hora reservada: ${horaReservada}`);
-        console.log(`fecha reservada: ${fechaReservada}`);
+        // console.log(`fecha reservada: ${fechaReservada}`);
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
