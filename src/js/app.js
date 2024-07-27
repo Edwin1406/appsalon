@@ -228,7 +228,7 @@ async function ApiHoras(){
     mostrarHoras(horas);
 }
 
-function mostrarHoras(){
+function mostrarHoras(horas){
     const {hora} =  horas ; //destructuring
     console.log(hora);
 }
