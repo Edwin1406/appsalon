@@ -243,7 +243,7 @@ function mostrarHoras(horas) {
 }
 
 
-function seleccionarHora(horasReservadas){
+function seleccionarHora(){
     
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
@@ -257,7 +257,7 @@ function seleccionarHora(horasReservadas){
     }else{
         cita.hora = horaCita;
         console.log(cita);
-        console.log(horasReservadas);
+      
     }
     })
 }
