@@ -30,7 +30,7 @@ class ServicioController{
             $alertas = $servicio->validar();
             debuguear($alertas);
         }
-           $alertas = Servicio::getAlertas();
+        //    $alertas = Servicio::getAlertas();
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
             'servicio' => $servicio,
