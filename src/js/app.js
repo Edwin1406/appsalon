@@ -240,23 +240,21 @@ async function ApiHoras(){
 function mostrarHoras(horas) {
     let fechaCita = '';
 
-const inputFecha = document.querySelector('#fecha');
-inputFecha.addEventListener('input', function(e) {
-    fechaCita = e.target.value;
-    console.log(`fechaCita dentro del evento: ${fechaCita}`);
+    const inputFecha = document.querySelector('#fecha');
+    inputFecha.addEventListener('input', function(e) {
+        fechaCita = e.target.value;
+        console.log(`fechaCita dentro del evento: ${fechaCita}`);
+    });
     
-    // Llamamos a la función obtenerFechaCita dentro del evento para capturar el valor actualizado
-    console.log(`fechaCita obtenida dentro del evento: ${obtenerFechaCita(fechaCita)}`);
-});
-
-// Función para obtener el valor actualizado de fechaCita
-function obtenerFechaCita(fechaCita) {
-    return fechaCita;
-}
-
-// Si llamamos a la función aquí, antes de que el evento se dispare, mostrará el valor inicial
-console.log(`fechaCita fuera del evento: ${fechaCita}`);
-
+    // Función para obtener el valor actualizado de fechaCita
+    function obtenerFechaCita() {
+        return fechaCita;
+    }
+    
+    // Llamada a la función después de que el usuario haya interactuado con el input
+    inputFecha.addEventListener('change', function() {
+        console.log(`fechaCita fuera del evento: ${obtenerFechaCita()}`);
+    });
     
 
 
