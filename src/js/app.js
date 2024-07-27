@@ -222,15 +222,25 @@ function seleccionarFecha(){
 // API DE HORAS SELECCIONADAS PARA LA CITA
 
 async function ApiHoras(){
-    const url = 'https://serviacrilico.com/api/horas';
-    const resultado = await fetch(url);
-    const horas = await resultado.json();
-    mostrarHoras(horas);
+    try {
+        const url = 'https://serviacrilico.com/api/horas';
+        const resultado = await fetch(url);
+        const horas = await resultado.json();
+        mostrarHoras(horas);
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+   
 }
 
+
+
 function mostrarHoras(horas){
-    const {hora} =  horas ; //destructuring
+   horas.forEach(hora =>{
     console.log(hora);
+   });
 }
 
 function seleccionarHora(){
