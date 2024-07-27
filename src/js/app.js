@@ -243,21 +243,12 @@ function mostrarHoras(horas) {
     
 }
 
-function seleccionarHoras(){
-    const selectHoras = document.querySelector('#hora');
-    let hora = 10;
-    for(let i = 0; i < 8; i++){
-        const option = document.createElement('OPTION');
-        option.value = `${hora < 10 ? `0${hora}`:hora}:00`;
-        option.textContent = `${hora < 10 ? `0${hora}`:hora}:00`;
-        selectHoras.appendChild(option);
-        hora++;
-    }
+function seleccionarHoras(horasReservadas){
+    console.log(horasReservadas);
 }
 
 
-function seleccionarHora(horasReservadas){
-
+function seleccionarHora(){
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
