@@ -218,7 +218,7 @@ function seleccionarFecha(citaFecha){
     });
 }
 
-
+console.log(citaFecha);
 
 
 // API DE HORAS SELECCIONADAS PARA LA CITA
