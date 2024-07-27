@@ -29,13 +29,13 @@ class ServicioController{
             $servicio->sincronizar($_POST);
             // validacion
             $alertas = $servicio->validar();
-            // debuguear($alertas);
+            debuguear($alertas);
         }
 
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
             'servicio' => $servicio,
-            'alertas' => $alertas ?? []
+            'alertas' => $alertas
         ]);
     }
     public static function actualizar(Router $router){
