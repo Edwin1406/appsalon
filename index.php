@@ -47,6 +47,7 @@ $router->post('/api/eliminar',[ApiController::class,'eliminar']);
 
 // Crud de servicios
 $router->get('/servicios', [ServicioController::class, 'index']);
+$router->get('/servicios/crear', [ServicioController::class, 'crear']);
 
 
 
