@@ -219,51 +219,37 @@ function seleccionarFecha(){
 
 
 
-// API DE HORAS SELECCIONADAS PARA LA CITA
-
-async function ApiHoras(){
+async function ApiHoras() {
     try {
         const url = 'https://serviacrilico.com/api/horas';
         const resultado = await fetch(url);
         const horas = await resultado.json();
         mostrarHoras(horas);
-      
-        
     } catch (error) {
         console.log(error);
-        
     }
-   
 }
-
 
 function mostrarHoras(horas) {
-    const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
+    const horasReservadas = horas.map(hora => hora.hora);
     seleccionarHora(horasReservadas);
-    
 }
 
-
-function seleccionarHora(horasReservadas){
-
-
+function seleccionarHora(horasReservadas) {
     const inputHora = document.querySelector('#hora');
-    inputHora.addEventListener('input',function(e){
-    
-    const horaCita = e.target.value
-    const hora = horaCita.split(":");
+    inputHora.addEventListener('input', function(e) {
+        const horaCita = e.target.value;
+        const [hora, minuto] = horaCita.split(':').map(Number);
 
-    if(hora[0] < 10 || hora[0] > 18|| horasReservadas==horaCita){
-        e.target.value = '';
-       mostrarAlerta('Hora no valida','error','.formulario');
-    }else{
-        cita.hora = horaCita;
-        console.log(cita);
-      
-    }
-    })
+        if (hora < 10 || hora > 18 || horasReservadas.includes(horaCita)) {
+            e.target.value = '';
+            mostrarAlerta('Hora no valida', 'error', '.formulario');
+        } else {
+            cita.hora = horaCita;
+            console.log(cita);
+        }
+    });
 }
-
 
 
 
