@@ -238,7 +238,8 @@ async function ApiHoras(){
 
 
 function mostrarHoras(horas){
-   horas.forEach(hora =>{
+   horas.forEach(horasReservadas =>{
+    const {hora} = horasReservadas;
     console.log(hora);
    });
 }
