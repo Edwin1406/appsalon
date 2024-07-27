@@ -21,8 +21,8 @@ class ServicioController{
     public static function crear(Router $router){
         session_start();
         // crear un nuevo servicio vacio
-        $alertas = [];
         $servicio = new Servicio;
+        $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             // este metodo se encarga de llenar el objeto servicio con los datos enviados por el usuario
             $servicio->sincronizar($_POST);
