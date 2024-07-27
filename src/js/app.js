@@ -239,19 +239,15 @@ async function ApiHoras(){
 
 function mostrarHoras(horas) {
 
+    let fechaCita = '';
+
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
-        const fechaCita = e.target.value;
-        console.log(fechaCita);
+        fechaCita = e.target.value;
     });
-
-
-    window.addEventListener('load',function(){
-        const fechaCita = inputFecha.value;
-        console.log(fechaCita);
-    });
-
     console.log(fechaCita);
+
+
 
 
 
