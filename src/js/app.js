@@ -242,7 +242,7 @@ function mostrarHoras(horas) {
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const fechaCita = e.target.value;
-        return fechaCita;
+     
     
     });
     console.log(fechaCita);
