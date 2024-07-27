@@ -242,7 +242,7 @@ function mostrarHoras(horas) {
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
-        console.log(dia);
+        console.log(e.target.value);
     });
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
