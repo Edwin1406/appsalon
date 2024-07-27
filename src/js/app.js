@@ -26,8 +26,8 @@ function inciarApp() {
     idCliente(); //añade el id del cliente al objeto cita
     seleccionarFecha(); // añade la fecha al objeto cita
     seleccionarHora(); //añade la hora al objeto cita
-    mostrarResumen(); //muestra el resumen de la cita
-    
+    mostrarResumen(); //muestra el resumen de la citA
+    ApiHoras(); //consultando la api de horas disponibles    
 }
 
 
@@ -196,6 +196,9 @@ function nombreCita(){
 }
 
 
+
+
+
 function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
@@ -214,6 +217,16 @@ function seleccionarFecha(){
 }
 
 
+
+
+// API DE HORAS SELECCIONADAS PARA LA CITA
+
+async function ApiHoras(){
+    const url = 'https://serviacrilico.com/api/horas';
+    const resultado = await fetch(url);
+    const horas = await resultado.json();
+    console.log(horas);
+}
 
 function seleccionarHora(){
     const inputHora = document.querySelector('#hora');
