@@ -226,8 +226,8 @@ async function ApiHoras(){
         const url = 'https://serviacrilico.com/api/horas';
         const resultado = await fetch(url);
         const horas = await resultado.json();
-        // mostrarHoras(horas);
-        return horas;
+        seleccionarHora(horas);
+      
         
     } catch (error) {
         console.log(error);
@@ -245,11 +245,7 @@ async function ApiHoras(){
 
 
 function seleccionarHora(horas){
-   
-    horas.forEach(horad => {
-        const {hora} = horad;
-    });
-    
+   console.log(horas);
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
     
