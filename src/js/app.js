@@ -253,7 +253,7 @@ function seleccionarHora(horasReservadas){
     const horaCita = e.target.value
     const hora = horaCita.split(":");
 
-    if(hora[0] < 10 || hora[0] > 18|| horasReservadas.includes(horaCita)){
+    if(hora[0] < 10 || hora[0] > 18|| horasReservadas==horaCita){
         e.target.value = '';
        mostrarAlerta('Hora no valida','error','.formulario');
     }else{
