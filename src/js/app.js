@@ -243,6 +243,7 @@ function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
+    console.log(horasReservadas);
     
    const fechaReservada = horas.map(fechaReservada => {
         return fechaReservada.fecha;
@@ -255,8 +256,9 @@ function mostrarHoras(horas) {
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
+        const fechaReservada = fechaReservada.includes(horaCita);
         console.log(`hora reservada: ${horaReservada}`);
-    
+        console.log(`fecha reservada: ${fechaReservada}`);
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
