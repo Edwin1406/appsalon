@@ -244,8 +244,8 @@ function mostrarHoras(horas) {
         const fechaCita = e.target.value;
      
     
+        console.log(fechaCita);
     });
-    console.log(fechaCita);
 
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
