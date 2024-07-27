@@ -22,6 +22,7 @@ class ServicioController{
         session_start();
         $servicio = new Servicio;
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $servicio->sincronizar($_POST);
 
         }
         $router->render('servicios/crear',[
