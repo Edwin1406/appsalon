@@ -7,7 +7,7 @@ use MVC\Router;
 class ServicioController{
     public static function index(Router $router){
         $servicios = Servicio::all();
-        debuguear($servicios);
+        // debuguear($servicios);
         $router->render('servicios/index',[
           'servicios' => $servicios
 
