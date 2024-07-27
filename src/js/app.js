@@ -257,8 +257,8 @@ function mostrarHoras(horas) {
 
     inputHora,inputFecha.addEventListener('input',function(e){
         const fechaCita = e.target.value;
-        console.log(fechaCita);
-        
+        console.log(`fechaCita`,fechaCita);
+
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
