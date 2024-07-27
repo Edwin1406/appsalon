@@ -209,9 +209,7 @@ function seleccionarFecha(){
            
         }else{
             cita.fecha = e.target.value;
-            let citaFecha= cita.fecha = e.target.value;
-           mostrarHoras(citaFecha);
-    
+            console.log(cita);
            
         }
 
@@ -243,13 +241,15 @@ function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
-    console.log(horasReservadas);
     
-   const fechaReservada = horas.map(fechaReservada => {
+    console.log(horasReservadas); // ['15:50', '10:30', '10:51']
+
+ 
+    const fechaReservada = horas.map(fechaReservada => {
         return fechaReservada.fecha;
    });
     console.log(fechaReservada);
-   
+
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
@@ -257,10 +257,8 @@ function mostrarHoras(horas) {
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        // const fechaReservada = fechaReservada.includes(horaCita);
-        
-        console.log(`hora reservada: ${horaReservada}`);
-        // console.log(`fecha reservada: ${fechaReservada}`);
+        // console.log(`hora reservada: ${horaReservada}`);
+    
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
