@@ -8,10 +8,12 @@ class ServicioController{
     public static function index(Router $router){
         session_start();
         $servicios = Servicio::all();
+        $servicio = new Servicio;
         // debuguear($servicios);
         $router->render('servicios/index',[
           'servicios' => $servicios,
-            'nombre' => $_SESSION['nombre']
+            'nombre' => $_SESSION['nombre'],
+            'servicio' => $servicio
 
         ]);
         
