@@ -11,5 +11,7 @@ foreach( $alertas as $key => $mensajes):
 <?php
     endforeach;
 endforeach;
+}else{
+    echo $alertas;
 }
 ?>
