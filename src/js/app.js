@@ -227,6 +227,7 @@ async function ApiHoras(){
         const resultado = await fetch(url);
         const horas = await resultado.json();
         mostrarHoras(horas);
+        console.log(horas);
         
     } catch (error) {
         console.log(error);
@@ -236,15 +237,15 @@ async function ApiHoras(){
 }
 
 
-function mostrarHoras(horas) {
-    const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
-    console.log(horasReservadas);
-    // return horasReservadas;
-}
+// function mostrarHoras(horas) {
+//     const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
+//     console.log(horasReservadas);
+//     // return horasReservadas;
+// }
 
 
 function seleccionarHora(horasReservadas){
-    console.log(horasReservadas);
+    const {hora} = horasReservadas;
     
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
