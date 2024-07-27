@@ -7,6 +7,7 @@ require_once __DIR__ . '/includes/app.php';
 
 use Controllers\AdminController;
 use Controllers\ApiController;
+use Controllers\ApiHoraController;
 use Controllers\CitaController;
 use Controllers\LoginController;
 use Controllers\ServicioController;
@@ -44,6 +45,7 @@ $router->get('/admin', [AdminController::class, 'index']);
 $router->get('/api/servicios', [ApiController::class, 'index']);
 $router->post('/api/citas',[ApiController::class,'guardar']);
 $router->post('/api/eliminar',[ApiController::class,'eliminar']);
+$router->get('/api/Horas',[ApiHoraController::class,'index']);
 
 // Crud de servicios
 // CREAR

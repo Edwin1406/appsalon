@@ -215,47 +215,22 @@ function seleccionarFecha(){
 
 
 
-// function seleccionarHora(){
-//     const inputHora = document.querySelector('#hora');
-//     inputHora.addEventListener('input',function(e){
-    
-//     const horaCita = e.target.value
-//     const hora = horaCita.split(":");
-
-//     if(hora[0] < 10 || hora[0] > 18){
-//         e.target.value = '';
-//        mostrarAlerta('Hora no valida','error','.formulario');
-//     }else{
-//         cita.hora = horaCita;
-//         console.log(cita);
-//     }
-//     })
-// }
-function seleccionarHora() {
+function seleccionarHora(){
     const inputHora = document.querySelector('#hora');
-    const horasReservadas = ['09:00', '10:30', '14:00']; // Ejemplo de horas reservadas
+    inputHora.addEventListener('input',function(e){
+    
+    const horaCita = e.target.value
+    const hora = horaCita.split(":");
 
-    inputHora.addEventListener('input', function(e) {
-        const horaCita = e.target.value;
-        const hora = horaCita.split(":");
-
-        // Verificar si la hora es válida
-        if (hora[0] < 10 || hora[0] > 18) {
-            e.target.value = '';
-            mostrarAlerta('Hora no válida', 'error', '.formulario');
-        } else {
-            // Verificar si la hora está reservada
-            if (horasReservadas.includes(horaCita)) {
-                e.target.value = '';
-                mostrarAlerta('Hora ya reservada', 'error', '.formulario');
-            } else {
-                cita.hora = horaCita;
-                console.log(cita);
-            }
-        }
-    });
+    if(hora[0] < 10 || hora[0] > 18){
+        e.target.value = '';
+       mostrarAlerta('Hora no valida','error','.formulario');
+    }else{
+        cita.hora = horaCita;
+        console.log(cita);
+    }
+    })
 }
-
 
 
 
