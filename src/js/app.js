@@ -247,14 +247,14 @@ function mostrarHoras(horas) {
     });
     
     // Función para obtener el valor actualizado de fechaCita
-    function obtenerFechaCita() {
+    function obtenerFechaCita(fechaCita) {
         return fechaCita;
     }
+    obtenerFechaCita();
+
+    console.log(`fechaCita fuera del evento: ${fechaCita}`);
     
-    // Llamada a la función después de que el usuario haya interactuado con el input
-    inputFecha.addEventListener('change', function() {
-        console.log(`fechaCita fuera del evento: ${obtenerFechaCita()}`);
-    });
+   
     
 
 
