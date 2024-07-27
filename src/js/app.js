@@ -244,6 +244,7 @@ function mostrarHoras(horas) {
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         fechaCita = e.target.value;
+        console.log(fechaCita);
     });
     console.log(`fechaCita: ${fechaCita}`);
 
