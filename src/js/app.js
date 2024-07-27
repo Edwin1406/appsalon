@@ -406,6 +406,6 @@ async function reservarCita(){
     }
 
     // sprend operator para los servicios
-    // console.log([...datos]); // para ver los datos que se envian
+    console.log([...datos]); // para ver los datos que se envian
 }
 
