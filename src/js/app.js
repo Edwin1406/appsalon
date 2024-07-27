@@ -199,7 +199,7 @@ function nombreCita(){
 
 
 
-function seleccionarFecha(){
+function seleccionarFecha(citaFecha){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
@@ -210,7 +210,7 @@ function seleccionarFecha(){
         }else{
             cita.fecha = e.target.value;
             let citaFecha= cita.fecha = e.target.value;
-            console.log(citaFecha);
+            return citaFecha;
     
            
         }
@@ -256,7 +256,8 @@ function mostrarHoras(horas) {
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        const fechaReservada = fechaReservada.includes(horaCita);
+        const fechaReservada = fechaReservada.includes(citaFecha);
+
         console.log(`hora reservada: ${horaReservada}`);
         console.log(`fecha reservada: ${fechaReservada}`);
         if(hora[0] < 10 || hora[0] > 18){
