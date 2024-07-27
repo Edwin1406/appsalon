@@ -244,7 +244,7 @@ function mostrarHoras(horas) {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
     
-    console.log(horasReservadas.fecha); // ['15:50', '10:30', '10:51']
+    console.log(horas); // ['15:50', '10:30', '10:51']
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
