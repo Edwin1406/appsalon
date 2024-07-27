@@ -271,7 +271,7 @@ function mostrarHoras(horas) {
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
-        }else if(fechaReservadad &&  fechacorta || horaReservada){
+        }else if(fechaReservadad && horaReservada){
             e.target.value = '';
             mostrarAlerta('Hora ya reservada','error','.formulario');
         }else{
