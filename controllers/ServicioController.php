@@ -22,14 +22,15 @@ class ServicioController{
         session_start();
         // crear un nuevo servicio vacio
         $servicio = new Servicio;
-        $alertas = Servicio::getAlertas();
+     
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             // este metodo se encarga de llenar el objeto servicio con los datos enviados por el usuario
             $servicio->sincronizar($_POST);
             // validacion
             $alertas = $servicio->validar();
-            debuguear($alertas);
+            // debuguear($alertas);
         }
+        $alertas = Servicio::getAlertas();
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
             'servicio' => $servicio,
