@@ -256,6 +256,7 @@ function mostrarHoras(horas) {
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
         }else if(horaReservada){
+            e.target.value = '';
             mostrarAlerta('Hora ya reservada','error','.formulario');
         }else{
             cita.hora = horaCita;
