@@ -238,12 +238,13 @@ async function ApiHoras(){
 
 function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
-    console.log(horasReservadas[0]);
+    console.log(horasReservadas);
     // return horasReservadas;
 }
 
 
-function seleccionarHora(){
+function seleccionarHora(horasReservadas){
+    console.log(horasReservadas);
     
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
