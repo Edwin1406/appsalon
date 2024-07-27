@@ -265,7 +265,7 @@ function mostrarHoras(horas) {
         const horaReservada = horasReservadas.includes(horaCita);
         // const fechaReservada = fechaReservada.includes(fechaReservada);
         // console.log(`fecha reservada: ${fechaReservada}`);
-        // console.log(`hora reservada: ${horaReservada}`);
+        console.log(`hora reservada: ${horaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
