@@ -240,7 +240,7 @@ async function ApiHoras(){
 function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => horasReservadas.hora);
     console.log(horasReservadas);
-    seleccionarHoras(horasReservadas);
+   
     
 }
 
