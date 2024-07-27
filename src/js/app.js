@@ -243,7 +243,7 @@ function mostrarHoras(horas) {
 }
 
 
-function seleccionarHora(){
+function seleccionarHora(horasReservadas){
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
     
