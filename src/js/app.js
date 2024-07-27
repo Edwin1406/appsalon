@@ -239,7 +239,7 @@ async function ApiHoras(){
 }
 
 
-function mostrarHoras(horas,citaFecha) {
+function mostrarHoras(horas) {
     const horasReservadas = horas.map(horasReservadas => {
         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
     });
@@ -249,7 +249,7 @@ function mostrarHoras(horas,citaFecha) {
         return fechaReservada.fecha;
    });
     console.log(fechaReservada);
-    console.log(citaFecha);
+   
 
     const inputHora = document.querySelector('#hora');
     inputHora.addEventListener('input',function(e){
