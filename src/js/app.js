@@ -264,14 +264,14 @@ function mostrarHoras(horas) {
         const horaCita = e.target.value
         const hora = horaCita.split(":");
         const horaReservada = horasReservadas.includes(horaCita);
-        const fechaReservadad = fechaReservada.includes(fechacorta);
-        console.log(`fecha reservada: ${fechaReservadad}`);
+        // const fechaReservadad = fechaReservada.includes(fechacorta);
+        // console.log(`fecha reservada: ${fechaReservadad}`);
         console.log(`hora reservada: ${horaReservada}`);
     
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
-        }else if(fechaReservadad && horaReservada){
+        }else if(horaReservada){
             e.target.value = '';
             mostrarAlerta('Hora ya reservada','error','.formulario');
         }else{
