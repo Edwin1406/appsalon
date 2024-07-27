@@ -18,11 +18,13 @@ class ServicioController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         }
+        $router->render('servicios/crear');
     }
     public static function actualizar(Router $router){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         }
+        $router->render('servicios/actualizar');
     }
     public static function eliminar(Router $router){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
