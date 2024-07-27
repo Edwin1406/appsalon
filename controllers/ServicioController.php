@@ -26,13 +26,13 @@ class ServicioController{
             // este metodo se encarga de llenar el objeto servicio con los datos enviados por el usuario
             $servicio->sincronizar($_POST);
             // validacion
-            $alerta = $servicio->validar();
+            $alertas = $servicio->validar();
 
         }
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
             'servicio' => $servicio,
-            'alerta' => $alerta
+            'alertas' => $alertas
         ]);
     }
     public static function actualizar(Router $router){
