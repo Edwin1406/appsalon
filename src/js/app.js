@@ -237,15 +237,16 @@ async function ApiHoras(){
    
 }
 
+
 function generarHorasDisponibles() {
     const datalist = document.querySelector('#horasDisponibles');
     const startTime = 10; // Hora de inicio
-    const endTime = 18;  // Hora de finalización
+    const endTime = 19;  // Hora de finalización
+    
     const interval = 30; // Intervalo de 30 minutos
 
-    for (let hour = startTime; hour <= endTime; hour++) {
+    for (let hour = startTime; hour < endTime; hour++) {
         for (let minute = 0; minute < 60; minute += interval) {
-            if (hour === endTime && minute > 0) break;
             let timeString = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
             const option = document.createElement('option');
             option.value = timeString;
