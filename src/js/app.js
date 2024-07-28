@@ -291,7 +291,7 @@ function seleccionarHora(){
     const horaCita = e.target.value
     const hora = horaCita.split(":");
 
-    if(hora[0] < 10 || hora[0] > 18){
+    if(hora[0] < 10 || hora[0] >= 18){
         e.target.value = '';
     //    mostrarAlerta('Hora no valida','error','.formulario');
     Swal.fire({
