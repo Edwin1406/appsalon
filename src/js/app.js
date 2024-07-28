@@ -279,7 +279,7 @@ function mostrarHoras(horas) {
                 title: "Hora ya reservada en esa fecha",
                 text: "Por favor selecciona otra hora",
               });
-        } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) > 18) {
+        } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) <=18) {
             e.target.value = '';
             // mostrarAlerta('Hora no válida', 'error', '.formulario');
             Swal.fire({
