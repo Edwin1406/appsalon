@@ -237,73 +237,36 @@ async function ApiHoras(){
 }
 
 
-// function mostrarHoras(horas) {
-//     // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
-//     // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
+function generarHorasDisponibles() {
+    const datalist = document.querySelector('#horasDisponibles');
+    const startTime = 10; // Hora de inicio
+    const endTime = 18;  // Hora de finalización
+    const interval = 30; // Intervalo de 30 minutos
 
-//     const inputHora = document.querySelector('#hora');
-//     const inputFecha = document.querySelector('#fecha');
+    for (let hour = startTime; hour < endTime; hour++) {
+        for (let minute = 0; minute < 60; minute += interval) {
+            let timeString = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+            const option = document.createElement('option');
+            option.value = timeString;
+            datalist.appendChild(option);
+        }
+    }
+}
 
-//     inputHora.addEventListener('input', function(e) {
-//         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
-//         const fechaCita = inputFecha.value;
+generarHorasDisponibles();
 
-//         // Comprobar si la fecha y hora ya están reservadas
-//         const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
-        
-//         if (fechaYHoraReservada) {
-//             e.target.value = '';
-//             mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
-//         } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) > 18) {
-//             e.target.value = '';
-//             mostrarAlerta('Hora no válida', 'error', '.formulario');
-//         } else {
-//             cita.hora = horaCita;
-//             console.log(cita);
-//         }
-//     });
-// }
+
+
+
 
 
 
 function mostrarHoras(horas) {
-    const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
-    const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
+    // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
+    // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
 
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
-
-    // Crear las opciones de hora en intervalos de 30 minutos
-    const generarOpcionesHoras = () => {
-        const selectHora = document.querySelector('#hora');
-        selectHora.innerHTML = ''; // Limpiar opciones anteriores
-        for (let i = 10; i <= 18; i++) {
-            const hora = i.toString().padStart(2, '0');
-            ['00', '30'].forEach(minuto => {
-                const opcion = document.createElement('option');
-                opcion.value = `${hora}:${minuto}`;
-                opcion.textContent = `${hora}:${minuto}`;
-                selectHora.appendChild(opcion);
-            });
-        }
-    }
-
-    generarOpcionesHoras();
-
-    inputFecha.addEventListener('change', function() {
-        const fechaCita = inputFecha.value;
-
-        // Deshabilitar las horas reservadas para la fecha seleccionada
-        document.querySelectorAll('#hora option').forEach(opcion => {
-            const horaCita = opcion.value;
-            const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
-            if (fechaYHoraReservada) {
-                opcion.disabled = true;
-            } else {
-                opcion.disabled = false;
-            }
-        });
-    });
 
     inputHora.addEventListener('input', function(e) {
         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
@@ -324,7 +287,6 @@ function mostrarHoras(horas) {
         }
     });
 }
-
 
 function seleccionarHora(){
 
