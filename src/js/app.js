@@ -242,7 +242,6 @@ function generarHorasDisponibles() {
     const datalist = document.querySelector('#horasDisponibles');
     const startTime = 10; // Hora de inicio
     const endTime = 19;  // Hora de finalización
-    
     const interval = 30; // Intervalo de 30 minutos
 
     for (let hour = startTime; hour < endTime; hour++) {
@@ -280,7 +279,7 @@ function mostrarHoras(horas) {
                 title: "Hora ya reservada en esa fecha",
                 text: "Por favor selecciona otra hora",
               });
-        } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) <=18) {
+        } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) == 18) {
             e.target.value = '';
             // mostrarAlerta('Hora no válida', 'error', '.formulario');
             Swal.fire({
