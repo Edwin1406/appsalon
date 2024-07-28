@@ -25,7 +25,7 @@ function inciarApp() {
     nombreCita(); //añade el nombre del cliente al objeto cita
     idCliente(); //añade el id del cliente al objeto cita
     seleccionarFecha(); // añade la fecha al objeto cita
-    seleccionarHora(); //añade la hora al objeto cita
+    // seleccionarHora(); //añade la hora al objeto cita
     mostrarResumen(); //muestra el resumen de la citA
     ApiHoras(); //consultando la api de horas disponibles  
     generarHorasDisponibles(); //genera las horas disponibles en el input de hora  
