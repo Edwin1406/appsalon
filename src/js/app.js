@@ -288,7 +288,7 @@ function mostrarHoras(horas) {
               });
         } else {
             cita.hora = horaCita;
-            console.log(cita);
+            console.log(cita); 
         }
     });
 }
