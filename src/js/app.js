@@ -241,7 +241,8 @@ async function ApiHoras(){
 function generarHorasDisponibles() {
     const datalist = document.querySelector('#horasDisponibles');
     const startTime = 10; // Hora de inicio
-    const endTime = 18;  // Hora de finalización
+    const endTime = 19;  // Hora de finalización
+    
     const interval = 30; // Intervalo de 30 minutos
 
     for (let hour = startTime; hour < endTime; hour++) {
