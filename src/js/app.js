@@ -27,7 +27,8 @@ function inciarApp() {
     seleccionarFecha(); // añade la fecha al objeto cita
     seleccionarHora(); //añade la hora al objeto cita
     mostrarResumen(); //muestra el resumen de la citA
-    ApiHoras(); //consultando la api de horas disponibles    
+    ApiHoras(); //consultando la api de horas disponibles  
+    generarHorasDisponibles(); //genera las horas disponibles en el input de hora  
 }
 
 
@@ -240,7 +241,7 @@ async function ApiHoras(){
 function generarHorasDisponibles() {
     const datalist = document.querySelector('#horasDisponibles');
     const startTime = 10; // Hora de inicio
-    const endTime = 18;  // Hora de finalización
+    const endTime = 19;  // Hora de finalización
     const interval = 30; // Intervalo de 30 minutos
 
     for (let hour = startTime; hour < endTime; hour++) {
@@ -252,12 +253,6 @@ function generarHorasDisponibles() {
         }
     }
 }
-
-generarHorasDisponibles();
-
-
-
-
 
 
 
