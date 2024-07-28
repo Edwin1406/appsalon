@@ -272,10 +272,20 @@ function mostrarHoras(horas) {
         
         if (fechaYHoraReservada) {
             e.target.value = '';
-            mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
+            // mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
+            Swal.fire({
+                icon: "error",
+                title: "Hora ya reservada en esa fecha",
+                text: "Por favor selecciona otra hora",
+              });
         } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) > 18) {
             e.target.value = '';
-            mostrarAlerta('Hora no válida', 'error', '.formulario');
+            // mostrarAlerta('Hora no válida', 'error', '.formulario');
+            Swal.fire({
+                icon: "error",
+                title: "Hora no valida",
+                text: "Ya esa hora no esta disponible",
+              });
         } else {
             cita.hora = horaCita;
             console.log(cita);
