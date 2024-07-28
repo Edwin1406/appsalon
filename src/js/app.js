@@ -294,11 +294,7 @@ function mostrarHoras(horas) {
     });
 }
 
-
-
-
-
-
+// -------------------------------------------  ALERTAS ----------------------------------------------
 
 function mostrarAlerta(mensaje,tipo,elemento,desparece=true){
     // si hay una alerta previa no crear otra
