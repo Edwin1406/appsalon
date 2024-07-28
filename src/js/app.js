@@ -238,58 +238,72 @@ async function ApiHoras(){
 
 
 // function mostrarHoras(horas) {
-
-//     const horasReservadas = horas.map(horasReservadas => {
-//         return horasReservadas.hora.slice(0, 5); // Elimina los últimos tres caracteres (los segundos y el ':')
-//     });
-    
-//     console.log(horasReservadas); // ['15:50', '10:30', '10:51']
-
- 
-//     const fechaReservada = horas.map(fechaReservada => {
-//         return fechaReservada.fecha;
-//    });
-//     console.log(fechaReservada);
-
+//     // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
+//     // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
 
 //     const inputHora = document.querySelector('#hora');
-//     // const inputFecha = document.querySelector('#fecha');
+//     const inputFecha = document.querySelector('#fecha');
 
-//     inputHora.addEventListener('input',function(e){
-//         const fechaCita = e.target.value;
-//         const fechacorta = fechaCita.split("-");
-//         console.log(fechaCita);
-       
+//     inputHora.addEventListener('input', function(e) {
+//         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
+//         const fechaCita = inputFecha.value;
 
-//         const horaCita = e.target.value
-//         const hora = horaCita.split(":");
-//         const horaReservada = horasReservadas.includes(horaCita);
-//         const fechaReservadad = fechaReservada.includes(fechacorta);
-//         console.log(`fecha reservada: ${fechaReservadad}`);
-//         console.log(`hora reservada: ${horaReservada}`);
-    
-//         if(hora[0] < 10 || hora[0] > 18){
+//         // Comprobar si la fecha y hora ya están reservadas
+//         const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
+        
+//         if (fechaYHoraReservada) {
 //             e.target.value = '';
-//            mostrarAlerta('Hora no valida','error','.formulario');
-//         // }else if(horaReservada){
-//         //     e.target.value = '';
-//         //     mostrarAlerta('Hora ya reservada','error','.formulario');
-//         }else{
+//             mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
+//         } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) > 18) {
+//             e.target.value = '';
+//             mostrarAlerta('Hora no válida', 'error', '.formulario');
+//         } else {
 //             cita.hora = horaCita;
 //             console.log(cita);
-          
 //         }
-//         })
-   
-    
+//     });
 // }
 
+
+
 function mostrarHoras(horas) {
-    // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
-    // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
+    const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
+    const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
 
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
+
+    // Crear las opciones de hora en intervalos de 30 minutos
+    const generarOpcionesHoras = () => {
+        const selectHora = document.querySelector('#hora');
+        selectHora.innerHTML = ''; // Limpiar opciones anteriores
+        for (let i = 10; i <= 18; i++) {
+            const hora = i.toString().padStart(2, '0');
+            ['00', '30'].forEach(minuto => {
+                const opcion = document.createElement('option');
+                opcion.value = `${hora}:${minuto}`;
+                opcion.textContent = `${hora}:${minuto}`;
+                selectHora.appendChild(opcion);
+            });
+        }
+    }
+
+    generarOpcionesHoras();
+
+    inputFecha.addEventListener('change', function() {
+        const fechaCita = inputFecha.value;
+
+        // Deshabilitar las horas reservadas para la fecha seleccionada
+        document.querySelectorAll('#hora option').forEach(opcion => {
+            const horaCita = opcion.value;
+            const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
+            if (fechaYHoraReservada) {
+                opcion.disabled = true;
+            } else {
+                opcion.disabled = false;
+            }
+        });
+    });
 
     inputHora.addEventListener('input', function(e) {
         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
@@ -310,6 +324,7 @@ function mostrarHoras(horas) {
         }
     });
 }
+
 
 function seleccionarHora(){
 
