@@ -271,9 +271,9 @@ function mostrarHoras(horas) {
         if(hora[0] < 10 || hora[0] > 18){
             e.target.value = '';
            mostrarAlerta('Hora no valida','error','.formulario');
-        }else if(horaReservada){
-            e.target.value = '';
-            mostrarAlerta('Hora ya reservada','error','.formulario');
+        // }else if(horaReservada){
+        //     e.target.value = '';
+        //     mostrarAlerta('Hora ya reservada','error','.formulario');
         }else{
             cita.hora = horaCita;
             console.log(cita);
