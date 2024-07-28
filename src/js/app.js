@@ -266,6 +266,7 @@ function mostrarHoras(horas) {
     inputHora.addEventListener('input', function(e) {
         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
         const fechaCita = inputFecha.value;
+        console.log(fechaCita);
 
         // Comprobar si la fecha y hora ya están reservadas
         const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
