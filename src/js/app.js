@@ -253,12 +253,12 @@ function mostrarHoras(horas) {
 
 
     const inputHora = document.querySelector('#hora');
-    const inputFecha = document.querySelector('#fecha');
+    // const inputFecha = document.querySelector('#fecha');
 
     inputHora.addEventListener('input',function(e){
         const fechaCita = e.target.value;
         const fechacorta = fechaCita.split("-");
-        console.log(fechacorta);
+        console.log(fechaCita);
        
 
         const horaCita = e.target.value
