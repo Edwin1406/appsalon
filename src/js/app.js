@@ -285,8 +285,8 @@ async function ApiHoras(){
 // }
 
 function mostrarHoras(horas) {
-    const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
-    const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
+    // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
+    // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
 
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
