@@ -61,6 +61,10 @@ class ServicioController{
             $servicio->sincronizar($_POST);
             $alertas = $servicio->validar();
             // debuguear($_POST);
+            if(empty($alertas)){
+                $servicio->guardar();
+                header('Location: /servicios');
+            }
 
         }
         $router->render('servicios/actualizar',[
