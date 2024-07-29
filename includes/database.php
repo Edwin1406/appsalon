@@ -1,6 +1,11 @@
 <?php
 
-$db = mysqli_connect('localhost', 'u504036119_appsalon', 'Edwin19982.', 'u504036119_appsalon');
+$db = mysqli_connect(
+$_ENV['BD_HOST'], 
+$_ENV['BD_USER'], 
+$_ENV['BD_PASS'],
+$_ENV['DB_NAME'],
+);
 
 
 if (!$db) {
