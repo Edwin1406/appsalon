@@ -224,7 +224,7 @@ function seleccionarFecha(){
 
 async function ApiHoras(){
     try {
-        const url = `${location.origin}/api/servicios`;
+        const url = `${location.origin}/api/horas`;
         const resultado = await fetch(url);
         const horas = await resultado.json();
         mostrarHoras(horas);
@@ -433,7 +433,7 @@ async function reservarCita(){
     try {
 
          //conexion a la api 
-      const url = 'https://serviacrilico.com/api/citas';
+      const url = `${location.origin}/api/citas`;
       const respuesta = await fetch(url,{
           method:'POST',
           body:datos
