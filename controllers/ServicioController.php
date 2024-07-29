@@ -60,7 +60,7 @@ class ServicioController{
 
             $servicio->sincronizar($_POST);
             $alertas = $servicio->validar();
-            debuguear($_POST);
+            // debuguear($_POST);
 
         }
         $router->render('servicios/actualizar',[
