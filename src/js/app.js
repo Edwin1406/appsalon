@@ -118,7 +118,7 @@ function paginaAnterior(){
 
 async function ApiServicios(){
     try {
-        const url = 'https://serviacrilico.com/api/servicios';
+        const url = `${location.origin}/api/servicios`;
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -224,7 +224,7 @@ function seleccionarFecha(){
 
 async function ApiHoras(){
     try {
-        const url = 'https://serviacrilico.com/api/horas';
+        const url = `${location.origin}/api/servicios`;
         const resultado = await fetch(url);
         const horas = await resultado.json();
         mostrarHoras(horas);
