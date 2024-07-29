@@ -79,6 +79,7 @@ class ServicioController{
     }
     // -------------------------------------ELIMINAR-------------------------------------
     public static function eliminar(){
+        session_start();
         isAdmin();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
