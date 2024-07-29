@@ -50,6 +50,7 @@ class ServicioController{
         session_start();
        
         $id = is_numeric($_GET['id']) ? $_GET['id'] : null;
+        debuguear($id);
         $servicio = Servicio::find($id);
         $alertas = [];
 
