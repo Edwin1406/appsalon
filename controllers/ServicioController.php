@@ -56,6 +56,9 @@ class ServicioController{
         $alertas = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            
+
+            $servicio->sincronizar($_POST);
             $alertas = $servicio->validar();
             debuguear($_POST);
 
