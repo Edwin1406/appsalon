@@ -22,12 +22,12 @@ class email {
         $mail = new PHPMailer();
         // configurar el SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'agrolecc@gmail.com';
-        $mail->Password = 'fkbavwbfpyqikmws';
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        $mail->Port = $_ENV['EMAIL_PORT'];
 
           // configurar el contenido del email
         $mail->setFrom('agrolecc@gmail.com');
@@ -58,12 +58,12 @@ class email {
         $mail = new PHPMailer();
         // configurar el SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.hostinger.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'agrolecc@gmail.com';
-        $mail->Password = 'fkbavwbfpyqikmws';
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        $mail->Port = $_ENV['EMAIL_PORT'];
 
           // configurar el contenido del email
         $mail->setFrom('agrolecc@gmail.com');
