@@ -76,7 +76,9 @@ class ServicioController{
     // -------------------------------------ELIMINAR-------------------------------------
     public static function eliminar(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            debuguear($_POST);
+          $id= $_POST['id'];
+            $servicio = Servicio::find($id);
+            debuguear($servicio);
 
         }
     }
