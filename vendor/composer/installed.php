@@ -3,7 +3,7 @@
         'name' => 'edwin/appsalon',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '55269ee25a77d3506b5c36c4c717f209eb51a2c1',
+        'reference' => '6715a8c660510b9580e1608eadc18145211faf4d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'edwin/appsalon' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '55269ee25a77d3506b5c36c4c717f209eb51a2c1',
+            'reference' => '6715a8c660510b9580e1608eadc18145211faf4d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
