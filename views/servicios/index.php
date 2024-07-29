@@ -8,7 +8,7 @@
             <p> Nombre : <span> <?php echo $servicio->nombre?></span></p>
             <p> Precio : <span> $ <?php echo $servicio->precio?></span></p>
             <div class="acciones">
-                <a href="/servicios/actualizar?id=<?php echo $servicio->id ?>">Actualizar</a>
+                <a  class="boton" href="/servicios/actualizar?id=<?php echo $servicio->id ?>">Actualizar</a>
             </div>
         </li>
     <?php endforeach?>
