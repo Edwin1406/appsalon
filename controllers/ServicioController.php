@@ -18,6 +18,7 @@ class ServicioController{
         ]);
         
     }
+    // -------------------------------------CREAR-------------------------------------
     public static function crear(Router $router){
         session_start();
         // crear un nuevo servicio vacio
@@ -30,6 +31,10 @@ class ServicioController{
             // validacion
             $alertas = $servicio->validar();
             // debuguear($alertas);
+            if(empty($alertas)){
+                $servicio->guardar();
+                header('Location: /servicios');
+            }
         }
 
         $router->render('servicios/crear',[
@@ -38,6 +43,8 @@ class ServicioController{
             'alertas' => $alertas
         ]);
     }
+
+    // -------------------------------------ACTUALIZAR-------------------------------------
     public static function actualizar(Router $router){
         session_start();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -47,6 +54,7 @@ class ServicioController{
             'nombre' => $_SESSION['nombre']
         ]);
     }
+    // -------------------------------------ELIMINAR-------------------------------------
     public static function eliminar(Router $router){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
