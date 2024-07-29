@@ -49,9 +49,9 @@ class ServicioController{
 
         session_start();
 
-        $servicio = new Servicio;
+        $servicio = Servicio::find($_GET['id']);
         $alertas = [];
-        
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $alertas = $servicio->validar();
             debuguear($_POST);
