@@ -78,7 +78,8 @@ class ServicioController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
           $id= $_POST['id'];
             $servicio = Servicio::find($id);
-            debuguear($servicio);
+            $servicio->eliminar();
+            // debuguear($servicio);
 
         }
     }
