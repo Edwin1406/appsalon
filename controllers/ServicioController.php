@@ -46,13 +46,21 @@ class ServicioController{
 
     // -------------------------------------ACTUALIZAR-------------------------------------
     public static function actualizar(Router $router){
+
         session_start();
+
+        $servicio = new Servicio;
+        $alertas = [];
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $alertas = $servicio->validar();
             debuguear($_POST);
 
         }
         $router->render('servicios/actualizar',[
-            'nombre' => $_SESSION['nombre']
+            'nombre' => $_SESSION['nombre'],
+            'servicio' => $servicio,
+            'alertas' => $alertas
         ]);
     }
     // -------------------------------------ELIMINAR-------------------------------------
