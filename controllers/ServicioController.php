@@ -49,10 +49,10 @@ class ServicioController{
 
         session_start();
        
-        $id = is_numeric($_GET['id']);
-        if(!$id) return;
+        
+        if(!is_numeric($_GET['id'])) return;
         // debuguear($id);
-        $servicio = Servicio::find($id);
+        $servicio = Servicio::find($_GET['id']);
         $alertas = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
