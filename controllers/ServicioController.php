@@ -48,6 +48,7 @@ class ServicioController{
     public static function actualizar(Router $router){
         session_start();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            debuguear($_POST);
 
         }
         $router->render('servicios/actualizar',[
