@@ -9,7 +9,8 @@
             <p> Precio : <span> $ <?php echo $servicio->precio?></span></p>
             <div class="acciones">
                 <a  class="boton" href="/servicios/actualizar?id=<?php echo $servicio->id ?>">Actualizar</a>
-            <form action="/servicios/eliminar">
+
+            <form action="/servicios/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $servicio->id?>">
                 <input type="submit" value="Eliminar" class="boton-rojo">
             </form>
