@@ -170,6 +170,7 @@ font-weight: 400;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border-radius: 1rem;
 
 
 
@@ -177,7 +178,7 @@ font-weight: 400;
 @media(min-width:768px){
     .boton{
         display: inline-block;
-        
+
     }
 }
 
