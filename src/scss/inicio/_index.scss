@@ -1,0 +1,6 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app{
+    min-height: 100vh;
+}
