@@ -107,14 +107,6 @@ color: var(--negro);
 font-weight: 400;
 }
 
-.logo__bold {
-    font-weight: 700;
-    background: linear-gradient(to right, #0891B2 0%, lighten(#0891B2, 30%) 100%);
-    color: transparent;
-    -webkit-background-clip: text; /* Necesario para Safari y Chrome */
-    background-clip: text; /* Para otros navegadores que soportan esta propiedad */
-    text-align: center;
-}
 
 
 @media(min-width:768px){
