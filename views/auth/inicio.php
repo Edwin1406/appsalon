@@ -5,7 +5,7 @@
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="/">
-            <h1 class="logo__nombre">Blog <span class="logo__bold">Odontologia </span></h1>
+            <h1 class="logo__nombre no-margin">Blog <span class="logo__bold">Odontologia </span></h1>
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
