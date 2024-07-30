@@ -74,3 +74,9 @@ img{
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
