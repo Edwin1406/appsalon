@@ -1,13 +1,16 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.app-header{
-    // margin-top: 0;
-    background: url('/public/build/img/2.jpg');
-    height: 60rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-   
+.header{
+
+    margin-top: 0;
+    .app-header{
+        background: url('/public/build/img/2.jpg');
+        height: 60rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+       
+    }
 }
 .contenedor-app{
     

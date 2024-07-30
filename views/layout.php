@@ -17,15 +17,20 @@
 </head>
 
 <body>
-    <header class="app-header">
-        <nav class="nav-principal">
-            <a href="/">Inicio</a>
-            <a href="/cita">Citas</a>
-            <a href="/servicios">Servicios</a>
-            <a href="/admin">Administrador</a>
-            <a href="/logout">Cerrar Sesión</a>
-        </nav>
-    </header>
+    <div class="header">
+
+
+        <header class="app-header">
+            <nav class="nav-principal">
+                <a href="/">Inicio</a>
+                <a href="/cita">Citas</a>
+                <a href="/servicios">Servicios</a>
+                <a href="/admin">Administrador</a>
+                <a href="/logout">Cerrar Sesión</a>
+            </nav>
+        </header>
+
+    </div>
 
     <div class="contenedor-app">
 
