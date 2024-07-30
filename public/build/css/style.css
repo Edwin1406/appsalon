@@ -136,6 +136,9 @@ color: var(--negro);
 .logo__nombre{
 font-weight: 400;
 }
+.logo__nombre:hover{
+    color: var(--morado);
+}
 
 
 
@@ -157,9 +160,12 @@ font-weight: 400;
     margin: 0;
 }
 .navegacion__enlace:hover{
-    color:var(--primario);
+    color:var(--rosa);
     
+}
 
+.logo__bold{
+color: var(--blanco);
 }
 
 
