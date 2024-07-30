@@ -15,12 +15,19 @@
     
 </head>
 <body>
-<header class="header">
-    
 
-</header>
 
     <div class="contenedor-app">
+        <header class="app-header">
+            <p class="nombre-usuario">Hola: <span> <?php echo $_SESSION['nombre'] ?? ''; ?> </span></p>
+            <nav class="nav-principal">
+                <a href="/">Inicio</a>
+                <a href="/cita">Citas</a>
+                <a href="/servicios">Servicios</a>
+                <a href="/admin">Administrador</a>
+                <a href="/logout">Cerrar Sesión</a>
+            </nav>
+        </header>
         <div class="imagen"></div>
         <div class="app">
             <?php echo $contenido; ?>
