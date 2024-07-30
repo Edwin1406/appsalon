@@ -110,7 +110,7 @@ font-weight: 400;
 .logo__bold{
     font-weight: 700;
     background: linear-gradient(to right, #0891B2 0%,lighten(#0891B2,30%) 100%);
-    color: transparent;
+    /* color: transparent; */
     background-clip: text;
     /* font-size: 7rem; */
     text-align: center;
