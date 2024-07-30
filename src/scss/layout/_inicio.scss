@@ -2,7 +2,8 @@
 @use 'base/mixins' as m;
 .contenedor-app{
   
-        display: block;
+    display: block;
+    margin-top: 0;
        
     
     .app-header{
