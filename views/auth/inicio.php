@@ -9,7 +9,7 @@
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
-              <a href="" class="navegacion__enlace">Cursos</a>
+              <a href="" class="navegacion__enlace">.</a>
               <a href="" class="navegacion__enlace"> Contacto</a>
             </nav>
          
