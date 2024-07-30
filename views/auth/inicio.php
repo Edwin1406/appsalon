@@ -5,7 +5,10 @@
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="">
-            <h1 class="logo__bold">new dental</h1>
+            <div class="logo__bold">
+    new dental
+</div>
+
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
