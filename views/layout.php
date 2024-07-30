@@ -17,17 +17,7 @@
 </head>
 
 <body>
-    <div class="header">
-
-
-        <header class="app-header">
-           <div class="header__texto">
-            <h2 class="no-margin">¡Te ayudamos para que tu sonrisa esté siempre perfecta!</h2>
-            <p class="no-margin">Agenda tus citas</p>
-           </div>
-        </header>
-
-    </div>
+    
 
     <div class="contenedor-app">
 
@@ -37,6 +27,14 @@
         </div>
 
     </div>
+    
+    <?php
+    include_once __DIR__ . '/templates/header.php';
+    echo $contenido; 
+    include_once __DIR__ . '/templates/footer.php';
+    
+    ?>
+    
     <?php echo $script ?? ''; ?>
 
 
