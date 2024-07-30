@@ -132,10 +132,9 @@ font-weight: 400;
     text-align: center;
     font-size: 1.8rem;
     color: var(--negro);
-    :hover{
-        background-color: #0891B2;
-    }
-
+}
+.navegacion__enlace:hover{
+    background-color: #4338CA;
 }
 
 
