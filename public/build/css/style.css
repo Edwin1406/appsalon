@@ -104,7 +104,7 @@ img{
 
 .header__texto{
     text-align: center;
-    color: var(--negro);
+    color: var(--blanco);
     margin-top: 5rem;
     position: relative;
     z-index: 2;
