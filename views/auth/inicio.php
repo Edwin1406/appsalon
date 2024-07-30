@@ -3,8 +3,10 @@
 <header class="header">
     <div class="contenedor">
         <div class="barra">
-            <a class="logo" href="/login"> login</a>
+            <a class="logo" href="/login">
             <h1>Blog <span>Odontologia </span></h1>
+            </a>
+         
         </div>
     </div>
     <div class="header__texto">
