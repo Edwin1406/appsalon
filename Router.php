@@ -58,7 +58,6 @@ class Router {
          include __DIR__ . "/views/$view.php";
          $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
          include __DIR__ . "/views/layout.php";
-         
 
      }
 }
