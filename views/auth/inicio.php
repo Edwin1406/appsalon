@@ -5,8 +5,13 @@
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="/">
-            <h1>Blog <span>Odontologia </span></h1>
+            <h1 class="logo__nombre">Blog <span class="logo__bold">Odontologia </span></h1>
             </a>
+            <nav class="navegacion">
+              <a href="" class="navegacion__enlace">Nosotros</a>
+              <a href="" class="navegacion__enlace">Cursos</a>
+              <a href="" class="navegacion__enlace"> Contacto</a>
+            </nav>
          
         </div>
     </div>
