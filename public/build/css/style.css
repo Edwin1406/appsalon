@@ -97,11 +97,17 @@ img{
     z-index: 1; /* Asegura que el sombreado esté encima de la imagen */
 }
 
+.barra{
+    position: relative;
+    z-index: 2;
+}
+
 .header__texto{
     text-align: center;
     color: var(--negro);
     margin-top: 5rem;
 }
+
 
 
 @media(min-width:768px){
