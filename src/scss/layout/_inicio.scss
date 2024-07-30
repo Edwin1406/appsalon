@@ -5,30 +5,11 @@
         display: block;
        
     
-  
-    
-    .app{
-        width: 95%;
-        margin: 0 auto;
-        padding: 3rem 0;
-        @include m.tablet{
-           overflow:auto;
-          
-        }
-    }
-        
-    
     .app-header{
         height: 20rem;
         background: url('/public/build/img/2.jpg');
         background-size: cover;
         background-position: center center;
-        @include m.tablet{
-           
-            height: auto;
-            // background-size: contain;
-            // background-repeat: no-repeat;
-            
-        }
+       
     }
 }
