@@ -1,9 +1,10 @@
     <link rel="stylesheet" href="/public/build/css/style.css">
 
 <header class="header">
+
     <div class="contenedor">
         <div class="barra">
-            <a class="logo" href="/login">
+            <a class="logo" href="/">
             <h1>Blog <span>Odontologia </span></h1>
             </a>
          
@@ -13,5 +14,6 @@
         <h2 class="no-margin">hola</h2>
     <p class="no-margin">aprtende de mi </p>
     </div>
+
 
 </header>
