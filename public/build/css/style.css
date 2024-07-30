@@ -161,17 +161,26 @@ font-weight: 400;
 }
 
 .boton{
-    background-color: var(--gris);
-    padding: 1.5rem 4rem;
-    color: var(--negro);
-    font-size: 1.6rem;
-    display: inline-block;
-    font-weight: 700;
-    border: none;
-    transition-property: background-color;
-    transition-duration: .3s;
-    text-align: center;
     display: block;
-    border-radius: 1rem;
-    width: 100%;
+    font-family: var(--funteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+
+
+}
+@media(min-width:768px){
+    .boton{
+        display: inline-block;
+        
+    }
+}
+
+.boton--primario{
+    background-color: var(--negro);
 }
