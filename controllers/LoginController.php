@@ -14,7 +14,10 @@ class LoginController
     {
         $router->render('auth/paginaNoEncontrada');
     }
-
+    public static function inicio(Router $router)
+    {
+        $router->render('inicio/index');
+    }
     public static function login(Router $router)
     {
         $alertas = [];
@@ -225,9 +228,6 @@ class LoginController
 
 
 
-    public static function inicio(Router $router)
-    {
-        $router->render('inicio/index');
-    }
+    
    
 }
