@@ -222,5 +222,12 @@ class LoginController
             'error' => $error
         ]);
     }
+
+
+
+    public static function inicio(Router $router)
+    {
+ echo 'inicio';
+    }
    
 }

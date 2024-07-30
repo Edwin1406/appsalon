@@ -18,6 +18,7 @@ $router = new Router();
 // Rutas de inicio de sesión
 $router->get('/paginaNoEncontrada', [LoginController::class, 'paginaNoEncontrada']);
 
+$router->get('/', [LoginController::class, 'inicio']);
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
 // $router->get('/', [LoginController::class, 'login']);
