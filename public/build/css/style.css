@@ -30,6 +30,7 @@ body{
     line-height: 2;
   
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.5634628851540616) 100%);
+    margin: 0;
 
 
 }
@@ -118,6 +119,12 @@ img{
     padding: 0;
 }
 
+/* .app{
+    margin: 0;
+}
+.contenedor-app{
+    margin: 0;
+} */
 
 
 @media(min-width:768px){
