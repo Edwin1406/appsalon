@@ -22,8 +22,8 @@
 
         <header class="app-header">
            <div class="header__texto">
-            <h2 class="no-margin">blog</h2>
-            <p class="no-margin">Administra tus citas</p>
+            <h2 class="no-margin">¡Te ayudamos para que tu sonrisa esté siempre perfecta!</h2>
+            <p class="no-margin">Agenda tus citas</p>
            </div>
         </header>
 
