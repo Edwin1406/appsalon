@@ -101,3 +101,21 @@ font-weight: 400;
 .logo__bold{
     font-weight: 700;
 }
+
+
+@media(min-width:768px){
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+
+}
+
+
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--negro);
+
+}
