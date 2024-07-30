@@ -14,6 +14,10 @@ class LoginController
     {
         $router->render('auth/paginaNoEncontrada');
     }
+    public static function inicio(Router $router)
+    {
+        $router->render('auth/inicio');
+    }
    
     public static function login(Router $router)
     {
