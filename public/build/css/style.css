@@ -134,7 +134,9 @@ font-weight: 400;
     color: var(--negro);
 }
 .navegacion__enlace:hover{
-    background-color: #4338CA;
+    background-color: #4eb4df;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 
