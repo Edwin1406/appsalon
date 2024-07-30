@@ -32,7 +32,7 @@
                 <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
-                <h4 class="no-margin">tipos de </h4>
+                <h4 class="no-margin">Cuidar tu imagen, también es cuidar tu sonrisa.</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur optio cupiditate 
                     dignissimos aperiam molestias sit illo a 
                     consequuntur est? Sit, provident. Reiciendis, quae tenetur! Est fugiat animi quam quia laboriosam.</p>
