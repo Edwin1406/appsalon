@@ -1,6 +1,11 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.body{
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
 .header{
     background-image: url('/public/build/img/2.jpg');
     height: 60rem;
