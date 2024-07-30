@@ -57,7 +57,7 @@ class Router {
         ob_start(); //inicia el almacenamiento en el memoria
          include __DIR__ . "/views/$view.php";
          $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
-         include __DIR__ . "/views/layout.php";
+        //  include __DIR__ . "/views/layout.php";
 
      }
 }
