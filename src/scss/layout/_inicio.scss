@@ -1,36 +1,4 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.header{
 
-    margin: 0;
-   
-   
-    .app-header{
-        background: url('/public/build/img/fondo.jpg');
-        height: 40rem;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        
-    }
-    
-    .header__texto{
-        text-align: center;
-        padding-top: 5rem;
-        .no-margin{
-            color: black;
-        }
-    }
-}
-.contenedor-app{
-    
-    display: block;
-  margin-top: 0;
-//   .imagen{
-//     background-image: none;
-//   }
-    
-
-   
-}
