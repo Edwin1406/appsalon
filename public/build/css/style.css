@@ -93,7 +93,7 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Color y opacidad del sombreado */
+    background: var(--indigo); /* Color y opacidad del sombreado */
     z-index: 1; /* Asegura que el sombreado esté encima de la imagen */
 }
 
