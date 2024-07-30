@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/public/build/css/app.css">
+
+
 <h1 class="nombre-pagina"> Recuperar Password</h1>
 <p class="descripcion-pagina">Coloca tu nueva contraseña</p>
 

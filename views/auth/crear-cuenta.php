@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/build/css/app.css">
+
 <h1 class="nombre-pagina">Crear cuenta</h1>
 <p class="descripcion-pagina">LLena el siguiente formulario para crear una cuenta</p>
 
