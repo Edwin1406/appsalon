@@ -86,6 +86,17 @@
                 <a href="/login" class="boton boton--secundario"> entrar</a>
 
             </li>
+            <li class="widget-cuerso">
+                <h4 class="no-margin">tecnica</h4>
+                <p class="widget-curso__label"> Precio:
+                    <span class="widget-curso__info">$100</span>
+                </p>
+                <p class="widget-curso__label"> cupo:
+                    <span class="widget-curso__info">$100</span>
+                </p>
+                <a href="/login" class="boton boton--secundario"> entrar</a>
+
+            </li>
 
         </ul>
 
