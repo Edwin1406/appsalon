@@ -1,6 +1,6 @@
 :root{
-    --funteHeading: 'Roboto', sans-serif;
-    --funteParrafos: 'Open Sans', sans-serif;
+    --funteHeading: 'Inter', sans-serif;
+    --funteParrafos:  'Open Sans', sans-serif;
     --primario: #ff4d4d;
     --blanco: #fff;
     --negro: #000;
@@ -51,6 +51,7 @@ h4{
 
 img{
     max-width: 100%;
+    border-radius: 2rem;
 }
 
 .no-margin{
