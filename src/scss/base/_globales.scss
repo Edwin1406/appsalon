@@ -1,37 +1,31 @@
 @use 'variables' as v;
-@use 'mixins' as m;
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 html {
     font-size: 62.5%;
     box-sizing: border-box;
     height: 100%;
 }
 body {
-    min-height: 100%;
-  
-    display: flex;
-    flex-direction: column;
-    background-color: v.$negro;
-    color: v.$blanco;
-    font-family: v.$fuente_principal;
+    // font-family: v.$fuente_textos;
     font-size: 1.6rem;
-    @include m.tablet{
-        height: 100%;
-    } 
+    min-height: 100%;
+    line-height: 2;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
 .contenedor {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
 }
+.contenedor-sm {
+    max-width: 70rem;
+    margin: 0 auto;
+}
 a {
     text-decoration: none;
 }
-
 img {
     max-width: 100%;
 }
