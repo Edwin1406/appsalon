@@ -2,7 +2,7 @@
 <p class="descripcion-pagina">Inicia Sesión con tus datos</p>
 <?php include_once __DIR__. '/../templates/alertas.php'; ?> 
 
-<form class="formulario" method="POST" action="/login">
+<form class="formulario" method="POST" action="/">
     <div class="campo">
         <label for="email">Email</label>
         <input 
