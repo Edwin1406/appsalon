@@ -108,6 +108,7 @@ img{
     margin-top: 5rem;
     position: relative;
     z-index: 2;
+    padding: 0;
 }
 
 
@@ -153,6 +154,7 @@ font-weight: 400;
     font-size: 1.8rem;
     color: var(--blanco);
     font-weight: 700;
+    margin: 0;
 }
 .navegacion__enlace:hover{
     color:var(--primario);
