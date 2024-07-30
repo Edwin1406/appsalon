@@ -155,7 +155,7 @@ font-weight: 400;
     font-weight: 700;
 }
 .navegacion__enlace:hover{
-    color: #4eb4df;
+    color:var(--morado);
     
 
 }
