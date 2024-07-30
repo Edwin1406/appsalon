@@ -21,13 +21,10 @@
 
 
         <header class="app-header">
-            <nav class="nav-principal">
-                <a href="/">Inicio</a>
-                <a href="/cita">Citas</a>
-                <a href="/servicios">Servicios</a>
-                <a href="/admin">Administrador</a>
-                <a href="/logout">Cerrar Sesión</a>
-            </nav>
+           <div class="header__texto">
+            <h2 class="no-margin">blog</h2>
+            <p class="no-margin">Administra tus citas</p>
+           </div>
         </header>
 
     </div>
