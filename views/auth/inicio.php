@@ -28,7 +28,7 @@
         <h3> Nuestros</h3>
         <article class="entrada">
             <div class="entrada__imagen">
-                <img src="/public/build/img/odontologia.jpg" alt="imagen blog">
+            <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
                 <h4 class="no-margin">tipos de </h4>
@@ -44,7 +44,7 @@
         <h3> Nuestros</h3>
         <article class="entrada">
             <div class="entrada__imagen">
-                <img src="/public/build/img/odontologia.jpg" alt="imagen blog">
+            <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
                 <h4 class="no-margin">tipos de </h4>
