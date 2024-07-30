@@ -135,7 +135,7 @@ font-weight: 400;
 }
 .navegacion__enlace:hover{
     background-color: #4eb4df;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 1rem;
 }
 
