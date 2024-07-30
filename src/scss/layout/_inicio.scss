@@ -2,24 +2,12 @@
 @use 'base/mixins' as m;
 
 .contenedor-app{
-    @include m.tablet{
-        display: grid;
-        // grid-template-columns: repeat(2, 1fr);
-        min-height: 100vh;
-    } 
+   
   
     .header{
         height: 20rem;
         background: url('/public/build/img/2.jpg');
-        background-size: cover;
-        background-position: center center;
-        @include m.tablet{
-           
-            height: auto;
-            // background-size: contain;
-            // background-repeat: no-repeat;
-            
-        }
+        
     }
     .app{
         width: 95%;
