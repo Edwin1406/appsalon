@@ -15,10 +15,7 @@
     
 </head>
 <body>
-
-
-    <div class="contenedor-app">
-        <header class="app-header">
+<header class="app-header">
             <p class="nombre-usuario">Hola: <span> <?php echo $_SESSION['nombre'] ?? ''; ?> </span></p>
             <nav class="nav-principal">
                 <a href="/">Inicio</a>
@@ -28,6 +25,9 @@
                 <a href="/logout">Cerrar Sesión</a>
             </nav>
         </header>
+
+    <div class="contenedor-app">
+       
         <div class="imagen"></div>
         <div class="app">
             <?php echo $contenido; ?>
