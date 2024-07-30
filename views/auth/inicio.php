@@ -16,8 +16,8 @@
         </div>
     </div>
     <div class="header__texto">
-        <h2 class="no-margin">hola</h2>
-    <p class="no-margin">aprtende de mi </p>
+        <h2 class="no-margin">¡Te ayudamos para que tu sonrisa esté siempre perfecta!</h2>
+    <p class="no-margin">Inicio || Precios Tabacundo</p>
     </div>
 
 
