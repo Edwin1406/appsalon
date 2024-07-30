@@ -1,3 +1,6 @@
-    <link rel="stylesheet" href="/public/build/css/app.css">
+    <link rel="stylesheet" href="/public/build/css/style.css">
 
-<h1>estas en inicio</h1>
+<header class="header">
+    
+
+</header>
