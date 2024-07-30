@@ -1,6 +1,39 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.contenedor-app{
+.contenedor-app {
+    // Elimina la regla de grid para tablet
+    // @include m.tablet{
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr);
+    //     min-height: 100vh;
+    // }
+
+    // Puedes mantener las otras reglas que no afectan la estructura
     min-height: 100vh;
+
+    .imagen {
+        height: 20rem;
+        background: url('/public/build/img/2.jpg');
+        background-size: cover;
+        background-position: center center;
+        
+        // Elimina las reglas de tablet si no son necesarias
+        // @include m.tablet{
+        //     height: auto;
+        //     // background-size: contain;
+        //     // background-repeat: no-repeat;
+        // }
+    }
+    
+    .app {
+        width: 95%;
+        margin: 0 auto;
+        padding: 3rem 0;
+
+        // Elimina la regla de overflow para tablet si no es necesaria
+        // @include m.tablet{
+        //    overflow:auto;
+        // }
+    }
 }
