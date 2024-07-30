@@ -132,12 +132,12 @@ font-weight: 400;
     text-align: center;
     font-size: 1.8rem;
     color: var(--negro);
+    font-weight: 700;
 }
 .navegacion__enlace:hover{
     background-color: #4eb4df;
     padding: 0.5rem;
     border-radius: 1rem;
-    font-weight: 700;
 }
 
 
