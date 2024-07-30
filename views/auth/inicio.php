@@ -74,7 +74,7 @@
 
     <aside class="sidebar">
         <h3>nuestro servicios</h3>
-        <ul class="cursos">
+        <ul class="cursos no-padding">
             <li class="widget-cuerso">
                 <h4 class="no-margin">tecnica</h4>
                 <p class="widget-curso__label"> Precio:
