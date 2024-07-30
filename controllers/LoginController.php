@@ -225,9 +225,9 @@ class LoginController
 
 
 
-    public static function inicio(Router $router)
-    {
-        $router->render('inicio/index');
-    }
+    // public static function inicio(Router $router)
+    // {
+    //     $router->render('inicio/index');
+    // }
    
 }
