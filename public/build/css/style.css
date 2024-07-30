@@ -106,6 +106,8 @@ img{
     text-align: center;
     color: var(--negro);
     margin-top: 5rem;
+    position: relative;
+    z-index: 2;
 }
 
 
