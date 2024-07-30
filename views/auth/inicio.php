@@ -25,8 +25,13 @@
 
 <div class="contenedor contenido-principal">
     <main class="blog">
-        <h3> Nuetro</h3>
-
+        <h3> Nuestros</h3>
+        <article class="entrada">
+            <div class="entrada__imagen">
+                <img src="/public/build/img/odontologia.jpg" alt="imagen blog">
+            </div>
+        
+        </article>
     </main>
     <aside class="sidebar">
         <h3>nuestro servicios</h3>
