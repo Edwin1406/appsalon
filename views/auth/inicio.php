@@ -4,8 +4,8 @@
 
     <div class="contenedor">
         <div class="barra">
-            <a class="logo" href="/public/build/img/dentista.jpg">
-            <h1 class="logo__nombre no-margin centrar-texto">New <span class="logo__bold">Dental</span></h1>
+            <a class="logo" href="">
+            <h1 class="logo__bold">new dental</h1>
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
