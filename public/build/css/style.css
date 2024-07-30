@@ -138,3 +138,7 @@ font-weight: 400;
    }
 
 }
+
+.entrada__imagen{
+    border-radius: 1rem;
+}
