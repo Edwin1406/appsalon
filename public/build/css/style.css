@@ -4,7 +4,15 @@
     --primario: #ff4d4d;
     --blanco: #fff;
     --negro: #000;
-    --gris: #e1e1e1
+    --cyan: #0891B2;
+    --azul: #2563EB;
+    --indigo: #4338CA;
+    --morado: #7C3AED;
+    --naranja:#F59E0B;
+    --rosa: #DB2777;
+    --gris: #6b7280;
+    --grisOscuro: #4B5563;
+    --verde: rgb(0, 120, 0);
 }
 
 html{
@@ -150,4 +158,20 @@ font-weight: 400;
 .entrada:last-of-type{
     border: none;
     margin-bottom: 0;
+}
+
+.boton{
+    background-color: var(--gris);
+    padding: 1.5rem 4rem;
+    color: var(--negro);
+    font-size: 1.6rem;
+    display: inline-block;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    display: block;
+    border-radius: 1rem;
+    width: 100%;
 }
