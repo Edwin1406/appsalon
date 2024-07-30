@@ -189,3 +189,32 @@ font-weight: 400;
 .boton--secundario{
     background-color: var(--morado);
 }
+
+/* quitar viñetas */
+.cursos{
+    list-style: none;
+}
+
+.widget-curso{
+ border-bottom: 1px solid var(--gris);
+ margin-bottom: 2rem;
+}
+/* quitar la lineal al utimo */
+.widget-curso:last-of-type{
+    border: none;
+    margin-bottom: 0;
+
+}
+.widget-curso__label{
+    font-weight: bold;
+    font-family: var(--funteHeading);
+}
+.widget-curso__info{
+    font-weight: normal;
+
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
