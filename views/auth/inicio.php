@@ -22,3 +22,15 @@
 
 
 </header>
+
+<div class="contenedor contenido-principal">
+    <main class="blog">
+        <h3> Nuetro</h3>
+
+    </main>
+    <aside class="sidebar">
+        <h3>nuestro servicios</h3>
+
+    </aside>
+
+</div>
