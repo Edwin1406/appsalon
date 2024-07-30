@@ -151,7 +151,7 @@ font-weight: 400;
     display: block;
     text-align: center;
     font-size: 1.8rem;
-    color: var(--negro);
+    color: var(--blanco);
     font-weight: 700;
 }
 .navegacion__enlace:hover{
