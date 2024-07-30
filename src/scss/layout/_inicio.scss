@@ -18,18 +18,17 @@
     }
         
     
-}
-
-.header{
-    height: 20rem;
-    background: url('/public/build/img/2.jpg');
-    background-size: cover;
-    background-position: center center;
-    @include m.tablet{
-       
-        height: auto;
-        // background-size: contain;
-        // background-repeat: no-repeat;
-        
+    .app-header{
+        height: 20rem;
+        background: url('/public/build/img/2.jpg');
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet{
+           
+            height: auto;
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            
+        }
     }
 }
