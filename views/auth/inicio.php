@@ -83,7 +83,7 @@
                 <p class="widget-curso__label"> cupo:
                     <span class="widget-curso__info">$100</span>
                 </p>
-                <a href="/login" class="boton boton--primario"> entrar</a>
+                <a href="/login" class="boton boton--secundario"> entrar</a>
 
             </li>
 

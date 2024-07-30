@@ -185,3 +185,7 @@ font-weight: 400;
 .boton--primario{
     background-color: var(--negro);
 }
+
+.boton--secundario{
+    background-color: var(--morado);
+}
