@@ -15,9 +15,7 @@
     
 </head>
 <body>
-<header class="header">
-<h1>dddd</h1>
-</header>
+
     <div class="contenedor-app">
         <div class="imagen"></div>
         <div class="app">
