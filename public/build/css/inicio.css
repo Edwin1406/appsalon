@@ -29,7 +29,9 @@ body{
     font-size: 1.6rem;
     line-height: 2;
   
-    background: radial-gradient(circle, rgb(192, 183, 187) 0%, rgba(129, 173, 202, 0.563) 100%);
+    /* background: radial-gradient(circle, rgb(192, 183, 187) 0%, rgba(129, 173, 202, 0.563) 100%); */
+    background: linear-gradient(90deg, rgba(193, 198, 200, 0.55) 15%, rgb(147, 177, 185) 100%);
+
     margin: 0;
 
 
@@ -59,6 +61,7 @@ h2{
 }
 h3{
     font-size: 3.2rem;
+    color: var(--rosa);
 }
 h4{
     font-size: 2.8rem;
@@ -277,4 +280,29 @@ color: var(--blanco);
     
     color: var(--morado);
  
+}
+
+
+.prueba{
+    background-color:var(--cyan);
+    margin: 5rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    
+}
+.prueba2{
+    background-color:var(--rosa);
+    margin: 5rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    
+}
+
+.titulo{
+    color: white;
+}
+
+.parrafo{
+    /* text-align: center; */
+color: white
 }
