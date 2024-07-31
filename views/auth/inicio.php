@@ -9,8 +9,8 @@
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
-              <a href="" class="navegacion__enlace">.</a>
               <a href="" class="navegacion__enlace"> Contacto</a>
+              <a href="/crear-cuenta" class="navegacion__enlace">Registrate</a>
             </nav>
          
         </div>
@@ -26,18 +26,19 @@
 
 <div class="contenedor contenido-principal">
     <main class="blog">
-        <h3> Nuestros</h3>
-
+        <h3>Sonríe con seguridad</h3>
+        
         <article class="entrada">
             <div class="entrada__imagen">
                 <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
-                <h4 class="no-margin">Cuidar tu imagen, también es cuidar tu sonrisa.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur optio cupiditate 
-                    dignissimos aperiam molestias sit illo a 
-                    consequuntur est? Sit, provident. Reiciendis, quae tenetur! Est fugiat animi quam quia laboriosam.</p>
-                <a href="/login" class="boton boton--primario"> entrar</a>
+                <br>
+                <h4 class="no-margin">Blanqueamiento dental</h4>
+                <p>Te ofrecemos distintas opciones de aclaramiento dental, 
+                    en tu cita de valoración te recomendaremos la más adecuada para ti, 
+                    todas tienen resultados excelentes.</p>
+                <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
             </div>
         </article>
 
@@ -46,11 +47,11 @@
                 <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
-                <h4 class="no-margin">tipos de </h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur optio cupiditate 
-                    dignissimos aperiam molestias sit illo a 
-                    consequuntur est? Sit, provident. Reiciendis, quae tenetur! Est fugiat animi quam quia laboriosam.</p>
-                <a href="/login" class="boton boton--primario"> entrar</a>
+                <br>
+                <h4 class="no-margin">Dientes perfectos</h4>
+                <p>Contamos con varios tipos de ortodoncia con los que lograremos los resultados deseados, 
+                    logrando corregir todas las imperfecciones en dientes y mordida.</p>
+                <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
             </div>
         </article>
 
@@ -59,11 +60,12 @@
                 <img src='/public/build/img/fondo.jpg' alt="imagen blog">
             </div>
             <div class="entrada__contenido">
+                <br>
                 <h4 class="no-margin">tipos de </h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur optio cupiditate 
                     dignissimos aperiam molestias sit illo a 
                     consequuntur est? Sit, provident. Reiciendis, quae tenetur! Est fugiat animi quam quia laboriosam.</p>
-                <a href="/login" class="boton boton--primario"> entrar</a>
+                <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
             </div>
         </article>
 
