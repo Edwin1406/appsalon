@@ -17,7 +17,7 @@
     </div>
     <div class="header__texto">
         <h2 class="no-margin">¡Te ayudamos para que tu sonrisa esté siempre perfecta!</h2>
-        <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
+        <a href="/" class="boton boton--primario"> Agenda tu cita</a>
     </div>
 
 
@@ -36,7 +36,7 @@
                 <h4 class="no-margin">Ortodoncia</h4>
                 <p>Contamos con varios tipos de ortodoncia con los que lograremos los resultados deseados, 
                     logrando corregir todas las imperfecciones en dientes y mordida.</p>
-                <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
+                <a href="/" class="boton boton--primario"> Agenda tu cita</a>
             </div>
         </article>
 
@@ -85,7 +85,7 @@
                 <p>Te ofrecemos distintas opciones de aclaramiento dental, 
                     en tu cita de valoración te recomendaremos la más adecuada para ti, 
                     todas tienen resultados excelentes.</p>
-                <a href="/login" class="boton boton--primario"> Agenda tu cita</a>
+                <a href="/" class="boton boton--primario"> Agenda tu cita</a>
             </div>
         </article>
 
