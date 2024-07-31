@@ -103,3 +103,21 @@
     </aside>
 
 </div>
+
+
+<footer class="footer">
+    <div class="contenedor">
+        <div class="barra">
+            <a class="logo" href="">
+            <h1 class="logo__nombre no-margin centrar-texto color">New <span class="logo__bold">Dental</span></h1>
+            </a>
+            <nav class="navegacion">
+              <a href="" class="navegacion__enlace">Nosotros</a>
+              <a href="" class="navegacion__enlace">Cursos</a>
+              <a href="" class="navegacion__enlace"> Contacto</a>
+            </nav>
+         
+        </div>
+    </div>
+
+</footer>
