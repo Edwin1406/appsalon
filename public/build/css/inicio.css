@@ -49,6 +49,7 @@ a{
 
 h1,h2,h3,h4{
     font-family: var(--funteHeading);
+    /* line-height: 1.2; */
 }
 h1{
     font-size: 4.8rem;
@@ -92,6 +93,7 @@ img{
     background-repeat: no-repeat;
     background-position: center top;
     position: relative;
+    
 }
 
 .header::after {
@@ -119,12 +121,7 @@ img{
     padding: 0;
 }
 
-/* .app{
-    margin: 0;
-}
-.contenedor-app{
-    margin: 0;
-} */
+
 
 
 @media(min-width:768px){

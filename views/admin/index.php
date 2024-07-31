@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/build/css/app.css">
+
 <h1 class="nombre-pagina">Panel de Adminsitración</h1>
 <?php
 
