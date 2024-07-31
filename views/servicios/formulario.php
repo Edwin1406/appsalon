@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/build/css/app.css">
+
 <div class="campo">
     <label for="nombre">Nombre:</label>
     <input type="text"

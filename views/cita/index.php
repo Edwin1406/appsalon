@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/build/css/app.css">
+
 <h1 class="nombre-pagina">Crear nueva cita</h1>
 <p class="descripcion-pagina">Elige tus servicios y coloca tus datos</p>
 <!-- cerrar Sesion -->
