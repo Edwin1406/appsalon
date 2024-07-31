@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/public/build/css/inicio.css">
+<link href="https://fonts.cdnfonts.com/css/dear-story" rel="stylesheet">
+
 
 <header class="header">
 
@@ -117,7 +119,7 @@
 
 
 <div class="contenedor">
-    
+
 </div>
 
 
