@@ -8,6 +8,8 @@
         <div class="barra">
             <a class="logo" href="">
             <h1 class="logo__nombre no-margin centrar-texto">New <span class="logo__bold">Dental</span></h1>
+            <h1 class="logo_subtitulo"> <span>Clínicas Odontológicas</span></h1>
+
             </a>
             <nav class="navegacion">
               <a href="" class="navegacion__enlace">Nosotros</a>
