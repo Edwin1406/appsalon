@@ -1,5 +1,7 @@
+
 :root{
-    --funteHeading: 'Inter', sans-serif;
+    --funteHeading: 'Poppins', sans-serif;
+    --funteTitulo:  'Dear story', sans-serif; 
     --funteParrafos:  'Open Sans', sans-serif;
     --primario: #ff4d4d;
     --blanco: #fff;
@@ -18,6 +20,7 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+   
 }
 
 *,*::before,*::after{
@@ -153,6 +156,7 @@ color: var(--negro);
 
 .logo__nombre{
 font-weight: 400;
+font-family: var(--funteTitulo);
 }
 .logo__nombre:hover{
     color: var(--rosa);
@@ -306,3 +310,4 @@ color: var(--blanco);
     /* text-align: center; */
 color: white
 }
+
