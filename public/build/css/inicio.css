@@ -311,3 +311,6 @@ color: var(--blanco);
 color: white
 }
 
+.logo_subtitulo{
+    font-size: 1.7rem;
+}
