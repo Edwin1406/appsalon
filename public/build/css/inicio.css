@@ -231,6 +231,7 @@ color: var(--blanco);
 }
 
 .boton--primario{
+    margin-top: 2rem;
     background-color: var(--negro);
 }
 

@@ -17,6 +17,7 @@
     </div>
     <div class="header__texto">
         <h2 class="no-margin">¡Te ayudamos para que tu sonrisa esté siempre perfecta!</h2>
+        <br>
     <a href="/" class="boton boton--primario">Agenda tu cita</a>
     </div>
 
