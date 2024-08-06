@@ -389,6 +389,17 @@ color: white
     transform: scale(0.9);
 }
 
+
+@media(max-width:768px){
+   
+    .texto{
+        color: var(--negro);
+        text-align: center;
+        margin: 3rem;
+    }
+
+}
+
 .texto{
 
   
@@ -419,5 +430,6 @@ color: white
     text-align: center;
     color: var(--blanco);
 }
+
 
 
