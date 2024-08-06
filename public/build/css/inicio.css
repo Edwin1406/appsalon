@@ -32,8 +32,8 @@ body{
     font-size: 1.6rem;
     line-height: 2;
   
-    /* background: radial-gradient(circle, rgb(192, 183, 187) 0%, rgba(129, 173, 202, 0.563) 100%); */
-    background: linear-gradient(90deg, rgba(193, 198, 200, 0.55) 15%, rgb(147, 177, 185) 100%);
+    background: radial-gradient(circle, rgb(192, 183, 187) 0%, rgba(129, 173, 202, 0.563) 100%);
+    /* background: linear-gradient(90deg, rgba(227, 150, 150, 0.55) 15%, rgb(136, 151, 155) 100%); */
 
     margin: 0;
 
@@ -288,10 +288,11 @@ color: var(--blanco);
 @media(max-width:768px){
    
     .prueba{
-        background-color:var(--azul);
+        background-color:var(--negro);
         margin: 4rem;
         padding: 4rem;
         border-radius: 1rem;
+   
         
         
     }
@@ -302,10 +303,13 @@ color: var(--blanco);
     }
 }
 .prueba{
-    background-color:var(--cyan);
-    margin: 5rem;
+    transition: transform 0.3s ease; /* Suaviza la transición al escalar */
+
+    background-color:var(--negro);
+    margin: 2rem;
     padding: 3rem;
     border-radius: 1rem;
+    color: white;
     
 }
 
@@ -316,8 +320,10 @@ color: var(--blanco);
 
 
 .prueba2{
+    transition: transform 0.3s ease; /* Suaviza la transición al escalar */
+
     background-color:var(--rosa);
-    margin: 5rem;
+    margin: 2rem;
     padding: 3rem;
     border-radius: 1rem;
     
@@ -336,3 +342,82 @@ color: white
 .logo_subtitulo{
     font-size: 1.6rem;
 }
+
+
+
+
+/* nueva seccion corregida */
+
+.h3-small{
+  margin-top: 10rem;
+   font-size: 2rem;
+    /* font-family: var(--funteTitulo);  */
+}
+
+
+
+.picture{
+    padding-top: 3rem;
+    padding-bottom: 0;
+    height: 0;
+}
+
+.imagen-picture{
+
+    height: 9rem;
+    margin: 0;
+
+   
+}
+.imagen-hover:hover{ 
+
+    transform: scale(0.99);
+    transition: transform 0.5s ease; /* Suaviza la transición al escalar */
+
+}
+
+.titulo:hover{
+    color: var(--negro);
+}
+
+
+.prueba:hover{
+    
+    transform: scale(0.9);
+}
+.prueba2:hover{
+    transform: scale(0.9);
+}
+
+.texto{
+
+  
+    padding: 3rem;
+
+    border:none;
+    color: var(--negro);
+    text-align: center;
+    background-position: center top;
+    background-image: url('/public/build/img/ani.gif');
+    margin: 10rem ;
+    font-size: 2.5rem;
+   
+}
+
+.parrafo-p:hover{
+    color: var(--blanco);
+    /* font-size:4rem; */
+   
+}
+
+.contenido{
+       background-image: url('/public/build/img/smoke.mp4');
+
+}
+
+.copy{
+    text-align: center;
+    color: var(--blanco);
+}
+
+

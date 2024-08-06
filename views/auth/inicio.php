@@ -120,8 +120,55 @@
 </div>
 
 
-<div class="contenedor">
+<div class="contenedor contenido-principal">
+    <main class="blog">
+        <article class="entrada">
+            <div class="entrada__imagen">
+                <img class="imagen-hover" src='/public/build/img/fondo.jpg' alt="imagen blog">
+            </div>
+         
+        </article>
 
+
+    </main>
+    
+    
+
+    <aside class="sidebar">
+        <div class="picture">
+            <img class="imagen-picture" src="/public/build/img/Animation.gif" alt="imagen blog">
+             
+             
+
+        </div>
+        <h3 class="h3-small"> Diseñamos para ti una nueva sonrisa</h3>
+    
+            <div>
+               
+                <h4 class="titulo">La mejor tecnología con resultados eficaces.</h4>
+                <p class="parrafo"> Sabemos lo importantes que son tus dientes para ti, 
+                    por eso trabajamos con los mejores materiales y tecnología, 
+                    garantizándote resultados increíbles y cambios positivos . </p>
+            </div>
+
+    </aside>
+
+</div>
+
+
+
+
+<div class="contenido">
+    
+    <div class="texto">
+        <h3 class="h3-small" style="font-size: 3rem;">Profesionales al cuidado de tu salud dental</h3>
+        <p class="parrafo-p">
+            Nuestro equipo de profesionales está altamente capacitado para brindarte la mejor atención y cuidado de tu salud dental, 
+            contamos con especialistas en todas las áreas de la odontología, 
+            por lo que podrás encontrar todo lo que necesitas en un solo lugar.
+        </p>
+    </div>
+    
 </div>
 
 
@@ -138,6 +185,8 @@
             </nav>
          
         </div>
+
+        <p class="copy">Todos los derechos reservados New Dental 2024</p>
     </div>
 
 </footer>
