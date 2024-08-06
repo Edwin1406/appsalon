@@ -302,6 +302,7 @@ color: var(--blanco);
         margin: 4rem;
         padding: 4rem;
         border-radius: 1rem;
+        font-size: 1px;
         
     }
 }
