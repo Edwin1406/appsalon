@@ -326,6 +326,7 @@ color: var(--blanco);
 
 .titulo{
     color: white;
+    text-align: center;
 }
 
 .parrafo{
