@@ -12,10 +12,10 @@ class AdminController
         isAdmin();
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas= explode('-',$fecha);
-        // debuguear($fechas);
-        if(!checkdate($fechas[1],$fechas[2],$fechas[0])){
-          header('Location: /paginaNoEncontrada');
-        }
+        debuguear($fechas);
+        // if(!checkdate($fechas[1],$fechas[2],$fechas[0])){
+        //   header('Location: /paginaNoEncontrada');
+        // }
 
     
         // debuguear($fecha);
