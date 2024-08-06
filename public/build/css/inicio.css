@@ -390,15 +390,6 @@ color: white
 }
 
 
-@media(max-width:768px){
-   
-    .texto{
-        color: var(--negro);
-        text-align: center;
-        margin: 3rem;
-    }
-
-}
 
 .texto{
 
@@ -410,8 +401,8 @@ color: white
     text-align: center;
     background-position: center top;
     background-image: url('/public/build/img/ani.gif');
-    margin: 10rem ;
-    font-size: 2.5rem;
+    /* margin: 10rem ; */
+    /* font-size: 2.5rem; */
    
 }
 
