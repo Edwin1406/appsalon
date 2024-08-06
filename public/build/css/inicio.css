@@ -282,8 +282,7 @@ color: var(--blanco);
 }
 .color{
     
-    /* color: var(--morado); */
- 
+    color: var(--blanco); 
 }
 
 @media(max-width:768px){
