@@ -294,6 +294,22 @@ color: var(--blanco);
     border-radius: 1rem;
     
 }
+
+@media(min-width:768px){
+   
+.prueba{
+    background-color:var(--cyan);
+    margin: 5rem;
+    padding: 4rem;
+    border-radius: 1rem;
+    
+}
+}
+
+
+
+
+
 .prueba2{
     background-color:var(--rosa);
     margin: 5rem;
