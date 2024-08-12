@@ -137,7 +137,7 @@ function mostrarServicios(servicios){
         // console.log(servicio);
         // scripting de los servicios
         const nombreServicio = document.createElement('P');
-        nombreServicio.classList.add('nombre-servicio');
+        nombreServicio.classList.add('precio-servicio');
         nombreServicio.textContent = nombre;
        
         // const precioServicio =document.createElement('P');
@@ -145,7 +145,7 @@ function mostrarServicios(servicios){
         // precioServicio.textContent = `$ ${precio}`;
 
         const odontologos = document.createElement('P');
-        odontologos.classList.add('precio-servicio');
+        odontologos.classList.add('nombre-servicio');
         odontologos.textContent = odontologo;
 
         // contenedor de servicios
