@@ -143,6 +143,10 @@ function mostrarServicios(servicios){
         precioServicio.classList.add('precio-servicio');
         precioServicio.textContent = `$ ${precio}`;
 
+        const odontologId = document.createElement('P');
+        odontologId.classList.add('odontologId');
+        odontologId.textContent = id;
+
         // contenedor de servicios
         const servicioDiv = document.createElement('DIV');
         servicioDiv.classList.add('servicio');
@@ -154,6 +158,7 @@ function mostrarServicios(servicios){
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
+        servicioDiv.appendChild(odontologId);
 
         document.querySelector('#servicios').appendChild(servicioDiv);
 
