@@ -26,9 +26,9 @@ class Servicio extends ActiveRecord{
         if(!$this->precio){
             self::$alertas['error'][] = "Debes añadir un precio al servicio";
         }
-        if($this->precio < 0){
-            self::$alertas['error'][] = "El precio debe ser mayor a 0";
-        }
+        // if($this->precio < 0){
+        //     self::$alertas['error'][] = "El precio debe ser mayor a 0";
+        // }
         if(!is_numeric($this->precio)){
             self::$alertas['error'][] = "El precio debe ser un numero";
         }
