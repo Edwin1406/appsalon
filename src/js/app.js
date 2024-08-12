@@ -140,9 +140,9 @@ function mostrarServicios(servicios){
         nombreServicio.classList.add('nombre-servicio');
         nombreServicio.textContent = nombre;
        
-        const precioServicio =document.createElement('P');
-        precioServicio.classList.add('precio-servicio');
-        precioServicio.textContent = `$ ${precio}`;
+        // const precioServicio =document.createElement('P');
+        // precioServicio.classList.add('precio-servicio');
+        // precioServicio.textContent = `$ ${precio}`;
 
         const odontologos = document.createElement('P');
         odontologos.classList.add('odontologId');
@@ -158,7 +158,7 @@ function mostrarServicios(servicios){
         }; 
         
         servicioDiv.appendChild(nombreServicio);
-        servicioDiv.appendChild(precioServicio);
+        // servicioDiv.appendChild(precioServicio);
         servicioDiv.appendChild(odontologos);
 
         document.querySelector('#servicios').appendChild(servicioDiv);
@@ -363,8 +363,8 @@ function mostrarResumen (){
         textoServicio.innerHTML = `<span>Servicio:</span> ${nombre}`;
 
 
-        // const precioServicio = document.createElement('P');
-        // precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
+        const precioServicio = document.createElement('P');
+        precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
 
     
         const odonto = document.createElement('P');
@@ -373,7 +373,7 @@ function mostrarResumen (){
     
 
         contenedorServicio.appendChild(textoServicio);
-        // contenedorServicio.appendChild(precioServicio);
+        contenedorServicio.appendChild(precioServicio);
         contenedorServicio.appendChild(odonto);
         resumen.appendChild(contenedorServicio);
 
