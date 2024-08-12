@@ -122,6 +122,7 @@ async function ApiServicios(){
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
+        console.log(`hola: ${servicios}`);
     } catch (e) {
       console.log(e);
         
