@@ -368,12 +368,13 @@ function mostrarResumen (){
 
     
         const odonto = document.createElement('P');
-        odonto.innerHTML = `<span>Precio:</span> $ ${odontologo}`;
+        odonto.innerHTML = `<span>Precio:</span> ${odontologo}`;
 
     
 
         contenedorServicio.appendChild(textoServicio);
         contenedorServicio.appendChild(precioServicio);
+        contenedorServicio.appendChild(odonto);
         resumen.appendChild(contenedorServicio);
 
     })
