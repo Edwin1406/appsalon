@@ -9,20 +9,26 @@ use Model\Servicio;
 
 class ApiController {
     public static function index() {
-
         $servicios = Servicio::all();
-      
 
-        // Recorremos cada servicio para agregar el nombre del odontólogo
+        $serviciosConOdontologo = [];
+        
         foreach ($servicios as $servicio) {
             $odontologo = Odontologo::find($servicio->odontologoId);
-            $servicio->odontologo = $odontologo->nombre;
             
+            $servicioConOdontologo = [
+                'id' => $servicio->id,
+                'nombre' => $servicio->nombre,
+                'precio' => $servicio->precio,
+                'odontologoId' => $servicio->odontologoId,
+                'odontologo' => $odontologo->nombre, // Añadimos el nombre del odontólogo
+            ];
+        
+            $serviciosConOdontologo[] = $servicioConOdontologo;
         }
         
-     
-
-        echo json_encode($servicios);
+        echo json_encode($serviciosConOdontologo);
+        
         
     }
 
