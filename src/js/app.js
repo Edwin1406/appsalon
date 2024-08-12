@@ -158,7 +158,7 @@ function mostrarServicios(servicios){
         
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
-        servicioDiv.appendChild(odontologId);
+        servicioDiv.appendChild(odontologo);
 
         document.querySelector('#servicios').appendChild(servicioDiv);
 
