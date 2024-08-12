@@ -354,7 +354,7 @@ function mostrarResumen (){
     // Iterar sobre el arreglo de servicios y mostrar el resumen
     servicios.forEach(servicio =>{
         // destructuring
-        const {id,nombre,precio} = servicio;
+        const {id,nombre,precio,odontologo} = servicio;
         const contenedorServicio = document.createElement('DIV');
         contenedorServicio.classList.add('contenedor-servicio');
 
@@ -365,6 +365,10 @@ function mostrarResumen (){
 
         const precioServicio = document.createElement('P');
         precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
+
+    
+        const odonto = document.createElement('P');
+        odonto.innerHTML = `<span>Precio:</span> $ ${odontologo}`;
 
     
 
