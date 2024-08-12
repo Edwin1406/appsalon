@@ -10,8 +10,17 @@ class ApiController {
     public static function index() {
 
         $servicios = Servicio::all();
-       
+      
 
+        // Recorremos cada servicio para agregar el nombre del odontólogo
+        foreach ($servicios as $servicio) {
+            $odontologo = Servicio::find($servicio->odontologoId);
+            $servicio->odontologoNombre = $odontologo->nombre;
+        }
+        
+        // Para depurar y verificar que el nombre del odontólogo está agregado
+        debuguear($servicios);
+        
         debuguear($servicios);
         echo json_encode($servicios);
         
