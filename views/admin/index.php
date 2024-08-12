@@ -51,7 +51,7 @@
            
         <?php $idCita = $cita->id; 
         endif;
-        $total += $cita->precio;
+        // $total += $cita->precio;
         ?>
  
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
@@ -60,7 +60,7 @@
         $actual = $cita->id;
         $proximo = $citas[$key+1]->id ?? 0;
         if(esUltimo($actual,$proximo)):?>
-            <p class="total"><span>Total:</span> <?php echo '$'.$total?></p>
+            <!-- <p class="total"><span>Total:</span> <?php echo '$'.$total?></p> -->
             <form action="/api/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $cita->id;?>">
                 <input type="submit" class="boton-eliminar" value="Eliminar">
