@@ -363,8 +363,8 @@ function mostrarResumen (){
         textoServicio.innerHTML = `<span>Servicio:</span> ${nombre}`;
 
 
-        const precioServicio = document.createElement('P');
-        precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
+        // const precioServicio = document.createElement('P');
+        // precioServicio.innerHTML = `<span>Precio:</span> $ ${precio}`;
 
     
         const odonto = document.createElement('P');
@@ -373,7 +373,7 @@ function mostrarResumen (){
     
 
         contenedorServicio.appendChild(textoServicio);
-        contenedorServicio.appendChild(precioServicio);
+        // contenedorServicio.appendChild(precioServicio);
         contenedorServicio.appendChild(odonto);
         resumen.appendChild(contenedorServicio);
 
