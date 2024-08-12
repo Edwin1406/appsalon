@@ -133,7 +133,7 @@ async function ApiServicios(){
 
 function mostrarServicios(servicios){
     servicios.forEach(servicio => {
-        const {id,nombre,precio} =servicio;
+        const {id,nombre,precio,odontologId} =servicio;
         // scripting de los servicios
         const nombreServicio = document.createElement('P');
         nombreServicio.classList.add('nombre-servicio');
@@ -143,9 +143,9 @@ function mostrarServicios(servicios){
         precioServicio.classList.add('precio-servicio');
         precioServicio.textContent = `$ ${precio}`;
 
-        const odontologId = document.createElement('P');
-        odontologId.classList.add('odontologId');
-        odontologId.textContent = id;
+        const odontologo = document.createElement('P');
+        odontologo.classList.add('odontologId');
+        odontologo.textContent = odontologId;
 
         // contenedor de servicios
         const servicioDiv = document.createElement('DIV');
