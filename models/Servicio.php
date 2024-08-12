@@ -15,7 +15,7 @@ class Servicio extends ActiveRecord{
         // areglos asociativos
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
-        $this->precio = $args['precio'] ?? '';
+        $this->precio = $args['precio'] ?? 0;
         $this->odontologoId = $args['odontologoId'] ?? '';
     }
 

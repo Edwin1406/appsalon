@@ -9,7 +9,7 @@
      value="<?php echo $servicio->nombre; ?>">
      >
 </div>
-<div class="campo">
+<!-- <div class="campo">
     <label for="precio">Precio:</label>
     <input type="number"
      name="precio" 
@@ -17,4 +17,4 @@
      placeholder="Precio del Servicio"
      value="<?php echo $servicio->precio=0; ?>" disabled>
      >
-</div>
+</div> -->
