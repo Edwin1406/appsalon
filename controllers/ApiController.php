@@ -19,10 +19,6 @@ class ApiController {
             $servicio->odontologoNombre = $odontologo->nombre;
         }
         
-        // Para depurar y verificar que el nombre del odontólogo está agregado
-        debuguear($servicios);
-        
-        debuguear($servicios);
         echo json_encode($servicios);
         
     }
