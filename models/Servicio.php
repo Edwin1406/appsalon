@@ -3,11 +3,12 @@ namespace Model;
 
 class Servicio extends ActiveRecord{
     protected static $tabla = 'servicios';
-    protected static $columnasDB =['id','nombre','precio'];
+    protected static $columnasDB =['id','nombre','precio','odontologoId'];
     
     public $id;
     public $nombre;
     public $precio;
+    public $odontologoId;
 
     public function __construct()
     {
@@ -15,6 +16,7 @@ class Servicio extends ActiveRecord{
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
         $this->precio = $args['precio'] ?? '';
+        $this->odontologoId = $args['odontologoId'] ?? '';
     }
 
     public function validar(){
