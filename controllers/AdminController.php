@@ -22,6 +22,7 @@ class AdminController
         // consultar la base de datos
         $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio ";
+        $consulta .= " odontologo.nombre as odontologo ";
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";
         $consulta .= " ON citas.usuarioId=usuarios.id  ";
