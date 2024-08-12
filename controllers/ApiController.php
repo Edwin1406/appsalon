@@ -12,23 +12,23 @@ class ApiController {
 
         $servicios = Servicio::all();
 
-        $serviciosOdonto = [];
+        $serviciosConOdontologo = [];
         
         foreach ($servicios as $servicio) {
             $odontologo = Odontologo::find($servicio->odontologoId);
             
-            $serviciosOdonto = [
+            $servicioConOdontologo = [
                 'id' => $servicio->id,
                 'nombre' => $servicio->nombre,
                 'precio' => $servicio->precio,
                 'odontologoId' => $servicio->odontologoId,
-                'odontologo' => $odontologo->nombre
+                'odontologo' => $odontologo->nombre, // Añadimos el nombre del odontólogo
             ];
         
-            $serviciosOdonto[] = $serviciosOdonto;
+            $serviciosConOdontologo[] = $servicioConOdontologo;
         }
         
-        echo json_encode($serviciosOdonto);
+        echo json_encode($serviciosConOdontologo);
         
         
     }
