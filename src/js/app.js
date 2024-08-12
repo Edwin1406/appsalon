@@ -145,7 +145,7 @@ function mostrarServicios(servicios){
         // precioServicio.textContent = `$ ${precio}`;
 
         const odontologos = document.createElement('P');
-        odontologos.classList.add('odontologId');
+        odontologos.classList.add('precio-servicio');
         odontologos.textContent = odontologo;
 
         // contenedor de servicios
