@@ -16,6 +16,7 @@ class ApiController {
         // Recorremos cada servicio para agregar el nombre del odontólogo
         foreach ($servicios as $servicio) {
             $odontologo = Odontologo::find($servicio->odontologoId);
+            $servicio->odontologo = $odontologo->nombre;
             
         }
         
