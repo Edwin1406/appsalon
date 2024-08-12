@@ -9,8 +9,9 @@ use Model\Servicio;
 class ApiController {
     public static function index() {
 
-        // $servicios = Servicio::all();
-        $servicios = Servicio::where('odontologoId', $_SESSION['usuario']);
+        $servicios = Servicio::all();
+       
+
         debuguear($servicios);
         echo json_encode($servicios);
         
