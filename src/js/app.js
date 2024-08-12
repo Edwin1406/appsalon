@@ -121,8 +121,9 @@ async function ApiServicios(){
         const url = `${location.origin}/api/servicios`;
         const resultado = await fetch(url);
         const servicios = await resultado.json();
-        mostrarServicios(servicios);
-        console.log(`hola: ${servicios}`);
+        console.log(servicios);
+        // mostrarServicios(servicios);
+       
     } catch (e) {
       console.log(e);
         
