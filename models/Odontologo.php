@@ -8,13 +8,13 @@ class Odontologo extends ActiveRecord{
     
     public $id;
     public $nombre;
-    public $odontologoNombre;
+    public $odontologo;
     
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
-        $this->odontologoNombre = $args['odontologoNombre'] ?? '';
+        $this->odontologo = $args['odontologo'] ?? '';
 
     }
     
