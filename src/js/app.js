@@ -373,7 +373,7 @@ function mostrarResumen (){
     
 
         contenedorServicio.appendChild(textoServicio);
-        contenedorServicio.appendChild(precioServicio);
+        // contenedorServicio.appendChild(precioServicio);
         contenedorServicio.appendChild(odonto);
         resumen.appendChild(contenedorServicio);
 
