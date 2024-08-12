@@ -146,7 +146,7 @@ function mostrarServicios(servicios){
 
         const odontologo = document.createElement('P');
         odontologo.classList.add('odontologId');
-        odontologo.textContent = odontologId;
+        odontologo.textContent = servicio.odontologId;
 
         // contenedor de servicios
         const servicioDiv = document.createElement('DIV');
