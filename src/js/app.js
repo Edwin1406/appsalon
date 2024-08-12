@@ -134,7 +134,7 @@ async function ApiServicios(){
 function mostrarServicios(servicios){
     servicios.forEach(servicio => {
         const {id,nombre,precio,odontologo} =servicio;
-        console.log(servicio);
+        // console.log(servicio);
         // scripting de los servicios
         const nombreServicio = document.createElement('P');
         nombreServicio.classList.add('nombre-servicio');

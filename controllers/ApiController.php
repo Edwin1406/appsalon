@@ -22,7 +22,7 @@ class ApiController {
                 'nombre' => $servicio->nombre,
                 'precio' => $servicio->precio,
                 'odontologoId' => $servicio->odontologoId,
-                'odontologo' => $odontologo->nombre, // Añadimos el nombre del odontólogo
+                'odontologo' => $odontologo->nombre
             ];
         
             $serviciosOdonto[] = $servicioConOdontologo;
