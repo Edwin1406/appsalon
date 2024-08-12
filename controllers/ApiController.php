@@ -3,6 +3,7 @@ namespace Controllers;
 
 use Model\Cita;
 use Model\CitaServicio;
+use Model\Odontologo;
 use Model\Servicio;
 
 
@@ -14,7 +15,7 @@ class ApiController {
 
         // Recorremos cada servicio para agregar el nombre del odontólogo
         foreach ($servicios as $servicio) {
-            $odontologo = Servicio::find($servicio->odontologoId);
+            $odontologo = Odontologo::find($servicio->odontologoId);
             $servicio->odontologoNombre = $odontologo->nombre;
         }
         
