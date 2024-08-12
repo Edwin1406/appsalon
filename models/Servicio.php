@@ -23,9 +23,9 @@ class Servicio extends ActiveRecord{
         if(!$this->nombre){
             self::$alertas['error'][] = "Debes añadir un nombre de servicio"; 
         }
-        if(!$this->precio){
-            self::$alertas['error'][] = "Debes añadir un precio al servicio";
-        }
+        // if(!$this->precio){
+        //     self::$alertas['error'][] = "Debes añadir un precio al servicio";
+        // }
         // if($this->precio < 0){
         //     self::$alertas['error'][] = "El precio debe ser mayor a 0";
         // }
