@@ -15,6 +15,6 @@
      name="precio" 
      id="precio"
      placeholder="Precio del Servicio"
-     value="<?php echo $servicio->precio=0; ?>">
+     value="<?php echo $servicio->precio=0; ?>" disabled>
      >
 </div>
