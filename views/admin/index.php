@@ -53,7 +53,7 @@
         endif;
         // $total += $cita->precio;
         ?>
- 
+         <!-- <p> - <?php echo $cita->servicio .' '.$cita->precio ?></p> -->
             <p><span>Hora:</span> <?php echo $cita->hora?></p>
 
         <?php 
