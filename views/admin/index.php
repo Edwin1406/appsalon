@@ -71,17 +71,33 @@
     <?php endforeach;?>
     </ul>
    
-        <?php
-        // eliminar el cero del telefono
-        $telefono_sin_cero = ltrim($cita->telefono, '0');
-        $business_name = "NEW DENTAL";
-        $phone_number =  $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
-        $message = urlencode("Hola, me gustaría más información sobre $business_name.");
-        $whatsapp_url = "https://wa.me/$phone_number?text=$message";
-        ?>
-    <a href="<?php echo $whatsapp_url; ?>" target="_blank">
-        <button>Contactar por WhatsApp</button>
-    </a>
+    <?php
+    // Eliminar el cero del teléfono
+    $telefono_sin_cero = ltrim($cita->telefono, '0');
+    $business_name = "NEW DENTAL";
+    $client_name = $cita->nombre; // Asume que $cita->nombre contiene el nombre del cliente
+    $appointment_date = date('d-m-Y', strtotime($cita->fecha)); // Asume que $cita->fecha es la fecha de la cita
+    $appointment_time = date('H:i', strtotime($cita->hora)); // Asume que $cita->hora es la hora de la cita
+    $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
+
+    // Determinar saludo dependiendo de la hora actual
+    $current_hour = date('H');
+    if ($current_hour < 12) {
+        $saludo = "Buenos días";
+    } elseif ($current_hour < 18) {
+        $saludo = "Buenas tardes";
+    } else {
+        $saludo = "Buenas noches";
+    }
+
+    $message = urlencode("$saludo $client_name, te saluda $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!");
+    
+    $whatsapp_url = "https://wa.me/$phone_number?text=$message";
+?>
+<a href="<?php echo $whatsapp_url; ?>" target="_blank">
+    <button>Recordar Cita por WhatsApp</button>
+</a>
+
 
 
 
