@@ -132,7 +132,7 @@
 
  
   
-<a class="whatssap"  target="_blank">
+<a class="whatssap" class="boton-eliminar" target="_blank">
     Enviar mensaje de WhatsApp
 </a>
 
