@@ -81,6 +81,7 @@
 
     // Obtener la hora actual del servidor
     $current_hour = date('H');
+    echo $current_hour;
     
     // Determinar saludo dependiendo de la hora actual
     if ($current_hour < 12) {
@@ -91,7 +92,7 @@
         $saludo = "Buenas noches";
     }
 
-    $message = urlencode("$saludo $client_name, te saluda $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!");
+    $message = urlencode("$saludo $client_name, te saluda $business_name Tabacundo. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!,responda a este mensaje confirmando su asistencia");
     
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
