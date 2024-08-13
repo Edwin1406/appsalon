@@ -132,7 +132,7 @@
 
  
   
-<a class="whatssap" href="<?php echo $whatsapp_url; ?>" target="_blank">
+<a class="boton-eliminar" href="<?php echo $whatsapp_url; ?>" target="_blank">
     Enviar mensaje de WhatsApp
 </a>
 
