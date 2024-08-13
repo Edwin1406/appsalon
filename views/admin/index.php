@@ -34,7 +34,7 @@
     <?php 
     $idCita=0;
     foreach($citas as $key => $cita):
-        debuguear($cita);
+        // debuguear($cita);
 
     if($idCita != $cita->id):
         $total=0;
