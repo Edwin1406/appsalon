@@ -116,7 +116,7 @@
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
 <a class="whatssap" href="<?php echo $whatsapp_url; ?>" target="_blank">
-    <button>Recordar Cita por WhatsApp</button>
+    Enviar mensaje de WhatsApp
 </a>
 
 <style>
