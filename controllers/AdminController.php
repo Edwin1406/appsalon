@@ -37,7 +37,7 @@ class AdminController
         
         // debuguear($consulta);
         $citas=AdminCita::SQL($consulta);
-        debuguear($citas);
+        // debuguear($citas);
         
         // debuguear($citas);     
       $router->render('admin/index',[
