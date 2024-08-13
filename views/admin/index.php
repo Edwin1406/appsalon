@@ -64,9 +64,11 @@
             <form action="/api/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $cita->id;?>">
                 <input type="submit" class="boton-eliminar" value="Eliminar">
-              
-            </form>
 
+            </form>
+            <a class="boton-eliminar" href="<?php echo $whatsapp_url; ?>" target="_blank">
+    Enviar mensaje de WhatsApp
+</a>
 
             <?php
     // Establecer la zona horaria de Ecuador
@@ -114,17 +116,6 @@
 ?>
 
 
-
-
-
-
-
-
-            <form action="/api/eliminar" method="POST">
-                <input type="hidden" name="id" value="<?php echo $cita->id;?>">
-                <input type="submit" class="boton-eliminar" value="Eliminar">
-              
-            </form>
         <?php endif;?>
         
     <?php endforeach;?>
@@ -132,19 +123,9 @@
 
  
   
-<a class="boton-eliminar" href="<?php echo $whatsapp_url; ?>" target="_blank">
-    Enviar mensaje de WhatsApp
-</a>
 
-<style>
-    .whatssap {
-        display: block;
-        margin-top: 20px;
-        text-align: center;
-        border-radius: 1rem;
-        background-color: green;
-    }
-</style>
+
+
 
 
     </ul>
