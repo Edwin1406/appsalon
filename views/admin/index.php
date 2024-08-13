@@ -70,10 +70,10 @@
         
     <?php endforeach;?>
     </ul>
-    
+   
         <?php
         $business_name = "NEW DENTAL";
-        $phone_number = $cita->telefono; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
+        $phone_number =  $cita->telefono; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
         $message = urlencode("Hola, me gustaría más información sobre $business_name.");
         $whatsapp_url = "https://wa.me/$phone_number?text=$message";
         ?>
