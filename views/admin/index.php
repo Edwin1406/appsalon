@@ -93,7 +93,7 @@
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
     $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
-    $appointment_time = $date->format('H:i'); // Formatear la hora de la cita
+    $appointment_time = $cita->hora; // Formatear la hora de la cita
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
     // Obtener la hora actual del servidor en la zona horaria de Ecuador
