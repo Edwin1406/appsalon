@@ -71,13 +71,13 @@
     <?php endforeach;?>
     </ul>
     
-   
     <?php
     // Establecer la zona horaria de Ecuador
     date_default_timezone_set('America/Guayaquil');
 
     // Crear un objeto DateTime para la fecha de la cita
-    $date = new DateTime($cita->fechas_whats);
+    $date = new DateTime($cita->fecha);
+    $time = new DateTime($cita->hora);
 
     // Formatear la fecha como "martes 13 de agosto del 2024"
     $formatter = new IntlDateFormatter(
@@ -89,11 +89,13 @@
     );
     $appointment_date = $formatter->format($date);
 
+    // Formatear la hora como "10:00 AM"
+    $appointment_time = $time->format('g:i A');
+
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
-    $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
-    $appointment_time = $cita->hora; // Formatear la hora de la cita
+    $client_name = $cita->nombre; // Asume que $cita->nombre contiene el nombre del cliente
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
     // Obtener la hora actual del servidor en la zona horaria de Ecuador
@@ -116,7 +118,6 @@
 <a href="<?php echo $whatsapp_url; ?>" target="_blank">
     <button>Recordar Cita por WhatsApp</button>
 </a>
-
 
 
 
