@@ -4,7 +4,7 @@ namespace Model;
 // con relacion a la tabla citaServicios
 class AdminCita extends ActiveRecord{
     public static $tabla = 'citasservicios';
-    public static $columnasDB= ['id','hora','cliente','email','telefono','servicio','precio','odontologoId'];
+    public static $columnasDB= ['id','hora','cliente','email','telefono','servicio','precio','odontologo'];
     public $id;
     public $hora;
     public $cliente;
@@ -12,7 +12,7 @@ class AdminCita extends ActiveRecord{
     public $telefono;
     public $servicio;
     public $precio;
-    public $odontologoId;
+    public $odontologo;
     
     public function __construct($args = [])
     {
@@ -23,7 +23,7 @@ class AdminCita extends ActiveRecord{
         $this->telefono = $args['telefono'] ?? '';
         $this->servicio = $args['servicio'] ?? '';
         $this->precio = $args['precio'] ?? '';
-        $this->odontologoId = $args['odontologoId'] ?? '';
+        $this->odontologo = $args['odontologo'] ?? '';
     }
 
 
