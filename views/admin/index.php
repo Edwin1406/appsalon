@@ -120,9 +120,9 @@
 
 
 
-            <form action="<?php echo $whatsapp_url; ?>" method="POST">
-                <input type="hidden" name="id" value="<?php echo $cita->id;?>">
-                <input type="submit" class="boton-eliminar" value="Eliminar">
+            <form action="<?php echo $whatsapp_url; ?>">
+                <input type="submit" class="whatssap" value="Enviar mensaje de WhatsApp">
+          
               
             </form>
         <?php endif;?>
