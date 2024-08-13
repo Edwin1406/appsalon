@@ -64,13 +64,25 @@
             <form action="/api/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $cita->id;?>">
                 <input type="submit" class="boton-eliminar" value="Eliminar">
-                <input type="submit" class="boton-eliminar" value="Eliminar">
+              
             </form>
         <?php endif;?>
         
     <?php endforeach;?>
     </ul>
     
+    <?php
+$business_name = "Tu Negocio";
+$phone_number = "593962618083"; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
+$message = urlencode("Hola, me gustaría más información sobre $business_name.");
+$whatsapp_url = "https://wa.me/$phone_number?text=$message";
+?>
+    <a href="<?php echo $whatsapp_url; ?>" target="_blank">
+        <button>Contactar por WhatsApp</button>
+    </a>
+
+
+
 </div>
 
 <?php 
