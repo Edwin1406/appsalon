@@ -66,7 +66,7 @@
                 <input type="submit" class="boton-eliminar" value="Eliminar">
 
             </form>
-            <a class="boton-eliminar" href="<?php echo $whatsapp_url; ?>" target="_blank">
+            <a class="boton-whatsapp" href="<?php echo $whatsapp_url; ?>" target="_blank">
     Enviar mensaje de WhatsApp
 </a>
 
