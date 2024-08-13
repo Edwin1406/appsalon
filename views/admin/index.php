@@ -70,7 +70,11 @@
         
     <?php endforeach;?>
     </ul>
+    
     <?php
+    // Establecer la zona horaria de Ecuador
+    date_default_timezone_set('America/Guayaquil');
+    
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
@@ -79,9 +83,8 @@
     $appointment_time = date('H:i', strtotime($cita->hora)); // Asume que $cita->hora es la hora de la cita
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
-    // Obtener la hora actual del servidor
+    // Obtener la hora actual del servidor en la zona horaria de Ecuador
     $current_hour = date('H');
-    echo $current_hour;
     
     // Determinar saludo dependiendo de la hora actual
     if ($current_hour < 12) {
@@ -92,7 +95,7 @@
         $saludo = "Buenas noches";
     }
 
-    $message = urlencode("$saludo $client_name, te saluda $business_name Tabacundo. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!,responda a este mensaje confirmando su asistencia");
+    $message = urlencode("$saludo $client_name, te saluda $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!");
     
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
