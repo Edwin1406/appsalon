@@ -76,7 +76,7 @@
     date_default_timezone_set('America/Guayaquil');
 
     // Crear un objeto DateTime para la fecha de la cita
-    $date = new DateTime($cita->fecha);
+    $date = new DateTime($cita->fechas_whats);
     $time = new DateTime($cita->hora);
 
     // Formatear la fecha como "martes 13 de agosto del 2024"
@@ -95,7 +95,7 @@
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
-    $client_name = $cita->nombre; // Asume que $cita->nombre contiene el nombre del cliente
+    $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
     // Obtener la hora actual del servidor en la zona horaria de Ecuador
