@@ -72,8 +72,10 @@
     </ul>
    
         <?php
+        // eliminar el cero del telefono
+        $telefono_sin_cero = ltrim($cita->telefono, '0');
         $business_name = "NEW DENTAL";
-        $phone_number =  $cita->telefono; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
+        $phone_number =  $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
         $message = urlencode("Hola, me gustaría más información sobre $business_name.");
         $whatsapp_url = "https://wa.me/$phone_number?text=$message";
         ?>
