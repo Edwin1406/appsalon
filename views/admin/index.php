@@ -66,10 +66,6 @@
                 <input type="submit" class="boton-eliminar" value="Eliminar">
 
             </form>
-            <a class="boton-whatsapp" href="<?php echo $whatsapp_url; ?>" target="_blank">
-    Enviar mensaje de WhatsApp
-</a>
-
             <?php
     // Establecer la zona horaria de Ecuador
     date_default_timezone_set('America/Guayaquil');
@@ -114,6 +110,11 @@
     
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
+            <a class="boton-whatsapp" href="<?php echo $whatsapp_url; ?>" target="_blank">
+    Enviar mensaje de WhatsApp
+</a>
+
+            
 
 
         <?php endif;?>
