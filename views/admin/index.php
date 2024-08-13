@@ -71,15 +71,19 @@
     <?php endforeach;?>
     </ul>
     
+   
     <?php
     // Establecer la zona horaria de Ecuador
     date_default_timezone_set('America/Guayaquil');
+
+    // Configurar localización en español para la fecha
+    setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain', 'Spanish');
     
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
     $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
-    $appointment_date = date('d-m-Y', strtotime($cita->fechas_whats)); // Asume que $cita->fecha es la fecha de la cita
+    $appointment_date = strftime('%A %d de %B del %Y', strtotime($cita->fechas_whats)); // Formatear la fecha como "martes 13 de agosto del 2024"
     $appointment_time = date('H:i', strtotime($cita->hora)); // Asume que $cita->hora es la hora de la cita
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
@@ -95,14 +99,14 @@
         $saludo = "Buenas noches";
     }
 
-    $message = urlencode("$saludo $client_name, te saluda $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. ¡Te esperamos!");
+    // Crear el mensaje para WhatsApp
+    $message = urlencode("$saludo $client_name, te saluda $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. Por favor, responde a este mensaje confirmando tu asistencia. ¡Te esperamos!");
     
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
 <a href="<?php echo $whatsapp_url; ?>" target="_blank">
     <button>Recordar Cita por WhatsApp</button>
 </a>
-
 
 
 
