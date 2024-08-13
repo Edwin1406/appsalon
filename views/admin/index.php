@@ -69,8 +69,9 @@
         <?php endif;?>
         
     <?php endforeach;?>
-    </ul>
-    
+
+
+ 
     <?php
     // Establecer la zona horaria de Ecuador
     date_default_timezone_set('America/Guayaquil');
@@ -129,6 +130,8 @@
     }
 </style>
 
+
+    </ul>
 </div>
 
 <?php 
