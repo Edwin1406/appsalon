@@ -115,11 +115,19 @@
     
     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
 ?>
-<a href="<?php echo $whatsapp_url; ?>" target="_blank">
+<a class="whatssap" href="<?php echo $whatsapp_url; ?>" target="_blank">
     <button>Recordar Cita por WhatsApp</button>
 </a>
 
-
+<style>
+    .whatssap {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 1rem;
+        background-color: green;
+    }
+</style>
 
 </div>
 
