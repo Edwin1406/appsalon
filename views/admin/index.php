@@ -70,18 +70,19 @@
         
     <?php endforeach;?>
     </ul>
-   
     <?php
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
     $business_name = "NEW DENTAL";
-    $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
-    $appointment_date = date('d-m-Y', strtotime($cita->fechas_whats)); // Asume que $cita->fecha es la fecha de la cita
+    $client_name = $cita->nombre; // Asume que $cita->nombre contiene el nombre del cliente
+    $appointment_date = date('d-m-Y', strtotime($cita->fecha)); // Asume que $cita->fecha es la fecha de la cita
     $appointment_time = date('H:i', strtotime($cita->hora)); // Asume que $cita->hora es la hora de la cita
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
-    // Determinar saludo dependiendo de la hora actual
+    // Obtener la hora actual del servidor
     $current_hour = date('H');
+    
+    // Determinar saludo dependiendo de la hora actual
     if ($current_hour < 12) {
         $saludo = "Buenos días";
     } elseif ($current_hour < 18) {
@@ -97,6 +98,7 @@
 <a href="<?php echo $whatsapp_url; ?>" target="_blank">
     <button>Recordar Cita por WhatsApp</button>
 </a>
+
 
 
 
