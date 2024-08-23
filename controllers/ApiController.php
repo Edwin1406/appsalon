@@ -9,6 +9,7 @@ use Model\Servicio;
 
 class ApiController {
     public static function index() {
+        header("Access-Control-Allow-Origin: *");
 
         $servicios = Servicio::all();
 
