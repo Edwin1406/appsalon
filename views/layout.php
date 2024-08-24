@@ -16,11 +16,14 @@
 </head>
 <body>
     
-<?php 
-        // include_once __DIR__ .'/templates/header.php';
-        echo $contenido;
-        // include_once __DIR__ .'/templates/footer.php'; 
-    ?>
+    <div class="contenedor-app">
+        
+        <div class="imagen"></div>
+        <?php echo $contenido; ?>
+        <div class="app">
+        </div>
+
+    </div>
     <?php echo $script ?? ''; ?>
 
            
