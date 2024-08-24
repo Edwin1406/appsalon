@@ -53,6 +53,10 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    @include m.tablet{
+    margin-left: 9rem;
+    margin-right: 9rem;
+    }
 }
 *, *:before, *:after {
     box-sizing: inherit;
