@@ -1,6 +1,7 @@
 <div class="contenedor login">
     <div class="contenedor-sm">
-        <p class="descripcion-pagina"> Iniciar Sesión</p>
+    <h2 class="auth__heading"><?php echo $titulo ?? '' ?></h2>
+    <p class="auth__texto">Inicia Sesion en Sitio Web </p>
         <?php include_once __DIR__ . '/../templates/alertas.php' ?>
 
         <form class="formulario"  method="POST">

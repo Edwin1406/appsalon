@@ -4,7 +4,7 @@
 // para un diseño más moderno degradado
 .login{
     margin-top: 5rem;
-    .uptask{
+    .auth__heading{
         @include m.textoDegradado(v.$cyan);
 
     }
