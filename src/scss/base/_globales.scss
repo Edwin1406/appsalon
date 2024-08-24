@@ -5,8 +5,12 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
     // height: 100%;
+   @include m.tablet{
     margin-left: 3rem;
     margin-right: 3rem;
+    }
+    
+   
 }
 body {
     min-height: 100%;
