@@ -15,15 +15,7 @@
     
 </head>
 <body>
-    
-    <!-- <div class="contenedor-app">
-        
-        <div class="imagen"></div>
-        <?php echo $contenido; ?>
-        <div class="app">
-        </div>
 
-    </div>
   
     <?php 
         // include_once __DIR__ .'/templates/header.php';
