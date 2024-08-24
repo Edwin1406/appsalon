@@ -11,19 +11,21 @@
     <title>Citas</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="/public/build/css/app.css">
+    <!-- <link rel="stylesheet" href="/public/build/css/app.css"> -->
     
 </head>
 <body>
     
+    <div class="contenedor-app">
+        
+        <div class="imagen"></div>
+        <div class="app">
+            <?php echo $contenido; ?>
+        </div>
 
-  
-    <?php 
-        // include_once __DIR__ .'/templates/header.php';
-        echo $contenido;
-        // include_once __DIR__ .'/templates/footer.php'; 
-    ?>
+    </div>
     <?php echo $script ?? ''; ?>
+
            
 </body>
 </html>

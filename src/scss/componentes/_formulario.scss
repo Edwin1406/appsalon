@@ -1,44 +1,29 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-// para un diseño más moderno degradado
-.login{
-    margin-top: 5rem;
-    .auth__heading{
-        @include m.textoDegradado(v.$cyan);
-
-    }
-
-    input[type="submit"]{
-        @include m.boton(v.$cyan,v.$blanco);
-      
-    }
-    .acciones{
-        a{
-            color: v.$cyan;
-        }
-    }
-}
-
 .formulario{
     margin-top: 5rem;
-    .campo{
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        label{
-            flex: 0 0 10rem ;
+    width: 100%;
+}
 
-        }
-        input{
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            background-color:lighten(v.$gris,40%);
-            border-radius: 1rem;
-        }
-    
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    label{
+        flex: 0 0 10rem;
     }
-    
+    input{
+        flex: 1;
+        border: none;
+        padding: calc(v.$separacion / 4);
+        border-radius: 10px;
+        width: 10%;
 
+        &:disabled{
+            background-color: lighten(v.$negro,70%);
+            color: v.$blanco;
+            cursor: not-allowed;
+        }
+    }
 }

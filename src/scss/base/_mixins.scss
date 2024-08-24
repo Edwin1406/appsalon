@@ -50,32 +50,3 @@
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
 }
-
-
-
-// color degradado
-
-@mixin textoDegradado($color) {
-    background: linear-gradient(to right, $color 0%,lighten($color,30%) 100%);
-    color: transparent;
-    background-clip: text;
-    font-size: 7rem;
-    text-align: center;
-    @include tablet {
-        font-size: 10rem;
-    }
-}
-@mixin logoDegradado($color) {
-    background: linear-gradient(to right, $color 0%,lighten($color,30%) 100%);
-    color: transparent;
-    background-clip: text;
-    font-size: 5rem;
-    text-align: center;
-    @include tablet {
-        font-size: 5rem;
-    }
-    @include desktop() {
-        font-size: 5rem;
-    }
-  
-}
