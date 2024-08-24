@@ -4,46 +4,19 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    // height: 100%;
-   @include m.tablet{
-    margin-left: 9rem;
-    margin-right: 9rem;
-    }
-    
-   
-}
-body {
-    min-height: 100%;
-  
-    display: flex;
-    flex-direction: column;
-    background-color: v.$negro;
-    color: v.$blanco;
-    font-family: v.$fuente_principal;
-    font-size: 1.6rem;
-
-    margin-top: 0;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 0;
-
-    @include m.tablet{
-        height: 100%;
-    } 
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
-.contenedor {
-    width: 95%;
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.8rem;
+    
 }
 a {
     text-decoration: none;
 }
-
 img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
