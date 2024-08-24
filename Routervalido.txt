@@ -89,18 +89,3 @@ class Router {
 }
 ?>
 
-
-
-
-pagina incial 
-
-
-    
-    <!-- <div class="contenedor-app">
-        
-        <div class="imagen"></div>
-        <?php echo $contenido; ?>
-        <div class="app">
-        </div>
-
-    </div>
