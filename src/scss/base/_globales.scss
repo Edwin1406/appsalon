@@ -50,28 +50,33 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-    @include m.tablet{
-    margin-left: 9rem;
-    margin-right: 9rem;
-    }
-}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
 body {
     font-family: v.$fuente_principal;
-    font-size: 1.8rem;
-    background-color: v.$negro;
-        color: v.$blanco;
-    
+font-size: 1.6rem;
+    min-height: 100%;
+    line-height: 2;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contenedor-sm {
+    max-width: 70rem;
+    margin: 0 auto;
 }
 a {
     text-decoration: none;
 }
 img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
 }
