@@ -16,7 +16,7 @@
 </head>
 <body>
     
-    <div class="contenedor-app">
+    <!-- <div class="contenedor-app">
         
         <div class="imagen"></div>
         <?php echo $contenido; ?>
@@ -24,8 +24,13 @@
         </div>
 
     </div>
+  
+    <?php 
+        // include_once __DIR__ .'/templates/header.php';
+        echo $contenido;
+        // include_once __DIR__ .'/templates/footer.php'; 
+    ?>
     <?php echo $script ?? ''; ?>
-
            
 </body>
 </html>
