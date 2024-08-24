@@ -15,7 +15,12 @@ body {
     color: v.$blanco;
     font-family: v.$fuente_principal;
     font-size: 1.6rem;
-    margin: 1rem;
+
+    margin-top: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
+
     @include m.tablet{
         height: 100%;
     } 
