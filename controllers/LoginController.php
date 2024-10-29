@@ -46,7 +46,7 @@ class LoginController
                             header('Location: /admin');
                             
                         }else{
-                            header('Location: /cita');
+                            header('Location: /admin/cita');
                             
                         }
                         // debuguear($_SESSION);
