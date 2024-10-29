@@ -45,25 +45,21 @@ class Router {
         
      } 
         //  Muestra una vista
-     public function render($view,$datos=[]):void{
+     public function render($view,$datos=[]) {
 
-        extract($datos, EXTR_SKIP);
+        // acceder a la llave valor del arreglo
+        foreach($datos as $key => $value){
+            // $$ variable de variable
+            $$key = $value;
+
+        }
 
         ob_start(); //inicia el almacenamiento en el memoria
          include __DIR__ . "/views/$view.php";
          $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
-         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+         include __DIR__ . "/views/layout.php";
 
-         if (strpos($urlActual, '/admin') !== false) {
-             //  debuguear($urlActual);
-             include __DIR__ . "/views/layout.php";
-            } else {
-                
-                include __DIR__ . "/views/admin-layout.php";
-             
-
-            }
-        }
+     }
 }
 ?>
 
