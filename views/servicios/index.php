@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/public/build/css/app.css">
 
 <h1 class="nombre-pagina">Servicios</h1>
 <p class="descripcion-pagina">Administracion de Servicios</p>
