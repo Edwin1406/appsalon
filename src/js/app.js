@@ -113,7 +113,6 @@ function paginaAnterior(){
 
 
 
-alert('Hola, Bienvenido a la página de citas de Odontología, por favor sigue los pasos para agendar tu cita');
 
 
 async function ApiServicios(){
