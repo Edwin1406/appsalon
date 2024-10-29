@@ -49,7 +49,7 @@ class LoginController
                             header('Location: /admin/cita');
                             
                         }
-                        // debuguear($_SESSION);
+                        debuguear($_SESSION);
                          
                     }
 
