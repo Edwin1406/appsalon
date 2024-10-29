@@ -43,10 +43,10 @@ $router->get('/admin', [AdminController::class, 'index']);
 
 
 // api de citas
-$router->get('/api/servicios', [ApiController::class, 'index']);
-$router->post('/api/citas',[ApiController::class,'guardar']);
-$router->post('/api/eliminar',[ApiController::class,'eliminar']);
-$router->get('/api/horas',[ApiHoraController::class,'index']);
+$router->get('/admin/api/servicios', [ApiController::class, 'index']);
+$router->post('/admin/api/citas',[ApiController::class,'guardar']);
+$router->post('/admin/api/eliminar',[ApiController::class,'eliminar']);
+$router->get('/admin/api/horas',[ApiHoraController::class,'index']);
 
 // Crud de servicios
 // CREAR
