@@ -42,7 +42,7 @@ class AdminController
       $router->render('admin/index',[
         'nombre' => $_SESSION['nombre'],
         'citas' => $citas,
-        'fecha' => $fechaasjkdhasjkdhasjkhdasjkdnas
+        'fecha' => $fecha
 
       ]);
     }
