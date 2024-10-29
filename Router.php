@@ -55,10 +55,10 @@ class Router {
          $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
 
          if (strpos($urlActual, '/admin') !== false) {
-             include __DIR__ . "/views/admin-layout.php";
-         } else {
+             include __DIR__ . "/views/layout.php";
+        } else {
 
-         include __DIR__ . "/views/layout.php";
+             include __DIR__ . "/views/admin-layout.php";
 
             }
         }
