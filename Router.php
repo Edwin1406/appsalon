@@ -56,9 +56,11 @@ class Router {
 
          if (strpos($urlActual, '/admin') !== false) {
              include __DIR__ . "/views/admin-layout.php";
+             debuguear($urlActual);
          } else {
 
              include __DIR__ . "/views/layout.php";
+             
 
             }
         }
