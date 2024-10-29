@@ -35,7 +35,7 @@ class LoginController
                         
                         // autenticar el usuario
                         session_start();
-                        debuguear($usuario);
+                    
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
@@ -44,10 +44,10 @@ class LoginController
                         // redireccionar
                         if($usuario->admin==='1'){
                             $_SESSION['admin'] = $usuario->admin ?? null;
-                            header('Location: https://agro.serviacrilico.com/admin/cita');
+                            header('Location: /admin');
                             
                         }else{
-                            header('Location: https://agro.serviacrilico.com/admin/cita');
+                            header('Location: /admin/cita');
                             
                         }
                         debuguear($_SESSION);
