@@ -54,7 +54,7 @@ class Router {
          $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
          $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
 
-         if (strpos($urlActual, '/') !== false) {
+         if (strpos($urlActual, '/admin') !== false) {
              include __DIR__ . "/views/layout.php";
         } elseif (strpos($urlActual, '/vista') !== false) {
 

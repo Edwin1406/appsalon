@@ -18,9 +18,9 @@ $router = new Router();
 // Rutas de inicio de sesión
 $router->get('/paginaNoEncontrada', [LoginController::class, 'paginaNoEncontrada']);
 $router->get('/', [LoginController::class, 'inicio']);
-$router->get('/login', [LoginController::class, 'login']);
-$router->post('/login', [LoginController::class, 'login']);
-$router->get('/logout', [LoginController::class, 'logout']);
+$router->get('/admin/login', [LoginController::class, 'login']);
+$router->post('/admin/login', [LoginController::class, 'login']);
+$router->get('/admin/logout', [LoginController::class, 'logout']);
 
 // Recuperar contraseña
 $router->get('/olvide', [LoginController::class, 'olvide']);
