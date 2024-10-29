@@ -56,7 +56,7 @@ class Router {
 
          if (strpos($urlActual, '/') !== false) {
              include __DIR__ . "/views/layout.php";
-        } else {
+        } elseif (strpos($urlActual, '/vista') !== false) {
 
              include __DIR__ . "/views/admin-layout.php";
 
