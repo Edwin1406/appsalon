@@ -35,7 +35,7 @@ class LoginController
                         
                         // autenticar el usuario
                         session_start();
-                    
+            
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
@@ -50,7 +50,7 @@ class LoginController
                             header('Location: /admin/cita');
                             
                         }
-                        debuguear($_SESSION);
+               
                          
                     }
 
