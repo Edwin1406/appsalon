@@ -18,9 +18,9 @@ $router = new Router();
 // Rutas de inicio de sesión
 $router->get('/paginaNoEncontrada', [LoginController::class, 'paginaNoEncontrada']);
 $router->get('/inicio', [LoginController::class, 'inicio']);
-$router->get('/', [LoginController::class, 'login']);
-$router->post('/', [LoginController::class, 'login']);
-$router->get('/logout', [LoginController::class, 'logout']);
+$router->get('/admin/login', [LoginController::class, 'login']);
+$router->post('/admin/login', [LoginController::class, 'login']);
+$router->get('/admin/logout', [LoginController::class, 'logout']);
 
 // Recuperar contraseña
 $router->get('/olvide', [LoginController::class, 'olvide']);
@@ -50,14 +50,14 @@ $router->get('/api/horas',[ApiHoraController::class,'index']);
 
 // Crud de servicios
 // CREAR
-$router->get('/servicios', [ServicioController::class, 'index']);
-$router->get('/servicios/crear', [ServicioController::class, 'crear']);
-$router->post('/servicios/crear', [ServicioController::class, 'crear']);
+$router->get('/admin/servicios', [ServicioController::class, 'index']);
+$router->get('/admin/servicios/crear', [ServicioController::class, 'crear']);
+$router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 // ACTUALIZAR
-$router->get('/servicios/actualizar', [ServicioController::class, 'actualizar']);
-$router->post('/servicios/actualizar', [ServicioController::class, 'actualizar']);
+$router->get('/admin/servicios/actualizar', [ServicioController::class, 'actualizar']);
+$router->post('/admin/servicios/actualizar', [ServicioController::class, 'actualizar']);
 // ELIMINAR
-$router->post('/servicios/eliminar', [ServicioController::class, 'eliminar']);
+$router->post('/admin/servicios/eliminar', [ServicioController::class, 'eliminar']);
 
 
 
