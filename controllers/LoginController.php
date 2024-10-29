@@ -21,7 +21,7 @@ class LoginController
    
     public static function login(Router $router)
     {
-        $alertas = [a];
+        $alertas = [];
 
         if($_SERVER['REQUEST_METHOD']==='POST'){
             $auth = new Usuario($_POST);
