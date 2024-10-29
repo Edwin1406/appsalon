@@ -232,7 +232,7 @@ function seleccionarFecha(){
 
 async function ApiHoras(){
     try {
-        const url = `${location.origin}/api/horas`;
+        const url = `${location.origin}/admin/api/horas`;
         const resultado = await fetch(url);
         const horas = await resultado.json();
         mostrarHoras(horas);
