@@ -118,7 +118,7 @@ function paginaAnterior(){
 
 async function ApiServicios(){
     try {
-        const url = `${location.origin}/api/servicios`;
+        const url = `${location.origin}/admin/api/servicios`;
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         // console.log(servicios);
