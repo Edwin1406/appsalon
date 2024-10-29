@@ -53,12 +53,12 @@ class Router {
          $contenido = ob_get_clean();
  
  
-         $url_actual = $_SERVER['REQUEST_URI'] ?? '/';
+         $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
          
         
          // debuguear($url_actual);
  
-         if(str_contains($url_actual,'/admin')){
+         if(str_contains($urlActual,'/admin')){
              include __DIR__ . "/views/admin-layout.php";
  
          }else{
