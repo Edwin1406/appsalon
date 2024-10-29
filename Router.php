@@ -44,32 +44,24 @@ class Router {
        
         
      } 
-     public function render(string $view, array $datos = []): void
-     {
-         extract($datos, EXTR_SKIP);
- 
-         ob_start();
+        //  Muestra una vista
+     public function render($view,$datos=[]):void{
+
+        extract($datos, EXTR_SKIP);
+
+        ob_start(); //inicia el almacenamiento en el memoria
          include __DIR__ . "/views/$view.php";
-         $contenido = ob_get_clean();
- 
- 
-         $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
-         
-        
-         // debuguear($url_actual);
- 
-         if(str_contains($urlActual,'/admin')){
+         $contenido = ob_get_clean(); //limpia la memoria y lo guarda en la variable
+         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+
+         if (strpos($urlActual, '/admin') !== false) {
              include __DIR__ . "/views/admin-layout.php";
- 
-         }else{
-             
+         } else {
+
              include __DIR__ . "/views/layout.php";
- 
-         }
-       
- 
-        
-     }
+
+            }
+        }
 }
 ?>
 
