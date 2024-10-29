@@ -35,6 +35,7 @@ class LoginController
                         
                         // autenticar el usuario
                         session_start();
+                        debuguear($usuario);
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
