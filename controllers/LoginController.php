@@ -44,10 +44,10 @@ class LoginController
                         // redireccionar
                         if($usuario->admin==='1'){
                             $_SESSION['admin'] = $usuario->admin ?? null;
-                            header('Location: /admin');
+                            header('Location: https://agro.serviacrilico.com/admin/cita');
                             
                         }else{
-                            header('Location: /admin/cita');
+                            header('Location: https://agro.serviacrilico.com/admin/cita');
                             
                         }
                         debuguear($_SESSION);
