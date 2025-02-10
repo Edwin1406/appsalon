@@ -445,7 +445,7 @@ async function reservarCita(){
     try {
 
          //conexion a la api 
-      const url = `${location.origin}/admin/api/citas`;
+      const url = `${location.origin}/api/citas`;
       const respuesta = await fetch(url,{
           method:'POST',
           body:datos
