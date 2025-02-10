@@ -47,7 +47,7 @@ class LoginController
                             header('Location: /admin');
                             
                         }else{
-                            header('Location: /admin/cita');
+                            header('Location: /cita');
                             
                         }
                
