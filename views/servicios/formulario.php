@@ -8,6 +8,24 @@
      value="<?php echo $servicio->nombre; ?>">
      >
 </div>
+<!-- opcion -->
+
+<div class="campo">
+    <label for="odontologo">Odontólogo:</label>
+    <select name="odontologo" id="odontologo" disabled>
+        <?php foreach ($odontologos as $odontologo): ?>
+            <option value="<?php echo $odontologo->id; ?>" 
+                <?php echo $odontologo->id == $servicio->odontologo_id ? 'selected' : ''; ?>>
+                <?php echo htmlspecialchars($odontologo->nombre . " " . $odontologo->apellido); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+
+
+
+
 <!-- <div class="campo">
     <label for="precio">Precio:</label>
     <input type="number"
