@@ -2,15 +2,6 @@
 @use 'base/mixins' as m;
 
 .contenedor-app{
-
-    // desktop
-    @include m.desktop{
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        min-height: 100vh;
-    }
-
-
     @include m.tablet{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -45,13 +36,6 @@
 
 .barra{
     margin: v.$separacion 0;
-    // desktop
-    @include m.desktop{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     @include m.tablet{
         display: flex;
         justify-content: space-between;
@@ -65,25 +49,30 @@
 }
 
 
-.barra-servicios{
-    margin-bottom: v.$separacion;
-
-    // desktop
-    @include m.desktop{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-
-    @include m.tablet{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+// .barra-servicios{
+//     margin-bottom: v.$separacion;
+//     @include m.tablet{
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
         
+//     }
+//     .boton{
+//         margin: 0 0 1rem 0;
+//         // border-radius: 5px;
+//     }
+// }
+
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    .boton{
-        margin: 0 0 1rem 0;
-        // border-radius: 5px;
+    .boton {
+        margin: 0 0.5rem 1rem 0.5rem; // Agrega margen lateral de 0.5rem
     }
 }
+
