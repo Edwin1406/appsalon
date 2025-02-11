@@ -2,10 +2,10 @@
 
 <style>
 
-#calendar {
+/* #calendar {
             max-width: 100%;
             margin: 40px auto;
-        }
+        } */
 
         #calendar {
     overflow-x: auto; /* Habilita el scroll horizontal */
