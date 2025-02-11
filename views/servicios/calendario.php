@@ -6,6 +6,7 @@
             max-width: 100%;
             margin: 1rem ;
             background-color: #fff;
+            color: black;
         }
 
         
