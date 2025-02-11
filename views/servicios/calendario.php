@@ -7,24 +7,35 @@
             margin: 40px auto;
         } */
         .eventos-celda {
-    max-height: 100px; /* Altura máxima para evitar que crezca demasiado */
-    overflow-y: auto; /* Scroll vertical si hay muchos eventos */
-    overflow-x: auto; /* Scroll horizontal si los nombres son largos */
-    white-space: nowrap; /* Evita que los textos se corten en varias líneas */
-    scrollbar-width: thin; /* Hace la barra de desplazamiento más delgada */
+    max-height: 120px; /* Ajusta según el espacio disponible */
+    overflow-y: auto; /* Activa el scroll vertical */
+    overflow-x: auto; /* Activa el scroll horizontal */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    word-wrap: normal; /* Mantiene las palabras en línea */
+    display: block; /* Asegura que el contenido respete las dimensiones */
+    padding: 2px; /* Añade algo de espacio para mejor visibilidad */
+}
+.calendario-celda {
+    min-width: 120px; /* Asegura que la celda tenga suficiente espacio */
+    max-width: 200px; /* Evita que se expanda demasiado */
+    overflow: hidden; /* Evita desbordamiento visual */
+}
+.eventos-celda span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega "..." si el texto es muy largo */
 }
 
-.eventos-celda::-webkit-scrollbar {
-    height: 6px; /* Grosor de la barra de desplazamiento horizontal */
-}
-
-.eventos-celda::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-}
-
-.eventos-celda::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+.eventos-celda span:hover {
+    overflow: visible;
+    white-space: normal;
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 100;
 }
 
 
