@@ -10,8 +10,7 @@
         } */
         .eventos-celda {
     max-height: 120px; /* Ajusta según el espacio disponible */
-    overflow-y: auto; /* Activa el scroll vertical */
-    overflow-x: auto; /* Activa el scroll horizontal */
+
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
     word-wrap: normal; /* Mantiene las palabras en línea */
     display: block; /* Asegura que el contenido respete las dimensiones */
