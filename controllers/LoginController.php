@@ -67,11 +67,14 @@ class LoginController
 
     public static function logout(Router $router)
     {
-        // session_start();
-        session_destroy();
+        session_start();  // Asegurar que la sesión esté activa
+        $_SESSION = [];   // Limpiar todas las variables de sesión
+        session_unset();  // Liberar todas las variables de sesión
+        session_destroy(); // Destruir la sesión
         header('Location: /');
+        exit;
     }
-
+    
     // crea una cuenta de usuario
     public static function crear(Router $router)
     {
