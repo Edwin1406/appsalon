@@ -6,9 +6,19 @@
      id="nombre"
      placeholder="Nombre del Servicio"
      value="<?php echo $servicio->nombre; ?>">
-     >
 </div>
 <!-- opcion -->
+
+<style>
+.formulario__input{
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    border: 1px solid #e1e1e1;
+}
+    
+</style>
+
 
 <div class="campo">
     <label for="odontologoId">Odontólogo:</label>
