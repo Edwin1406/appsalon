@@ -6,12 +6,24 @@
             max-width: 100%;
             margin: 40px auto;
         } */
-        .calendario-celda {
-    max-height: 150px; /* Ajusta el tamaño máximo según sea necesario */
-    overflow-y: auto; /* Permite desplazamiento vertical solo dentro de la celda */
-    scrollbar-width: thin; /* Estiliza la barra de desplazamiento en navegadores compatibles */
+        .eventos-celda {
+    max-height: 100px; /* Ajusta según el espacio disponible */
+    overflow-y: auto; /* Habilita scroll vertical */
+    scrollbar-width: thin; /* Hace la barra más delgada */
 }
 
+.eventos-celda::-webkit-scrollbar {
+    width: 6px; /* Grosor de la barra */
+}
+
+.eventos-celda::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.eventos-celda::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
 
 
         .modal {
