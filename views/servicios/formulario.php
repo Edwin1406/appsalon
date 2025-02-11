@@ -15,7 +15,7 @@
     <select name="odontologo" id="odontologo" disabled>
         <?php foreach ($odontologos as $odontologo): ?>
             <option value="<?php echo $odontologo->id; ?>" 
-                <?php echo $odontologo->id == $servicio->odontologo_id ? 'selected' : ''; ?>>
+                <?php echo $odontologo->id ? 'selected' : ''; ?>>
                 <?php echo htmlspecialchars($odontologo->nombre . " " . $odontologo->apellido); ?>
             </option>
         <?php endforeach; ?>
