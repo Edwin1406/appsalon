@@ -35,6 +35,14 @@
     width: 100%;
     margin: 5rem 0;
     border-radius: 1rem;
+    @include telefono {
+        width: auto;
+    }
+    
+    // desktop
+    @include desktop {
+        width: auto;
+    }
 
     @include tablet {
         width: auto;
