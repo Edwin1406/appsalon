@@ -7,13 +7,15 @@
             margin: 40px auto;
         } */
         .eventos-celda {
-    max-height: 100px; /* Ajusta según el espacio disponible */
-    overflow-y: auto; /* Habilita scroll vertical */
-    scrollbar-width: thin; /* Hace la barra más delgada */
+    max-height: 100px; /* Altura máxima para evitar que crezca demasiado */
+    overflow-y: auto; /* Scroll vertical si hay muchos eventos */
+    overflow-x: auto; /* Scroll horizontal si los nombres son largos */
+    white-space: nowrap; /* Evita que los textos se corten en varias líneas */
+    scrollbar-width: thin; /* Hace la barra de desplazamiento más delgada */
 }
 
 .eventos-celda::-webkit-scrollbar {
-    width: 6px; /* Grosor de la barra */
+    height: 6px; /* Grosor de la barra de desplazamiento horizontal */
 }
 
 .eventos-celda::-webkit-scrollbar-thumb {
@@ -24,6 +26,7 @@
 .eventos-celda::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
 
 
         .modal {
