@@ -1,6 +1,7 @@
 <?php
 namespace Controllers;
 
+use Model\Odontologo;
 use Model\Servicio;
 use MVC\Router;
 
@@ -24,6 +25,8 @@ class ServicioController{
         session_start();
         // isAdmin();
 
+        $odontologos = Odontologo::all();
+
         // crear un nuevo servicio vacio
         $servicio = new Servicio;
         $alertas = [];
@@ -43,7 +46,8 @@ class ServicioController{
         $router->render('servicios/crear',[
             'nombre' => $_SESSION['nombre'],
             'servicio' => $servicio,
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'odontologos' => $odontologos
         ]);
     }
 
