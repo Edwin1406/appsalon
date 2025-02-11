@@ -8,7 +8,7 @@
         <a class="boton" href="/admin">Ver Citas</a>
         <a class="boton" href="/servicios">Ver Servicios</a>
         <a class="boton" href="/servicios/crear">Nuevo Servicio</a>
-        <a class="boton" href="/servicios/calendario">Calendario</a>
+        <a class="boton" href="/servicios/calendario"> Ver Calendario</a>
 
     </div>
 <?php endif; ?>
