@@ -4,6 +4,7 @@
 </div>
 
 <?php if(isset($_SESSION['admin' === 1])): ?>
+    <?php debuguear($_SESSION); ?>
     <div class="barra-servicios">
         <a class="boton" href="/admin">Ver Citas</a>
         <a class="boton" href="/admin/servicios">Ver Servicios</a>
