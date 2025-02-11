@@ -16,7 +16,7 @@
         <?php foreach ($odontologos as $odontologo): ?>
             <option value="<?php echo $odontologo->id; ?>" 
                 <?php echo $odontologo->id ? 'selected' : ''; ?>>
-                <?php echo htmlspecialchars($odontologo->nombre . " " . $odontologo->apellido); ?>
+                <?php echo htmlspecialchars($odontologo->nombre ) ?>
             </option>
         <?php endforeach; ?>
     </select>
