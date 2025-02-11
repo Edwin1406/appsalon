@@ -10,10 +10,6 @@ class AdminController
     {
         session_start();
         isAdmin();
-        // admin
-        if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== 1) {
-            header('Location: /paginaNoEncontrada');
-        }
 
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas= explode('-',$fecha);
