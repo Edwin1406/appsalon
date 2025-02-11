@@ -6,11 +6,12 @@
             max-width: 100%;
             margin: 40px auto;
         } */
-
-        #calendar {
-    overflow-x: auto; /* Habilita el scroll horizontal */
-    white-space: nowrap; /* Evita que los elementos salten de línea */
+        .calendario-celda {
+    max-height: 150px; /* Ajusta el tamaño máximo según sea necesario */
+    overflow-y: auto; /* Permite desplazamiento vertical solo dentro de la celda */
+    scrollbar-width: thin; /* Estiliza la barra de desplazamiento en navegadores compatibles */
 }
+
 
 
         .modal {
