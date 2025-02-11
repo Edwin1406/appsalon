@@ -25,7 +25,7 @@
             padding: 20px 30px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 20%;
             max-width: 90%;
             max-height: 80vh;
             overflow-y: auto;
@@ -43,18 +43,18 @@
         }
 
         .modal_titulo {
-            font-size: 20px;
+            font-size: 1rem;
             font-weight: bold;
             color: #333;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
         }
 
         .modal_detalles p {
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 1.5;
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
             word-wrap: break-word;
         }
 
