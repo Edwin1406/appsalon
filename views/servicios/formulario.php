@@ -12,7 +12,7 @@
 
 <div class="campo">
     <label for="odontologo">Odontólogo:</label>
-    <select name="odontologo" id="odontologo" disabled>
+    <select name="odontologo" id="odontologo">
         <?php foreach ($odontologos as $odontologo): ?>
             <option value="<?php echo $odontologo->id; ?>" 
                 <?php echo $odontologo->id ? 'selected' : ''; ?>>
