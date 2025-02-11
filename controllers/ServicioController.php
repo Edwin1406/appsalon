@@ -34,6 +34,8 @@ class ServicioController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             // este metodo se encarga de llenar el objeto servicio con los datos enviados por el usuario
             $servicio->sincronizar($_POST);
+
+            debuguear($_POST);
             // validacion
             $alertas = $servicio->validar();
             // debuguear($alertas);
