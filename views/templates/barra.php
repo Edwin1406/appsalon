@@ -2,7 +2,7 @@
     <p>Bienvenido: <?php echo $nombre ?? ''; ?></p>
     <a href="/logout" class="boton">Cerrar Session</a>
 </div>
-<?php if(!empty($_SESSION['admin']) && $_SESSION['admin'] === true): ?>
+<?php if (!empty($_SESSION['admin']) && $_SESSION['admin'] === '1'): ?>
     
     <div class="barra-servicios">
         <a class="boton" href="/admin">Ver Citas</a>
