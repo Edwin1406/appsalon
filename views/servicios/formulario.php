@@ -12,7 +12,7 @@
 
 <div class="campo">
     <label for="odontologoId">Odontólogo:</label>
-    <select name="odontologoId" id="odontologoId">
+    <select name="odontologoId" id="odontologoId" class="formulario__input">
         <?php foreach ($odontologos as $odontologo): ?>
             <option value="<?php echo $odontologo->id; ?>" 
                 <?php echo $odontologo->id ? 'selected' : ''; ?>>
