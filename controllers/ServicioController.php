@@ -99,5 +99,15 @@ class ServicioController{
         }
     }
 
+    public static function calendario(Router $router){
+        session_start();
+        // isAdmin();
+        $router->render('servicios/calendario',[
+            'nombre' => $_SESSION['nombre']
+        ]);
+    }
+
+
+
 }
 ?>

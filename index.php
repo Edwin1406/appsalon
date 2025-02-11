@@ -53,6 +53,10 @@ $router->get('/api/horas',[ApiHoraController::class,'index']);
 $router->get('/servicios', [ServicioController::class, 'index']);
 $router->get('/servicios/crear', [ServicioController::class, 'crear']);
 $router->post('/servicios/crear', [ServicioController::class, 'crear']);
+
+$router->get('/servicios/calendario', [ServicioController::class, 'calendario']);
+
+
 // ACTUALIZAR
 $router->get('/servicios/actualizar', [ServicioController::class, 'actualizar']);
 $router->post('/servicios/actualizar', [ServicioController::class, 'actualizar']);
