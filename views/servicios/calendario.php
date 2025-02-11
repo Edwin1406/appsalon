@@ -7,6 +7,12 @@
             margin: 40px auto;
         }
 
+        #calendar {
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    white-space: nowrap; /* Evita que los elementos salten de línea */
+}
+
+
         .modal {
             position: fixed;
             top: 0;
