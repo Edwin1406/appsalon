@@ -4,7 +4,7 @@
 
 #calendar {
             max-width: 100%;
-            margin: 40px auto;
+            margin: 1rem auto;
         }
 
         
