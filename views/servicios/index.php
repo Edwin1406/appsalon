@@ -11,7 +11,7 @@
             <div class="acciones">
                 <a  class="boton" href="/admin/servicios/actualizar?id=<?php echo $servicio->id ?>">Actualizar</a>
 
-            <form action="/servicios/eliminar" method="POST">
+            <form action="/admin/servicios/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $servicio->id?>">
                 <input type="submit" value="Eliminar" class="boton-eliminar">
             </form>
