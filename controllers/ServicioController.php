@@ -108,5 +108,20 @@ class ServicioController{
 
 
 
+    public static function cliente(Router $router){
+        session_start();
+        // isAdmin();
+        $servicio = new Servicio;
+        $alertas = [];
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+           
+        }
+        $router->render('servicios/cliente',[
+            'alertas' => $alertas
+        ]);
+        
+    }
+
+
 }
 ?>
