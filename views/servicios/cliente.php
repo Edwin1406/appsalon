@@ -1,4 +1,3 @@
-<h1 class="nombre-pagina">Cliente</h1>
 
 <link rel="stylesheet" href="/public/build/css/app.css">
 
