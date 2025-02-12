@@ -15,7 +15,7 @@ include_once __DIR__. '/../templates/alertas.php';
 
     
     <div class="campo">
-        <label for="nombre">Odontólogo:</label>
+        <label for="nombre">Cliente:</label>
         <select name="nombre" id="nombre" class="formulario__input">
             <?php foreach ($usuarios as $usuario): ?>
                 <option value="<?php echo $usuario->id; ?>" 
