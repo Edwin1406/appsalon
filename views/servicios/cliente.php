@@ -55,7 +55,7 @@ include_once __DIR__. '/../templates/alertas.php';
     </div>
 
    
-    <input type="submit" value="Crear Servicio" class="boton boton-verde">
+    <input type="submit" value="Crear Cliente" class="boton boton-verde">
 
 </form>
 
