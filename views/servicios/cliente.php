@@ -20,7 +20,7 @@ div class="campo">
             id="nombre" 
             placeholder="Tu Nombre" 
             name="nombre"
-            value="<?php echo s($usuario->nombre); ?>"
+            value=""
         />
     </div>
     <div class="campo">
@@ -30,7 +30,7 @@ div class="campo">
             id="apellido" 
             placeholder="Tu Apellido" 
             name="apellido"
-            value="<?php echo s($usuario->apellido); ?>"
+            value=""
         />
     </div>
     <div class="campo">
@@ -40,7 +40,7 @@ div class="campo">
             id="telefono" 
             placeholder="Tu Telefono" 
             name="telefono"
-            value="<?php echo s($usuario->telefono); ?>"
+            value=""
         />
     </div>
     <div class="campo">
@@ -50,7 +50,7 @@ div class="campo">
             id="email" 
             placeholder="Tu Email" 
             name="email"
-            value="<?php echo s($usuario->email); ?>"
+            value=""
         />
     </div>
    
