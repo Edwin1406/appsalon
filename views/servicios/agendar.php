@@ -15,12 +15,12 @@ include_once __DIR__. '/../templates/alertas.php';
 
     
     <div class="campo">
-        <label for="odontologoId">Odontólogo:</label>
-        <select name="odontologoId" id="odontologoId" class="formulario__input">
-            <?php foreach ($odontologos as $odontologo): ?>
-                <option value="<?php echo $odontologo->id; ?>" 
-                    <?php echo $odontologo->id ? 'selected' : ''; ?>>
-                    <?php echo htmlspecialchars($odontologo->nombre ) ?>
+        <label for="nombre">Odontólogo:</label>
+        <select name="nombre" id="nombre" class="formulario__input">
+            <?php foreach ($usuarios as $usuario): ?>
+                <option value="<?php echo $usuario->id; ?>" 
+                    <?php echo $usuario->id ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars($usuario->nombre ) ?>
                 </option>
             <?php endforeach; ?>
         </select>
