@@ -152,9 +152,11 @@ class ServicioController{
     public static function agendar(Router $router){
         session_start();
         // isAdmin();
+        $alertas = [];
         $usuarios = Usuario::all();
         $router->render('servicios/agendar',[
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            'alertas' => $alertas,
         ]);
     }
 
