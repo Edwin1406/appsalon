@@ -1,6 +1,7 @@
 <?php
 namespace Controllers;
 
+use Model\Cliente;
 use Model\Odontologo;
 use Model\Servicio;
 use Model\Usuario;
@@ -111,9 +112,9 @@ class ServicioController{
 
     public static function cliente(Router $router){
        //instanciar Usuario
-       $usuario = new Usuario;
+       $usuario = new Cliente;
        //arreglo con mensajes de errores
-       $alertas = Usuario::getAlertas();
+       $alertas = Cliente::getAlertas();
        $alertas = []; //porque cuando inicia la pagina no hay errores
 
        if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -126,7 +127,7 @@ class ServicioController{
              $resultado=$usuario->existeUsuario();
 
                if($resultado->num_rows){
-                   $alertas=Usuario::getAlertas();
+                   $alertas=Cliente::getAlertas();
                }else{
                    // Almacenar el usuario en la base de datos
                    $resultado = $usuario->guardar();
