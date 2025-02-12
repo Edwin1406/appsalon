@@ -14,6 +14,14 @@ include_once __DIR__. '/../templates/alertas.php';
     margin-bottom: 1rem;
 }
 
+select{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    border: 1px solid #e1e1e1;
+}
+
 
 </style>
 
