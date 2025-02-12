@@ -25,6 +25,31 @@ include_once __DIR__. '/../templates/alertas.php';
             <?php endforeach; ?>
         </select>
     </div>
+    
+    <div class="campo">
+        <label for="nombre">Servicio:</label>
+        <select name="nombre" id="nombre" class="formulario__input">
+            <?php foreach ($servicios as $servicio): ?>
+                <option value="<?php echo $servicio->id; ?>" 
+                    <?php echo $servicio->id ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars($servicio->nombre ) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    
+        <div class="campo">
+            <label for="odontologoId">Odontólogo:</label>
+            <select name="odontologoId" id="odontologoId" class="formulario__input">
+                <?php foreach ($odontologos as $odontologo): ?>
+                    <option value="<?php echo $odontologo->id; ?>" 
+                        <?php echo $odontologo->id ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($odontologo->nombre ) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
 
     <div class="campo">
         <label for="email">Email</label>

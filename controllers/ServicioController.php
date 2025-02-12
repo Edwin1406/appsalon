@@ -154,9 +154,13 @@ class ServicioController{
         // isAdmin();
         $alertas = [];
         $usuarios = Usuario::all();
+        $odontologos = Odontologo::all();
+        $servicios = Servicio::all();
         $router->render('servicios/agendar',[
             'usuarios' => $usuarios,
             'alertas' => $alertas,
+            'odontologos' => $odontologos,
+            'servicios' => $servicios,
         ]);
     }
 
