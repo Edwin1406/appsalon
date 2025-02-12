@@ -15,7 +15,6 @@ class ServicioController{
         $router->render('servicios/index',[
           'servicios' => $servicios,
             'nombre' => $_SESSION['nombre'],
-         
 
         ]);
         
@@ -41,7 +40,7 @@ class ServicioController{
             // debuguear($alertas);
             if(empty($alertas)){
                 $servicio->guardar();
-                header('Location: /servicios');
+                header('Location: /admin/servicios');
             }
         }
 
@@ -73,7 +72,7 @@ class ServicioController{
             // debuguear($_POST);
             if(empty($alertas)){
                 $servicio->guardar();
-                header('Location: /servicios');
+                header('Location: /admin/servicios');
             }
 
         }
@@ -92,7 +91,7 @@ class ServicioController{
             $id= $_POST['id'];
             $servicio = Servicio::find($id);
             $servicio->eliminar();
-            header('Location: /servicios');
+            header('Location: /admin/servicios');
             
             // debuguear($servicio);
 
