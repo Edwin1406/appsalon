@@ -51,14 +51,15 @@ include_once __DIR__. '/../templates/alertas.php';
         </div>
 
         <div class="campo">
-            <label for="hora">Hora</label>
+            <label for="fecha">Fecha</label>
             <input 
-                type="time" 
-                id="hora" 
-                name="hora"
+                type="date" 
+                id="fecha" 
+                name="fecha"
                 value=""
             />
         </div>
+
 
 
         <div class="campo">
