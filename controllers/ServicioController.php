@@ -3,6 +3,7 @@ namespace Controllers;
 
 use Model\Odontologo;
 use Model\Servicio;
+use Model\Usuario;
 use MVC\Router;
 
 class ServicioController{
@@ -109,13 +110,36 @@ class ServicioController{
 
 
     public static function cliente(Router $router){
-        session_start();
-        // isAdmin();
-        $servicio = new Servicio;
-        $alertas = [];
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-           
-        }
+       //instanciar Usuario
+       $usuario = new Usuario;
+       //arreglo con mensajes de errores
+       $alertas = Usuario::getAlertas();
+       $alertas = []; //porque cuando inicia la pagina no hay errores
+
+       if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+          $usuario ->sincronizar($_POST);
+          $alertas = $usuario->validar();
+       //revisar que el arreglo de errores este vacio
+           if(empty($alertas)){
+               // existeUsuario
+             $resultado=$usuario->existeUsuario();
+
+               if($resultado->num_rows){
+                   $alertas=Usuario::getAlertas();
+               }else{
+                   // Almacenar el usuario en la base de datos
+                   $resultado = $usuario->guardar();
+
+                   if($resultado){
+                      echo 'Cliente Creado';
+                   }
+
+                
+               }
+           }
+         
+       }
         $router->render('servicios/cliente',[
             'alertas' => $alertas
         ]);
