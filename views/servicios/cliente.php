@@ -13,7 +13,7 @@ include_once __DIR__. '/../templates/alertas.php';
 <form action="/admin/servicios/crear" method="POST" class="formulario">
             
 
-div class="campo">
+<div class="campo">
         <label for="nombre">Nombre</label>
         <input 
             type="text" 
@@ -53,6 +53,7 @@ div class="campo">
             value=""
         />
     </div>
+
    
     <input type="submit" value="Crear Servicio" class="boton boton-verde">
 
