@@ -1,5 +1,11 @@
 <h1 class="nombre-pagina">Calendario</h1>
+<div class="dashboard__contenedor-boton">
+    <a class="dashboard__boton" href="/admin/area" >
+        <i class="fa-solid fa-circle-arrow-left"></i>
+        Volver
+    </a>
 
+</div>
 <style>
 
 #calendar {
