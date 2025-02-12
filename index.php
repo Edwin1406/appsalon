@@ -58,6 +58,7 @@ $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 
 // CREAR CLIENTE
 $router->get('/admin/servicios/cliente', [ServicioController::class, 'cliente']);
+$router->post('/admin/servicios/cliente', [ServicioController::class, 'cliente']);
 
 // CALENDARIO
 $router->get('/admin/servicios/calendario', [ServicioController::class, 'calendario']);
