@@ -289,13 +289,16 @@ class ServicioController{
     public static function apicitaservicio(Router $router) {
         $citas = CitaServicio::all(); // Obtiene los datos con los JOINs
         
-        // Configurar encabezados para que la respuesta sea JSON
-        header('Content-Type: application/json');
-        
-        echo json_encode([
-            'status' => 'success',
-            'data' => $citas
-        ], JSON_PRETTY_PRINT);
+        foreach ($citas as $cita) {
+           $cita->citaId = $cita->cita->fecha . ' ' . $cita->cita->hora;
+           // odontologo
+              $cita->odontologoId = $cita->cita->odontologo->nombre;
+            $cita->servicioId = $cita->servicio->nombre;
+
+        }
+
+
+        echo json_encode($citas);
     }
     
     
