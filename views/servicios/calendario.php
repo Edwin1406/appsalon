@@ -286,7 +286,7 @@ estadoInfo.addEventListener('dblclick', function() {
 
 async function Apivisor( citaId) {
         try {
-            const url =`${location.origin}/admin/api/nombreCliente?id=${citaId}`
+            const url =`${location.origin}/admin/api/estado?id=${citaId}`
             const resultado = await fetch(url);
             const visor = await resultado.json();
 
