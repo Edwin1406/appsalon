@@ -206,16 +206,26 @@ class ServicioController{
             'servicios' => $servicios,
         ]);
     }
+    
+
+
     public static function apicitas(Router $router) {
         $citas = Cita::all();
+        $citasArray = [];
     
         foreach ($citas as $cita) {
-            $usuario = Usuario::find($cita->usuarioId); 
-            $cita->setAttribute('usuario', $usuario); // Asigna los datos del usuario correctamente
+            $citaData = new stdClass(); 
+            $citaData->id = $cita->id;
+            $citaData->fecha = $cita->fecha;
+            $citaData->hora = $cita->hora;
+            $citaData->usuario = Usuario::find($cita->usuarioId); 
+    
+            $citasArray[] = $citaData;
         }
     
-        echo json_encode($citas);
+        echo json_encode($citasArray);
     }
+    
     
     
 }
