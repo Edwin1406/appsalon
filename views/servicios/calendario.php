@@ -325,7 +325,7 @@ async function Apiestado( citaId) {
 
         try {
 
-            const url = `${location.origin}/admin/api/actualizar`;
+            const url = `${location.origin}/admin/api/actualizarestado`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: data
