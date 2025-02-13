@@ -186,6 +186,24 @@
             
             <p><strong>Estado:</strong> <span id="estado_info"></span></p>
 
+
+            <p><strong>Estado:</strong> <span id="estado_info" class="cancelado">CANCELADO</span></p>
+
+<style>
+    .pendiente {
+        color: tomato;
+    }
+
+    .confirmado {
+        color: green;
+    }
+
+    .cancelado {
+        color: red;
+    }
+</style>
+
+
         </div>
     </div>
 </div>
