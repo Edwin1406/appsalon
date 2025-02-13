@@ -16,4 +16,26 @@ class  CitaServicio extends ActiveRecord{
         $this->servicioId = $args['servicioId'] ?? '';
     }
 
+
+
+
+    public static function obtenerCitas() {
+        $query = "SELECT 
+                    cs.id AS citasservicio_id,
+                    c.id AS cita_id,
+                    c.fecha,
+                    c.hora,
+                    u.nombre AS nombrecliente,
+                    s.nombre AS nombreservicio,
+                    o.nombre AS nombreodontologo
+                  FROM citasservicios cs
+                  LEFT JOIN citas c ON cs.citaId = c.id
+                  LEFT JOIN usuarios u ON c.usuarioid = u.id
+                  LEFT JOIN servicios s ON cs.servicioId = s.id
+                  LEFT JOIN odontologo o ON s.odontologoid = o.id";
+
+        return self::consultarSQL($query);
+    }
+
+
 }

@@ -287,17 +287,8 @@ class ServicioController{
 
 
     public static function apicitaservicio(Router $router) {
-        $citas = CitaServicio::all(); // Obtiene los datos con los JOINs
-        
-        foreach ($citas as $cita) {
-            $cita->citaId = isset($cita->cita) ? $cita->cita->fecha . ' ' . $cita->cita->hora : null;
-    
-            // Verificar si el odontólogo existe (revisando usuarioid)
-            $cita->odontologoId = isset($cita->cita) && isset($cita->cita->usuario) ? $cita->cita->usuario->nombre : null;
-    
-            // Verificar si el servicio existe
-            $cita->servicioId = isset($cita->servicio) ? $cita->servicio->nombre : null;
-        }
+        $citas = CitaServicio::obtenerCitas();
+
     
         echo json_encode($citas);
     }

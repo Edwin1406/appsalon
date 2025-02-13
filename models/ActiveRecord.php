@@ -111,18 +111,7 @@ class ActiveRecord {
 
 
 
-    public static function all1() {
-        $query = "SELECT 
-                        cs.id, cs.citaId, cs.servicioId, 
-                        c.fecha, c.hora, c.paciente, 
-                        s.nombre AS servicio, s.precio 
-                  FROM citasservicios cs
-                  INNER JOIN citas c ON cs.citaId = c.id
-                  INNER JOIN servicios s ON cs.servicioId = s.id";
-    
-        $resultado = self::consultarSQL($query);
-        return $resultado;
-    }
+ 
     
 
 
