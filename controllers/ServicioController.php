@@ -291,14 +291,17 @@ class ServicioController{
         
         foreach ($citas as $cita) {
             $cita->citaId = isset($cita->cita) ? $cita->cita->fecha . ' ' . $cita->cita->hora : null;
-            // Verificar si la relación odontologo existe
-            $cita->odontologoId = isset($cita->cita) && isset($cita->cita->odontologo) ? $cita->cita->odontologo->nombre : null;
-            // Verificar si la relación servicio existe
+    
+            // Verificar si el odontólogo existe (revisando usuarioid)
+            $cita->odontologoId = isset($cita->cita) && isset($cita->cita->usuario) ? $cita->cita->usuario->nombre : null;
+    
+            // Verificar si el servicio existe
             $cita->servicioId = isset($cita->servicio) ? $cita->servicio->nombre : null;
         }
     
         echo json_encode($citas);
     }
+    
     
     
     
