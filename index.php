@@ -56,6 +56,7 @@ $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 
 // API DE SERVICIOS
 $router->get('/admin/api/apicitas', [ServicioController::class, 'apicitas']);
+$router->get('/admin/api/apicitaservicio', [ServicioController::class, 'apicitaservicio']);
 
 
 

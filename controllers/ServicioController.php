@@ -284,6 +284,14 @@ class ServicioController{
     
         echo json_encode($citasArray);
     }
+
+
+    public static function apicitaservicio(Router $router) {
+        $citas = CitaServicio::all();
+       
+    
+        echo json_encode($citas);
+    }
     
     
     
