@@ -2,6 +2,7 @@
 namespace Controllers;
 
 use Model\Cita;
+use Model\Citas;
 use MVC\Router;
 use Model\Cliente;
 use Model\Usuario;
@@ -238,7 +239,8 @@ class ServicioController{
             return;
             }
 
-        $
+        $estados = Citas::find($visor_id);
+        echo json_encode($estados);
     }
     
     
