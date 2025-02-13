@@ -332,10 +332,10 @@ async function Apiestado( citaId) {
             });
             const resultado = await respuesta.json();
             if(resultado.respuesta.tipo === 'correcto'){
-                // actualizar el DOM
-                document.querySelector(`[data-id="${id}"]`).textContent = estado; 
-                // colores de estado
-                document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
+                // // actualizar el DOM
+                // document.querySelector(`[data-id="${id}"]`).textContent = estado; 
+                // // colores de estado
+                // document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
 
                 
 
