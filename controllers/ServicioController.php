@@ -1,11 +1,13 @@
 <?php
 namespace Controllers;
 
-use Model\Cliente;
-use Model\Odontologo;
-use Model\Servicio;
-use Model\Usuario;
+use Model\Cita;
 use MVC\Router;
+use Model\Cliente;
+use Model\Usuario;
+use Model\Servicio;
+use Model\Odontologo;
+use Model\CitaServicio;
 
 class ServicioController{
     public static function index(Router $router){
