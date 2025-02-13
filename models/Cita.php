@@ -19,7 +19,7 @@ class Cita extends ActiveRecord{
         
     }
 
-     // ✅ Método para obtener el usuario sin usar propiedades dinámicas
+     // Método para obtener el usuario sin usar propiedades dinámicas
      public function getUsuario() {
         return Usuario::find($this->usuarioId);
     }

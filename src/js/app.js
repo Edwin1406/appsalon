@@ -245,8 +245,24 @@ async function ApiHoras(){
 }
 
 
+// function generarHorasDisponibles() {
+//     const datalist = document.querySelector('#horasDisponibles');
+//     const startTime = 10; // Hora de inicio
+//     const endTime = 19;  // Hora de finalización
+//     const interval = 30; // Intervalo de 30 minutos
+
+//     for (let hour = startTime; hour < endTime; hour++) {
+//         for (let minute = 0; minute < 60; minute += interval) {
+//             let timeString = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+//             const option = document.createElement('option');
+//             option.value = timeString;
+//             datalist.appendChild(option);
+//         }
+//     }
+// }
+
 function generarHorasDisponibles() {
-    const datalist = document.querySelector('#horasDisponibles');
+    const selectHora = document.querySelector('#hora');
     const startTime = 10; // Hora de inicio
     const endTime = 19;  // Hora de finalización
     const interval = 30; // Intervalo de 30 minutos
@@ -256,7 +272,8 @@ function generarHorasDisponibles() {
             let timeString = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
             const option = document.createElement('option');
             option.value = timeString;
-            datalist.appendChild(option);
+            option.textContent = timeString;
+            selectHora.appendChild(option);
         }
     }
 }
@@ -264,8 +281,7 @@ function generarHorasDisponibles() {
 
 
 function mostrarHoras(horas) {
-    // const horasReservadas = horas.map(horasReservada => horasReservada.hora.slice(0, 5)); // Elimina los segundos
-    // const fechasReservadas = horas.map(fechaReservada => fechaReservada.fecha);
+  
 
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
