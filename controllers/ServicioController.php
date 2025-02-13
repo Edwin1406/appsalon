@@ -273,19 +273,12 @@ class ServicioController{
              echo json_encode(['respuesta' => $respuesta]);
         }
         
-     }
- 
-
-
-
+     
 
 
 
         
     }
-    
-    
-    
     
     
     
