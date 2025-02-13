@@ -23,6 +23,7 @@
     padding: 1rem;
     background-color: #f1f1f1;
     gap: 1rem;
+    width: 20%;
 }
 
 
