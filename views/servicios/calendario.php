@@ -27,7 +27,7 @@
 
 }
 
-a{
+.dashboard__boton{
     text-decoration: none;
     color: white;
     background-color: #333;
