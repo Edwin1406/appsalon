@@ -133,7 +133,6 @@ class ActiveRecord {
 //     return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
 // }
 
-
 public static function whereAgenda($columna1, $valor1, $columna2 = null, $valor2 = null) {
     $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna1} = ?";
     $parametros = [$valor1];
@@ -143,10 +142,21 @@ public static function whereAgenda($columna1, $valor1, $columna2 = null, $valor2
         $parametros[] = $valor2;
     }
 
-    $resultado = self::consultarSQL($query, $parametros);
+    // Conectar a la base de datos
+    $conexion = self::$db->prepare($query);
+
+    // Definir los tipos de parámetros dinámicamente
+    $tipos = str_repeat('s', count($parametros)); // 's' para string, 'i' para integer si fuera necesario
+
+    // Hacer bind de los parámetros
+    $conexion->bind_param($tipos, ...$parametros);
+
+    // Ejecutar la consulta
+    $conexion->execute();
+    $resultado = $conexion->get_result()->fetch_all(MYSQLI_ASSOC);
+
     return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
 }
-
 
 
 
