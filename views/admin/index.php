@@ -88,7 +88,7 @@ if (count($citas) === 0) {
 
                     // Eliminar el cero del teléfono
                     $telefono_sin_cero = ltrim($cita->telefono, '0');
-                    $business_name = "(nombre del la clinica)"; // Nombre de tu negocio)";
+                    $business_name = "DENTAL ÁLVAREZ"; // Nombre de tu negocio)";
                     $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
                     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
@@ -105,7 +105,7 @@ if (count($citas) === 0) {
                     }
 
                     // Crear el mensaje para WhatsApp
-                    $message = urlencode("$saludo $client_name, te saluda $business_name (lugar). Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. Por favor, responde a este mensaje confirmando tu asistencia. ¡Te esperamos!");
+                    $message = urlencode("$saludo $client_name, te saludamos de $business_name (lugar). Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. Por favor, responde a este mensaje confirmando tu asistencia. ¡Te esperamos!");
 
                     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
                     ?>
