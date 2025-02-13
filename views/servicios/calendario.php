@@ -21,7 +21,7 @@
     margin-top: 2rem;
     border-radius: 1rem;
     padding: 1rem;
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     gap: 1rem;
     width: 20%;
 
@@ -30,7 +30,7 @@
 a{
     text-decoration: none;
     color: white;
-    /* background-color: #333; */
+    background-color: #333;
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
