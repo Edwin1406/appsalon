@@ -80,6 +80,8 @@ $router->post('/admin/servicios/eliminar', [ServicioController::class, 'eliminar
 
 // api Estado de la cita
 $router->get('/admin/api/estado', [ServicioController::class, 'estado']);
+$router->post('/admin/api/actualizarestado', [ServicioController::class, 'actualizarestado']);
+
 
 
 

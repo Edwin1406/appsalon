@@ -319,11 +319,9 @@ async function Apiestado( citaId) {
         data.append('usuarioId', usuarioId);
 
 
-        for (const [key, value] of data.entries()) {
-            console.log(`${key}: ${value}`);
-        }
-
-        
+        // for (const [key, value] of data.entries()) {
+        //     console.log(`${key}: ${value}`);
+        // }
 
         try {
 

@@ -241,10 +241,16 @@ class ServicioController{
 
         $estados = Citas::find($visor_id);
         echo json_encode($estados);
+    }
 
 
-
-
+    public static function actualizarestado(){
+        $id= $_POST['id'];
+        $estado= $_POST['estado'];
+        $cita = Citas::find($id);
+        $cita->estado = $estado;
+        $cita->guardar();
+        echo json_encode($cita);
     }
     
     
