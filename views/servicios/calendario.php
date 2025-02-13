@@ -143,6 +143,8 @@
             margin-top: 10px;
         }
 
+        
+
         @media (max-width: 768px) {
 
             .fc .fc-toolbar{
@@ -179,6 +181,77 @@
 </div>
 
 <script>
+// document.addEventListener('DOMContentLoaded', function() {
+//     const calendarEl = document.getElementById('calendar');
+//     const modal = document.getElementById('modalInfoCita');
+//     const cerrarModal = document.getElementById('cerrarModal');
+//     const whatsappButton = document.createElement('button');
+//     whatsappButton.textContent = 'Enviar WhatsApp';
+//     whatsappButton.id = 'whatsappButton';
+//     whatsappButton.style.marginTop = '10px';
+//     document.querySelector('.modal_contenido').appendChild(whatsappButton);
+
+//     fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
+//         .then(response => response.json())
+//         .then(data => {
+//             const eventos = data.map(cita => ({
+//                 id: cita.cita_id,
+//                 title: cita.nombrecliente+' '+cita.apellidocliente,
+//                 start: cita.fecha, 
+//                 extendedProps: {
+//                     hora: cita.hora,
+//                     telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`, // Asegurar formato internacional
+//                     doctor: cita.nombreodontologo.trim(),
+//                     asunto: cita.nombreservicio.trim()
+//                 }
+//             }));
+
+//             const calendar = new FullCalendar.Calendar(calendarEl, {
+//                 initialView: 'dayGridMonth',
+//                 locale: 'es',
+//                 headerToolbar: {
+//                     left: 'prev,next today',
+//                     center: 'title',
+//                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
+//                 },
+//                 buttonText: {
+//                     today: 'Hoy',
+//                     month: 'Mes',
+//                     week: 'Semana',
+//                     day: 'Día'
+//                 },
+//                 events: eventos,
+//                 eventClick: function(info) {
+//                     document.getElementById('nombre_paciente_info').textContent = info.event.title;
+//                     document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
+//                     document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
+//                     document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
+//                     document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
+//                     document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
+                    
+//                     const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+//                     const telefono = info.event.extendedProps.telefono;
+                    
+//                     whatsappButton.onclick = function() {
+//                         const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+//                         window.open(whatsappURL, '_blank');
+//                     };
+                    
+//                     modal.style.display = 'flex';
+//                 }
+//             });
+
+//             calendar.render();
+//         });
+
+//     cerrarModal.addEventListener('click', function() {
+//         modal.style.display = 'none';
+//     });
+// });
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
     const modal = document.getElementById('modalInfoCita');
@@ -189,61 +262,76 @@ document.addEventListener('DOMContentLoaded', function() {
     whatsappButton.style.marginTop = '10px';
     document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
-    fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
-        .then(response => response.json())
-        .then(data => {
-            const eventos = data.map(cita => ({
-                id: cita.cita_id,
-                title: cita.nombrecliente+' '+cita.apellidocliente,
-                start: cita.fecha, 
-                extendedProps: {
-                    hora: cita.hora,
-                    telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`, // Asegurar formato internacional
-                    doctor: cita.nombreodontologo.trim(),
-                    asunto: cita.nombreservicio.trim()
-                }
-            }));
-
-            const calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                locale: 'es',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                },
-                buttonText: {
-                    today: 'Hoy',
-                    month: 'Mes',
-                    week: 'Semana',
-                    day: 'Día'
-                },
-                events: eventos,
-                eventClick: function(info) {
-                    document.getElementById('nombre_paciente_info').textContent = info.event.title;
-                    document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
-                    document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
-                    document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
-                    document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
-                    document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
-                    
-                    const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
-                    const telefono = info.event.extendedProps.telefono;
-                    
-                    whatsappButton.onclick = function() {
-                        const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-                        window.open(whatsappURL, '_blank');
-                    };
-                    
-                    modal.style.display = 'flex';
-                }
+    function fetchEventsAndUpdateCalendar(calendar) {
+        fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
+            .then(response => response.json())
+            .then(data => {
+                const eventos = data.map(cita => ({
+                    id: cita.cita_id,
+                    title: cita.nombrecliente+' '+cita.apellidocliente,
+                    start: cita.fecha, 
+                    extendedProps: {
+                        hora: cita.hora,
+                        telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
+                        doctor: cita.nombreodontologo.trim(),
+                        asunto: cita.nombreservicio.trim()
+                    }
+                }));
+                calendar.removeAllEvents();
+                calendar.addEventSource(eventos);
             });
+    }
 
-            calendar.render();
-        });
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'es',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        buttonText: {
+            today: 'Hoy',
+            month: 'Mes',
+            week: 'Semana',
+            day: 'Día'
+        },
+        datesSet: function(info) {
+            setTimeout(() => {
+                document.querySelector('.fc-toolbar-title').textContent = info.view.title;
+            }, 50);
+        },
+        eventClick: function(info) {
+            document.getElementById('nombre_paciente_info').textContent = info.event.title;
+            document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
+            document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
+            document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
+            document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
+            document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
+            
+            const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+            const telefono = info.event.extendedProps.telefono;
+            
+            whatsappButton.onclick = function() {
+                const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                window.open(whatsappURL, '_blank');
+            };
+            
+            modal.style.display = 'flex';
+        }
+    });
+
+    calendar.render();
+    fetchEventsAndUpdateCalendar(calendar);
+    setInterval(() => fetchEventsAndUpdateCalendar(calendar), 60000); // Actualizar cada 60 segundos
 
     cerrarModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 });
+
+
+
+
+
 </script>
