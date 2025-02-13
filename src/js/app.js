@@ -213,7 +213,7 @@ function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
     inputFecha.addEventListener('input',function(e){
         const dia = new Date(e.target.value).getUTCDay();
-        if([6,0].includes(dia)){
+        if([0].includes(dia)){
             e.target.value = '';
             mostrarAlerta('No se puede agendar en fin de semana','error','.formulario');
            
