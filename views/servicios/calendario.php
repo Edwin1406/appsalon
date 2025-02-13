@@ -19,31 +19,28 @@
 </div>
 <style>
 
-    .contenido_ir{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-        border-radius: 1rem;
-        padding: 1rem;
-        /* background-color: #f1f1f1; */
-        gap: 5rem;
-        width: 20%;
-    }
+.contenido_ir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que los botones se muevan a la siguiente línea si no caben */
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 2rem;
+    width: auto; /* Permitir que se adapte al contenido */
+}
 
-.dashboard__contenedor-boton{
+.dashboard__contenedor-boton {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     border-radius: 1rem;
     padding: 1rem;
-    /* background-color: #f1f1f1; */
-    gap: 1rem;
-    width: 20%;
-
+    width: auto; /* Permitir que el contenedor se adapte al contenido */
 }
 
-.dashboard__boton{
+.dashboard__boton {
     text-decoration: none;
     color: white;
     background-color: #333;
@@ -53,7 +50,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    min-width: 150px; /* Ajustar el tamaño mínimo */
+    white-space: nowrap; /* Evitar saltos de línea en el texto */
+}
+
+.dashboard__boton i {
+    font-size: 1rem; /* Ajustar el tamaño del icono */
 }
 
 
