@@ -292,13 +292,61 @@ async function Apiestado( citaId) {
             // solo 2 estados confirmado y cancelado 
             const nuevoEstado = visor.estado === 'PENDIENTE' ? 'CONFIRMADO' : 'CANCELADO';
             visor.estado = nuevoEstado;
-            console.log(visor);
-            // actualizarEstado(visor);
+            // console.log(visor);
+            actualizarEstado(visor);
         } catch (error) {
             console.log(error);
         }
     }
+// actualizar el estado 
+    async function  actualizarEstado(visor){
+        const {id,fecha,hora,estado,usuarioId} = visor;
 
+        console.log('Datos antes de enviar:', { 
+            id, 
+            fecha,
+            hora,
+            estado,
+            usuarioId
+        });
+
+
+        const data = new FormData();
+        data.append('id', id);
+        data.append('fecha', fecha);
+        data.append('hora', hora);
+        data.append('estado', estado);
+        data.append('usuarioId', usuarioId);
+
+
+        for (const [key, value] of data.entries()) {
+            console.log(`${key}: ${value}`);
+        }
+
+        
+
+        try {
+
+            const url = `${location.origin}/admin/api/actualizar`;
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: data
+            });
+            const resultado = await respuesta.json();
+            if(resultado.respuesta.tipo === 'correcto'){
+                // actualizar el DOM
+                document.querySelector(`[data-id="${id}"]`).textContent = estado; 
+                // colores de estado
+                document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
+
+                
+
+            }
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
 
 
 
