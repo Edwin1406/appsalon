@@ -109,15 +109,6 @@ class ActiveRecord {
         return $resultado;
     }
 
-
-    protected static function consultarSQL206($query) {
-        $resultado = self::$db->query($query);
-        $array = [];
-        while ($row = $resultado->fetch_assoc()) {
-            $array[] = $row;
-        }
-        return $array;
-    }
     
     
  
