@@ -162,7 +162,6 @@
 <?php endif; ?>
 
 
-
 <div id="calendar"></div>
 <div id="modalInfoCita" class="modal" style="display: none;">
     <div class="modal_contenido">
@@ -179,11 +178,6 @@
     </div>
 </div>
 
-
-
-
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
@@ -195,18 +189,18 @@ document.addEventListener('DOMContentLoaded', function() {
     whatsappButton.style.marginTop = '10px';
     document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
-    fetch('https://odonto.megawebsistem.com/admin/api/apicitas')
+    fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
         .then(response => response.json())
         .then(data => {
             const eventos = data.map(cita => ({
-                id: cita.id,
-                title: cita.usuario.nombre + ' ' + cita.usuario.apellido + ' - ' + cita.hora,
+                id: cita.cita_id,
+                title: cita.nombrecliente + ' - ' + cita.hora,
                 start: cita.fecha, 
                 extendedProps: {
                     hora: cita.hora,
-                    telefono: cita.usuario.telefono.startsWith('+') ? cita.usuario.telefono : `+593${cita.usuario.telefono.replace(/^0/, '')}`, // Asegurar formato internacional
-                    doctor: 'Por asignar',
-                    asunto: 'Consulta'
+                    telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`, // Asegurar formato internacional
+                    doctor: cita.nombreodontologo.trim(),
+                    asunto: cita.nombreservicio.trim()
                 }
             }));
 
@@ -252,5 +246,4 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     });
 });
-
 </script>
