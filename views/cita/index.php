@@ -49,11 +49,11 @@
             </div> -->
 
             <div class="campo">
-                <label for="hora">Hora</label>
-                <select id="hora">
-                    <option value="" selected disabled>Selecciona una hora</option>
-                </select>
-            </div>
+    <label for="hora">Hora</label>
+    <select id="hora">
+        <option value="" selected disabled>Selecciona una hora</option>
+    </select>
+</div>
 
 
 

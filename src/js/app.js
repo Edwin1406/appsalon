@@ -13,6 +13,8 @@ const cita = {
 
 document.addEventListener('DOMContentLoaded', function() {
     inciarApp();
+    generarHorasDisponibles();
+
 });
 
 function inciarApp() { 
@@ -28,7 +30,7 @@ function inciarApp() {
     // seleccionarHora(); //añade la hora al objeto cita
     mostrarResumen(); //muestra el resumen de la citA
     ApiHoras(); //consultando la api de horas disponibles  
-    generarHorasDisponibles(); //genera las horas disponibles en el input de hora  
+    // generarHorasDisponibles(); //genera las horas disponibles en el input de hora  
 }
 
 
@@ -263,6 +265,12 @@ async function ApiHoras(){
 
 function generarHorasDisponibles() {
     const selectHora = document.querySelector('#hora');
+    
+    if (!selectHora) {
+        console.error("Elemento #hora no encontrado en el DOM");
+        return;
+    }
+
     const startTime = 10; // Hora de inicio
     const endTime = 19;  // Hora de finalización
     const interval = 30; // Intervalo de 30 minutos
@@ -277,7 +285,7 @@ function generarHorasDisponibles() {
         }
     }
 }
-generarHorasDisponibles();
+
 
 
 
