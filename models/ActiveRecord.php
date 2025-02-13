@@ -109,6 +109,11 @@ class ActiveRecord {
         return $resultado;
     }
 
+    public static function allDesc($orden = 'DESC') {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id {$orden}";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
     
     
     protected static function consultarSQL5($query) {
