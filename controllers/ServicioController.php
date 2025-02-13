@@ -164,7 +164,7 @@ class ServicioController{
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Crear una nueva cita con los datos del formulario
+            // Crear la cita
             $cita = new Cita([
                 'usuarioId' => $_POST['usuarioId'],
                 'odontologoId' => $_POST['odontologoId'],
@@ -172,22 +172,18 @@ class ServicioController{
                 'hora' => $_POST['hora']
             ]);
     
-            $resultado = $cita->guardar(); // Guarda la cita en la BD y devuelve el resultado
-            $citaId = $resultado['id']; // Se obtiene el ID de la cita guardada
+            $resultado = $cita->guardar(); // Guarda la cita
+            $citaId = $resultado['id']; // Obtiene el ID de la cita
     
             if ($citaId) {
-                // Guardar los servicios seleccionados en la tabla intermedia
-                if (!empty($_POST['servicios'])) {
-                    foreach ($_POST['servicios'] as $servicioId) {
-                        $citaServicio = new CitaServicio([
-                            'citaId' => $citaId,
-                            'servicioId' => $servicioId
-                        ]);
-                        $citaServicio->guardar();
-                    }
-                }
+                // Guardar el servicio seleccionado en la tabla intermedia
+                $citaServicio = new CitaServicio([
+                    'citaId' => $citaId,
+                    'servicioId' => $_POST['servicio'] // Solo un servicio
+                ]);
+                $citaServicio->guardar();
     
-                // Redirigir a la página de éxito o al listado de citas
+                // Redirigir para limpiar la URL
                 header('Location: /admin/servicios/agendar?resultado=1');
                 exit;
             }
