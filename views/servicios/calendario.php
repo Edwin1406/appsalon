@@ -225,16 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const telefono = info.event.extendedProps.telefono;
                     
                     whatsappButton.onclick = function() {
-                        const whatsappAppURL = `whatsapp://send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
-                        const whatsappWebURL = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
-                        
-                        window.location.href = whatsappAppURL;
-                        
-                        setTimeout(() => {
-                            if (document.visibilityState === 'visible') {
-                                window.open(whatsappWebURL, '_blank');
-                            }
-                        }, 1000);
+                        const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                        window.open(whatsappURL, '_blank');
                     };
                     
                     modal.style.display = 'flex';
