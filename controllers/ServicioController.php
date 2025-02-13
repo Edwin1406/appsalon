@@ -162,29 +162,43 @@ class ServicioController{
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
 
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Crear la cita
+            $fecha = $_POST['fecha'];
+            $hora = $_POST['hora'];
+    
+            // Verificar si ya existe una cita en la misma fecha y hora
+            $citaExistente = Cita::where([
+                'fecha' => $fecha,
+                'hora' => $hora
+            ]);
+    
+            if ($citaExistente) {
+                // Guardar mensaje de error en sesión y redirigir
+                $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora en la fecha $fecha.";
+                header('Location: /admin/servicios/agendar');
+                exit;
+            }
+    
+            // Si no hay cita en la misma fecha y hora, proceder a guardar
             $cita = new Cita([
                 'usuarioId' => $_POST['usuarioId'],
                 'odontologoId' => $_POST['odontologoId'],
-                'fecha' => $_POST['fecha'],
-                'hora' => $_POST['hora']
+                'fecha' => $fecha,
+                'hora' => $hora
             ]);
     
-            $resultado = $cita->guardar(); // Guarda la cita
-            $citaId = $resultado['id']; // Obtiene el ID de la cita
+            $resultado = $cita->guardar();
+            $citaId = $resultado['id'];
     
             if ($citaId) {
-                // Guardar el servicio seleccionado en la tabla intermedia
                 $citaServicio = new CitaServicio([
                     'citaId' => $citaId,
-                    'servicioId' => $_POST['servicio'] // Solo un servicio
+                    'servicioId' => $_POST['servicio']
                 ]);
                 $citaServicio->guardar();
     
-                // Redirigir para limpiar la URL
-                header('Location: /admin/servicios/agendar?resultado=1');
+                $_SESSION['mensaje_exito'] = "Cita creada correctamente";
+                header('Location: /admin/servicios/agendar');
                 exit;
             }
         }

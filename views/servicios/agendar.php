@@ -24,11 +24,15 @@ select{
 
 
 </style>
+<?php if(isset($_SESSION['mensaje_exito'])): ?>
+    <p class="alerta exito"><?php echo $_SESSION['mensaje_exito']; ?></p>
+    <?php unset($_SESSION['mensaje_exito']); ?>
+<?php endif; ?>
 
-    <!-- moestrar el mensaje exito porqe en la l tengo respesta = 1  https://odonto.megawebsistem.com/admin/servicios/agendar?resultado=1 -->
-    <?php if(isset($_GET['resultado']) && $_GET['resultado'] == 1): ?>
-        <p class="alerta exito">Cita creada correctamente</p>
-    <?php endif; ?>
+<?php if(isset($_SESSION['mensaje_error'])): ?>
+    <p class="alerta error"><?php echo $_SESSION['mensaje_error']; ?></p>
+    <?php unset($_SESSION['mensaje_error']); ?>
+<?php endif; ?>
 
 
 
