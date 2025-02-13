@@ -124,6 +124,16 @@
         .modal_detalles p strong {
             color: #333;
         }
+
+        @media (max-width: 768px) {
+
+            .fc .fc-toolbar{
+                display: block;
+            }
+        }
+
+
+
 </style>
 
 
