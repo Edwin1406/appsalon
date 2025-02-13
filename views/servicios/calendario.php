@@ -333,7 +333,7 @@ async function Apiestado( citaId) {
             const resultado = await respuesta.json();
             if(resultado.respuesta.tipo === 'correcto'){
                 // // actualizar el DOM
-                // document.querySelector(`[data-id="${id}"]`).textContent = estado; 
+                document.querySelector(`[data-id="${id}"]`).textContent = estado;
                 // // colores de estado
                 // document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
 
@@ -344,7 +344,17 @@ async function Apiestado( citaId) {
         }
     }
 
+    function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
+        Swal.fire({
+            title: titulo,
+            text: mensaje,
+            icon: "success",
+            position: "top-end",
+            confirmButtonColor: color,
+            background: fondo,
 
+        });  
+    }
 
 
 
