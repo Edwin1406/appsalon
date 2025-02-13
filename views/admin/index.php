@@ -89,7 +89,7 @@
 
     // Eliminar el cero del teléfono
     $telefono_sin_cero = ltrim($cita->telefono, '0');
-    $business_name = "NEW DENTAL";
+    $business_name = "(nombre del la clinica)"; // Nombre de tu negocio)";
     $client_name = $cita->cliente; // Asume que $cita->nombre contiene el nombre del cliente
     $phone_number = $telefono_sin_cero; // Número de WhatsApp incluyendo el código del país (ej. 593 para Ecuador)
 
