@@ -22,6 +22,7 @@ class  CitaServicio extends ActiveRecord{
     public static function obtenerCitas() {
         $query = "SELECT 
                     cs.id AS citasservicio_id,
+                    cs.estado AS estado,
                     c.id AS cita_id,
                     c.fecha,
                     c.hora,

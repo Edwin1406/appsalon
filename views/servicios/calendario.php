@@ -181,6 +181,8 @@
             <p><strong>Teléfono:</strong> <span id="telefono_info"></span></p>
             <p><strong>Doctor:</strong> <span id="doctor_info"></span></p>
             <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>
+            <p><strong>Estado:</strong> <span id="asunto_info"></span></p>
+
         </div>
     </div>
 </div>
