@@ -26,6 +26,7 @@ class  CitaServicio extends ActiveRecord{
                     c.fecha,
                     c.hora,
                     u.nombre AS nombrecliente,
+                    u.telefono AS telefonocliente,
                     s.nombre AS nombreservicio,
                     o.nombre AS nombreodontologo
                   FROM citasservicios cs
