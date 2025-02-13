@@ -125,9 +125,23 @@ class ActiveRecord {
 
 
 // 
-public static function whereAgenda($columna, $valor) {
-    $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = ?";
-    $parametros = [$valor];
+// public static function whereAgenda($columna, $valor) {
+//     $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = ?";
+//     $parametros = [$valor];
+
+//     $resultado = self::consultarSQL($query, $parametros);
+//     return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
+// }
+
+
+public static function whereAgenda($columna1, $valor1, $columna2 = null, $valor2 = null) {
+    $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna1} = ?";
+    $parametros = [$valor1];
+
+    if ($columna2 && $valor2) {
+        $query .= " AND {$columna2} = ?";
+        $parametros[] = $valor2;
+    }
 
     $resultado = self::consultarSQL($query, $parametros);
     return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias

@@ -225,7 +225,7 @@ class ServicioController{
             $servicioId = $_POST['servicio'];
     
             // Verificar si ya existe una cita en la misma fecha y hora
-            $citaExistente = Cita::where('hora', $hora)->where('fecha', $fecha)->first();
+            $citaExistente = Cita::whereAgenda('hora', $hora, 'fecha', $fecha);
     
             if ($citaExistente) {
                 $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora en la fecha $fecha. Por favor, elige otra hora.";
@@ -267,7 +267,7 @@ class ServicioController{
     
 
 
-
+    
     public static function apicitas(Router $router) {
         $citas = Cita::all();
         $citasArray = [];
