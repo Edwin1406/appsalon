@@ -160,6 +160,7 @@ class ServicioController{
         
         $alertas = [];
         $usuarios = Usuario::all('DESC');
+        debuguear($usuarios);
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
     
