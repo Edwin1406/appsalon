@@ -154,63 +154,6 @@ class ServicioController{
 
 
 
-    // public static function agendar(Router $router){
-       
-        
-    //     session_start();
-    //     isAdmin();
-        
-    //     $alertas = [];
-    //     $usuarios = Usuario::all();
-    //     $odontologos = Odontologo::all();
-    //     $servicios = Servicio::all();
-
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         $fecha = $_POST['fecha'];
-    //         $hora = $_POST['hora'];
-    
-    //         // Verificar si ya existe una cita en la misma hora (sin importar la fecha ni el odontólogo)
-    //         $citaExistente = Cita::where('hora', $hora);
-    
-    //         if ($citaExistente) {
-    //             $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora. Por favor, elige otra hora.";
-    //             header('Location: /admin/servicios/agendar');
-    //             exit;
-    //         }
-    
-    //         // Guardar la nueva cita
-    //         $cita = new Cita([
-    //             'usuarioId' => $_POST['usuarioId'],
-    //             'odontologoId' => $_POST['odontologoId'],
-    //             'fecha' => $fecha,
-    //             'hora' => $hora
-    //         ]);
-    
-    //         $resultado = $cita->guardar();
-    //         $citaId = $resultado['id'];
-    
-    //         if ($citaId) {
-    //             $citaServicio = new CitaServicio([
-    //                 'citaId' => $citaId,
-    //                 'servicioId' => $_POST['servicio']
-    //             ]);
-    //             $citaServicio->guardar();
-    
-    //             $_SESSION['mensaje_exito'] = "Cita creada correctamente";
-    //             header('Location: /admin/servicios/agendar');
-    //             exit;
-    //         }
-    //     }
-
-    //     $router->render('servicios/agendar',[
-    //         'usuarios' => $usuarios,
-    //         'alertas' => $alertas,
-    //         'odontologos' => $odontologos,
-    //         'servicios' => $servicios,
-    //     ]);
-    // }
-    
-
     public static function agendar(Router $router){
         session_start();
         isAdmin();
