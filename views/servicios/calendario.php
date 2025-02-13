@@ -34,7 +34,7 @@
     margin-top: 2rem;
     border-radius: 1rem;
     padding: 1rem;
-    gap: 2rem;
+    gap: 1rem;
     width: auto; /* Permitir que se adapte al contenido */
 }
 
