@@ -49,13 +49,23 @@
             </div> -->
 
             <div class="campo">
-    <label for="hora">Hora</label>
-    <select id="hora">
-        <option value="" selected disabled>Selecciona una hora</option>
-    </select>
-</div>
+                <label for="hora">Hora</label>
+                <select id="hora">
+                    <option value="" selected disabled>Selecciona una hora</option>
+                </select>
+            </div>
 
+    <style>
 
+        #hora{
+            padding: 1rem;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            border: 1px solid #e1e1e1;
+            width: 100%;
+        }
+
+    </style>
 
             <input type="hidden" id="id" value="<?php echo $id; ?>">
         </form>
