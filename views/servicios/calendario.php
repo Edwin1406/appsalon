@@ -192,6 +192,16 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+    const idVisor = event.target.getAttribute('estado_info');
+console.log(idVisor);
+
+
+
+
     const calendarEl = document.getElementById('calendar');
     const modal = document.getElementById('modalInfoCita');
     const cerrarModal = document.getElementById('cerrarModal');
@@ -272,8 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const idVisor = event.target.getAttribute('estado_info');
-console.log(idVisor);
 
 
 
