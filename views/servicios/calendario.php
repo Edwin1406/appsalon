@@ -16,6 +16,13 @@
         </a>
         
     </div>
+    <div class="dashboard__contenedor-boton">
+        <a class="dashboard__boton" href="/admin">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            INICIO
+        </a>
+        
+    </div>
 </div>
 <style>
 
