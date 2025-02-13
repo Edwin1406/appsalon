@@ -34,7 +34,7 @@ class  CitaServicio extends ActiveRecord{
                   LEFT JOIN servicios s ON cs.servicioId = s.id
                   LEFT JOIN odontologo o ON s.odontologoid = o.id";
     
-        $resultado = self::consultarSQL($query);
+        $resultado = self::consultarSQL5($query);
     
         // 🔍 Depuración: Verificar qué trae la consulta
         var_dump($resultado);

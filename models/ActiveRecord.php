@@ -111,7 +111,15 @@ class ActiveRecord {
 
     
     
- 
+    protected static function consultarSQL5($query) {
+        $resultado = self::$db->query($query);
+        $array = [];
+        while ($row = $resultado->fetch_assoc()) { // ✅ Devuelve arrays asociativos
+            $array[] = $row;
+        }
+        return $array;
+    }
+    
     
 
 
