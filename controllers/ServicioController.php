@@ -253,7 +253,7 @@ class ServicioController{
                 $citaServicio->guardar();
     
                 $_SESSION['mensaje_exito'] = "Cita creada correctamente";
-                header('Location: /admin/servicios/agendar');
+                header('Location: /admin/servicios/calendario');
                 exit;
             }
         }
