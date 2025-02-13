@@ -26,7 +26,7 @@ class ServicioController{
     // -------------------------------------CREAR-------------------------------------
     public static function crear(Router $router){
         session_start();
-        // isAdmin();
+        isAdmin();
 
         $odontologos = Odontologo::all();
 
@@ -60,7 +60,7 @@ class ServicioController{
     public static function actualizar(Router $router){
 
         session_start();
-        // isAdmin();
+        isAdmin();
 
         
         if(!is_numeric($_GET['id'])) return;
@@ -113,6 +113,8 @@ class ServicioController{
 
 
     public static function cliente(Router $router){
+        session_start();
+        isAdmin();
        //instanciar Usuario
        $usuario = new Cliente;
        //arreglo con mensajes de errores

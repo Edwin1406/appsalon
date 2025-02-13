@@ -207,7 +207,7 @@ function nombreCita(){
 
 
 
-
+// aumentar el 6 de la fecha para bloquaer los fines de semana al if
 
 function seleccionarFecha(){
     const inputFecha = document.querySelector('#fecha');
