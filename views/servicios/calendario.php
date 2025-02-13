@@ -27,7 +27,7 @@
         border-radius: 1rem;
         padding: 1rem;
         /* background-color: #f1f1f1; */
-        gap: 1rem;
+        gap: 5rem;
         width: 20%;
     }
 
