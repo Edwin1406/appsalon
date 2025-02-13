@@ -206,20 +206,17 @@ class ServicioController{
             'servicios' => $servicios,
         ]);
     }
-    
     public static function apicitas(Router $router) {
-        // Obtener todas las citas
         $citas = Cita::all();
     
-        // Recorrer cada cita y agregar los datos del usuario manualmente
         foreach ($citas as $cita) {
-            $usuario = Usuario::find($cita->usuarioId); // Buscar al usuario por ID
-            $cita->usuario = $usuario; // Agregar los datos completos del usuario
-            unset($cita->usuarioId); // Eliminar el usuarioId para evitar redundancia
+            $usuario = Usuario::find($cita->usuarioId); 
+            $cita->setAttribute('usuario', $usuario); // Asigna los datos del usuario correctamente
         }
     
         echo json_encode($citas);
     }
+    
     
 }
 
