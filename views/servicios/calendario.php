@@ -335,7 +335,15 @@ async function Apiestado( citaId) {
                 // // actualizar el DOM
                 document.querySelector(`[data-id="${id}"]`).textContent = estado;
                 // // colores de estado
-                // document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
+                document.querySelector(`[data-id="${id}"]`).classList.remove('pendiente');
+                document.querySelector(`[data-id="${id}"]`).classList.remove('confirmado');
+                document.querySelector(`[data-id="${id}"]`).classList.remove('cancelado');
+                document.querySelector(`[data-id="${id}"]`).classList.add(estado.toLowerCase());
+                // // mostrar alerta
+                mostrarAlerta('Correcto', 'Estado actualizado', 'success', '#4BB543', '#D1E7DD');
+            }else{
+                mostrarAlerta('Error', 'Hubo un error al actualizar el estado', 'error', '#FF0040', '#F8D7DA');
+            
 
             }
         } catch (error) {
