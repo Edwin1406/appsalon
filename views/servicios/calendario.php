@@ -143,7 +143,7 @@
             margin-top: 10px;
         }
 
-        h2 #fc-dom-1.fc-toolbar-title{
+        h2{
             color: #333;
             text-align: center;
         }
