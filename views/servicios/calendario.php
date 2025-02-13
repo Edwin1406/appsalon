@@ -277,11 +277,10 @@ cerrarModal.addEventListener('click', function() {
 // Detectar doble clic en el estado para obtener el ID de la cita
 estadoInfo.addEventListener('dblclick', function() {
     const citaId = estadoInfo.getAttribute('data-cita-id');
-    if (citaId) {
-        console.log('ID de la cita:', citaId);
-    } else {
-        console.log('No se encontró el ID de la cita.');
-    }
+    console.log(citaId);
+    Apiestado(citaId);
+
+    
 });
 
 });
