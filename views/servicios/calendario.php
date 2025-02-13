@@ -30,12 +30,13 @@
 a{
     text-decoration: none;
     color: white;
-    background-color: #333;
+    /* background-color: #333; */
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 1rem;
 }
 
