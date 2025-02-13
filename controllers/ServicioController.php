@@ -150,8 +150,43 @@ class ServicioController{
 
 
     public static function agendar(Router $router){
-        session_start();
+       
         // isAdmin();
+
+        session_start();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Crear una nueva cita con los datos del formulario
+            $cita = new Cita([
+                'usuarioId' => $_POST['usuarioId'],
+                'odontologoId' => $_POST['odontologoId'],
+                'fecha' => $_POST['fecha'],
+                'hora' => $_POST['hora']
+            ]);
+    
+            $resultado = $cita->guardar(); // Guarda la cita en la BD y devuelve el resultado
+            $citaId = $resultado['id']; // Se obtiene el ID de la cita guardada
+    
+            if ($citaId) {
+                // Guardar los servicios seleccionados en la tabla intermedia
+                if (!empty($_POST['servicios'])) {
+                    foreach ($_POST['servicios'] as $servicioId) {
+                        $citaServicio = new CitaServicio([
+                            'citaId' => $citaId,
+                            'servicioId' => $servicioId
+                        ]);
+                        $citaServicio->guardar();
+                    }
+                }
+    
+                // Redirigir a la página de éxito o al listado de citas
+                header('Location: /admin/citas');
+                exit;
+            }
+        }
+
+
+
         $alertas = [];
         $usuarios = Usuario::all();
         $odontologos = Odontologo::all();
