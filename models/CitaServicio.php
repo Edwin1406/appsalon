@@ -40,15 +40,16 @@ class  CitaServicio extends ActiveRecord{
         $citas = [];
         foreach ($resultado as $fila) {
             $citas[] = (object) [
-                'citasservicio_id' => $fila['citasservicio_id'],
-                'cita_id' => $fila['cita_id'],
-                'fecha' => $fila['fecha'],
-                'hora' => $fila['hora'],
-                'nombrecliente' => $fila['nombrecliente'],
-                'nombreservicio' => $fila['nombreservicio'],
-                'nombreodontologo' => $fila['nombreodontologo'],
+                'citasservicio_id' => $fila->citasservicio_id,
+                'cita_id' => $fila->cita_id,
+                'fecha' => $fila->fecha,
+                'hora' => $fila->hora,
+                'nombrecliente' => $fila->nombrecliente,
+                'nombreservicio' => $fila->nombreservicio,
+                'nombreodontologo' => $fila->nombreodontologo,
             ];
         }
+        
 
         return $citas;
     }
