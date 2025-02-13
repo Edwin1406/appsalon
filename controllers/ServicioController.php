@@ -290,16 +290,16 @@ class ServicioController{
         $citas = CitaServicio::all(); // Obtiene los datos con los JOINs
         
         foreach ($citas as $cita) {
-           $cita->citaId = $cita->cita->fecha . ' ' . $cita->cita->hora;
-           // odontologo
-              $cita->odontologoId = $cita->cita->odontologo->nombre;
-            $cita->servicioId = $cita->servicio->nombre;
-
+            $cita->citaId = isset($cita->cita) ? $cita->cita->fecha . ' ' . $cita->cita->hora : null;
+            // Verificar si la relación odontologo existe
+            $cita->odontologoId = isset($cita->cita) && isset($cita->cita->odontologo) ? $cita->cita->odontologo->nombre : null;
+            // Verificar si la relación servicio existe
+            $cita->servicioId = isset($cita->servicio) ? $cita->servicio->nombre : null;
         }
-
-
+    
         echo json_encode($citas);
     }
+    
     
     
     
