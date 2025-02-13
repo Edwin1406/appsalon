@@ -206,7 +206,19 @@ class ServicioController{
             'servicios' => $servicios,
         ]);
     }
+    
+    public static function apicitas(Router $router){
+        // session_start();
+        // isAdmin();
+        $citas = Cita::all();
+        // debuguear($citas);
+        echo json_encode($citas);
+        
+    }
+    
 }
+
+
 
 
 
