@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const telefono = info.event.extendedProps.telefono;
                     
                     whatsappButton.onclick = function() {
-                        const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                        const whatsappURL = `https://wa.me/+593${telefono}?text=${encodeURIComponent(mensaje)}`;
                         window.open(whatsappURL, '_blank');
                     };
                     
