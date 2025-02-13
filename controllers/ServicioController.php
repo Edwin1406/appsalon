@@ -1,11 +1,13 @@
 <?php
 namespace Controllers;
 
-use Model\Cliente;
-use Model\Odontologo;
-use Model\Servicio;
-use Model\Usuario;
+use Model\Cita;
 use MVC\Router;
+use Model\Cliente;
+use Model\Usuario;
+use Model\Servicio;
+use Model\Odontologo;
+use Model\CitaServicio;
 
 class ServicioController{
     public static function index(Router $router){
@@ -150,24 +152,145 @@ class ServicioController{
 
 
 
+    // public static function agendar(Router $router){
+       
+        
+    //     session_start();
+    //     isAdmin();
+        
+    //     $alertas = [];
+    //     $usuarios = Usuario::all();
+    //     $odontologos = Odontologo::all();
+    //     $servicios = Servicio::all();
+
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $fecha = $_POST['fecha'];
+    //         $hora = $_POST['hora'];
+    
+    //         // Verificar si ya existe una cita en la misma hora (sin importar la fecha ni el odontólogo)
+    //         $citaExistente = Cita::where('hora', $hora);
+    
+    //         if ($citaExistente) {
+    //             $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora. Por favor, elige otra hora.";
+    //             header('Location: /admin/servicios/agendar');
+    //             exit;
+    //         }
+    
+    //         // Guardar la nueva cita
+    //         $cita = new Cita([
+    //             'usuarioId' => $_POST['usuarioId'],
+    //             'odontologoId' => $_POST['odontologoId'],
+    //             'fecha' => $fecha,
+    //             'hora' => $hora
+    //         ]);
+    
+    //         $resultado = $cita->guardar();
+    //         $citaId = $resultado['id'];
+    
+    //         if ($citaId) {
+    //             $citaServicio = new CitaServicio([
+    //                 'citaId' => $citaId,
+    //                 'servicioId' => $_POST['servicio']
+    //             ]);
+    //             $citaServicio->guardar();
+    
+    //             $_SESSION['mensaje_exito'] = "Cita creada correctamente";
+    //             header('Location: /admin/servicios/agendar');
+    //             exit;
+    //         }
+    //     }
+
+    //     $router->render('servicios/agendar',[
+    //         'usuarios' => $usuarios,
+    //         'alertas' => $alertas,
+    //         'odontologos' => $odontologos,
+    //         'servicios' => $servicios,
+    //     ]);
+    // }
+    
+
     public static function agendar(Router $router){
         session_start();
-        // isAdmin();
+        isAdmin();
+        
         $alertas = [];
         $usuarios = Usuario::all();
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
-        $router->render('servicios/agendar',[
+    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $fecha = $_POST['fecha'];
+            $hora = $_POST['hora'];
+            $usuarioId = $_POST['usuarioId'];
+            $odontologoId = $_POST['odontologoId'];
+            $servicioId = $_POST['servicio'];
+    
+            // Verificar si ya existe una cita en la misma fecha y hora
+            $citaExistente = Cita::whereAgenda('hora', $hora, 'fecha', $fecha);
+    
+            if ($citaExistente) {
+                $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora en la fecha $fecha. Por favor, elige otra hora.";
+                header('Location: /admin/servicios/agendar');
+                exit;
+            }
+    
+            // Guardar la nueva cita
+            $cita = new Cita([
+                'usuarioId' => $usuarioId,
+                'odontologoId' => $odontologoId,
+                'fecha' => $fecha,
+                'hora' => $hora
+            ]);
+    
+            $resultado = $cita->guardar();
+            $citaId = $resultado['id'] ?? null;
+    
+            if ($citaId) {
+                $citaServicio = new CitaServicio([
+                    'citaId' => $citaId,
+                    'servicioId' => $servicioId
+                ]);
+                $citaServicio->guardar();
+    
+                $_SESSION['mensaje_exito'] = "Cita creada correctamente";
+                header('Location: /admin/servicios/agendar');
+                exit;
+            }
+        }
+    
+        $router->render('servicios/agendar', [
             'usuarios' => $usuarios,
             'alertas' => $alertas,
             'odontologos' => $odontologos,
             'servicios' => $servicios,
         ]);
     }
+    
 
 
-
-
-
+    
+    public static function apicitas(Router $router) {
+        $citas = Cita::all();
+        $citasArray = [];
+    
+        foreach ($citas as $cita) {
+            $citasArray[] = [
+                'id' => $cita->id,
+                'fecha' => $cita->fecha,
+                'hora' => $cita->hora,
+                'usuario' => $cita->getUsuario() // ✅ Obtener usuario correctamente
+            ];
+        }
+    
+        echo json_encode($citasArray);
+    }
+    
+    
+    
 }
+
+
+
+
+
 ?>

@@ -54,6 +54,9 @@ $router->get('/admin/servicios', [ServicioController::class, 'index']);
 $router->get('/admin/servicios/crear', [ServicioController::class, 'crear']);
 $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 
+// API DE SERVICIOS
+$router->get('/admin/api/apicitas', [ServicioController::class, 'apicitas']);
+
 
 
 // CREAR CLIENTE
@@ -62,6 +65,7 @@ $router->post('/admin/servicios/cliente', [ServicioController::class, 'cliente']
 
 // CREAR CITA
 $router->get('/admin/servicios/agendar', [ServicioController::class, 'agendar']);
+$router->post('/admin/servicios/agendar', [ServicioController::class, 'agendar']);
 
 // CALENDARIO
 $router->get('/admin/servicios/calendario', [ServicioController::class, 'calendario']);

@@ -23,99 +23,110 @@ select{
 }
 
 
+
+
 </style>
+<?php if(isset($_SESSION['mensaje_exito'])): ?>
+    <p class="alerta exito"><?php echo $_SESSION['mensaje_exito']; ?></p>
+    <?php unset($_SESSION['mensaje_exito']); ?>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['mensaje_error'])): ?>
+    <p class="alerta error"><?php echo $_SESSION['mensaje_error']; ?></p>
+    <?php unset($_SESSION['mensaje_error']); ?>
+<?php endif; ?>
 
 
 
 
-<form action="/admin/servicios/cliente" method="POST" class="formulario">
-            
+<form action="/admin/servicios/agendar" method="POST" class="formulario">
 
-    
     <div class="campo">
-        <label for="nombre">Cliente:</label>
-        <select name="nombre" id="nombre" class="formulario__input">
+        <label for="usuarioId">Cliente:</label>
+        <select name="usuarioId" id="usuarioId" class="formulario__input">
             <?php foreach ($usuarios as $usuario): ?>
-                <option value="<?php echo $usuario->id; ?>" 
-                    <?php echo $usuario->id ? 'selected' : ''; ?>>
+                <option value="<?php echo $usuario->id; ?>">
                     <?php echo htmlspecialchars($usuario->nombre ) ?>
                 </option>
             <?php endforeach; ?>
         </select>
     </div>
-    
     <div class="campo">
-        <label for="nombre">Servicio:</label>
-        <select name="nombre" id="nombre" class="formulario__input">
-            <?php foreach ($servicios as $servicio): ?>
-                <option value="<?php echo $servicio->id; ?>" 
-                    <?php echo $servicio->id ? 'selected' : ''; ?>>
-                    <?php echo htmlspecialchars($servicio->nombre ) ?>
-                </option>
+    <label for="servicio">Servicio:</label>
+    <select name="servicio" id="servicio" class="formulario__input">
+        <option value="" disabled selected>Selecciona un servicio</option>
+        <?php foreach ($servicios as $servicio): ?>
+            <option value="<?php echo $servicio->id; ?>" data-odontologo="<?php echo $servicio->odontologoId; ?>">
+                <?php echo htmlspecialchars($servicio->nombre); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+
+<div class="campo">
+    <label for="odontologoId">Odontólogo:</label>
+    <select name="odontologoId" id="odontologoId" class="formulario__input">
+        <option value="" disabled selected>Selecciona un odontólogo</option>
+        <?php foreach ($odontologos as $odontologo): ?>
+            <option value="<?php echo $odontologo->id; ?>">
+                <?php echo htmlspecialchars($odontologo->nombre); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+
+
+    <div class="campo">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required />
+    </div>
+
+    <div class="campo">
+        <label for="hora">Hora</label>
+        <select id="hora" name="hora" required>
+            <?php 
+            $horas = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30",
+                      "13:00", "13:30", "14:00", "14:30", "15:00", "15:30",
+                      "16:00", "16:30", "17:00", "17:30", "18:00", "18:30",
+                      "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+            foreach ($horas as $hora): ?>
+                <option value="<?php echo $hora; ?>"><?php echo $hora; ?></option>
             <?php endforeach; ?>
         </select>
     </div>
-    
-        <div class="campo">
-            <label for="odontologoId">Odontólogo:</label>
-            <select name="odontologoId" id="odontologoId" class="formulario__input">
-                <?php foreach ($odontologos as $odontologo): ?>
-                    <option value="<?php echo $odontologo->id; ?>" 
-                        <?php echo $odontologo->id ? 'selected' : ''; ?>>
-                        <?php echo htmlspecialchars($odontologo->nombre ) ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
 
-        <div class="campo">
-            <label for="fecha">Fecha</label>
-            <input 
-                type="date" 
-                id="fecha" 
-                name="fecha"
-                value=""
-            />
-        </div>
-
-        <div class="campo">
-            <label for="hora">Hora</label>
-            <select id="hora" name="hora">
-                <option value="10:00">10:00</option>
-                <option value="10:30">10:30</option>
-                <option value="11:00">11:00</option>
-                <option value="11:30">11:30</option>
-                <option value="12:00">12:00</option>
-                <option value="12:30">12:30</option>
-                <option value="13:00">13:00</option>
-                <option value="13:30">13:30</option>
-                <option value="14:00">14:00</option>
-                <option value="14:30">14:30</option>
-                <option value="15:00">15:00</option>
-                <option value="15:30">15:30</option>
-                <option value="16:00">16:00</option>
-                <option value="16:30">16:30</option>
-                <option value="17:00">17:00</option>
-                <option value="17:30">17:30</option>
-                <option value="18:00">18:00</option>
-                <option value="18:30">18:30</option>
-                <option value="19:00">19:00</option>
-                <option value="19:30">19:30</option>
-                <option value="20:00">20:00</option>
-                <option value="20:30">20:30</option>
-                <option value="21:00">21:00</option>
-                <option value="21:30">21:30</option>
-                <option value="22:00">22:00</option>
-            </select>
-        </div>
-
-
-
-   
-    <input type="submit" value="Crear Cliente" class="boton boton-verde">
-
+    <input type="submit" value="Agendar Cita" class="boton boton-verde">
 </form>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const servicioSelect = document.getElementById("servicio");
+    const odontologoSelect = document.getElementById("odontologoId");
 
+    servicioSelect.addEventListener("change", function() {
+        // Obtener la opción seleccionada
+        const selectedOption = servicioSelect.options[servicioSelect.selectedIndex];
+        const odontologoId = selectedOption.getAttribute("data-odontologo");
 
+        console.log("Servicio seleccionado:", selectedOption.value);
+        console.log("Odontólogo ID obtenido:", odontologoId);
+
+        if (odontologoId) {
+            // Buscar y seleccionar el odontólogo correspondiente
+            for (let i = 0; i < odontologoSelect.options.length; i++) {
+                if (odontologoSelect.options[i].value === odontologoId) {
+                    odontologoSelect.selectedIndex = i;
+                    console.log("Odontólogo seleccionado automáticamente.");
+                    break;
+                }
+            }
+        }
+    });
+
+    // Ejecutar la función al cargar la página para seleccionar automáticamente
+    servicioSelect.dispatchEvent(new Event("change"));
+});
+</script>
 
 

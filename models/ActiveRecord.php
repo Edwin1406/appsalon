@@ -122,6 +122,46 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);//array_shift para que no devuelva un el primer elemento de un array
     }
+
+
+// 
+// public static function whereAgenda($columna, $valor) {
+//     $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = ?";
+//     $parametros = [$valor];
+
+//     $resultado = self::consultarSQL($query, $parametros);
+//     return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
+// }
+
+public static function whereAgenda($columna1, $valor1, $columna2 = null, $valor2 = null) {
+    $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna1} = ?";
+    $parametros = [$valor1];
+
+    if ($columna2 && $valor2) {
+        $query .= " AND {$columna2} = ?";
+        $parametros[] = $valor2;
+    }
+
+    // Conectar a la base de datos
+    $conexion = self::$db->prepare($query);
+
+    // Definir los tipos de parámetros dinámicamente
+    $tipos = str_repeat('s', count($parametros)); // 's' para string, 'i' para integer si fuera necesario
+
+    // Hacer bind de los parámetros
+    $conexion->bind_param($tipos, ...$parametros);
+
+    // Ejecutar la consulta
+    $conexion->execute();
+    $resultado = $conexion->get_result()->fetch_all(MYSQLI_ASSOC);
+
+    return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
+}
+
+
+
+
+
     
     // consulta plana utilizar cuando los metodos no son suficientes para la consulta
     public static function SQL($query) {
