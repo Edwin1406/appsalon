@@ -62,6 +62,7 @@ $router->post('/admin/servicios/cliente', [ServicioController::class, 'cliente']
 
 // CREAR CITA
 $router->get('/admin/servicios/agendar', [ServicioController::class, 'agendar']);
+$router->post('/admin/servicios/agendar', [ServicioController::class, 'agendar']);
 
 // CALENDARIO
 $router->get('/admin/servicios/calendario', [ServicioController::class, 'calendario']);
