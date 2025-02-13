@@ -245,21 +245,43 @@ class ServicioController{
 
 
     public static function actualizarestado(){
-        $id= $_POST['id'];
-        $cita = Citas::find($id);
-        if(!$cita){
-            $respuesta = [
-                'tipo' => 'error',
-                'mensaje' => 'Cita hubo un error al actualizar'
-            ];
-            echo json_encode($respuesta);
-            return;
-        }   
-        $estado= new Citas($_POST);
-        $cita->guardar();
-        echo json_encode([
-            'estado' => $estado->estado
-        ]);
+
+   
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            session_start();
+            $cita = Citas::find($_POST['id']);
+ 
+            if (!$cita || (int)$cita->id !== (int)$_POST['id']) {
+             $respuesta = [
+                 'estado' => 'error',
+                 'mensaje' => 'Error al actualizar el estado'
+             ];
+             echo json_encode($respuesta);
+             return;
+         }
+             $visor = new Citas($_POST);
+             $visor->id = $cita->id;
+             // debuguear($visor);
+             $resultado = $visor->guardar();
+             if($resultado){
+                 $respuesta = [
+                     'tipo' => 'correcto',
+                     'mensaje' => 'Estado actualizado'
+                 ];
+             } 
+             echo json_encode(['respuesta' => $respuesta]);
+        }
+        
+     }
+ 
+
+
+
+
+
+
+        
     }
     
     
