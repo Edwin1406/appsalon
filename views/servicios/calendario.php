@@ -160,31 +160,34 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
     const modal = document.getElementById('modalInfoCita');
     const cerrarModal = document.getElementById('cerrarModal');
+    const whatsappButton = document.createElement('button');
+    whatsappButton.textContent = 'Enviar WhatsApp';
+    whatsappButton.id = 'whatsappButton';
+    whatsappButton.style.marginTop = '10px';
+    document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
-    // Cargar los eventos desde la nueva API
     fetch('https://odonto.megawebsistem.com/admin/api/apicitas')
         .then(response => response.json())
         .then(data => {
             const eventos = data.map(cita => ({
                 id: cita.id,
                 title: cita.usuario.nombre + ' ' + cita.usuario.apellido + ' - ' + cita.hora,
-                start: cita.fecha, // Solo se usa la fecha, sin hora
+                start: cita.fecha, 
                 extendedProps: {
                     hora: cita.hora,
                     telefono: cita.usuario.telefono,
-                    doctor: 'Por asignar', // No hay doctor en la API actual, se debe definir cómo se manejará
-                    asunto: 'Consulta' // No se especifica el asunto en la API actual, se puede definir por defecto
+                    doctor: 'Por asignar',
+                    asunto: 'Consulta'
                 }
             }));
 
-            // Crear el calendario con los eventos transformados
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                locale: 'es', // Idioma en español
+                locale: 'es',
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
@@ -198,14 +201,19 @@
                 },
                 events: eventos,
                 eventClick: function(info) {
-                    // Mostrar datos en el modal
                     document.getElementById('nombre_paciente_info').textContent = info.event.title;
                     document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
                     document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
                     document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
                     document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
                     document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
-
+                    
+                    const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+                    const telefono = info.event.extendedProps.telefono;
+                    whatsappButton.onclick = function() {
+                        window.open(`https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`, '_blank');
+                    };
+                    
                     modal.style.display = 'flex';
                 }
             });
@@ -213,10 +221,10 @@
             calendar.render();
         });
 
-    // Cerrar el modal
     cerrarModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 });
+
 
 </script>
