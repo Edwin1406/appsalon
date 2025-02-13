@@ -1,0 +1,13 @@
+BD_HOST =localhost
+BD_USER =u904102484_odonto
+BD_PASS =Odonto2025.
+DB_NAME =u904102484_odonto
+
+
+EMAIL_HOST =smtp.hostinger.com
+EMAIL_PORT =465
+EMAIL_USER =pruebas@odonto.megawebsistem.com
+EMAIL_PASS =Odonto2025.
+
+
+
