@@ -143,6 +143,10 @@
             margin-top: 10px;
         }
 
+        h2 #fc-dom-1.fc-toolbar-title{
+            color: #333;
+            text-align: center;
+        }
         
 
         @media (max-width: 768px) {
