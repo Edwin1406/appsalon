@@ -332,20 +332,15 @@ async function Apiestado( citaId) {
             });
             const resultado = await respuesta.json();
             if(resultado.respuesta.tipo === 'correcto'){
-                // // actualizar el DOM
-                document.querySelector(`[data-id="${id}"]`).textContent = estado;
-                // // colores de estado
-                document.querySelector(`[data-id="${id}"]`).classList.remove('pendiente');
-                document.querySelector(`[data-id="${id}"]`).classList.remove('confirmado');
-                document.querySelector(`[data-id="${id}"]`).classList.remove('cancelado');
-                document.querySelector(`[data-id="${id}"]`).classList.add(estado.toLowerCase());
-                // // mostrar alerta
-                mostrarAlerta('Correcto', 'Estado actualizado', 'success', '#4BB543', '#D1E7DD');
-            }else{
-                mostrarAlerta('Error', 'Hubo un error al actualizar el estado', 'error', '#FF0040', '#F8D7DA');
-            
-
+                const elementoEstado = document.querySelector(`[data-id="${id}"]`);
+            if (elementoEstado) {
+                elementoEstado.textContent = estado;
+                elementoEstado.classList.remove('pendiente', 'confirmado', 'cancelado');
+                elementoEstado.classList.add(estado.toLowerCase());
+            } else {
+                console.warn(`No se encontró el elemento con data-id="${id}" en el DOM.`);
             }
+        }
         } catch (error) {
             console.log(error);
             
