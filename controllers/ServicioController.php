@@ -287,11 +287,17 @@ class ServicioController{
 
 
     public static function apicitaservicio(Router $router) {
-        $citas = CitaServicio::all();
-       
-    
-        echo json_encode($citas);
+        $citas = CitaServicio::all1(); // Obtiene los datos con JOIN de la BD
+        
+        // Configurar encabezados para que el navegador entienda que es JSON
+        header('Content-Type: application/json');
+        
+        echo json_encode([
+            'status' => 'success',
+            'data' => $citas
+        ]);
     }
+    
     
     
     

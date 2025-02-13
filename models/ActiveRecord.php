@@ -109,6 +109,22 @@ class ActiveRecord {
         return $resultado;
     }
 
+
+
+    public static function all1() {
+        $query = "SELECT cs.id, cs.citaId, cs.servicioId, 
+                         c.fecha, c.paciente, 
+                         s.nombre AS servicio, s.precio 
+                  FROM cita_servicio cs
+                  INNER JOIN citas c ON cs.citaId = c.id
+                  INNER JOIN servicios s ON cs.servicioId = s.id";
+        
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+    
+
+
     // Busca un registro por su id
     public static function find($id) {
         $query = "SELECT * FROM " . static::$tabla  ." WHERE id = {$id}";
