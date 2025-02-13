@@ -181,7 +181,7 @@
             <p><strong>Teléfono:</strong> <span id="telefono_info"></span></p>
             <p><strong>Doctor:</strong> <span id="doctor_info"></span></p>
             <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>
-            <p><strong>Estado:</strong> <span id="asunto_info"></span></p>
+            <p><strong>Estado:</strong> <span id="estado_info"></span></p>
 
         </div>
     </div>
@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
             document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
             document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
+            document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
             
             const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
             const telefono = info.event.extendedProps.telefono;
@@ -270,7 +271,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+const btnEstado = document.querySelectorAll('.btn-estado');
+btnEstado.classList.add('btn-estado');
 
 
 </script>
