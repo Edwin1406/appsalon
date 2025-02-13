@@ -181,6 +181,9 @@
             <p><strong>Teléfono:</strong> <span id="telefono_info"></span></p>
             <p><strong>Doctor:</strong> <span id="doctor_info"></span></p>
             <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>
+
+
+            
             <p><strong>Estado:</strong> <span id="estado_info"></span></p>
 
         </div>
@@ -343,17 +346,27 @@ async function Apiestado( citaId) {
                     console.warn("No se encontró el elemento con id='estado_info' en el DOM.");
                 }
 
-
-
-
-
-
         }
         } catch (error) {
             console.log(error);
             
         }
     }
+
+    let estadoElemento = document.getElementById("estado_info");
+
+        // Obtener el texto del estado
+        let estadoTexto = estadoElemento.innerText.trim().toUpperCase();
+
+        // Asignar color según el estado
+        if (estadoTexto === "PENDIENTE") {
+            estadoElemento.style.color = "tomato";
+        } else if (estadoTexto === "CONFIRMADO") {
+            estadoElemento.style.color = "green";
+        } else if (estadoTexto === "CANCELADO") {
+            estadoElemento.style.color = "red";
+        }
+
 
     function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
         Swal.fire({
