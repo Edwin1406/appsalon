@@ -173,7 +173,7 @@
 
 
 <script>
- document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
     const modal = document.getElementById('modalInfoCita');
     const cerrarModal = document.getElementById('cerrarModal');
@@ -223,8 +223,18 @@
                     
                     const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
                     const telefono = info.event.extendedProps.telefono;
+                    
                     whatsappButton.onclick = function() {
-                        window.open(`https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`, '_blank');
+                        const whatsappAppURL = `whatsapp://send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
+                        const whatsappWebURL = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
+                        
+                        window.location.href = whatsappAppURL;
+                        
+                        setTimeout(() => {
+                            if (document.visibilityState === 'visible') {
+                                window.open(whatsappWebURL, '_blank');
+                            }
+                        }, 1000);
                     };
                     
                     modal.style.display = 'flex';
@@ -238,6 +248,5 @@
         modal.style.display = 'none';
     });
 });
-
 
 </script>
