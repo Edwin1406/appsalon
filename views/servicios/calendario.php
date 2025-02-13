@@ -196,8 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    const idVisor = event.target.getAttribute('estado_info');
-console.log(idVisor);
+
 
 
 
@@ -282,6 +281,18 @@ console.log(idVisor);
     });
 });
 
+
+
+
+click();
+
+function click(){
+    document.addEventListener('dblclick', function(event) {
+            const idVisor = event.target.getAttribute('data-id');
+           console.log(idVisor)
+        });
+
+}
 
 
 
