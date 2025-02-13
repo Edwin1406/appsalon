@@ -2,14 +2,14 @@
 <div class="dashboard__contenedor-boton">
     <a class="dashboard__boton" href="/admin/servicios/cliente">
         <i class="fa-solid fa-circle-arrow-left"></i>
-        Volver
+        AGREGAR CLIENTE
     </a>
 
 </div>
 <div class="dashboard__contenedor-boton">
     <a class="dashboard__boton" href="/admin/servicios/agendar">
         <i class="fa-solid fa-circle-arrow-left"></i>
-        Volver
+        AGREGAR CITA
     </a>
 
 </div>
