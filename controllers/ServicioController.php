@@ -159,7 +159,7 @@ class ServicioController{
         isAdmin();
         
         $alertas = [];
-        $usuarios = Usuario::allDesc('ASC');
+        $usuarios = Usuario::allDesc('DESC');
         debuguear($usuarios);
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
