@@ -18,7 +18,6 @@ class  CitaServicio extends ActiveRecord{
 
 
 
-
     public static function obtenerCitas() {
         $query = "SELECT 
                     cs.id AS citasservicio_id,
@@ -34,7 +33,7 @@ class  CitaServicio extends ActiveRecord{
                   LEFT JOIN servicios s ON cs.servicioId = s.id
                   LEFT JOIN odontologo o ON s.odontologoid = o.id";
 
-        $resultado = self::consultarSQL($query);
+        $resultado = self::consultarSQL206($query);
 
         // Convertir cada resultado en un objeto de la clase
         $citas = [];
