@@ -213,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         hora: cita.hora,
                         telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
                         doctor: cita.nombreodontologo.trim(),
-                        asunto: cita.nombreservicio.trim()
+                        asunto: cita.nombreservicio.trim(),
+                        estado: cita.estado.trim()
                     }
                 }));
                 calendar.removeAllEvents();
@@ -248,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
             document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
+
             
             const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
             const telefono = info.event.extendedProps.telefono;
