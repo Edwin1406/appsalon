@@ -22,6 +22,7 @@
     .contenido_ir{
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-top: 2rem;
         border-radius: 1rem;
         padding: 1rem;
