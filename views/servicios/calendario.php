@@ -337,8 +337,6 @@ async function Apiestado( citaId) {
                 // // colores de estado
                 // document.querySelector(`[data-id="${id}"]`).style.color = estado === 'ENVIADO' ? 'green' : estado === 'PAUSADO' ? 'red' : 'orange';
 
-                
-
             }
         } catch (error) {
             console.log(error);

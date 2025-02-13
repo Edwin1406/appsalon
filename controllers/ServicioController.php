@@ -246,11 +246,20 @@ class ServicioController{
 
     public static function actualizarestado(){
         $id= $_POST['id'];
-        $estado= $_POST['estado'];
         $cita = Citas::find($id);
-        $cita->estado = $estado;
+        if(!$cita){
+            $respuesta = [
+                'tipo' => 'error',
+                'mensaje' => 'Cita hubo un error al actualizar'
+            ];
+            echo json_encode($respuesta);
+            return;
+        }   
+        $estado= new Citas($_POST);
         $cita->guardar();
-        echo json_encode($cita);
+        echo json_encode([
+            'estado' => $estado->estado
+        ]);
     }
     
     
