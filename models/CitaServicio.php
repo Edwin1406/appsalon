@@ -33,13 +33,11 @@ class  CitaServicio extends ActiveRecord{
                   LEFT JOIN usuarios u ON c.usuarioid = u.id
                   LEFT JOIN servicios s ON cs.servicioId = s.id
                   LEFT JOIN odontologo o ON s.odontologoid = o.id";
-
-        $resultado = self::consultarSQL($query);
-
-        // Devolver el resultado en formato JSON
-        return json_encode($resultado, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    
+        // Retornar directamente los datos sin json_encode
+        return self::consultarSQL($query);
     }
-
+    
 
    
 }
