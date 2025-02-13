@@ -269,21 +269,7 @@ class ServicioController{
 
 
     
-    public static function apicitas(Router $router) {
-        $citas = Cita::all();
-        $citasArray = [];
     
-        foreach ($citas as $cita) {
-            $citasArray[] = [
-                'id' => $cita->id,
-                'fecha' => $cita->fecha,
-                'hora' => $cita->hora,
-                'usuario' => $cita->getUsuario() // ✅ Obtener usuario correctamente
-            ];
-        }
-    
-        echo json_encode($citasArray);
-    }
     public static function apicitaservicio(Router $router) {
         $citas = CitaServicio::obtenerCitas(); // Obtiene el array directamente
     
