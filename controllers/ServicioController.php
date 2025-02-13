@@ -208,19 +208,17 @@ class ServicioController{
     }
     
 
-
     public static function apicitas(Router $router) {
         $citas = Cita::all();
         $citasArray = [];
     
         foreach ($citas as $cita) {
-            $citaData = new Cita(); 
-            $citaData->id = $cita->id;
-            $citaData->fecha = $cita->fecha;
-            $citaData->hora = $cita->hora;
-            $citaData->usuario = Usuario::find($cita->usuarioId); 
-    
-            $citasArray[] = $citaData;
+            $citasArray[] = [
+                'id' => $cita->id,
+                'fecha' => $cita->fecha,
+                'hora' => $cita->hora,
+                'usuario' => $cita->getUsuario() // ✅ Obtener usuario correctamente
+            ];
         }
     
         echo json_encode($citasArray);
