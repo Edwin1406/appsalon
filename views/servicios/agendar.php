@@ -57,7 +57,7 @@ select{
         <option value="" disabled selected>Selecciona un servicio</option>
         <?php foreach ($servicios as $servicio): ?>
             <option value="<?php echo $servicio->id; ?>" 
-                    data-odontologo="<?php echo $servicio->odontologoid ?? ''; ?>">
+                    data-odontologo="<?php echo $servicio->odontologoId ?? ''; ?>">
                 <?php echo htmlspecialchars($servicio->nombre); ?>
             </option>
         <?php endforeach; ?>
