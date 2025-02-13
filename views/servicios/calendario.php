@@ -332,14 +332,22 @@ async function Apiestado( citaId) {
             });
             const resultado = await respuesta.json();
             if(resultado.respuesta.tipo === 'correcto'){
-                const elementoEstado = document.querySelector(`[data-id="${id}"]`);
-            if (elementoEstado) {
-                elementoEstado.textContent = estado;
-                elementoEstado.classList.remove('pendiente', 'confirmado', 'cancelado');
-                elementoEstado.classList.add(estado.toLowerCase());
-            } else {
-                console.warn(`No se encontró el elemento con data-id="${id}" en el DOM.`);
-            }
+                
+
+                const elementoEstado = document.getElementById("estado_info");
+                if (elementoEstado) {
+                    elementoEstado.textContent = estado;
+                    elementoEstado.classList.remove('pendiente', 'confirmado', 'cancelado');
+                    elementoEstado.classList.add(estado.toLowerCase());
+                } else {
+                    console.warn("No se encontró el elemento con id='estado_info' en el DOM.");
+                }
+
+
+
+
+
+
         }
         } catch (error) {
             console.log(error);
