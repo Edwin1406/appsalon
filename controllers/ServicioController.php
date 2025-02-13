@@ -207,13 +207,18 @@ class ServicioController{
         ]);
     }
     
-    public static function apicitas(Router $router){
-        // session_start();
-        // isAdmin();
+    public static function apicitas(Router $router) {
+        // Obtener todas las citas
         $citas = Cita::all();
-        // debuguear($citas);
+    
+        // Recorrer cada cita y agregar los datos del usuario manualmente
+        foreach ($citas as $cita) {
+            $usuario = Usuario::find($cita->usuarioId); // Buscar al usuario por ID
+            $cita->usuario = $usuario; // Agregar los datos completos del usuario
+            unset($cita->usuarioId); // Eliminar el usuarioId para evitar redundancia
+        }
+    
         echo json_encode($citas);
-        
     }
     
 }
