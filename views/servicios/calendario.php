@@ -70,7 +70,7 @@
 #calendar {
             max-width: 100%;
             margin: 1rem ;
-            background-color: #fff;
+            background-color: #d6dbdf;
             color: black;
             padding: 1rem;
         }
