@@ -1,16 +1,34 @@
 <h1 class="nombre-pagina">Calendario</h1>
-<div class="dashboard__contenedor-boton">
-    <a class="dashboard__boton" href="/admin/servicios/cliente">
-        <i class="fa-solid fa-circle-arrow-left"></i>
-        AGREGAR CLIENTE
-    </a>
-    <a class="dashboard__boton" href="/admin/servicios/agendar">
-        <i class="fa-solid fa-circle-arrow-left"></i>
-        AGREGAR CITA
-    </a>
-</div>
 
+<div class="contenido_ir">
+
+    <div class="dashboard__contenedor-boton">
+        <a class="dashboard__boton" href="/admin/servicios/cliente">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            AGREGAR CLIENTE
+        </a>
+        
+    </div>
+    <div class="dashboard__contenedor-boton">
+        <a class="dashboard__boton" href="/admin/servicios/agendar">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            AGREGAR CITA
+        </a>
+        
+    </div>
+</div>
 <style>
+
+    .contenido_ir{
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        padding: 1rem;
+        /* background-color: #f1f1f1; */
+        gap: 1rem;
+        width: 20%;
+    }
 
 .dashboard__contenedor-boton{
     display: flex;
