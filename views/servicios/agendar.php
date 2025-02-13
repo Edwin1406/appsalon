@@ -55,9 +55,10 @@ select{
     <div class="campo">
     <label for="servicio">Servicio:</label>
     <select name="servicio" id="servicio" class="formulario__input">
+        <option value="" disabled selected>Selecciona un servicio</option>
         <?php foreach ($servicios as $servicio): ?>
             <option value="<?php echo $servicio->id; ?>" data-odontologo="<?php echo $servicio->odontologoid; ?>">
-                <?php echo htmlspecialchars($servicio->nombre ); ?>
+                <?php echo htmlspecialchars($servicio->nombre); ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -66,9 +67,10 @@ select{
 <div class="campo">
     <label for="odontologoId">Odontólogo:</label>
     <select name="odontologoId" id="odontologoId" class="formulario__input">
+        <option value="" disabled selected>Selecciona un odontólogo</option>
         <?php foreach ($odontologos as $odontologo): ?>
             <option value="<?php echo $odontologo->id; ?>">
-                <?php echo htmlspecialchars($odontologo->nombre ); ?>
+                <?php echo htmlspecialchars($odontologo->nombre); ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -96,32 +98,32 @@ select{
 
     <input type="submit" value="Agendar Cita" class="boton boton-verde">
 </form>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Obtener los elementos
     const servicioSelect = document.getElementById("servicio");
     const odontologoSelect = document.getElementById("odontologoId");
 
-    // Escuchar cambios en el select de servicios
     servicioSelect.addEventListener("change", function() {
         // Obtener el odontologoId asociado al servicio seleccionado
         const selectedOption = servicioSelect.options[servicioSelect.selectedIndex];
         const odontologoId = selectedOption.getAttribute("data-odontologo");
 
-        // Seleccionar automáticamente el odontólogo correcto
-        for (let i = 0; i < odontologoSelect.options.length; i++) {
-            if (odontologoSelect.options[i].value === odontologoId) {
-                odontologoSelect.selectedIndex = i;
-                break;
+        if (odontologoId) {
+            // Recorrer el select de odontólogos y seleccionar el correcto
+            for (let i = 0; i < odontologoSelect.options.length; i++) {
+                if (odontologoSelect.options[i].value === odontologoId) {
+                    odontologoSelect.selectedIndex = i;
+                    break;
+                }
             }
         }
     });
 
-    // Disparar el evento manualmente al cargar la página (para selección previa)
+    // Disparar el evento manualmente al cargar la página (si ya hay un servicio seleccionado)
     servicioSelect.dispatchEvent(new Event("change"));
 });
 </script>
+
 
 
 
