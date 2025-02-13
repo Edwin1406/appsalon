@@ -277,6 +277,7 @@ function generarHorasDisponibles() {
         }
     }
 }
+generarHorasDisponibles();
 
 
 
