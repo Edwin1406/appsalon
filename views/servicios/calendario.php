@@ -4,15 +4,12 @@
         <i class="fa-solid fa-circle-arrow-left"></i>
         AGREGAR CLIENTE
     </a>
-
-</div>
-<div class="dashboard__contenedor-boton">
     <a class="dashboard__boton" href="/admin/servicios/agendar">
         <i class="fa-solid fa-circle-arrow-left"></i>
         AGREGAR CITA
     </a>
-
 </div>
+
 <style>
 
 .dashboard__contenedor-boton{
