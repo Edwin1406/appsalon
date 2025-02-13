@@ -52,38 +52,28 @@ select{
         </select>
     </div>
 
-    <!-- <div class="campo">
-        <label for="servicios">Servicios:</label>
-        <select name="servicios[]" id="servicios" class="formulario__input" multiple>
-            <?php foreach ($servicios as $servicio): ?>
-                <option value="<?php echo $servicio->id; ?>">
-                    <?php echo htmlspecialchars($servicio->nombre ) ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <p>Presiona Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples opciones</p>
-    </div> -->
     <div class="campo">
-        <label for="servicio">Servicio:</label>
-        <select name="servicio" id="servicio" class="formulario__input">
-            <?php foreach ($servicios as $servicio): ?>
-                <option value="<?php echo $servicio->id; ?>">
-                    <?php echo htmlspecialchars($servicio->nombre ); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+    <label for="servicio">Servicio:</label>
+    <select name="servicio" id="servicio" class="formulario__input">
+        <?php foreach ($servicios as $servicio): ?>
+            <option value="<?php echo $servicio->id; ?>" data-odontologo="<?php echo $servicio->odontologoid; ?>">
+                <?php echo htmlspecialchars($servicio->nombre ); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
 
-    <div class="campo">
-        <label for="odontologoId">Odontólogo:</label>
-        <select name="odontologoId" id="odontologoId" class="formulario__input">
-            <?php foreach ($odontologos as $odontologo): ?>
-                <option value="<?php echo $odontologo->id; ?>">
-                    <?php echo htmlspecialchars($odontologo->nombre ) ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+<div class="campo">
+    <label for="odontologoId">Odontólogo:</label>
+    <select name="odontologoId" id="odontologoId" class="formulario__input">
+        <?php foreach ($odontologos as $odontologo): ?>
+            <option value="<?php echo $odontologo->id; ?>">
+                <?php echo htmlspecialchars($odontologo->nombre ); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
 
     <div class="campo">
         <label for="fecha">Fecha</label>
@@ -107,6 +97,31 @@ select{
     <input type="submit" value="Agendar Cita" class="boton boton-verde">
 </form>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener los elementos
+    const servicioSelect = document.getElementById("servicio");
+    const odontologoSelect = document.getElementById("odontologoId");
+
+    // Escuchar cambios en el select de servicios
+    servicioSelect.addEventListener("change", function() {
+        // Obtener el odontologoId asociado al servicio seleccionado
+        const selectedOption = servicioSelect.options[servicioSelect.selectedIndex];
+        const odontologoId = selectedOption.getAttribute("data-odontologo");
+
+        // Seleccionar automáticamente el odontólogo correcto
+        for (let i = 0; i < odontologoSelect.options.length; i++) {
+            if (odontologoSelect.options[i].value === odontologoId) {
+                odontologoSelect.selectedIndex = i;
+                break;
+            }
+        }
+    });
+
+    // Disparar el evento manualmente al cargar la página (para selección previa)
+    servicioSelect.dispatchEvent(new Event("change"));
+});
+</script>
 
 
 
