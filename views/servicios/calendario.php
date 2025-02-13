@@ -125,12 +125,25 @@
             color: #333;
         }
 
+        #whatsappButton {
+            background-color: #25d366;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
         @media (max-width: 768px) {
 
             .fc .fc-toolbar{
                 display: block;
             }
         }
+
+
 
 
 
