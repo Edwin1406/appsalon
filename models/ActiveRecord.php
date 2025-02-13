@@ -122,6 +122,28 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);//array_shift para que no devuelva un el primer elemento de un array
     }
+
+
+// 
+
+        public static function whereAgenda($columna, $valor, $columnaExtra = null, $valorExtra = null) {
+            $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = ?";
+
+            $parametros = [$valor];
+
+            // Si se proporciona una segunda condición, la añadimos a la consulta
+            if ($columnaExtra && $valorExtra) {
+                $query .= " AND {$columnaExtra} = ?";
+                $parametros[] = $valorExtra;
+            }
+
+            $resultado = self::consultarSQL($query, $parametros);
+            return array_shift($resultado); // Devuelve el primer resultado o NULL si no hay coincidencias
+        }
+
+
+
+
     
     // consulta plana utilizar cuando los metodos no son suficientes para la consulta
     public static function SQL($query) {

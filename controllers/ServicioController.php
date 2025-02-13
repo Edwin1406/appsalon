@@ -165,15 +165,9 @@ class ServicioController{
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fecha = $_POST['fecha'];
             $hora = $_POST['hora'];
-    
-            // Verificar si ya existe una cita en la misma fecha y hora
-            $citaExistente = Cita::where([
-                'fecha' => $fecha,
-                'hora' => $hora
-            ]);
-    
+            $citaExistente = Cita::where('fecha', $fecha, 'hora', $hora);
+
             if ($citaExistente) {
-                // Guardar mensaje de error en sesión y redirigir
                 $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora en la fecha $fecha.";
                 header('Location: /admin/servicios/agendar');
                 exit;
@@ -203,7 +197,7 @@ class ServicioController{
             }
         
 
-
+        }
 
         $router->render('servicios/agendar',[
             'usuarios' => $usuarios,
@@ -212,10 +206,8 @@ class ServicioController{
             'servicios' => $servicios,
         ]);
     }
-
-
-
-
-
 }
+
+
+
 ?>
