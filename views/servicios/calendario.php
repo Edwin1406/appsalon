@@ -289,10 +289,10 @@ async function Apiestado( citaId) {
             const url =`${location.origin}/admin/api/estado?id=${citaId}`
             const resultado = await fetch(url);
             const visor = await resultado.json();
-
+            // solo 2 estados confirmado y cancelado 
+            const nuevoEstado = visor.estado === 'PENDIENTE' ? 'CONFIRMADO' : 'CANCELADO';
+            visor.estado = nuevoEstado;
             console.log(visor);
-            // const nuevoEstado = visor.estado === "ENVIADO" ? "PAUSADO" : "TERMINADO";
-            // visor.estado = nuevoEstado;
             // actualizarEstado(visor);
         } catch (error) {
             console.log(error);
