@@ -232,15 +232,19 @@ class ServicioController{
 
 
     public static function estado (Router $router){
-        $visor_id= $_GET['id'] ?? '';
-        $visor_id= filter_var($visor_id,FILTER_VALIDATE_INT);
-        if(!$visor_id){
-            echo json_encode([]);
-            return;
-            }
+        // $visor_id= $_GET['id'] ?? '';
+        // $visor_id= filter_var($visor_id,FILTER_VALIDATE_INT);
+        // if(!$visor_id){
+        //     echo json_encode([]);
+        //     return;
+        //     }
 
-        $estados = Citas::find($visor_id);
-        echo json_encode($estados);
+        // $estados = Citas::find($visor_id);
+        // echo json_encode($estados);
+
+echo "hola";
+
+
     }
     
     
