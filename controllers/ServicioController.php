@@ -289,8 +289,12 @@ class ServicioController{
     public static function apicitaservicio(Router $router) {
         $citas = CitaServicio::obtenerCitas();
 
-    
-        echo json_encode($citas);
+        foreach ($citas as $cita) {
+            echo "Cliente: " . $cita->nombrecliente . " - Servicio: " . $cita->nombreservicio . "<br>";
+        }
+
+        json_encode($citas);
+        
     }
     
     
