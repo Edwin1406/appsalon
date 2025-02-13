@@ -29,7 +29,7 @@ select{
     <?php if(isset($_GET['resultado']) && $_GET['resultado'] == 1): ?>
         <p class="alerta exito">Cita creada correctamente</p>
     <?php endif; ?>
-    
+
 
 
 
@@ -46,7 +46,7 @@ select{
         </select>
     </div>
 
-    <div class="campo">
+    <!-- <div class="campo">
         <label for="servicios">Servicios:</label>
         <select name="servicios[]" id="servicios" class="formulario__input" multiple>
             <?php foreach ($servicios as $servicio): ?>
@@ -56,6 +56,16 @@ select{
             <?php endforeach; ?>
         </select>
         <p>Presiona Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples opciones</p>
+    </div> -->
+    <div class="campo">
+        <label for="servicio">Servicio:</label>
+        <select name="servicio" id="servicio" class="formulario__input">
+            <?php foreach ($servicios as $servicio): ?>
+                <option value="<?php echo $servicio->id; ?>">
+                    <?php echo htmlspecialchars($servicio->nombre ); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
 
     <div class="campo">
