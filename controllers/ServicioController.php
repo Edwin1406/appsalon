@@ -165,13 +165,12 @@ class ServicioController{
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fecha = $_POST['fecha'];
             $hora = $_POST['hora'];
-            $odontologoId = $_POST['odontologoId'];
     
-            // Verificar si ya existe una cita con la misma hora para el mismo odontólogo en esa fecha
-            $citaExistente = Cita::where('fecha', $fecha, 'hora', $hora, 'odontologoId', $odontologoId);
+            // Verificar si ya existe una cita en la misma hora (sin importar la fecha ni el odontólogo)
+            $citaExistente = Cita::where('hora', $hora);
     
             if ($citaExistente) {
-                $_SESSION['mensaje_error'] = "Ya existe una cita con el Dr./Dra. a las $hora en la fecha $fecha.";
+                $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora. Por favor, elige otra hora.";
                 header('Location: /admin/servicios/agendar');
                 exit;
             }
@@ -179,7 +178,7 @@ class ServicioController{
             // Guardar la nueva cita
             $cita = new Cita([
                 'usuarioId' => $_POST['usuarioId'],
-                'odontologoId' => $odontologoId,
+                'odontologoId' => $_POST['odontologoId'],
                 'fecha' => $fecha,
                 'hora' => $hora
             ]);
