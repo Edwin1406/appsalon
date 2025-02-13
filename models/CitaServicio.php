@@ -36,10 +36,7 @@ class  CitaServicio extends ActiveRecord{
     
         $resultado = self::consultarSQL5($query);
     
-        // 🔍 Depuración: Verificar qué trae la consulta
-        var_dump($resultado);
-        die(); // Para detener la ejecución y ver los datos
-    
+     
         return $resultado;
     }
     
