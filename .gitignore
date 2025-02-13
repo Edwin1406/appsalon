@@ -1,8 +1,7 @@
 # Ignorar la carpeta vendor donde se instalan las dependencias de Composer
 /vendor/
 
-# Ignorar archivos de configuración específicos del entorno
-.env
+
 
 # Ignorar archivos de caché
 /cache/
