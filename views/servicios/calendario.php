@@ -272,9 +272,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const idVisor = event.target.getAttribute('estado_info');
+console.log(idVisor);
 
-const btnEstado = document.querySelectorAll('.btn-estado');
-btnEstado.classList.add('btn-estado');
 
 
 </script>
