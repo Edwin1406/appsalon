@@ -353,20 +353,7 @@ async function Apiestado( citaId) {
         }
     }
 
-    let estadoElemento = document.getElementById("estado_info");
-
-        // Obtener el texto del estado
-        let estadoTexto = estadoElemento.innerText.trim().toUpperCase();
-
-        // Asignar color según el estado
-        if (estadoTexto === "PENDIENTE") {
-            estadoElemento.style.color = "tomato";
-        } else if (estadoTexto === "CONFIRMADO") {
-            estadoElemento.style.color = "green";
-        } else if (estadoTexto === "CANCELADO") {
-            estadoElemento.style.color = "red";
-        }
-
+ 
 
     function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
         Swal.fire({
@@ -387,7 +374,22 @@ async function Apiestado( citaId) {
 
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    let estadoElemento = document.getElementById("estado_info");
+    if (estadoElemento) {
+        let estadoTexto = estadoElemento.innerText.trim().toUpperCase();
 
+        if (estadoTexto === "PENDIENTE") {
+            estadoElemento.style.color = "tomato";
+        } else if (estadoTexto === "CONFIRMADO") {
+            estadoElemento.style.color = "green";
+        } else if (estadoTexto === "CANCELADO") {
+            estadoElemento.style.color = "red";
+        }
+    } else {
+        console.error("No se encontró el elemento con id 'estado_info'");
+    }
+});
 
 
 </script>
