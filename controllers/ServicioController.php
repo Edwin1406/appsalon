@@ -180,7 +180,7 @@ class ServicioController{
                 }
     
                 // Redirigir a la página de éxito o al listado de citas
-                header('Location: /admin/citas');
+                header('Location: /admin/servicios/agendar?resultado=1');
                 exit;
             }
         }
