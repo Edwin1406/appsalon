@@ -157,6 +157,8 @@ class ServicioController{
         $usuarios = Usuario::all();
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
+
+        debuguear($servicios);
     
         // Depuración: Verificar si los servicios tienen odontologoid
         foreach ($servicios as $servicio) {
