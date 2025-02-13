@@ -19,6 +19,10 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    gap: 1rem;
 }
 
 
