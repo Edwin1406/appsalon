@@ -154,10 +154,7 @@
     <?php unset($_SESSION['mensaje_exito']); ?>
 <?php endif; ?>
 
-<?php if(isset($_SESSION['mensaje_error'])): ?>
-    <p class="alerta error"><?php echo $_SESSION['mensaje_error']; ?></p>
-    <?php unset($_SESSION['mensaje_error']); ?>
-<?php endif; ?>
+
 
 <div id="calendar"></div>
 <div id="modalInfoCita" class="modal" style="display: none;">
