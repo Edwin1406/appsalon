@@ -133,7 +133,8 @@ class ServicioController{
                    $resultado = $usuario->guardar();
 
                    if($resultado){
-                      echo 'Cliente Creado';
+                          //redireccionar al usuario
+                          header('Location: /admin/servicios/agendar');
                    }
 
                 
