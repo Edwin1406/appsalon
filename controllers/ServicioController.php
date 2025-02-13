@@ -293,7 +293,7 @@ class ServicioController{
             echo "Cliente: " . $cita->nombrecliente . " - Servicio: " . $cita->nombreservicio . "<br>";
         }
 
-        json_encode($citas);
+        echo json_encode($citas);
         
     }
     
