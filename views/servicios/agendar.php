@@ -23,6 +23,8 @@ select{
 }
 
 
+
+
 </style>
 <?php if(isset($_SESSION['mensaje_exito'])): ?>
     <p class="alerta exito"><?php echo $_SESSION['mensaje_exito']; ?></p>

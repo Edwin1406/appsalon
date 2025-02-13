@@ -15,6 +15,14 @@
 </div>
 <style>
 
+.dashboard__contenedor-boton{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+
 #calendar {
             max-width: 100%;
             margin: 1rem ;
