@@ -115,7 +115,7 @@ class ActiveRecord {
         $query = "SELECT cs.id, cs.citaId, cs.servicioId, 
                          c.fecha, c.paciente, 
                          s.nombre AS servicio, s.precio 
-                  FROM cita_servicio cs
+                  FROM citasservicios cs
                   INNER JOIN citas c ON cs.citaId = c.id
                   INNER JOIN servicios s ON cs.servicioId = s.id";
         
