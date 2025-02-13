@@ -15,17 +15,18 @@
 </div>
 <style>
 
-.dashboard__contenedor-boton{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    gap: 1rem;
-    width: 20%;
-}
 
+
+a .dashboard__boton{
+    background-color: #0075FF;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 100%;
+}
 
 
 #calendar {
