@@ -153,9 +153,15 @@ class ServicioController{
 
     public static function agendar(Router $router){
        
-        // isAdmin();
-
+        
         session_start();
+        isAdmin();
+        
+        $alertas = [];
+        $usuarios = Usuario::all();
+        $odontologos = Odontologo::all();
+        $servicios = Servicio::all();
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Crear una nueva cita con los datos del formulario
@@ -189,10 +195,6 @@ class ServicioController{
 
 
 
-        $alertas = [];
-        $usuarios = Usuario::all();
-        $odontologos = Odontologo::all();
-        $servicios = Servicio::all();
         $router->render('servicios/agendar',[
             'usuarios' => $usuarios,
             'alertas' => $alertas,
