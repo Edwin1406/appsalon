@@ -51,7 +51,6 @@ select{
             <?php endforeach; ?>
         </select>
     </div>
-
     <div class="campo">
     <label for="servicio">Servicio:</label>
     <select name="servicio" id="servicio" class="formulario__input">
@@ -75,6 +74,7 @@ select{
         <?php endforeach; ?>
     </select>
 </div>
+
 
 
     <div class="campo">
