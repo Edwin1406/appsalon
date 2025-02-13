@@ -285,17 +285,16 @@ class ServicioController{
         echo json_encode($citasArray);
     }
 
-
     public static function apicitaservicio(Router $router) {
+        // Obtener las citas desde el modelo
         $citas = CitaServicio::obtenerCitas();
-
-        foreach ($citas as $cita) {
-            echo "Cliente: " . $cita->nombrecliente . " - Servicio: " . $cita->nombreservicio . "<br>";
-        }
-
-        echo json_encode($citas);
-        
+    
+        // Enviar la respuesta como JSON con encabezado correcto
+        header('Content-Type: application/json');
+        echo json_encode($citas, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        exit;
     }
+    
     
     
     
