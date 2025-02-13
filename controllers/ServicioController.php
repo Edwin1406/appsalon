@@ -214,7 +214,7 @@ class ServicioController{
         $citasArray = [];
     
         foreach ($citas as $cita) {
-            $citaData = new stdClass(); 
+            $citaData = new Cita(); 
             $citaData->id = $cita->id;
             $citaData->fecha = $cita->fecha;
             $citaData->hora = $cita->hora;
