@@ -56,9 +56,21 @@ select{
     <select name="servicio" id="servicio" class="formulario__input">
         <option value="" disabled selected>Selecciona un servicio</option>
         <?php foreach ($servicios as $servicio): ?>
-            <option value="<?php echo $servicio->id; ?>" 
-                    data-odontologo="<?php echo $servicio->odontologoId ?? ''; ?>">
+            <option value="<?php echo $servicio->id; ?>" data-odontologo="<?php echo $servicio->odontologoid; ?>">
                 <?php echo htmlspecialchars($servicio->nombre); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+
+<div class="campo">
+    <label for="odontologoId">Odontólogo:</label>
+    <select name="odontologoId" id="odontologoId" class="formulario__input">
+        <option value="" disabled selected>Selecciona un odontólogo</option>
+        <?php foreach ($odontologos as $odontologo): ?>
+            <option value="<?php echo $odontologo->id; ?>">
+                <?php echo htmlspecialchars($odontologo->nombre); ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -93,13 +105,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const odontologoSelect = document.getElementById("odontologoId");
 
     servicioSelect.addEventListener("change", function() {
+        // Obtener la opción seleccionada
         const selectedOption = servicioSelect.options[servicioSelect.selectedIndex];
         const odontologoId = selectedOption.getAttribute("data-odontologo");
 
         console.log("Servicio seleccionado:", selectedOption.value);
         console.log("Odontólogo ID obtenido:", odontologoId);
 
-        if (odontologoId && odontologoId !== "") {
+        if (odontologoId) {
+            // Buscar y seleccionar el odontólogo correspondiente
             for (let i = 0; i < odontologoSelect.options.length; i++) {
                 if (odontologoSelect.options[i].value === odontologoId) {
                     odontologoSelect.selectedIndex = i;
