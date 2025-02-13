@@ -25,8 +25,16 @@ select{
 
 </style>
 
+    <!-- moestrar el mensaje exito porqe en la l tengo respesta = 1  https://odonto.megawebsistem.com/admin/servicios/agendar?resultado=1 -->
+    <?php if(isset($_GET['resultado']) && $_GET['resultado'] == 1): ?>
+        <p class="alerta exito">Cita creada correctamente</p>
+    <?php endif; ?>
+    
+
+
 
 <form action="/admin/servicios/agendar" method="POST" class="formulario">
+
     <div class="campo">
         <label for="usuarioId">Cliente:</label>
         <select name="usuarioId" id="usuarioId" class="formulario__input">
