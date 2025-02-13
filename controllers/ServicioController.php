@@ -149,24 +149,24 @@ class ServicioController{
         
     }
 
-
-
-    public static function agendar(Router $router){
-       
-        
+    public static function agendar(Router $router) {
         session_start();
         isAdmin();
-        
+    
         $alertas = [];
         $usuarios = Usuario::all();
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
-
+    
+        // Depuración: Verificar si los servicios tienen odontologoid
+        foreach ($servicios as $servicio) {
+            error_log("Servicio ID: {$servicio->id}, OdontologoID: " . ($servicio->odontologoid ?? 'NULL'));
+        }
+    
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fecha = $_POST['fecha'];
             $hora = $_POST['hora'];
     
-            // Verificar si ya existe una cita en la misma hora (sin importar la fecha ni el odontólogo)
             $citaExistente = Cita::where('hora', $hora);
     
             if ($citaExistente) {
@@ -198,7 +198,7 @@ class ServicioController{
                 exit;
             }
         }
-
+    
         $router->render('servicios/agendar',[
             'usuarios' => $usuarios,
             'alertas' => $alertas,
@@ -206,7 +206,7 @@ class ServicioController{
             'servicios' => $servicios,
         ]);
     }
-}
+}    
 
 
 
