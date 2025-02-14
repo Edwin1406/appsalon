@@ -38,16 +38,20 @@ select{
 
 <form action="/admin/servicios/agendar" method="POST" class="formulario">
 
+
     <div class="campo">
-        <label for="usuarioId">Cliente:</label>
-        <select name="usuarioId" id="usuarioId" class="formulario__input">
-            <?php foreach ($usuarios as $usuario): ?>
+    <label for="usuarioId">Cliente:</label>
+    <select name="usuarioId" id="usuarioId" class="formulario__input">
+        <?php foreach ($usuarios as $usuario): ?>
+            <?php if ($usuario->admin != 1): // Excluir administradores ?>
                 <option value="<?php echo $usuario->id; ?>">
-                    <?php echo htmlspecialchars($usuario->nombre ) ?>
+                    <?php echo htmlspecialchars($usuario->nombre); ?>
                 </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select>
+</div>
+
     <div class="campo">
     <label for="servicio">Servicio:</label>
     <select name="servicio" id="servicio" class="formulario__input">
