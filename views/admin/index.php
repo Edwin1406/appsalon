@@ -46,7 +46,16 @@ if (count($citas) === 0) {
                     <p><span>Cliente:</span> <?php echo $cita->cliente ?></p>
                     <p><span>Email:</span> <?php echo $cita->email ?></p>
                     <p><span>Telefono:</span> <?php echo $cita->telefono ?></p>
-                    <p><span>Estado:</span> <?php echo $cita->estado ?></p>
+                    <p><span>Estado:</span> 
+                    <?php 
+                                echo ($cita->estado == 'PENDIENTE') ? 'orange' : 
+                                    (($cita->estado == 'CONFIRMADO') ? 'green' : 
+                                    (($cita->estado == 'CANCELADO') ? 'red' : ''));
+                            ?>;">
+                                <?php echo $cita->estado; ?>
+                
+                
+                </p>
                     <h3>Servicios</h3>
 
                 <?php $idCita = $cita->id;
