@@ -21,7 +21,7 @@ include_once __DIR__ . '/../templates/barra.php' ?>
 
     </form>
 </div>
-
+<?php debuguear($citas) ?>
 <?php
 if (count($citas) === 0) {
     echo '<h2 class="text-center">No hay citas</h2>';
