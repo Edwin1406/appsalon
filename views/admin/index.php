@@ -3,9 +3,17 @@
 <h1 class="nombre-pagina">Panel de Adminsitración</h1>
 <style>
 
-.estado-pendiente { color: orange; }
-.estado-confirmado { color: green; }
-.estado-cancelado { color: red; }
+    .estado-confirmado{
+        color: green;
+    }
+
+    .estado-pendiente{
+        color: orange;
+    }
+
+    .estado-cancelado{
+        color: red;
+    }
 
 </style>
 <?php
