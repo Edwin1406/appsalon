@@ -29,5 +29,16 @@ class Odontologo extends ActiveRecord{
         return self::$alertas;
     }
 
+
+    public function existeUsuario(){
+        $query = "SELECT * FROM ".self::$tabla." WHERE nombre = '".$this->nombre."' LIMIT 1";
+        $resultado = self::$db->query($query);
+        if($resultado->num_rows){ //num_rows es una propiedad de mysqli
+            self::$alertas['error'][] = "El usuario ya esta registrado";
+        }
+        return $resultado;
+        // debuguear($resultado);
+    }
+
 }
 ?>
