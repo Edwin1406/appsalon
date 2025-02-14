@@ -191,10 +191,7 @@
             <p><strong>Hora:</strong> <span id="hora_info"></span></p>
             <p><strong>Teléfono:</strong> <span id="telefono_info"></span></p>
             <p><strong>Doctor:</strong> <span id="doctor_info"></span></p>
-            <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>
-
-
-            
+            <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>            
             <p><strong>Estado:</strong> <span id="estado_info"></span></p>
 
 
