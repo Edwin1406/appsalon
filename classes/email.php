@@ -30,7 +30,7 @@ class email {
         $mail->Port = $_ENV['EMAIL_PORT'];
 
           // configurar el contenido del email
-        $mail->setFrom('clinica@dental-alvarez.com');
+        $mail->setFrom('pruebas@odonto.megawebsistem.com');
         $mail->addAddress($this->email); //correo de destino
         $mail->Subject = 'Confirma tu cuenta';
 
@@ -40,7 +40,7 @@ class email {
         $contenido = '<html>';
         $contenido .= '<p>Hola ' . $this->nombre . '</p>';
         $contenido .= '<p>Para confirmar tu cuenta por favor haz clic en el siguiente enlace</p>';
-        $contenido .= '<p><a href="https://dental-alvarez.com/confirmar?token=' . $this->token . '">Confirmar cuenta</a></p>';
+        $contenido .= '<p><a href="https://odonto.megawebsistem.com/confirmar?token=' . $this->token . '">Confirmar cuenta</a></p>';
         $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
         $contenido .= '</html>';
         $mail->Body = $contenido;
@@ -66,7 +66,7 @@ class email {
         $mail->Port = $_ENV['EMAIL_PORT'];
 
           // configurar el contenido del email
-        $mail->setFrom('clinica@dental-alvarez.com');
+        $mail->setFrom('pruebas@odonto.megawebsistem.com');
         $mail->addAddress($this->email); //correo de destino
         $mail->Subject = 'Restablece tu contraseña';
 
@@ -76,7 +76,7 @@ class email {
         $contenido = '<html>';
         $contenido .= '<p>Hola ' . $this->nombre . '</p>';
         $contenido .= '<p>Haz solicitado reestablecer tu password,sigue el enlance para hacerlo</p>';
-        $contenido .= '<p><a href="https://dental-alvarez.com/recuperar?token=' . $this->token . '">Reestablecer Password</a></p>';
+        $contenido .= '<p><a href="https://odonto.megawebsistem.com/recuperar?token=' . $this->token . '">Reestablecer Password</a></p>';
         $contenido .= '<p>Si no solicitaste la creación de la cuenta, por favor ignora este mensaje</p>';
         $contenido .= '</html>';
         $mail->Body = $contenido;

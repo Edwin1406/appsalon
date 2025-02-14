@@ -1,5 +1,5 @@
 {
-    "name": "edwin/appsalon",
+    "name": "edwin/odonto",
     "description": "Proyecto PHP 8, MVC , SSQL , SASS , ACTIVE RECORD",
     "type": "project",
     "autoload": {
