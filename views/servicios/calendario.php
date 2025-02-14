@@ -200,6 +200,11 @@
     .cancelado {
         color: red;
     }
+
+    #estado_info:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 </style>
 
 
