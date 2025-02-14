@@ -48,7 +48,7 @@ if (count($citas) === 0) {
     echo '<h2 class="text-center">No hay citas</h2>';
 }
 ?>
-<?php debuguear($citas); ?>
+
 <div id="citas-admin">
     <ul class="citas">
         <?php
