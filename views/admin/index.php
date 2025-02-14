@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="/public/build/css/app.css">
 
 <h1 class="nombre-pagina">Panel de Adminsitración</h1>
+<style>
+
+.estado-pendiente { color: orange; }
+.estado-confirmado { color: green; }
+.estado-cancelado { color: red; }
+
+</style>
 <?php
 
 
@@ -46,14 +53,19 @@ if (count($citas) === 0) {
                     <p><span>Cliente:</span> <?php echo $cita->cliente ?></p>
                     <p><span>Email:</span> <?php echo $cita->email ?></p>
                     <p><span>Telefono:</span> <?php echo $cita->telefono ?></p>
-                    <p><span>Estado:</span> 
-                        <?php 
-                                echo ($cita->estado == 'PENDIENTE') ? 'orange' : 
-                                    (($cita->estado == 'CONFIRMADO') ? 'green' : 
-                                    (($cita->estado == 'CANCELADO') ? 'red' : ''));
-                            ?>
-                             <?php echo $cita->estado; ?>
-                     </p>
+                    <p>
+    <span>Estado:</span> 
+    <span class="
+        <?php 
+            echo ($cita->estado == 'PENDIENTE') ? 'estado-pendiente' : 
+                 (($cita->estado == 'CONFIRMADO') ? 'estado-confirmado' : 
+                 (($cita->estado == 'CANCELADO') ? 'estado-cancelado' : ''));
+        ?>
+    ">
+        <?php echo $cita->estado; ?>
+    </span>
+</p>
+
                     <h3>Servicios</h3>
 
                 <?php $idCita = $cita->id;
