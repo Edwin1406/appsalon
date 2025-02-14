@@ -8,6 +8,7 @@ class Cita extends ActiveRecord{
     public $id;
     public $fecha;
     public $hora;
+    public $estado;
     public $usuarioId;
     // Constructor
     public function __construct($args=[])
@@ -15,7 +16,9 @@ class Cita extends ActiveRecord{
         $this->id = $args['id'] ?? null;
         $this->fecha = $args['fecha'] ?? '';
         $this->hora = $args['hora'] ?? '';
+        $this->estado = $args['estado'] ?? '';
         $this->usuarioId = $args['usuarioId'] ?? '';
+
         
     }
 
