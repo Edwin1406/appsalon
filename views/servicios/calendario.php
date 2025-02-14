@@ -206,6 +206,7 @@
         padding: 1rem;
         background-color: black;
         border-radius: 0.5rem;
+        color: white;
     }
 </style>
 
