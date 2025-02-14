@@ -312,9 +312,9 @@ class ServicioController{
 
                    if($resultado){
                           //redireccionar al usuario
-                          header('Location: /admin/servicios/agendar');
+                          header('Location: /admin/servicios/crear');
                    }
-
+                   
                 
                }
            }
