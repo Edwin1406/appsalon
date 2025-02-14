@@ -279,6 +279,55 @@ class ServicioController{
 
         
     }
+
+
+
+
+    public static function odontologo(Router $router){
+       
+
+
+        session_start();
+        isAdmin();
+       //instanciar Usuario
+       $odontologo = new Cliente;
+       //arreglo con mensajes de errores
+       $alertas = Odontologo::getAlertas();
+       $alertas = []; //porque cuando inicia la pagina no hay errores
+
+       if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+          $odontologo ->sincronizar($_POST);
+          $alertas = $odontologo->validar();
+       //revisar que el arreglo de errores este vacio
+           if(empty($alertas)){
+               // existeUsuario
+             $resultado=$odontologo->existeUsuario();
+
+               if($resultado->num_rows){
+                   $alertas=Odontologo::getAlertas();
+               }else{
+                   // Almacenar el usuario en la base de datos
+                   $resultado = $odontologo->guardar();
+
+                   if($resultado){
+                          //redireccionar al usuario
+                          header('Location: /admin/servicios/agendar');
+                   }
+
+                
+               }
+           }
+         
+       }
+        
+         $router->render('servicios/odontologo',[
+             'alertas' => $alertas,
+             'odontologo' => $odontologo
+
+         ]);
+
+        }
     
     
     

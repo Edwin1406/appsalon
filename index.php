@@ -56,9 +56,11 @@ $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 
 // crear odontologo
 $router->get('/admin/servicios/odontologo', [ServicioController::class, 'odontologo']);
+$router->post('/admin/servicios/odontologo', [ServicioController::class, 'odontologo']);
 
 // API DE SERVICIOS
 $router->get('/admin/api/apicitaservicio', [ServicioController::class, 'apicitaservicio']);
+
 
 
 

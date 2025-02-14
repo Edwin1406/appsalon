@@ -17,7 +17,17 @@ class Odontologo extends ActiveRecord{
         $this->odontologo = $args['odontologo'] ?? '';
 
     }
+
+
     
+    public function validar()
+    {
+        if(!$this->nombre){
+            self::$alertas['error'][] = "Debes añadir un nombre";
+        }
+       
+        return self::$alertas;
+    }
 
 }
 ?>
