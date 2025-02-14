@@ -21,7 +21,7 @@ include_once __DIR__ . '/../templates/barra.php' ?>
 
     </form>
 </div>
-<?php debuguear($citas) ?>
+
 <?php
 if (count($citas) === 0) {
     echo '<h2 class="text-center">No hay citas</h2>';
@@ -46,7 +46,6 @@ if (count($citas) === 0) {
                     <p><span>Cliente:</span> <?php echo $cita->cliente ?></p>
                     <p><span>Email:</span> <?php echo $cita->email ?></p>
                     <p><span>Telefono:</span> <?php echo $cita->telefono ?></p>
-                    <p><span>Fecha:</span> <?php echo $cita->fecha ?></p>
                     <p><span>Estado:</span> <?php echo $cita->estado ?></p>
                     <h3>Servicios</h3>
 
