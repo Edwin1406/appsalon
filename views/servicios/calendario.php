@@ -204,7 +204,7 @@
     #estado_info:hover {
         cursor: pointer;
         padding: 1rem;
-        background-color: white;
+        background-color: black;
         border-radius: 0.5rem;
     }
 </style>
