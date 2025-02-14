@@ -20,13 +20,13 @@ include_once __DIR__. '/../templates/alertas.php';
             id="nombre" 
             placeholder="Tu Nombre" 
             name="nombre"
-            value=" <?php echo s($cliente->nombre); ?>"
+            value=" <?php echo s($odontologo->nombre); ?>"
         />
     </div>
    
 
    
-    <input type="submit" value="Crear Cliente" class="boton boton-verde">
+    <input type="submit" value="Crear Odontologo" class="boton boton-verde">
 
 </form>
 
