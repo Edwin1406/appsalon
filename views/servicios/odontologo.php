@@ -18,7 +18,7 @@ include_once __DIR__. '/../templates/alertas.php';
         <input 
             type="text" 
             id="nombre" 
-            placeholder="Tu Nombre" 
+            placeholder="Nombre Odontologo" 
             name="nombre"
             value=" <?php echo s($odontologo->nombre); ?>"
         />
