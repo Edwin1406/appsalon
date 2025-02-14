@@ -290,7 +290,7 @@ class ServicioController{
         session_start();
         isAdmin();
        //instanciar Usuario
-       $odontologo = new Cliente;
+       $odontologo = new Odontologo;
        //arreglo con mensajes de errores
        $alertas = Odontologo::getAlertas();
        $alertas = []; //porque cuando inicia la pagina no hay errores
