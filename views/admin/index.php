@@ -52,6 +52,7 @@ if (count($citas) === 0) {
                                     (($cita->estado == 'CONFIRMADO') ? 'green' : 
                                     (($cita->estado == 'CANCELADO') ? 'red' : ''));
                             ?>
+                             <?php echo $visores->estado; ?>
                      </p>
                     <h3>Servicios</h3>
 
