@@ -201,6 +201,15 @@
         color: red;
     }
 
+    #estado_info {
+        display: inline-block;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: #f1f1f1;
+        /* sombreado */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
     #estado_info:hover {
         cursor: pointer;
         padding: 1rem;
