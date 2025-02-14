@@ -23,7 +23,6 @@
             <i class="fa-solid fa-circle-arrow-left"></i>
                 CREAR ODONTÓLOGO
         </a>
-        
     </div>
 
     <div class="dashboard__contenedor-boton">
