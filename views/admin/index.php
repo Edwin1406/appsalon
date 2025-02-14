@@ -5,9 +5,21 @@
 p span.estado-pendiente { color: orange !important;
     padding: 1rem;
     background-color: white;
+    border-radius: 0.5rem;
+    font-weight: bold;
 }
-p span.estado-confirmado { color: green !important; }
-p span.estado-cancelado { color: red !important; }
+p span.estado-confirmado { color: green !important; 
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+p span.estado-cancelado { color: red !important; 
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
 
 
 </style>
