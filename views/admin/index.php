@@ -2,7 +2,10 @@
 
 <h1 class="nombre-pagina">Panel de Adminsitración</h1>
 <style>
-p span.estado-pendiente { color: orange !important; }
+p span.estado-pendiente { color: orange !important;
+    padding: 1rem;
+    background-color: white;
+}
 p span.estado-confirmado { color: green !important; }
 p span.estado-cancelado { color: red !important; }
 
