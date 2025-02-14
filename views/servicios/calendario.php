@@ -203,7 +203,9 @@
 
     #estado_info:hover {
         cursor: pointer;
-        text-decoration: underline;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 0.5rem;
     }
 </style>
 
