@@ -51,7 +51,7 @@ if (count($citas) === 0) {
                                 echo ($cita->estado == 'PENDIENTE') ? 'orange' : 
                                     (($cita->estado == 'CONFIRMADO') ? 'green' : 
                                     (($cita->estado == 'CANCELADO') ? 'red' : ''));
-                            ?>;">
+                            ?>
                                 <?php echo $cita->estado; ?>
                 
                 
