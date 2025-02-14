@@ -3,12 +3,11 @@ namespace Model;
 class Cita extends ActiveRecord{
     // Base de datos
     protected static $tabla = 'citas';
-    protected static $columnasDB = ['id','fecha','hora','estado','usuarioId'];
+    protected static $columnasDB = ['id','fecha','hora','usuarioId'];
     // Atributos
     public $id;
     public $fecha;
     public $hora;
-    public $estado;
     public $usuarioId;
     // Constructor
     public function __construct($args=[])
@@ -16,9 +15,7 @@ class Cita extends ActiveRecord{
         $this->id = $args['id'] ?? null;
         $this->fecha = $args['fecha'] ?? '';
         $this->hora = $args['hora'] ?? '';
-        $this->estado = $args['estado'] ?? '';
         $this->usuarioId = $args['usuarioId'] ?? '';
-
         
     }
 
