@@ -435,3 +435,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 </script>
+
+<?php
+$script = "<script src='public/build/js/buscador.js'></script>";
+?>
