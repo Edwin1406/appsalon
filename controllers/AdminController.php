@@ -21,7 +21,7 @@ class AdminController
     
         // debuguear($fecha);
         // consultar la base de datos
-        $consulta = "SELECT citas.id, citas.hora,citas.fecha as fechas_whats, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
+        $consulta = "SELECT citas.id, citas.hora,citas.fecha as fechas_whats,citas.estado , CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio,";
         $consulta .= " odontologo.nombre as odontologo ";
         $consulta .= " FROM citas  ";
