@@ -1,4 +1,6 @@
 <h1 class="nombre-pagina">Calendario</h1>
+<?include_once __DIR__ . '/../templates/barra.php' ?>
+
 
 <div class="contenido_ir">
 

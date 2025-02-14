@@ -21,7 +21,6 @@ p span.estado-cancelado { color: red !important;
     font-weight: bold;
 }
 
-
 </style>
 <?php
 
@@ -49,7 +48,7 @@ if (count($citas) === 0) {
     echo '<h2 class="text-center">No hay citas</h2>';
 }
 ?>
-
+<?php debuguear($citas); ?>
 <div id="citas-admin">
     <ul class="citas">
         <?php
@@ -68,18 +67,17 @@ if (count($citas) === 0) {
                     <p><span>Cliente:</span> <?php echo $cita->cliente ?></p>
                     <p><span>Email:</span> <?php echo $cita->email ?></p>
                     <p><span>Telefono:</span> <?php echo $cita->telefono ?></p>
-                    <p>
-    <span>Estado:</span> 
-    <span class="
-        <?php 
-            echo ($cita->estado == 'PENDIENTE') ? 'estado-pendiente' : 
-                 (($cita->estado == 'CONFIRMADO') ? 'estado-confirmado' : 
-                 (($cita->estado == 'CANCELADO') ? 'estado-cancelado' : ''));
-        ?>
-    ">
-        <?php echo $cita->estado; ?>
-    </span>
-</p>
+                    <p><span>Estado:</span> 
+                        <span class="
+                            <?php 
+                                echo ($cita->estado == 'PENDIENTE') ? 'estado-pendiente' : 
+                                    (($cita->estado == 'CONFIRMADO') ? 'estado-confirmado' : 
+                                    (($cita->estado == 'CANCELADO') ? 'estado-cancelado' : ''));
+                            ?>
+                            ">
+                            <?php echo $cita->estado; ?>
+                        </span>
+                    </p>
 
                     <h3>Servicios</h3>
 
