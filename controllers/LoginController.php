@@ -42,7 +42,7 @@ class LoginController
                         $_SESSION['login'] = true;
 
                                 // TODO:enviar email
-                        $email = new correo($usuario->email, $usuario->nombre);
+                        $email = new correo($usuario->email, $usuario->nombre, $usuario->apellido);
                         $email->enviarSesion();
                         
                         // redireccionar

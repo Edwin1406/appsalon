@@ -8,10 +8,12 @@ use DateTime;
 class correo {
     public $email;
     public $nombre;
+    public $apellido;
 
-    public function __construct($email, $nombre) {
+    public function __construct($email, $nombre, $apellido) {
         $this->email = $email;
         $this->nombre = $nombre;
+        $this->apellido = $apellido;
     }
    
  
@@ -90,7 +92,7 @@ class correo {
             $contenido .= '<div style="max-width: 600px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);">';
             $contenido .= '<p style="text-align: right; color: #555;">Fecha: ' . $fechaHora . '</p>';
             $contenido .= '<h2 style="text-align: center; color: #333;">Ingreso a tu Cuenta</h2>';
-            $contenido .= '<p><strong>' . htmlspecialchars($this->nombre) . '</strong>,</p>';
+            $contenido .= '<p><strong>' . htmlspecialchars($this->nombre) . htmlspecialchars($this->apellido) . '</strong></p>';
             $contenido .= '<p>Tu ingreso a la plataforma se realizó con éxito.</p>';
     
             // Tabla con detalles de inicio de sesión
