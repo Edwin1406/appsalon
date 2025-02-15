@@ -272,7 +272,7 @@ function generarHorasDisponibles() {
     }
 
     const startTime = 10; // Hora de inicio
-    const endTime = 19;  // Hora de finalización
+    const endTime = 23;  // Hora de finalización
     const interval = 30; // Intervalo de 30 minutos
 
     for (let hour = startTime; hour < endTime; hour++) {
