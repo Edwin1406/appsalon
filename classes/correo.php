@@ -14,38 +14,53 @@ class correo {
 
 
     public function enviarSesion() {
-        
-      //  creamos una instancia de PHPMailer
+      // Crear una instancia de PHPMailer
       $mail = new PHPMailer();
-      // configurar el SMTP
+      
+      // Configuración del servidor SMTP
       $mail->isSMTP();
       $mail->Host = $_ENV['EMAIL_HOST'];
       $mail->SMTPAuth = true;
       $mail->Username = $_ENV['EMAIL_USER'];
       $mail->Password = $_ENV['EMAIL_PASS'];
-      $mail->SMTPSecure = 'ssl';
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Alternativa moderna a 'ssl'
       $mail->Port = $_ENV['EMAIL_PORT'];
-
-        // configurar el contenido del email
-      $mail->setFrom('pruebas@odonto.megawebsistem.com');
-      $mail->addAddress($this->email); //correo de destino
-      $mail->Subject = 'Restablece tu contraseña';
-
-      // set HTML
+  
+      // Configurar el remitente y destinatario
+      $mail->setFrom('pruebas@odonto.megawebsistem.com', 'Soporte Odonto');
+      $mail->addAddress($this->email); // Correo del destinatario
+      $mail->addReplyTo('soporte@odonto.megawebsistem.com', 'Soporte Odonto');
+  
+      // Configurar el asunto del correo
+      $mail->Subject = 'Notificación de inicio de sesión';
+  
+      // Configurar el contenido en formato HTML
       $mail->isHTML(true);
       $mail->CharSet = 'UTF-8';
+  
+      // Construcción del contenido del email
       $contenido = '<html>';
-      $contenido .= '<p>Hola ' . $this->nombre . '</p>';
-      $contenido .= '<>Haz iniciado session en tu cuenta</p>';
-      $contenido .= '<p> </p>';
-      $contenido .= '<p>Si no iniciaste session cambiar contrasena</p>';
-      $contenido .= '</html>';
+      $contenido .= '<head><meta charset="UTF-8"></head>';
+      $contenido .= '<body>';
+      $contenido .= '<p><strong>Hola ' . htmlspecialchars($this->nombre) . ',</strong></p>';
+      $contenido .= '<p>Te notificamos que se ha iniciado sesión en tu cuenta.</p>';
+      $contenido .= '<p>Si fuiste tú, puedes ignorar este mensaje.</p>';
+      $contenido .= '<p>Si no reconoces esta actividad, te recomendamos cambiar tu contraseña inmediatamente.</p>';
+      $contenido .= '<p><a href="https://odonto.megawebsistem.com/reset-password" style="display:inline-block;padding:10px 15px;margin-top:10px;color:white;background-color:#007BFF;text-decoration:none;border-radius:5px;">Cambiar contraseña</a></p>';
+      $contenido .= '<p>Atentamente,<br>El equipo de Odonto</p>';
+      $contenido .= '</body></html>';
+  
       $mail->Body = $contenido;
-
-      // enviar el email
-      $mail->send();
-
+  
+      // Enviar el email y manejar posibles errores
+      if (!$mail->send()) {
+          error_log("Error al enviar correo: " . $mail->ErrorInfo);
+          return false;
+      }
+  
+      return true;
   }
+  
 }
 
 
