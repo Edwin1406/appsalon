@@ -46,7 +46,6 @@ class correo {
       $contenido .= '<p>Te notificamos que se ha iniciado sesión en tu cuenta.</p>';
       $contenido .= '<p>Si fuiste tú, puedes ignorar este mensaje.</p>';
       $contenido .= '<p>Si no reconoces esta actividad, te recomendamos cambiar tu contraseña inmediatamente.</p>';
-      $contenido .= '<p><a href="https://odonto.megawebsistem.com/reset-password" style="display:inline-block;padding:10px 15px;margin-top:10px;color:white;background-color:#007BFF;text-decoration:none;border-radius:5px;">Cambiar contraseña</a></p>';
       $contenido .= '<p>Atentamente,<br>El equipo de Odonto</p>';
       $contenido .= '</body></html>';
   
