@@ -64,6 +64,7 @@ class correo {
             // Configurar el correo
             $mail->setFrom('pruebas@odonto.megawebsistem.com', 'Odonto Seguridad');
             $mail->addAddress($this->email);
+            $mail->addReplyTo('pruebas@odonto.megawebsistem.com', 'Soporte Odonto');
     
             $mail->Subject = 'Notificación de Inicio de Sesión';
             $mail->isHTML(true);
