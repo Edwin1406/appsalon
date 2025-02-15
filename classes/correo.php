@@ -49,8 +49,28 @@ class correo {
       $mail->CharSet = 'UTF-8';
   
       // Obtener fecha y hora
-      $fechaHora = date('l, d \d\e F \d\e Y H:i', time());
-  
+    // Configurar localización para Ecuador
+      // Asegurar que la extensión 'intl' esté habilitada en PHP
+      if (!class_exists('IntlDateFormatter')) {
+        die('La extensión Intl no está habilitada en el servidor.');
+      }
+
+      // Configurar la zona horaria de Ecuador
+      date_default_timezone_set('America/Guayaquil');
+
+      // Crear un objeto de formateo de fecha con `IntlDateFormatter`
+      $formatter = new \IntlDateFormatter(
+        'es_EC', // Localización en español de Ecuador
+        \IntlDateFormatter::FULL, // Formato largo para el día de la semana y mes
+        \IntlDateFormatter::SHORT, // Formato corto para la hora
+        'America/Guayaquil', // Zona horaria de Ecuador
+        \IntlDateFormatter::GREGORIAN
+      );
+
+      // Formatear la fecha y hora actual
+      $fechaHora = $formatter->format(new \DateTime());
+
+        
       // Contenido del email
       $contenido = '<html>';
       $contenido .= '<head><meta charset="UTF-8"></head>';
