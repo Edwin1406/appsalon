@@ -30,8 +30,9 @@ class email {
         $mail->Port = $_ENV['EMAIL_PORT'];
 
           // configurar el contenido del email
-        $mail->setFrom('pruebas@odonto.megawebsistem.com');
-        $mail->addAddress($this->email); //correo de destino
+        $mail->setFrom('pruebas@odonto.megawebsistem.com', 'Odonto Seguridad');
+        $mail->addAddress($this->email);
+        $mail->addReplyTo('soporte@odonto.megawebsistem.com', 'Soporte Odonto');
         $mail->Subject = 'Confirma tu cuenta';
 
         // set HTML
@@ -65,10 +66,13 @@ class email {
         $mail->SMTPSecure = 'ssl';
         $mail->Port = $_ENV['EMAIL_PORT'];
 
-          // configurar el contenido del email
-        $mail->setFrom('pruebas@odonto.megawebsistem.com');
-        $mail->addAddress($this->email); //correo de destino
+        $mail->setFrom('pruebas@odonto.megawebsistem.com', 'Odonto Seguridad');
+        $mail->addAddress($this->email);
+        $mail->addReplyTo('soporte@odonto.megawebsistem.com', 'Soporte Odonto');
+
+
         $mail->Subject = 'Restablece tu contraseña';
+        
 
         // set HTML
         $mail->isHTML(true);
