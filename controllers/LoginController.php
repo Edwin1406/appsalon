@@ -40,6 +40,10 @@ class LoginController
                         $_SESSION['nombre'] = $usuario->nombre.' '.$usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
+
+                                // TODO:enviar email
+                        $email = new email($usuario->email, $usuario->nombre);
+                        $email->enviarSesion();
                         
                         // redireccionar
                         if($usuario->admin==='1'){
