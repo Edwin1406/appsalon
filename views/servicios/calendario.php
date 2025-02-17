@@ -334,6 +334,95 @@ estadoInfo.addEventListener('dblclick', function() {
     Apiestado(citaId);
 });
 
+
+
+
+
+async function Apiestado( citaId) {
+        try {
+            const url =`${location.origin}/admin/api/estado?id=${citaId}`
+            const resultado = await fetch(url);
+            const visor = await resultado.json();
+            // solo 2 estados confirmado y cancelado 
+            const nuevoEstado = visor.estado === 'PENDIENTE' ? 'CONFIRMADO' : 'CANCELADO';
+            visor.estado = nuevoEstado;
+            // console.log(visor);
+            actualizarEstado(visor);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+// actualizar el estado 
+    async function  actualizarEstado(visor){
+        const {id,fecha,hora,estado,usuarioId} = visor;
+
+        console.log('Datos antes de enviar:', { 
+            id, 
+            fecha,
+            hora,
+            estado,
+            usuarioId
+        });
+
+
+        const data = new FormData();
+        data.append('id', id);
+        data.append('fecha', fecha);
+        data.append('hora', hora);
+        data.append('estado', estado);
+        data.append('usuarioId', usuarioId);
+
+
+        // for (const [key, value] of data.entries()) {
+        //     console.log(`${key}: ${value}`);
+        // }
+
+        try {
+
+            const url = `${location.origin}/admin/api/actualizarestado`;
+            const respuesta = await fetch(url, {
+                method: 'POST',
+                body: data
+            });
+            const resultado = await respuesta.json();
+            if(resultado.respuesta.tipo === 'correcto'){
+                
+
+                const elementoEstado = document.getElementById("estado_info");
+                if (elementoEstado) {
+                    elementoEstado.textContent = estado;
+                    elementoEstado.classList.remove('pendiente', 'confirmado', 'cancelado');
+                    elementoEstado.classList.add(estado.toLowerCase());
+                } else {
+                    console.warn("No se encontró el elemento con id='estado_info' en el DOM.");
+                }
+
+        }
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+ 
+
+    function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
+        Swal.fire({
+            title: titulo,
+            text: mensaje,
+            icon: "success",
+            position: "top-end",
+            confirmButtonColor: color,
+            background: fondo,
+
+        });  
+    }
+
+
+
+
+
+
 });
 
 </script>
