@@ -181,12 +181,20 @@ class ServicioController{
                 exit;
             }
 
-            $idOdonto= Odontologo::find($odontologoId);
-            if( $idOdonto){
-                $_SESSION['mensaje_error'] = "El odontologo no coincide con el servicio";
+            //  odontologoId = 0 significa que no se ha seleccionado un odontólogo
+            if ($odontologoId == 0) {
+                $_SESSION['mensaje_error'] = "Por favor, selecciona un odontólogo";
                 header('Location: /admin/servicios/agendar');
                 exit;
             }
+
+            // sevicioId = 0 significa que no se ha seleccionado un servicio
+            if ($servicioId == 0) {
+                $_SESSION['mensaje_error'] = "Por favor, selecciona un servicio";
+                header('Location: /admin/servicios/agendar');
+                exit;
+            }
+
 
 
 
