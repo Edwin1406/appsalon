@@ -353,6 +353,8 @@ class ServicioController{
         if (!$id){
             header('Location: /');
         }
+
+        $alertas = [];
         $estado = Cita::find($id);
 
         if($_SERVER['REQUEST_METHOD']=='POST'){
