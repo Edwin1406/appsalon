@@ -152,31 +152,6 @@ if (count($citas) === 0) {
     </ul>
 </div>
 
-<script>
-apimokey();
-   
-async function apimokey(params) {
-        url = "https://www.qrcode-monkey.com/qrcode/api/qr";
-        const resultado = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(params)
-        });
-
-        console.log(resultado);
-        return urlBlob;
-
-}
-
-
-
-</script>
-
-
-
-
 
 
 <?php
