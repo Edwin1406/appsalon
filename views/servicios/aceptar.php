@@ -21,6 +21,6 @@ include_once __DIR__. '/../templates/alertas.php';
             <?php endif; ?>
         </select>
     </div>
-    <input type="submit" value="Actualizar Servicio" class="boton boton-verde">
+    <input type="submit" value="Actualizar" class="boton boton-verde">
 
 </form>
