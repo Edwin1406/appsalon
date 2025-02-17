@@ -181,12 +181,12 @@ class ServicioController{
                 exit;
             }
 
-
-                if ($usuarioId === '' || $odontologoId === '' || $servicioId === '' || $fecha === '' || $hora === '') {
-                    $_SESSION['mensaje_error'] = "Todos los campos son obligatorios";
-                    header('Location: /admin/servicios/agendar');
-                    exit;
-                }
+            $idOdonto= Odontologo::find($odontologoId);
+            if( $idOdonto->id != $servicioId){
+                $_SESSION['mensaje_error'] = "El odontologo no coincide con el servicio";
+                header('Location: /admin/servicios/agendar');
+                exit;
+            }
 
 
 
