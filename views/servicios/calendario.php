@@ -312,8 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
 
             estadoInfo.setAttribute('data-cita-id', info.event.id);
-            const tituloSeparado = info.event.title.split(" - "); 
-            const nombre = tituloSeparado.length > 1 ? tituloSeparado[1] : tituloSeparado[0]; 
+            const tituloSeparado = info.event.title.split("- "); 
+const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
 
             console.log(nombre)
 
