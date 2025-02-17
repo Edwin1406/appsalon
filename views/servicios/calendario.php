@@ -252,6 +252,8 @@ const colorPorAsunto = {
     'Endodoncia': '#dc3545',        // Rojo
     'Limpieza Dental': '#ffc107',   // Amarillo
     'Blanqueamiento': '#17a2b8',    // Celeste
+    'Extracción': '#6610f2',        // Morado
+    'Implante': '#fd7e14',          // Naranja
     'Otro': '#6c757d'               // Gris (por defecto)
 };
 
@@ -417,11 +419,6 @@ async function Apiestado( citaId) {
 
         });  
     }
-
-
-
-
-
 
 });
 
