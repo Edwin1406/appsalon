@@ -232,151 +232,126 @@
 </div>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+    const modal = document.getElementById('modalInfoCita');
+    const cerrarModal = document.getElementById('cerrarModal');
+    const estadoInfo = document.getElementById('estado_info'); 
+    const whatsappButton = document.createElement('button');
+    whatsappButton.textContent = 'Enviar WhatsApp';
+    whatsappButton.id = 'whatsappButton';
+    whatsappButton.style.marginTop = '10px';
+    document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
-const calendarEl = document.getElementById('calendar');
-const modal = document.getElementById('modalInfoCita');
-const cerrarModal = document.getElementById('cerrarModal');
-const estadoInfo = document.getElementById('estado_info'); 
-const whatsappButton = document.createElement('button');
-whatsappButton.textContent = 'Enviar WhatsApp';
-whatsappButton.id = 'whatsappButton';
-whatsappButton.style.marginTop = '10px';
-document.querySelector('.modal_contenido').appendChild(whatsappButton);
+    const colorPorAsunto = {
+        'Odontología General': '#007bff', 
+        'Ortodoncia': '#28a745',      
+        'Endodoncia': '#dc3545',       
+        'Limpieza Dental': '#ffc107', 
+        'Blanqueamiento': '#17a2b8',   
+        'Rehabilitación Oral': '#6c757d',
+        'Extracción': '#6610f2',        
+        'Cirugía Oral': '#fd7e14', 
+        'Restauración': '#e8f6f3', 
+        'Periodoncia': '#f8d7da',
+    };
 
-const colorPorAsunto = {
-    'Odontología General': '#007bff', 
-    'Ortodoncia': '#28a745',      
-    'Endodoncia': '#dc3545',       
-    'Limpieza Dental': '#ffc107', 
-    'Blanqueamiento': '#17a2b8',   
-    'Rehabilitación Oral': '#6c757d',
-    'Extracción': '#6610f2',        
-    'Cirugía Oral': '#fd7e14', 
-    'Restauración': '#e8f6f3', 
-    'Periodoncia': '#f8d7da',
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'es',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        buttonText: {
+            today: 'Hoy',
+            month: 'Mes',
+            week: 'Semana',
+            day: 'Día'
+        },
+        events: function(fetchInfo, successCallback, failureCallback) {
+            fetch(`${location.origin}/admin/api/apicitaservicio`)
+                .then(response => response.json())
+                .then(data => {
+                    // Ordenamos los eventos por fecha y hora
+                    data.sort((a, b) => {
+                        const dateA = new Date(`${a.fecha}T${a.hora}`);
+                        const dateB = new Date(`${b.fecha}T${b.hora}`);
+                        return dateA - dateB;
+                    });
 
-};
+                    const eventos = data.map(cita => ({
+                        id: cita.cita_id,
+                        title: `${cita.hora} - ${cita.nombrecliente} ${cita.apellidocliente}`,
+                        start: cita.fecha, 
+                        extendedProps: {
+                            hora: cita.hora,
+                            telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
+                            doctor: cita.nombreodontologo.trim(),
+                            asunto: cita.nombreservicio.trim(),
+                            estado: cita.estado.trim()
+                        },
+                        backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
+                        borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
+                    }));
 
-function fetchEventsAndUpdateCalendar(calendar) {
-    fetch(`${location.origin}/admin/api/apicitaservicio`) 
-        .then(response => response.json())
-        .then(data => {
-            // Ordenar las citas por fecha y hora antes de agregar al calendario
-            data.sort((a, b) => {
-                const dateA = new Date(`${a.fecha}T${a.hora}`);
-                const dateB = new Date(`${b.fecha}T${b.hora}`);
-                return dateA - dateB;
-            });
+                    successCallback(eventos);
+                })
+                .catch(error => failureCallback(error));
+        },
+        eventOrder: "title",  // Asegura que los eventos se ordenen por la hora en el título
+        eventClick: function(info) {
+            document.getElementById('nombre_paciente_info').textContent = info.event.title;
+            document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
+            document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
+            document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
+            document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
+            document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
+            document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
 
-            const eventos = data.map(cita => ({
-                id: cita.cita_id,
-                title: cita.nombrecliente + ' ' + cita.apellidocliente + ' ' + cita.hora,
-                start: cita.fecha, 
-                extendedProps: {
-                    hora: cita.hora,
-                    telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
-                    doctor: cita.nombreodontologo.trim(),
-                    asunto: cita.nombreservicio.trim(),
-                    estado: cita.estado.trim()
-                },
-                backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
-                borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
-            }));
+            estadoInfo.setAttribute('data-cita-id', info.event.id);
 
-            calendar.removeAllEvents();
-            calendar.addEventSource(eventos);
-        });
-}
+            const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+            const telefono = info.event.extendedProps.telefono;
 
+            whatsappButton.onclick = function() {
+                const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+                window.open(whatsappURL, '_blank');
+            };
 
-const calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    locale: 'es',
-    headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-    },
-    buttonText: {
-        today: 'Hoy',
-        month: 'Mes',
-        week: 'Semana',
-        day: 'Día'
-    },
-    datesSet: function(info) {
-        setTimeout(() => {
-            document.querySelector('.fc-toolbar-title').textContent = info.view.title;
-        }, 50);
-    },
-    eventClick: function(info) {
-        document.getElementById('nombre_paciente_info').textContent = info.event.title;
-        document.getElementById('fecha_info').textContent = info.event.start.toISOString().split('T')[0];
-        document.getElementById('hora_info').textContent = info.event.extendedProps.hora;
-        document.getElementById('telefono_info').textContent = info.event.extendedProps.telefono;
-        document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
-        document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
-        document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
+            modal.style.display = 'flex';
+        }
+    });
 
-        estadoInfo.setAttribute('data-cita-id', info.event.id);
+    calendar.render();
+    setInterval(() => calendar.refetchEvents(), 60000); // Actualizar cada 60 segundos
 
-        const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
-        const telefono = info.event.extendedProps.telefono;
+    cerrarModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
 
-        whatsappButton.onclick = function() {
-            const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            window.open(whatsappURL, '_blank');
-        };
+    estadoInfo.addEventListener('dblclick', function() {
+        const citaId = estadoInfo.getAttribute('data-cita-id');
+        console.log(citaId);
+        Apiestado(citaId);
+    });
 
-        modal.style.display = 'flex';
-    }
-});
-
-calendar.render();
-fetchEventsAndUpdateCalendar(calendar);
-setInterval(() => fetchEventsAndUpdateCalendar(calendar), 60000); // Actualizar cada 60 segundos
-
-cerrarModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
-
-estadoInfo.addEventListener('dblclick', function() {
-    const citaId = estadoInfo.getAttribute('data-cita-id');
-    console.log(citaId);
-    Apiestado(citaId);
-});
-
-
-
-
-
-async function Apiestado( citaId) {
+    async function Apiestado(citaId) {
         try {
-            const url =`${location.origin}/admin/api/estado?id=${citaId}`
+            const url = `${location.origin}/admin/api/estado?id=${citaId}`;
             const resultado = await fetch(url);
             const visor = await resultado.json();
-            // solo 2 estados confirmado y cancelado 
             const nuevoEstado = visor.estado === 'PENDIENTE' ? 'CONFIRMADO' : 'CANCELADO';
             visor.estado = nuevoEstado;
-            // console.log(visor);
             actualizarEstado(visor);
         } catch (error) {
             console.log(error);
         }
     }
-// actualizar el estado 
-    async function  actualizarEstado(visor){
-        const {id,fecha,hora,estado,usuarioId} = visor;
 
-        console.log('Datos antes de enviar:', { 
-            id, 
-            fecha,
-            hora,
-            estado,
-            usuarioId
-        });
-
+    async function actualizarEstado(visor) {
+        const { id, fecha, hora, estado, usuarioId } = visor;
 
         const data = new FormData();
         data.append('id', id);
@@ -385,22 +360,14 @@ async function Apiestado( citaId) {
         data.append('estado', estado);
         data.append('usuarioId', usuarioId);
 
-
-        // for (const [key, value] of data.entries()) {
-        //     console.log(`${key}: ${value}`);
-        // }
-
         try {
-
             const url = `${location.origin}/admin/api/actualizarestado`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: data
             });
             const resultado = await respuesta.json();
-            if(resultado.respuesta.tipo === 'correcto'){
-                
-
+            if (resultado.respuesta.tipo === 'correcto') {
                 const elementoEstado = document.getElementById("estado_info");
                 if (elementoEstado) {
                     elementoEstado.textContent = estado;
@@ -409,17 +376,13 @@ async function Apiestado( citaId) {
                 } else {
                     console.warn("No se encontró el elemento con id='estado_info' en el DOM.");
                 }
-
-        }
+            }
         } catch (error) {
             console.log(error);
-            
         }
     }
 
- 
-
-    function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
+    function mostrarAlerta(titulo, mensaje, tipo, color, fondo) {
         Swal.fire({
             title: titulo,
             text: mensaje,
@@ -427,10 +390,8 @@ async function Apiestado( citaId) {
             position: "top-end",
             confirmButtonColor: color,
             background: fondo,
-
-        });  
+        });
     }
-
 });
 
 </script>
