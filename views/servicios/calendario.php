@@ -233,15 +233,50 @@
 
 <script>
 
+document.addEventListener('DOMContentLoaded', function() {
 
+const calendarEl = document.getElementById('calendar');
+const modal = document.getElementById('modalInfoCita');
+const cerrarModal = document.getElementById('cerrarModal');
+const estadoInfo = document.getElementById('estado_info'); // Elemento del estado
+const whatsappButton = document.createElement('button');
+whatsappButton.textContent = 'Enviar WhatsApp';
+whatsappButton.id = 'whatsappButton';
+whatsappButton.style.marginTop = '10px';
+document.querySelector('.modal_contenido').appendChild(whatsappButton);
+
+// Definir colores según el asunto
 const colorPorAsunto = {
     'Consulta General': '#007bff',  // Azul
     'Ortodoncia': '#28a745',        // Verde
     'Endodoncia': '#dc3545',        // Rojo
     'Limpieza Dental': '#ffc107',   // Amarillo
     'Blanqueamiento': '#17a2b8',    // Celeste
-    'Otro': '#6c757d'               // Gris
+    'Otro': '#6c757d'               // Gris (por defecto)
 };
+
+function fetchEventsAndUpdateCalendar(calendar) {
+    fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
+        .then(response => response.json())
+        .then(data => {
+            const eventos = data.map(cita => ({
+                id: cita.cita_id,
+                title: cita.nombrecliente + ' ' + cita.apellidocliente,
+                start: cita.fecha, 
+                extendedProps: {
+                    hora: cita.hora,
+                    telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
+                    doctor: cita.nombreodontologo.trim(),
+                    asunto: cita.nombreservicio.trim(),
+                    estado: cita.estado.trim()
+                },
+                backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
+                borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
+            }));
+            calendar.removeAllEvents();
+            calendar.addEventSource(eventos);
+        });
+}
 
 const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
@@ -257,27 +292,10 @@ const calendar = new FullCalendar.Calendar(calendarEl, {
         week: 'Semana',
         day: 'Día'
     },
-    events: function(fetchInfo, successCallback, failureCallback) {
-        fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
-            .then(response => response.json())
-            .then(data => {
-                const eventos = data.map(cita => ({
-                    id: cita.cita_id,
-                    title: `${cita.nombrecliente} ${cita.apellidocliente}`,
-                    start: cita.fecha,
-                    extendedProps: {
-                        hora: cita.hora,
-                        telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
-                        doctor: cita.nombreodontologo.trim(),
-                        asunto: cita.nombreservicio.trim(),
-                        estado: cita.estado.trim()
-                    },
-                    backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'], // Color por asunto
-                    borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'] // Borde del mismo color
-                }));
-                successCallback(eventos);
-            })
-            .catch(error => failureCallback(error));
+    datesSet: function(info) {
+        setTimeout(() => {
+            document.querySelector('.fc-toolbar-title').textContent = info.view.title;
+        }, 50);
     },
     eventClick: function(info) {
         document.getElementById('nombre_paciente_info').textContent = info.event.title;
@@ -303,124 +321,19 @@ const calendar = new FullCalendar.Calendar(calendarEl, {
 });
 
 calendar.render();
+fetchEventsAndUpdateCalendar(calendar);
+setInterval(() => fetchEventsAndUpdateCalendar(calendar), 60000); // Actualizar cada 60 segundos
 
+cerrarModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
 
-
-
-
-// Detectar doble clic en el estado para obtener el ID de la cita
 estadoInfo.addEventListener('dblclick', function() {
     const citaId = estadoInfo.getAttribute('data-cita-id');
     console.log(citaId);
     Apiestado(citaId);
-
-    
 });
 
-
-async function Apiestado( citaId) {
-        try {
-            const url =`${location.origin}/admin/api/estado?id=${citaId}`
-            const resultado = await fetch(url);
-            const visor = await resultado.json();
-            // solo 2 estados confirmado y cancelado 
-            const nuevoEstado = visor.estado === 'PENDIENTE' ? 'CONFIRMADO' : 'CANCELADO';
-            visor.estado = nuevoEstado;
-            // console.log(visor);
-            actualizarEstado(visor);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-// actualizar el estado 
-    async function  actualizarEstado(visor){
-        const {id,fecha,hora,estado,usuarioId} = visor;
-
-        console.log('Datos antes de enviar:', { 
-            id, 
-            fecha,
-            hora,
-            estado,
-            usuarioId
-        });
-
-
-        const data = new FormData();
-        data.append('id', id);
-        data.append('fecha', fecha);
-        data.append('hora', hora);
-        data.append('estado', estado);
-        data.append('usuarioId', usuarioId);
-
-
-        // for (const [key, value] of data.entries()) {
-        //     console.log(`${key}: ${value}`);
-        // }
-
-        try {
-
-            const url = `${location.origin}/admin/api/actualizarestado`;
-            const respuesta = await fetch(url, {
-                method: 'POST',
-                body: data
-            });
-            const resultado = await respuesta.json();
-            if(resultado.respuesta.tipo === 'correcto'){
-                
-
-                const elementoEstado = document.getElementById("estado_info");
-                if (elementoEstado) {
-                    elementoEstado.textContent = estado;
-                    elementoEstado.classList.remove('pendiente', 'confirmado', 'cancelado');
-                    elementoEstado.classList.add(estado.toLowerCase());
-                } else {
-                    console.warn("No se encontró el elemento con id='estado_info' en el DOM.");
-                }
-
-        }
-        } catch (error) {
-            console.log(error);
-            
-        }
-    }
-
- 
-
-    function mostrarAlerta(titulo,mensaje,tipo,color,fondo){
-        Swal.fire({
-            title: titulo,
-            text: mensaje,
-            icon: "success",
-            position: "top-end",
-            confirmButtonColor: color,
-            background: fondo,
-
-        });  
-    }
-
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    let estadoElemento = document.getElementById("estado_info");
-    if (estadoElemento) {
-        let estadoTexto = estadoElemento.innerText.trim().toUpperCase();
-
-        if (estadoTexto === "PENDIENTE") {
-            estadoElemento.style.color = "tomato";
-        } else if (estadoTexto === "CONFIRMADO") {
-            estadoElemento.style.color = "green";
-        } else if (estadoTexto === "CANCELADO") {
-            estadoElemento.style.color = "red";
-        }
-    } else {
-        console.error("No se encontró el elemento con id 'estado_info'");
-    }
 });
-
 
 </script>
