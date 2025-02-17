@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Aplicación de citas odontologicas">
-    <meta name="keywords" content="citas, odontologicas, dentista">
+    <meta name="keywords" content="citas, odontologicas, dentista, pacientes, doctores, clinica, salud">
     <meta name="author" content="Edwin Diaz">
     <link rel="shortcut icon" href="public/build/img/dentista.jpg" type="image/x-icon">
     <title>Citas</title>

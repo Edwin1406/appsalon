@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="public/build/img/dentista.jpg" type="image/x-icon">
 <h1 class="nombre-pagina">Calendario</h1>
 <?php include_once __DIR__. '/../templates/barras.php' ?>
 

@@ -35,7 +35,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 
 
     <div class="campo">
-        <label for="usuarioId">Cliente:</label>
+        <label for="usuarioId">Paciente:</label>
         <select name="usuarioId" id="usuarioId" class="formulario__input">
             <?php foreach ($usuarios as $usuario): ?>
                 <?php if ($usuario->admin != 1): // Excluir administradores 
