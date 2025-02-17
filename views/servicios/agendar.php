@@ -63,7 +63,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 
     <div class="campo">
         <label for="odontologoId">Odontólogo:</label>
-        <select name="odontologoId" id="odontologoId" class="formulario__input">
+        <select name="odontologoId" id="odontologoId" class="formulario__input"disabled>
             <option value="" disabled selected>Selecciona un odontólogo</option>
             <?php foreach ($odontologos as $odontologo): ?>
                 <option value="<?php echo $odontologo->id; ?>">
