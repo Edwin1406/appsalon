@@ -355,7 +355,7 @@ class ServicioController{
         }
 
         $alertas = [];
-        $aceptar = Cita::find($id);
+        $aceptar = Citas::find($id);
 
         debuguear($aceptar);
 
