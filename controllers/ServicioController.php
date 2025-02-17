@@ -182,7 +182,7 @@ class ServicioController{
             }
 
             $idOdonto= Odontologo::find($odontologoId);
-            if( $idOdonto->id != $servicioId){
+            if( $idOdonto){
                 $_SESSION['mensaje_error'] = "El odontologo no coincide con el servicio";
                 header('Location: /admin/servicios/agendar');
                 exit;
