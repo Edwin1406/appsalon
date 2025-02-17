@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             console.log(nombre)
 
-            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/admin/servicios/aceptar?id=${info.event.id}`;
+            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${info.event.id}`;
 
             const telefono = info.event.extendedProps.telefono;
 
