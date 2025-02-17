@@ -162,6 +162,7 @@ class ServicioController{
         $usuarios = Usuario::allDesc('DESC');
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
+
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fecha = $_POST['fecha'];
@@ -179,6 +180,16 @@ class ServicioController{
                 header('Location: /admin/servicios/agendar');
                 exit;
             }
+
+
+                if ($usuarioId === '' || $odontologoId === '' || $servicioId === '' || $fecha === '' || $hora === '') {
+                    $_SESSION['mensaje_error'] = "Todos los campos son obligatorios";
+                    header('Location: /admin/servicios/agendar');
+                    exit;
+                }
+
+
+
     
             // Guardar la nueva cita
             $cita = new Cita([
