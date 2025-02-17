@@ -341,7 +341,43 @@ class ServicioController{
 
          ]);
 
+    }
+
+
+
+    public static function aceptar(Router $router){
+
+        $id = $_GET['id'] ?? null;
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+        if (!$id){
+            header('Location: /');
         }
+        $estado = Cita::find($id);
+
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $estado->sincronizar($_POST);
+
+            debuguear($_POST);
+            // debuguear($papel);
+            $alertas = $estado->validar();
+            if(empty($alertas)){
+                $estado->actualizar();
+                header('Location: /');
+            }
+
+        }
+        $router->render('servicios/aceptar', [
+            'titulo' => 'Aceptar Cita',
+            'alertas' => $alertas,
+            'estado' => $estado
+            
+        ]);
+        
+        
+
+
+    }
+
     
     
     

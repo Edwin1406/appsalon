@@ -87,7 +87,8 @@ $router->post('/admin/servicios/eliminar', [ServicioController::class, 'eliminar
 $router->get('/admin/api/estado', [ServicioController::class, 'estado']);
 $router->post('/admin/api/actualizarestado', [ServicioController::class, 'actualizarestado']);
 
-
+// aceptar cita
+$router->post('/admin/servicios/aceptar', [ServicioController::class, 'aceptar']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
