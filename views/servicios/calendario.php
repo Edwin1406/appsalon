@@ -247,7 +247,7 @@ document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
 // Definir colores según el asunto
 const colorPorAsunto = {
-    'Consulta General': '#007bff',  // Azul
+    'Calazado': '#007bff',  // Azul
     'Ortodoncia': '#28a745',        // Verde
     'Endodoncia': '#dc3545',        // Rojo
     'Limpieza Dental': '#ffc107',   // Amarillo
