@@ -1,5 +1,5 @@
 <h1 class="nombre-pagina">Actualizar el estado de la Cita</h1>
-<p class="descripcion-pagina">Administracion de Servicios</p>
+<p class="descripcion-pagina">Escoge una Estado</p>
 <?php 
 // include_once __DIR__. '/../templates/barra.php';
 include_once __DIR__. '/../templates/alertas.php';
