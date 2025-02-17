@@ -372,6 +372,7 @@ class ServicioController{
         $router->render('servicios/aceptar', [
             'titulo' => 'Aceptar Cita',
             'alertas' => $alertas,
+            'estado' => $estado
           
             
         ]);
