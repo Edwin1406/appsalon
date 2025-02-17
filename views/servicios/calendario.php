@@ -317,7 +317,7 @@ const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSepa
 
             console.log(nombre)
 
-            const mensaje = `Hola,${nombre} Te saluda Dental Álvarez, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+            const mensaje = `Hola,${nombre},Te saluda Dental Álvarez, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
             const telefono = info.event.extendedProps.telefono;
 
             whatsappButton.onclick = function() {
