@@ -254,6 +254,9 @@ const colorPorAsunto = {
     'Rehabilitación Oral': '#6c757d',
     'Extracción': '#6610f2',        
     'Cirugía Oral': '#fd7e14', 
+    'Restauración': '#e8f6f3', 
+    'Periodoncia': '#f8d7da',
+
 };
 
 function fetchEventsAndUpdateCalendar(calendar) {

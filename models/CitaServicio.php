@@ -35,13 +35,14 @@ class  CitaServicio extends ActiveRecord{
                   LEFT JOIN citas c ON cs.citaId = c.id
                   LEFT JOIN usuarios u ON c.usuarioid = u.id
                   LEFT JOIN servicios s ON cs.servicioId = s.id
-                  LEFT JOIN odontologo o ON s.odontologoid = o.id";
+                  LEFT JOIN odontologo o ON s.odontologoid = o.id
+                  ORDER BY c.fecha ASC, c.hora ASC";  
     
         $resultado = self::consultarSQL5($query);
     
-     
         return $resultado;
     }
+    
     
     
 
