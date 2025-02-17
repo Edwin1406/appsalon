@@ -349,9 +349,9 @@ class ServicioController{
 
         $id = $_GET['id'] ?? null;
         $id = filter_var($id, FILTER_VALIDATE_INT);
-        if (!$id){
-            header('Location: /');
-        }
+        // if (!$id){
+        //     header('Location: /');
+        // }
         $estado = Cita::find($id);
 
         if($_SERVER['REQUEST_METHOD']=='POST'){
