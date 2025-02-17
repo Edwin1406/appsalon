@@ -89,6 +89,7 @@ $router->post('/admin/api/actualizarestado', [ServicioController::class, 'actual
 
 // aceptar cita
 $router->get('/aceptar', [ServicioController::class, 'aceptar']);
+$router->post('/aceptar', [ServicioController::class, 'aceptar']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
