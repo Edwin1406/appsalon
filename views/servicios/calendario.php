@@ -263,6 +263,13 @@ function fetchEventsAndUpdateCalendar(calendar) {
     fetch(`${location.origin}/admin/api/apicitaservicio`) 
         .then(response => response.json())
         .then(data => {
+            // Ordenar las citas por fecha y hora antes de agregar al calendario
+            data.sort((a, b) => {
+                const dateA = new Date(`${a.fecha}T${a.hora}`);
+                const dateB = new Date(`${b.fecha}T${b.hora}`);
+                return dateA - dateB;
+            });
+
             const eventos = data.map(cita => ({
                 id: cita.cita_id,
                 title: cita.nombrecliente + ' ' + cita.apellidocliente + ' ' + cita.hora,
@@ -277,10 +284,12 @@ function fetchEventsAndUpdateCalendar(calendar) {
                 backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
                 borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
             }));
+
             calendar.removeAllEvents();
             calendar.addEventSource(eventos);
         });
 }
+
 
 const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
