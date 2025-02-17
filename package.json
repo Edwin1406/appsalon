@@ -1,7 +1,7 @@
 {
   "name": "app-salon-php-mvc-sass",
   "version": "1.0.0",
-  "description": "AppSalon - Curso Desarrollo web Completo",
+  "description": "Agenda de citas para Odontologos",
   "author": "edwin diaz",
   "main": "index.js",
   "type": "module",
