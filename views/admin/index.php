@@ -138,7 +138,7 @@ if (count($citas) === 0) {
                     }
 
                     // Crear el mensaje para WhatsApp
-                    $message = urlencode("$saludo $client_name, te saludamos de $business_name (lugar). Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. Por favor, responde a este mensaje confirmando tu asistencia. ¡Te esperamos!");
+                    $message = urlencode("$saludo $client_name, te saludamos de $business_name. Te recordamos que tienes una cita el día $appointment_date a las $appointment_time. Por favor, responde a este mensaje confirmando tu asistencia. ¡Te esperamos!");
 
                     $whatsapp_url = "https://wa.me/$phone_number?text=$message";
                     ?>
