@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const eventos = data.map(cita => ({
                         id: cita.cita_id,
-                        title: `${cita.hora} - ${cita.nombrecliente} ${cita.apellidocliente}`,
+                        title: `${cita.hora}- ${cita.nombrecliente} ${cita.apellidocliente} `,
                         start: cita.fecha, 
                         extendedProps: {
                             hora: cita.hora,
@@ -312,8 +312,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
 
             estadoInfo.setAttribute('data-cita-id', info.event.id);
+            const tituloSeparado = info.event.title.split(" - "); 
+            const nombre = tituloSeparado.length > 1 ? tituloSeparado[1] : tituloSeparado[0]; 
 
-            const mensaje = `Hola ${info.event.title}, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+            const mensaje = `Hola,${nombre} Te saluda Dental Álvarez, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
             const telefono = info.event.extendedProps.telefono;
 
             whatsappButton.onclick = function() {
