@@ -4,6 +4,6 @@
      name="estado" 
      id="estado"
      placeholder="Precio del Servicio"
-     value="<?php echo $estado->estado; ?>">
+     value="<?php echo $aceptar->estado; ?>">
      >
 </div> 

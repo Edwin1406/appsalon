@@ -355,16 +355,16 @@ class ServicioController{
         }
 
         $alertas = [];
-        $estado = Cita::find($id);
+        $aceptar = Cita::find($id);
 
         if($_SERVER['REQUEST_METHOD']=='POST'){
-            $estado->sincronizar($_POST);
+            $aceptar->sincronizar($_POST);
 
             // debuguear($_POST);
           
-            $alertas = $estado->validar();
+            $alertas = $aceptar->validar();
             if(empty($alertas)){
-                $estado->actualizar();
+                $aceptar->actualizar();
                 header('Location: /');
             }
 
@@ -372,7 +372,7 @@ class ServicioController{
         $router->render('servicios/aceptar', [
             'titulo' => 'Aceptar Cita',
             'alertas' => $alertas,
-            'estado' => $estado
+            'aceptar' => $aceptar
           
             
         ]);
