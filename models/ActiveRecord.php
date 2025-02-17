@@ -143,6 +143,18 @@ class ActiveRecord {
     }
 
 
+    public static function contarDonde($campo1, $valor1, $campo2, $valor2) {
+        $query = "SELECT COUNT(*) as total FROM citas WHERE $campo1 = :valor1 AND $campo2 = :valor2";
+        $stmt = self::$db->prepare($query);
+        $stmt->bindParam(':valor1', $valor1);
+        $stmt->bindParam(':valor2', $valor2);
+        $stmt->execute();
+        $resultado = self::consultarSQL($query);
+        return $resultado['total'] ?? 0;
+    }
+    
+
+
 // 
 // public static function whereAgenda($columna, $valor) {
 //     $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = ?";
