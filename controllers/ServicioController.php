@@ -357,7 +357,7 @@ class ServicioController{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $estado->sincronizar($_POST);
 
-            debuguear($_POST);
+            // debuguear($_POST);
             // debuguear($papel);
             $alertas = $estado->validar();
             if(empty($alertas)){
@@ -369,7 +369,7 @@ class ServicioController{
         $router->render('servicios/aceptar', [
             'titulo' => 'Aceptar Cita',
             'alertas' => $alertas,
-            'estado' => $estado
+          
             
         ]);
         
