@@ -4,7 +4,10 @@
 
 <style>
     p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 </style>
