@@ -313,17 +313,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             estadoInfo.setAttribute('data-cita-id', info.event.id);
             const tituloSeparado = info.event.title.split("- "); 
-const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
+            const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
 
             console.log(nombre)
 
-            const mensaje = `Hola,${nombre},Te saluda Dental Álvarez, te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia. ¡Gracias!`;
+            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${info.event.start.toISOString().split('T')[0]} a las ${info.event.extendedProps.hora}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/ ¡Gracias!`;
+
             const telefono = info.event.extendedProps.telefono;
 
             whatsappButton.onclick = function() {
                 const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
                 window.open(whatsappURL, '_blank');
             };
+
 
             modal.style.display = 'flex';
         }
