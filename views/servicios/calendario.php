@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const eventos = data.map(cita => ({
                         id: cita.cita_id,
-                        title: `${cita.hora} - ${cita.nombrecliente} ${cita.apellidocliente}`,
+                        title: ` ${cita.nombrecliente} ${cita.apellidocliente} -${cita.hora} `,
                         start: cita.fecha, 
                         extendedProps: {
                             hora: cita.hora,
