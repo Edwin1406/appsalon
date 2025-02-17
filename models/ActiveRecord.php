@@ -144,13 +144,17 @@ class ActiveRecord {
 
 
     public static function contarDonde($campo1, $valor1, $campo2, $valor2) {
-        $query = "SELECT COUNT(*) as total FROM citas WHERE $campo1 = :valor1 AND $campo2 = :valor2";
+        $query = "SELECT COUNT(*) as total FROM citas WHERE $campo1 = ? AND $campo2 = ?";
         $stmt = self::$db->prepare($query);
-        $stmt->bindParam(':valor1', $valor1);
-        $stmt->bindParam(':valor2', $valor2);
-        $stmt->execute();
-        $resultado = self::consultarSQL($query);
-        return $resultado['total'] ?? 0;
+        
+        if ($stmt) {
+            $stmt->bind_param("ss", $valor1, $valor2); // Si los valores son strings, usa "ss". Si hay enteros, ajusta el tipo.
+            $stmt->execute();
+            $resultado = $stmt->get_result()->fetch_assoc();
+            return $resultado['total'] ?? 0;
+        }
+        
+        return 0; // Retornar 0 en caso de error
     }
     
 
