@@ -346,6 +346,8 @@ class ServicioController{
 
 
     public static function aceptar(Router $router){
+        session_start();
+        isAdmin();
 
         $id = $_GET['id'] ?? null;
         $id = filter_var($id, FILTER_VALIDATE_INT);
