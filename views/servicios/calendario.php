@@ -260,7 +260,7 @@ const colorPorAsunto = {
 };
 
 function fetchEventsAndUpdateCalendar(calendar) {
-    fetch('https://odonto.megawebsistem.com/admin/api/apicitaservicio') 
+    fetch(`${location.origin}/admin/api/apicitaservicio`) 
         .then(response => response.json())
         .then(data => {
             const eventos = data.map(cita => ({
