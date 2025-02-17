@@ -154,14 +154,12 @@ class ServicioController{
     }
 
 
-
-    public static function agendar(Router $router){
+    public static function agendar(Router $router) {
         session_start();
         isAdmin();
         
         $alertas = [];
         $usuarios = Usuario::allDesc('DESC');
-        // debuguear($usuarios);
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
     
@@ -172,11 +170,12 @@ class ServicioController{
             $odontologoId = $_POST['odontologoId'];
             $servicioId = $_POST['servicio'];
     
-            // Verificar si ya existe una cita en la misma fecha y hora
-            $citaExistente = Cita::whereAgenda('hora', $hora, 'fecha', $fecha);
+            // Contar cuántas citas existen en la misma fecha y hora
+            $citasExistentes = Cita::contarDonde('hora', $hora, 'fecha', $fecha);
     
-            if ($citaExistente) {
-                $_SESSION['mensaje_error'] = "Ya existe una cita a las $hora en la fecha $fecha. Por favor, elige otra hora.";
+            // Permitir hasta dos citas en la misma hora
+            if ($citasExistentes >= 2) {
+                $_SESSION['mensaje_error'] = "Ya existen dos citas a las $hora en la fecha $fecha. Por favor, elige otra hora.";
                 header('Location: /admin/servicios/agendar');
                 exit;
             }
@@ -213,7 +212,6 @@ class ServicioController{
         ]);
     }
     
-
 
     
     
