@@ -351,7 +351,7 @@ class ServicioController{
         $id = $_GET['id'] ?? null;
         $id = filter_var($id, FILTER_VALIDATE_INT);
         if (!$id){
-            header('Location: /');
+            header('Location: /aceptar');
         }
 
         $alertas = [];
