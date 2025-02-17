@@ -357,6 +357,8 @@ class ServicioController{
         $alertas = [];
         $aceptar = Cita::find($id);
 
+        debuguear($aceptar);
+
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $aceptar->sincronizar($_POST);
 
