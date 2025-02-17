@@ -7,7 +7,7 @@
     <meta name="description" content="Aplicación de citas odontologicas">
     <meta name="keywords" content="citas, odontologicas, dentista, pacientes, doctores, clinica, salud">
     <meta name="author" content="Edwin Diaz">
-    <link rel="shortcut icon" href="public/build/img/dentista.jpg" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="public/build/img/dentista.jpg" type="image/x-icon"> -->
     <title>Citas</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap" rel="stylesheet"> 
