@@ -182,18 +182,13 @@ class ServicioController{
             }
 
               // sevicioId = 0 significa que no se ha seleccionado un servicio
-              if ($servicioId == 0) {
+              if ($servicioId == 0 || !$odontologoId==0) {
                 $_SESSION['mensaje_error'] = "Por favor, selecciona un servicio";
                 header('Location: /admin/servicios/agendar');
                 exit;
             }
 
-            //  odontologoId = 0 significa que no se ha seleccionado un odontólogo
-            if ($odontologoId == 0) {
-                $_SESSION['mensaje_error'] = "Por favor, selecciona un odontólogo";
-                header('Location: /admin/servicios/agendar');
-                exit;
-            }
+          
 
           
 
