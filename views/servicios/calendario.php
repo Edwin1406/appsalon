@@ -238,23 +238,22 @@ document.addEventListener('DOMContentLoaded', function() {
 const calendarEl = document.getElementById('calendar');
 const modal = document.getElementById('modalInfoCita');
 const cerrarModal = document.getElementById('cerrarModal');
-const estadoInfo = document.getElementById('estado_info'); // Elemento del estado
+const estadoInfo = document.getElementById('estado_info'); 
 const whatsappButton = document.createElement('button');
 whatsappButton.textContent = 'Enviar WhatsApp';
 whatsappButton.id = 'whatsappButton';
 whatsappButton.style.marginTop = '10px';
 document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
-// Definir colores según el asunto
 const colorPorAsunto = {
-    'CALZADO': '#007bff',  // Azul
-    'Ortodoncia': '#28a745',        // Verde
-    'Endodoncia': '#dc3545',        // Rojo
-    'Limpieza Dental': '#ffc107',   // Amarillo
-    'Blanqueamiento': '#17a2b8',    // Celeste
-    'Extracción': '#6610f2',        // Morado
-    'Implante': '#fd7e14',          // Naranja
-    'Otro': '#6c757d'               // Gris (por defecto)
+    'Odontología General': '#007bff', 
+    'Ortodoncia': '#28a745',      
+    'Endodoncia': '#dc3545',       
+    'Limpieza Dental': '#ffc107', 
+    'Blanqueamiento': '#17a2b8',   
+    'Rehabilitación Oral': '#6c757d',
+    'Extracción': '#6610f2',        
+    'Cirugía Oral': '#fd7e14', 
 };
 
 function fetchEventsAndUpdateCalendar(calendar) {
@@ -263,7 +262,7 @@ function fetchEventsAndUpdateCalendar(calendar) {
         .then(data => {
             const eventos = data.map(cita => ({
                 id: cita.cita_id,
-                title: cita.nombrecliente + ' ' + cita.apellidocliente,
+                title: cita.nombrecliente + ' ' + cita.apellidocliente + ' ' + cita.hora,
                 start: cita.fecha, 
                 extendedProps: {
                     hora: cita.hora,
