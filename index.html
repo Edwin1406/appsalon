@@ -1,18 +1,17 @@
 <script>
-
-    apimokey({data: "https://www.qrcode-monkey.com"}).then((url) => {
-        document.getElementById("qr").src = url;
-    });
+apimokey();
+   
 async function apimokey(params) {
-        url = "https://www.qrcode-monkey.com/api/qr/custom?";
-        url += "size=400";
-        url += "&format=png";
-        url += "&data=" + params.data;
-        const resultado = await fetch(url);
-        const blob = await resultado.blob();
-        const urlBlob = URL.createObjectURL(blob);
-        console.log(urlBlob);
-        
+        url = "https://www.qrcode-monkey.com/qrcode/api/qr";
+        const resultado = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+        });
+
+        console.log(resultado);
         return urlBlob;
 
 }
