@@ -16,7 +16,7 @@
     <div id="paso-1" class="seccion">
         <h2>servicios</h2>
         <p class="text-center">Elige tus servicios a continuación</p>
-        <div id="servicios" class="lista-servicios">Doctor/a: </div>
+        <div id="servicios" class="lista-servicios"> </div>
     </div>
 
     <div id="paso-2" class="seccion">
