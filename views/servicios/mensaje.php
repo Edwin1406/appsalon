@@ -1,1 +1,1 @@
-<h1>SE ACTUALIZO EL ESTADO DE LA CITA, GRACIAS </h1>
+<h1> <?php echo $titulo ?> </h1>

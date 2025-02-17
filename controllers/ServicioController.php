@@ -384,6 +384,17 @@ class ServicioController{
 
     }
 
+
+
+
+
+    public static function mensaje(Router $router){
+       
+        $router->render('servicios/mensaje',[
+            'titulo' => 'Cita Actualizada'
+        ]);
+    }
+
     
     
     
