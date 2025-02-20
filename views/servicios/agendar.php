@@ -49,7 +49,7 @@ include_once __DIR__ . '/../templates/alertas.php';
         <?php foreach ($usuarios as $usuario): ?>
             <?php if ($usuario->admin != 1): // Excluir administradores ?>
                 <option value="<?php echo $usuario->id; ?>">
-                    <?php echo htmlspecialchars($usuario->nombre) + " " + htmlspecialchars($usuario->apellido); ?>
+                    <?php echo htmlspecialchars($usuario->nombre) , htmlspecialchars($usuario->apellido); ?>
                 </option>
             <?php endif; ?>
         <?php endforeach; ?>
