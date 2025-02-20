@@ -289,42 +289,79 @@ function generarHorasDisponibles() {
 
 
 
-function mostrarHoras(horas) {
+// function mostrarHoras(horas) {
   
 
+//     const inputHora = document.querySelector('#hora');
+//     const inputFecha = document.querySelector('#fecha');
+
+//     inputHora.addEventListener('input', function(e) {
+//         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
+//         const fechaCita = inputFecha.value;
+//         console.log(fechaCita);
+
+//         // Comprobar si la fecha y hora ya están reservadas
+//         const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
+        
+//         if (fechaYHoraReservada) {
+//             e.target.value = '';
+//             // mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
+//             Swal.fire({
+//                 icon: "error",
+//                 title: "Hora ya reservada en esa fecha",
+//                 text: "Por favor selecciona otra hora",
+//               });
+//         } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) == 19) {
+//             e.target.value = '';
+//             // mostrarAlerta('Hora no válida', 'error', '.formulario');
+//             Swal.fire({
+//                 icon: "error",
+//                 title: "Hora no valida",
+//                 text: "Ya esa hora no esta disponible",
+//               });
+//         } else {
+//             cita.hora = horaCita;
+//             console.log(cita); 
+//         }
+//     });
+// }
+
+
+function mostrarHoras(horas) {
     const inputHora = document.querySelector('#hora');
     const inputFecha = document.querySelector('#fecha');
 
     inputHora.addEventListener('input', function(e) {
         const horaCita = e.target.value.slice(0, 5); // Solo hora y minutos
         const fechaCita = inputFecha.value;
-        console.log(fechaCita);
 
-        // Comprobar si la fecha y hora ya están reservadas
-        const fechaYHoraReservada = horas.some(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita);
-        
-        if (fechaYHoraReservada) {
+        // Contar cuántas veces se ha reservado esta fecha y hora
+        const reservasEnEsaHora = horas.filter(hora => hora.hora.slice(0, 5) === horaCita && hora.fecha === fechaCita).length;
+
+        if (reservasEnEsaHora >= 2) {
             e.target.value = '';
-            // mostrarAlerta('Hora ya reservada en esa fecha', 'error', '.formulario');
             Swal.fire({
                 icon: "error",
-                title: "Hora ya reservada en esa fecha",
-                text: "Por favor selecciona otra hora",
-              });
+                title: "Hora ya reservada",
+                text: "Solo se permiten 2 reservas en la misma hora del mismo día.",
+            });
         } else if (parseInt(horaCita.split(":")[0]) < 10 || parseInt(horaCita.split(":")[0]) == 19) {
             e.target.value = '';
-            // mostrarAlerta('Hora no válida', 'error', '.formulario');
             Swal.fire({
                 icon: "error",
-                title: "Hora no valida",
-                text: "Ya esa hora no esta disponible",
-              });
+                title: "Hora no válida",
+                text: "Esa hora no está disponible.",
+            });
         } else {
             cita.hora = horaCita;
-            console.log(cita); 
+            console.log(cita);
         }
     });
 }
+
+
+
+
 
 // -------------------------------------------  ALERTAS ----------------------------------------------
 
