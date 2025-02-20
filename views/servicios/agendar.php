@@ -23,6 +23,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 
 .select2-results__option{
     color: black;
+    padding: 1rem;
 }
 
 
@@ -40,7 +41,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 <form action="/admin/servicios/agendar" method="POST" class="formulario">
 
 
- <!-- Agregar Select2 CSS -->
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
 <div class="campo">
