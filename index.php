@@ -92,7 +92,7 @@ $router->get('/aceptar', [ServicioController::class, 'aceptar']);
 $router->post('/aceptar', [ServicioController::class, 'aceptar']);
 
 // Rutas de error
-$router->get('/mensaje', [ServicioController::class, 'mensaje']);
+// $router->get('/mensaje', [ServicioController::class, 'mensaje']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
