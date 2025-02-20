@@ -20,6 +20,12 @@ include_once __DIR__ . '/../templates/alertas.php';
         border-radius: .5rem;
         border: 1px solid #e1e1e1;
     }
+
+.select2-results__option{
+    color: black;
+}
+
+
 </style>
 
 
