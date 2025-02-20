@@ -34,19 +34,35 @@ include_once __DIR__ . '/../templates/alertas.php';
 <form action="/admin/servicios/agendar" method="POST" class="formulario">
 
 
-    <div class="campo">
-        <label for="usuarioId">Paciente:</label>
-        <select name="usuarioId" id="usuarioId" class="formulario__input">
-            <?php foreach ($usuarios as $usuario): ?>
-                <?php if ($usuario->admin != 1): // Excluir administradores 
-                ?>
-                    <option value="<?php echo $usuario->id; ?>">
-                        <?php echo htmlspecialchars($usuario->nombre); ?>
-                    </option>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </select>
-    </div>
+ <!-- Agregar Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+<div class="campo">
+    <label for="usuarioId">Paciente:</label>
+    <select name="usuarioId" id="usuarioId" class="formulario__input">
+        <?php foreach ($usuarios as $usuario): ?>
+            <?php if ($usuario->admin != 1): // Excluir administradores ?>
+                <option value="<?php echo $usuario->id; ?>">
+                    <?php echo htmlspecialchars($usuario->nombre); ?>
+                </option>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+<!-- Agregar jQuery y Select2 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#usuarioId').select2({
+            placeholder: "Selecciona un paciente",
+            allowClear: true
+        });
+    });
+</script>
+
 
     <div class="campo">
         <label for="servicio">Servicio:</label>

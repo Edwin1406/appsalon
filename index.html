@@ -1,20 +1,44 @@
 <script>
-apimokey();
-   
-async function apimokey(params) {
-        url = "https://www.qrcode-monkey.com/qrcode/api/qr";
-        const resultado = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(params)
-        });
-
-        console.log(resultado);
-        return urlBlob;
-
+function crearCombos(lista) {
+    let combos = [];
+    
+    for (let i = 0; i < lista.length; i += 2) {
+        if (lista[i + 1]) {
+            combos.push([lista[i], lista[i + 1]]);
+        } else {
+            combos.push([lista[i]]);
+        }
+    }
+    
+    return combos;
 }
+
+let lista = [
+    {"Cod.Papel": "B1", "Descripcion del Papel": "Blanco", "Gramaje (gr/m2)": 130},
+    {"Cod.Papel": "B2", "Descripcion del Papel": "Blanco", "Gramaje (gr/m2)": 150},
+    {"Cod.Papel": "B3", "Descripcion del Papel": "Blanco", "Gramaje (gr/m2)": 175},
+    {"Cod.Papel": "B4", "Descripcion del Papel": "Blanco", "Gramaje (gr/m2)": 200},
+    {"Cod.Papel": "K1", "Descripcion del Papel": "Kraft Liner", "Gramaje (gr/m2)": 125},
+    {"Cod.Papel": "K2", "Descripcion del Papel": "Kraft Liner", "Gramaje (gr/m2)": 140},
+    {"Cod.Papel": "K3", "Descripcion del Papel": "Kraft Liner", "Gramaje (gr/m2)": 150},
+    {"Cod.Papel": "K4", "Descripcion del Papel": "Kraft Liner", "Gramaje (gr/m2)": 175},
+    {"Cod.Papel": "K5", "Descripcion del Papel": "Kraft Liner", "Gramaje (gr/m2)": 220},
+    {"Cod.Papel": "O1", "Descripcion del Papel": "Onda", "Gramaje (gr/m2)": 115},
+    {"Cod.Papel": "O2", "Descripcion del Papel": "Onda", "Gramaje (gr/m2)": 125},
+    {"Cod.Papel": "O3", "Descripcion del Papel": "Onda", "Gramaje (gr/m2)": 150},
+    {"Cod.Papel": "O4", "Descripcion del Papel": "Onda", "Gramaje (gr/m2)": 175}
+];
+
+let resultado = crearCombos(lista);
+console.log(resultado);
+
+
+
+
+
+
+
+
 
 
 
