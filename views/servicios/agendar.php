@@ -21,12 +21,10 @@ include_once __DIR__ . '/../templates/alertas.php';
         border: 1px solid #e1e1e1;
     }
 
-.select2-results__option{
-    color: black;
-    padding: 1rem;
-}
-
-
+    .select2-results__option {
+        color: black;
+        padding: 1rem;
+    }
 </style>
 
 
@@ -42,33 +40,34 @@ include_once __DIR__ . '/../templates/alertas.php';
 
 
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
-<div class="campo">
-    <label for="usuarioId">Paciente:</label>
-    <select name="usuarioId" id="usuarioId" class="formulario__input">
-        <?php foreach ($usuarios as $usuario): ?>
-            <?php if ($usuario->admin != 1): // Excluir administradores ?>
-                <option value="<?php echo $usuario->id; ?>">
-                    <?php echo htmlspecialchars($usuario->nombre) ," ", htmlspecialchars($usuario->apellido); ?>
-                </option>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </select>
-</div>
+    <div class="campo">
+        <label for="usuarioId">Paciente:</label>
+        <select name="usuarioId" id="usuarioId" class="formulario__input">
+            <?php foreach ($usuarios as $usuario): ?>
+                <?php if ($usuario->admin != 1): // Excluir administradores 
+                ?>
+                    <option value="<?php echo $usuario->id; ?>">
+                        <?php echo htmlspecialchars($usuario->nombre), " ", htmlspecialchars($usuario->apellido); ?>
+                    </option>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
+    </div>
 
-<!-- Agregar jQuery y Select2 JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <!-- Agregar jQuery y Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#usuarioId').select2({
-            placeholder: "Selecciona un paciente",
-            allowClear: true
+    <script>
+        $(document).ready(function() {
+            $('#usuarioId').select2({
+                placeholder: "Selecciona un paciente",
+                allowClear: true
+            });
         });
-    });
-</script>
+    </script>
 
 
     <div class="campo">
@@ -86,7 +85,7 @@ include_once __DIR__ . '/../templates/alertas.php';
 
     <div class="campo">
         <label for="odontologoId">Odontólogo:</label>
-        <select name="odontologoId" id="odontologoId" class="formulario__input"disabled>
+        <select name="odontologoId" id="odontologoId" class="formulario__input" disabled>
             <option value="" disabled selected>Selecciona un odontólogo</option>
             <?php foreach ($odontologos as $odontologo): ?>
                 <option value="<?php echo $odontologo->id; ?>">
@@ -141,15 +140,15 @@ include_once __DIR__ . '/../templates/alertas.php';
     </div>
 
 
-<div class="campo">
-    <label for="nota">Nota:</label>
-    <input type="text"
-     name="nota" 
-     id="nota"
-     placeholder="Ingrese una nota"
-     value=""
-     class="formulario__input">
-</div>
+    <div class="campo">
+        <label for="nota">Nota:</label>
+        <input type="text"
+            name="nota"
+            id="nota"
+            placeholder="Ingrese una nota"
+            value=""
+            class="formulario__input">
+    </div>
 
 
 
