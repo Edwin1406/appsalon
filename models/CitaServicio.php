@@ -26,7 +26,6 @@ class  CitaServicio extends ActiveRecord{
                     c.estado AS estado,
                     c.fecha,
                     c.hora,
-                  
                     c.nota,
                     u.nombre AS nombrecliente,
                     u.apellido AS apellidocliente,
