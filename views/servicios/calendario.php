@@ -295,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             doctor: cita.nombreodontologo.trim(),
                             asunto: cita.nombreservicio.trim(),
                             estado: cita.estado.trim(),
+                            // cambio
                             nota: cita.nota.trim()
 
                         },
@@ -315,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
             document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
+            // cambio
             document.getElementById('nota_info').textContent = info.event.extendedProps.nota;
 
 
