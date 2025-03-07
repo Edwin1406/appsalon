@@ -18,7 +18,7 @@ class  CitaServicio extends ActiveRecord{
 
 
 
-
+// se realizo cambio se sagrgo nota
     public static function obtenerCitas() {
         $query = "SELECT 
                     cs.id AS citasservicio_id,

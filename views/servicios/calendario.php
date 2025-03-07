@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const eventos = data.map(cita => ({
                         id: cita.cita_id,
-                        title: `${cita.hora}- ${cita.nombrecliente} ${cita.apellidocliente} `,
+                        title: `${cita.hora}- ${cita.nombrecliente} ${cita.apellidocliente}- ${cita.nota}`,
                         start: cita.fecha, 
                         extendedProps: {
                             hora: cita.hora,
@@ -295,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             doctor: cita.nombreodontologo.trim(),
                             asunto: cita.nombreservicio.trim(),
                             estado: cita.estado.trim(),
+                            // se agrego nota
                             nota: cita.nota.trim()
 
                         },
@@ -315,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
             document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
+            // se agrego nota
             document.getElementById('nota_info').textContent = info.event.extendedProps.nota;
 
 
