@@ -147,7 +147,7 @@ include_once __DIR__ . '/../templates/alertas.php';
      name="nota" 
      id="nota"
      placeholder="Ingrese una nota"
-     value=""
+     value="<?php echo $cita->nota; ?>"
      class="formulario__input">
 </div>
 
