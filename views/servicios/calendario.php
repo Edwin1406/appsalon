@@ -195,6 +195,9 @@
             <p><strong>Doctor:</strong> <span id="doctor_info"></span></p>
             <p><strong>Asunto:</strong> <span id="asunto_info"></span></p>            
             <p><strong>Estado:</strong> <span id="estado_info"></span></p>
+            <!-- cambio -->
+            <p><strong>Nota:</strong> <span id="nota_info"></span></p>
+
 
 
 
@@ -291,7 +294,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             telefono: cita.telefonocliente.startsWith('+') ? cita.telefonocliente : `+593${cita.telefonocliente.replace(/^0/, '')}`,
                             doctor: cita.nombreodontologo.trim(),
                             asunto: cita.nombreservicio.trim(),
-                            estado: cita.estado.trim()
+                            estado: cita.estado.trim(),
+                            nota: cita.nota.trim()
+
                         },
                         backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
                         borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
@@ -310,6 +315,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('doctor_info').textContent = info.event.extendedProps.doctor;
             document.getElementById('asunto_info').textContent = info.event.extendedProps.asunto;
             document.getElementById('estado_info').textContent = info.event.extendedProps.estado;
+            document.getElementById('nota_info').textContent = info.event.extendedProps.nota;
+
 
             estadoInfo.setAttribute('data-cita-id', info.event.id);
             const tituloSeparado = info.event.title.split("- "); 
