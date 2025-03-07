@@ -166,6 +166,7 @@ class ServicioController{
 
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $nota = $_POST['nota'];
             $fecha = $_POST['fecha'];
             $hora = $_POST['hora'];
             $usuarioId = $_POST['usuarioId'];
@@ -194,7 +195,8 @@ class ServicioController{
                 'usuarioId' => $usuarioId,
                 'odontologoId' => $odontologoId,
                 'fecha' => $fecha,
-                'hora' => $hora
+                'hora' => $hora,
+                'nota' => $nota,
             ]);
     
             $resultado = $cita->guardar();
