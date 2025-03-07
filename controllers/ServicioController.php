@@ -162,7 +162,7 @@ class ServicioController{
         $usuarios = Usuario::allDesc('DESC');
         $odontologos = Odontologo::all();
         $servicios = Servicio::all();
-        debuguear($odontologos);
+        // debuguear($odontologos);
 
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
