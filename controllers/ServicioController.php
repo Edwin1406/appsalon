@@ -188,14 +188,6 @@ class ServicioController{
                 exit;
             }
 
-          
-
-          
-
-
-
-
-    
             // Guardar la nueva cita
             $cita = new Cita([
                 'usuarioId' => $usuarioId,

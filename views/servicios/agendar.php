@@ -140,6 +140,21 @@ include_once __DIR__ . '/../templates/alertas.php';
         </select>
     </div>
 
+
+<div class="campo">
+    <label for="nota">Nota:</label>
+    <input type="text"
+     name="nota" 
+     id="nota"
+     placeholder="Ingrese una nota"
+     value="<?php echo $cita->nota; ?>">
+</div>
+
+
+
+
+
+
     <input type="submit" value="Agendar Cita" class="boton boton-verde">
 </form>
 <script>
