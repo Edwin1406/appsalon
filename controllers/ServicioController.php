@@ -220,6 +220,7 @@ class ServicioController{
             'alertas' => $alertas,
             'odontologos' => $odontologos,
             'servicios' => $servicios,
+            'cita' => $cita,
         ]);
     }
     
