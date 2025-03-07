@@ -198,6 +198,8 @@ class ServicioController{
                 'hora' => $hora,
                 'nota' => $nota,
             ]);
+
+            debuguear($cita);
     
             $resultado = $cita->guardar();
             $citaId = $resultado['id'] ?? null;
@@ -220,7 +222,6 @@ class ServicioController{
             'alertas' => $alertas,
             'odontologos' => $odontologos,
             'servicios' => $servicios,
-            'cita' => $cita,
         ]);
     }
     
