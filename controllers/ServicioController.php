@@ -199,7 +199,7 @@ class ServicioController{
                 'nota' => $nota,
             ]);
 
-            // debuguear($cita);
+            debuguear($cita);
     
             $resultado = $cita->guardar();
             $citaId = $resultado['id'] ?? null;
