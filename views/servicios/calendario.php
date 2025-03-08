@@ -403,30 +403,40 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     });
 
-    // Función para mostrar la notificación de forma automática
+
+
+// Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
-// quiero moestrar las notas de las citas con toastify tomando en cuenta la fecha y hora de la cita media hora antes y que se muestre varias veces la notificacion de la cita hasta llegar a la hora de la cita media hora antes empieza a mostrar la notificacion
-
     const fechaActual = new Date();
-    const fechaActualISO = fechaActual.toISOString().split('T')[0];
-    const horaActual = fechaActual.toTimeString().substring(0, 5);
 
     for (const evento of eventos) {
-        const fechaCita = evento.start.toISOString().split('T')[0];
-        const horaCita = evento.extendedProps.hora;
-
+        const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener la fecha de la cita
+        const horaCita = evento.extendedProps.hora; // Obtener la hora de la cita en formato HH:mm
+        
+        // Convertir la fecha y hora de la cita a objeto Date
         const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
-        const fechaHoraCitaISO = fechaHoraCita.toISOString().split('T')[0];
-        const horaHoraCita = fechaHoraCita.toTimeString().substring(0, 5);
-
+        
+        // Crear un objeto Date que representa media hora antes de la cita
         const fechaHoraCitaMenosMediaHora = new Date(fechaHoraCita);
         fechaHoraCitaMenosMediaHora.setMinutes(fechaHoraCitaMenosMediaHora.getMinutes() - 30);
-        const fechaHoraCitaMenosMediaHoraISO = fechaHoraCitaMenosMediaHora.toISOString().split('T')[0];
-        const horaHoraCitaMenosMediaHora = fechaHoraCitaMenosMediaHora.toTimeString().substring(0, 5);
 
-        if (fechaActualISO === fechaHoraCitaMenosMediaHoraISO && horaActual === horaHoraCitaMenosMediaHora) {
+        // Si estamos dentro del período de notificación
+        if (fechaActual >= fechaHoraCitaMenosMediaHora && fechaActual < fechaHoraCita) {
             const mensaje = `Hola, ${evento.title.split("- ")[1].trim()}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
+
+            // Mostrar la notificación con Toastify
+            Toastify({
+                text: mensaje,
+                duration: 5000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#28a745",
+                stopOnFocus: true
+            }).showToast();
+
+            // Enviar mensaje por WhatsApp
             const telefono = evento.extendedProps.telefono;
             const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
             window.open(whatsappURL, '_blank');
@@ -434,8 +444,11 @@ function mostrarNotificacion() {
     }
 }
 
-// Iniciar las notificaciones automáticas cada 5 segundos
-setInterval(mostrarNotificacion, 5000);
+// Iniciar las notificaciones automáticas cada 5 minutos (en lugar de 5 segundos para evitar spam)
+setInterval(mostrarNotificacion, 300000);
+
+
+
 
 
 
