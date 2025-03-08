@@ -175,7 +175,8 @@
 
 
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <?php if(isset($_SESSION['mensaje_exito'])): ?>
     <p class="alerta exito"><?php echo $_SESSION['mensaje_exito']; ?></p>
     <?php unset($_SESSION['mensaje_exito']); ?>
@@ -335,6 +336,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
                 window.open(whatsappURL, '_blank');
             };
+
+
+
+            
+            Toastify({
+                text: "¡Hola! Esta es una notificación mejorada.",
+                duration: 3000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                stopOnFocus: true, 
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                },
+                onClick: function(){ window.open("https://www.google.com", "_blank"); } 
+            }).showToast();
+        
 
 
             modal.style.display = 'flex';
