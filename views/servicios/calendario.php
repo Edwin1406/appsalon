@@ -401,39 +401,50 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     });
 
-    if (info.event.extendedProps.nota)
-            {
-            
-            Toastify({
-                text: `Nota: ${info.event.extendedProps.nota}`   ,
-                duration: 3000,
-                gravity: "top", // top, bottom
-                position: "right", // left, right, center
-                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
-                stopOnFocus: true, 
-                style: {
-                    borderRadius: "8px",
-                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
-                },
-             
-            }).showToast();
-        
-            }else 
-            {
-                Toastify({
-                text: `No hay notas para esta cita`,
-                duration: 3000,
-                gravity: "top", // top, bottom
-                position: "right", // left, right, center
-                backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
-                stopOnFocus: true, 
-                style: {
-                    borderRadius: "8px",
-                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
-                },
-                
-            }).showToast();
-            }
+    // Función para mostrar la notificación de forma automática
+function mostrarNotificacion() {
+    // Simulación de datos (puedes reemplazar esto con datos reales)
+    let eventos = [
+        { extendedProps: { nota: "Reunión importante a las 3 PM" } },
+        { extendedProps: { nota: "Enviar informe mensual" } },
+        { extendedProps: {} }, // Evento sin nota
+        { extendedProps: { nota: "Llamar al cliente a las 5 PM" } }
+    ];
+
+    // Selecciona un evento aleatorio (puedes modificar esto para que use eventos reales)
+    let evento = eventos[Math.floor(Math.random() * eventos.length)];
+
+    if (evento.extendedProps.nota) {
+        Toastify({
+            text: `Nota: ${evento.extendedProps.nota}`,
+            duration: 3000,
+            gravity: "top", // top, bottom
+            position: "right", // left, right, center
+            backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+            stopOnFocus: true, 
+            style: {
+                borderRadius: "8px",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+            },
+        }).showToast();
+    } else {
+        Toastify({
+            text: "No hay notas para esta cita",
+            duration: 3000,
+            gravity: "top", // top, bottom
+            position: "right", // left, right, center
+            backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
+            stopOnFocus: true, 
+            style: {
+                borderRadius: "8px",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+            },
+        }).showToast();
+    }
+}
+
+// Iniciar las notificaciones automáticas cada 5 segundos
+setInterval(mostrarNotificacion, 5000);
 
 
 
