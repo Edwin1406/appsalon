@@ -51,7 +51,6 @@
 
 
 
-
 // Detectar el subdominio correctamente
 $host = $_SERVER['HTTP_HOST'];
 $partes_dominio = explode('.', $host);
@@ -111,16 +110,29 @@ if ($result) {
     $fecha_expiracion = date('Y-m-d', strtotime($fecha_registro . ' +3 months'));
     $fecha_actual = date('Y-m-d');
 
-    if ($fecha_actual > $fecha_expiracion) {
+    // Calcular los días restantes
+    $dias_restantes = (strtotime($fecha_expiracion) - strtotime($fecha_actual)) / (60 * 60 * 24);
+
+    if ($dias_restantes <= 0) {
         // 🚨 Membresía expirada, bloquear acceso o redirigir
         die("⛔ Acceso denegado: Tu suscripción ha caducado. Contacta con soporte para renovarla.");
         
         // OPCIONAL: Redirigir a página de pago
         // header("Location: renovar.php");
         // exit();
+    } elseif ($dias_restantes <= 3) {
+        // ⚠️ Mostrar aviso si quedan 3 días o menos
+        echo "⚠️ Atención: Tu suscripción expira en $dias_restantes día(s). ¡Renueva ahora para no perder el acceso!";
+        
+        // OPCIONAL: Redirigir a renovar.php si solo queda 1 día
+        if ($dias_restantes == 1) {
+            header("Location: renovar.php");
+            exit();
+        }
     }
 } else {
     die("⚠️ Error al verificar la suscripción.");
 }
 ?>
+
 
