@@ -107,7 +107,7 @@ if ($result) {
     $fecha_registro = $row['fecha_registro'];
 
     // Calcular la fecha de expiración (+3 meses desde la fecha de registro)
-    $fecha_expiracion = date('Y-m-d', strtotime($fecha_registro . ' +30 months'));
+    $fecha_expiracion = date('Y-m-d', strtotime($fecha_registro . ' +28 days'));
     $fecha_actual = date('Y-m-d');
 
     // Calcular los días restantes
