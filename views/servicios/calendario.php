@@ -450,6 +450,53 @@ setInterval(mostrarNotificacion, 5000);
 
 
 
+//monstrar notificacion de la nota de la cita con Toastify y nombre del paciente
+
+    function mostrarNotificacionNota () {
+        const eventos = calendar.getEvents();
+        const fechaActual = new Date(); // Obtener la fecha y hora actual
+
+        for (const evento of eventos) {
+            const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener fecha de la cita
+            const horaCita = evento.extendedProps.hora; // Hora en formato "HH:mm"
+            // nota de la cita
+            const notaCita = evento.extendedProps.nota; // nota de la cita
+
+            // Convertir la fecha y hora de la cita a un objeto Date
+            const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
+
+            // Verificar si la hora actual está antes de la cita, pero no después
+            if (fechaActual < fechaHoraCita && (fechaHoraCita - fechaActual) <= 60 * 60 * 1000) {
+
+                //mensaje de la notificacion tienes una cita en 1 hora
+
+                const tituloSeparado = evento.title.split("- ");
+                const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
+
+                const mensaje = `CITA AGENDADA HOY A LAS  ${horaCita}, CON EL PACIENTE: ${nota}`;
+
+                // Mostrar la notificación en pantalla con Toastify
+                Toastify({
+                    text: mensaje,
+                    duration: 5000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#28a745",
+                    stopOnFocus: true,
+                    style: {
+                        borderRadius: "8px",
+                        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                    }
+                }).showToast();
+            }
+        }
+    }
+
+    // Iniciar las notificaciones automáticas cada 5 minutos
+    setInterval(mostrarNotificacionNota, 5000);
+
+
     
 
 
