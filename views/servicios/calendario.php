@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     borderRadius: "8px",
                     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
                 },
-                onClick: function(){ window.open("https://www.google.com", "_blank"); } 
+             
             }).showToast();
         
             }else 
@@ -363,13 +363,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 duration: 3000,
                 gravity: "top", // top, bottom
                 position: "right", // left, right, center
-                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
                 stopOnFocus: true, 
                 style: {
                     borderRadius: "8px",
                     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
                 },
-                onClick: function(){ window.open("https://www.google.com", "_blank"); } 
+                
             }).showToast();
             }
 
