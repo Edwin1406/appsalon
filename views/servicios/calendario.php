@@ -408,24 +408,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
-    const fechaActual = new Date();
+    const fechaActual = new Date(); // Obtener la fecha y hora actual
 
     for (const evento of eventos) {
-        const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener la fecha de la cita
-        const horaCita = evento.extendedProps.hora; // Obtener la hora de la cita en formato HH:mm
-        
-        // Convertir la fecha y hora de la cita a objeto Date
+        const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener fecha de la cita
+        const horaCita = evento.extendedProps.hora; // Hora en formato "HH:mm"
+
+        // Convertir la fecha y hora de la cita a un objeto Date
         const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
-        
-        // Crear un objeto Date que representa media hora antes de la cita
-        const fechaHoraCitaMenosMediaHora = new Date(fechaHoraCita);
-        fechaHoraCitaMenosMediaHora.setMinutes(fechaHoraCitaMenosMediaHora.getMinutes() - 30);
 
-        // Si estamos dentro del período de notificación
-        if (fechaActual >= fechaHoraCitaMenosMediaHora && fechaActual < fechaHoraCita) {
-            const mensaje = `Hola, ${evento.title.split("- ")[1].trim()}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
+        // Crear una nueva fecha que representa 30 minutos antes de la cita
+        const fechaHoraCitaMenos30Min = new Date(fechaHoraCita.getTime() - 30 * 60000);
 
-            // Mostrar la notificación con Toastify
+        // Verificar si la hora actual está dentro del intervalo de notificación (desde 30 min antes hasta la cita)
+        if (fechaActual >= fechaHoraCitaMenos30Min && fechaActual < fechaHoraCita) {
+            const mensaje = `📢 Recuerdo: Tienes una cita programada el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia aquí: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
+
+            // Mostrar la notificación en pantalla con Toastify
             Toastify({
                 text: mensaje,
                 duration: 5000,
@@ -436,7 +435,7 @@ function mostrarNotificacion() {
                 stopOnFocus: true
             }).showToast();
 
-            // Enviar mensaje por WhatsApp
+            // Opcional: Enviar mensaje por WhatsApp
             const telefono = evento.extendedProps.telefono;
             const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
             window.open(whatsappURL, '_blank');
@@ -444,13 +443,13 @@ function mostrarNotificacion() {
     }
 }
 
-// Iniciar las notificaciones automáticas cada 5 minutos (en lugar de 5 segundos para evitar spam)
+// Iniciar las notificaciones automáticas cada 5 minutos
 setInterval(mostrarNotificacion, 300000);
 
 
 
 
-
+    
 
 
 
