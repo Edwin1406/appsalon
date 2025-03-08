@@ -417,11 +417,8 @@ function mostrarNotificacion() {
         // Convertir la fecha y hora de la cita a un objeto Date
         const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
 
-        // Crear una nueva fecha que representa 30 minutos antes de la cita
-        const fechaHoraCitaMenos30Min = new Date(fechaHoraCita.getTime() - 30 * 60000);
-
-        // Verificar si la hora actual está dentro del intervalo de notificación (desde 30 min antes hasta la cita)
-        if (fechaActual >= fechaHoraCitaMenos30Min && fechaActual < fechaHoraCita) {
+        // Verificar si la hora actual es menor que la cita (para que se notifique hasta la hora exacta)
+        if (fechaActual < fechaHoraCita) {
             const mensaje = `📢 Recuerdo: Tienes una cita programada el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia aquí: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
 
             // Mostrar la notificación en pantalla con Toastify
