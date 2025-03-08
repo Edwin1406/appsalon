@@ -46,7 +46,7 @@
     flex-wrap: wrap; /* Permitir que los botones se muevan a la siguiente línea si no caben */
     margin-top: 2rem;
     border-radius: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     gap: 1rem;
     width: auto; /* Permitir que se adapte al contenido */
 }
@@ -407,40 +407,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Función para mostrar la notificación de forma automática
+   
+    // Almacenar los eventos notificados en la iteración actual
+    let eventosNotificados = new Set();
+
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
     const fechaActual = new Date(); // Obtener la fecha y hora actual
+    const nuevosEventosNotificados = new Set(); // Para la nueva iteración
 
     for (const evento of eventos) {
         const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener fecha de la cita
         const horaCita = evento.extendedProps.hora; // Hora en formato "HH:mm"
         const nota = evento.extendedProps.nota; // Nota de la cita
         const asunto = evento.extendedProps.asunto; // Asunto de la cita
+        const eventoID = evento.id; // Identificador único del evento
 
         // Convertir la fecha y hora de la cita a un objeto Date
         const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
 
-        // Verificar si la hora actual está antes de la cita, pero no después
+        // Verificar si la hora actual está antes de la cita, pero no después (en la ventana de 1 hora)
         if (fechaActual < fechaHoraCita && (fechaHoraCita - fechaActual) <= 60 * 60 * 1000) {
+            // Si el evento ya fue notificado en la iteración anterior, omitirlo
+            if (eventosNotificados.has(eventoID)) continue;
+
+            // Marcar el evento como notificado en esta iteración
+            nuevosEventosNotificados.add(eventoID);
 
             // Obtener el color correspondiente al asunto, o un color por defecto si no está en la lista
-            const colorNotificacion = colorPorAsunto[asunto] || "#17a2b8"; 
+            const colorNotificacion = colorPorAsunto[asunto] || "#17a2b8";
 
             // Mensaje de la notificación
             const tituloSeparado = evento.title.split("- ");
             const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
             const mensaje = `<b>CITA AGENDADA HOY A LAS:</b> ${horaCita}, <b>PACIENTE:</b> ${nombre}, <b>NOTA:</b> ${nota}`;
+
             // Mostrar la notificación en pantalla con Toastify
             Toastify({
                 text: mensaje,
-                duration: 5000,
+                duration: 8000,
                 close: true,
                 gravity: "top",
                 position: "right",
                 backgroundColor: colorNotificacion,
                 stopOnFocus: true,
-                escapeMarkup: false, // Permite el uso de HTML en el mensaje
+                escapeMarkup: false,
                 style: {
                     borderRadius: "8px",
                     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
@@ -448,11 +459,13 @@ function mostrarNotificacion() {
             }).showToast();
         }
     }
+
+    // Actualizar el conjunto de eventos notificados para la siguiente iteración
+    eventosNotificados = nuevosEventosNotificados;
 }
 
-// Iniciar las notificaciones automáticas cada 5 minutos
-setInterval(mostrarNotificacion, 20000);
-
+// Iniciar las notificaciones automáticas cada 20 segundos
+setInterval(mostrarNotificacion, 40000);
 
 
 
