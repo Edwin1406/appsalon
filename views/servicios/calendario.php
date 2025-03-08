@@ -262,6 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
+
+        
+        
         initialView: 'dayGridMonth',
         locale: 'es',
         headerToolbar: {
@@ -377,6 +380,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             modal.style.display = 'flex';
         }
+
+
+
+
+
+
+
+
+
+
+
+        
     });
 
     calendar.render();
@@ -385,6 +400,44 @@ document.addEventListener('DOMContentLoaded', function() {
     cerrarModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
+
+    if (info.event.extendedProps.nota)
+            {
+            
+            Toastify({
+                text: `Nota: ${info.event.extendedProps.nota}`   ,
+                duration: 3000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                stopOnFocus: true, 
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                },
+             
+            }).showToast();
+        
+            }else 
+            {
+                Toastify({
+                text: `No hay notas para esta cita`,
+                duration: 3000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
+                stopOnFocus: true, 
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                },
+                
+            }).showToast();
+            }
+
+
+
+
 
     estadoInfo.addEventListener('dblclick', function() {
         const citaId = estadoInfo.getAttribute('data-cita-id');
