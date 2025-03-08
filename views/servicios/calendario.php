@@ -445,8 +445,8 @@ function mostrarNotificacion() {
     }
 }
 
-// Iniciar las notificaciones automáticas cada 5 minutos
-setInterval(mostrarNotificacion, 300000);
+// Iniciar las notificaciones automáticas cada 5 segundos
+setInterval(mostrarNotificacion, 5000);
 
 
 
