@@ -435,7 +435,11 @@ function mostrarNotificacion() {
                 gravity: "top",
                 position: "right",
                 backgroundColor: "#28a745",
-                stopOnFocus: true
+                stopOnFocus: true,
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                }
             }).showToast();
         }
     }
