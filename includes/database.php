@@ -125,10 +125,10 @@ if ($result) {
         echo "⚠️ Atención: Tu suscripción expira en $dias_restantes día(s). ¡Renueva ahora para no perder el acceso!";
         
         // OPCIONAL: Redirigir a renovar.php si solo queda 1 día
-        if ($dias_restantes == 1) {
-            header("Location: renovar.php");
-            exit();
-        }
+        // if ($dias_restantes == 1) {
+        //     header("Location: renovar.php");
+        //     exit();
+        // }
     }
 } else {
     die("⚠️ Error al verificar la suscripción.");
