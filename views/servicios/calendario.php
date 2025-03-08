@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
             Toastify({
-                text: "¡Hola! Esta es una notificación mejorada.",
+                text: `Nota: ${info.event.extendedProps.nota}`   ,
                 duration: 3000,
                 gravity: "top", // top, bottom
                 position: "right", // left, right, center
