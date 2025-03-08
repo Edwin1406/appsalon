@@ -430,7 +430,7 @@ function mostrarNotificacion() {
             // Mensaje de la notificación
             const tituloSeparado = evento.title.split("- ");
             const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
-            const mensaje = `CITA AGENDADA HOY A LAS ${horaCita}, <b>PACIENTE:</b> ${nombre}, <b>NOTA:</b> ${nota}`;
+            const mensaje = `<b>CITA AGENDADA HOY A LAS:</b> ${horaCita}, <b>PACIENTE:</b> ${nombre}, <b>NOTA:</b> ${nota}`;
             // Mostrar la notificación en pantalla con Toastify
             Toastify({
                 text: mensaje,
