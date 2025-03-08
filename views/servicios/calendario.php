@@ -308,6 +308,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
                     }));
 
+                    mostrarNotificacion();
+
                     successCallback(eventos);
                 })
                 .catch(error => failureCallback(error));
@@ -403,43 +405,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
-    // Simulación de datos (puedes reemplazar esto con datos reales)
-    let eventos = [
-        { extendedProps: { nota: "Reunión importante a las 3 PM" } },
-        { extendedProps: { nota: "Enviar informe mensual" } },
-        { extendedProps: {} }, // Evento sin nota
-        { extendedProps: { nota: "Llamar al cliente a las 5 PM" } }
-    ];
+    const eventos = calendar.getEvents();
 
-    // Selecciona un evento aleatorio (puedes modificar esto para que use eventos reales)
-    let evento = eventos[Math.floor(Math.random() * eventos.length)];
+    for (const evento of eventos) {
+        const fechaEvento = new Date(evento.start);
+        const fechaActual = new Date();
 
-    if (evento.extendedProps.nota) {
-        Toastify({
-            text: `Nota: ${evento.extendedProps.nota}`,
-            duration: 3000,
-            gravity: "top", // top, bottom
-            position: "right", // left, right, center
-            backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
-            stopOnFocus: true, 
-            style: {
-                borderRadius: "8px",
-                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
-            },
-        }).showToast();
-    } else {
-        Toastify({
-            text: "No hay notas para esta cita",
-            duration: 3000,
-            gravity: "top", // top, bottom
-            position: "right", // left, right, center
-            backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
-            stopOnFocus: true, 
-            style: {
-                borderRadius: "8px",
-                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
-            },
-        }).showToast();
+        if (fechaEvento > fechaActual && fechaEvento - fechaActual <= 300000) {
+            const titulo = 'Recordatorio de Cita';
+            const mensaje = `Recuerda tu cita con ${evento.title} a las ${evento.extendedProps.hora}`;
+            const tipo = 'success';
+            const color = '#28a745';
+            const fondo = '#d4edda';
+
+            mostrarAlerta(titulo, mensaje, tipo, color, fondo);
+        }
     }
 }
 
