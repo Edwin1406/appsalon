@@ -406,24 +406,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
-// quiero moestrar las notas de las citas con toastify tomando en cuenta la fecha y hora de la cita
+// quiero moestrar las notas de las citas con toastify tomando en cuenta la fecha y hora de la cita media hora antes
+
+    const fechaActual = new Date();
+    const fechaActualMasMediaHora = new Date(fechaActual.getTime() + 30 * 60000); // 30 minutos en milisegundos
+    const fechaActualMenosMediaHora = new Date(fechaActual.getTime() - 30 * 60000); // 30 minutos en milisegundos
 
     for (const evento of eventos) {
-        const fechaHora = `${evento.start.toISOString().split('T')[0]} ${evento.extendedProps.hora}`;
-        const ahora = new Date().toISOString().split('T')[0] + ' ' + new Date().toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
-        if (fechaHora === ahora) {
-            const tituloSeparado = evento.title.split("- "); 
-            const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
-            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${evento.start.toISOString().split('T')[0]} a las ${evento.extendedProps.hora}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
-            const telefono = evento.extendedProps.telefono;
-            const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-            const notificacion = new Notification('Recordatorio de Cita', {
-                body: `Hola, ${nombre}, recuerda tu cita a las ${evento.extendedProps.hora}.`,
-                icon: '/public/build/img/dentista.jpg'
-            });
-            notificacion.onclick = function() {
-                window.open(whatsappURL, '_blank');
-            };
+        const fechaEvento = new Date(evento.start);
+        if (fechaEvento > fechaActualMenosMediaHora && fechaEvento < fechaActualMasMediaHora) {
+            const mensaje = `Recuerda tu cita con ${evento.title} a las ${evento.extendedProps.hora}`;
+            Toastify({
+                text: mensaje,
+                duration: 5000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #007bff, #007bff)",
+                stopOnFocus: true, 
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                },
+                
+            }).showToast();
         }
     }
 }
