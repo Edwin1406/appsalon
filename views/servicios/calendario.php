@@ -406,19 +406,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
-
+// quiero moestrar las notas de las citas con toastify
     for (const evento of eventos) {
-        const fechaEvento = new Date(evento.start);
-        const fechaActual = new Date();
-
-        if (fechaEvento > fechaActual && fechaEvento - fechaActual <= 300000) {
-            const titulo = 'Recordatorio de Cita';
-            const mensaje = `Recuerda tu cita con ${evento.title} a las ${evento.extendedProps.hora}`;
-            const tipo = 'success';
-            const color = '#28a745';
-            const fondo = '#d4edda';
-
-            mostrarAlerta(titulo, mensaje, tipo, color, fondo);
+        if (evento.extendedProps.nota) {
+            Toastify({
+                text: `Nota: ${evento.extendedProps.nota}`,
+                duration: 3000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                stopOnFocus: true,
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                }
+            }).showToast();
         }
     }
 }
