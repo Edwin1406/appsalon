@@ -405,6 +405,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
 // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
@@ -413,7 +415,6 @@ function mostrarNotificacion() {
     for (const evento of eventos) {
         const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener fecha de la cita
         const horaCita = evento.extendedProps.hora; // Hora en formato "HH:mm"
-        //nombre del paciente
         const tituloSeparado = evento.title.split("- ");
         const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
 
@@ -422,9 +423,7 @@ function mostrarNotificacion() {
 
         // Verificar si la hora actual es menor que la cita (para que se notifique hasta la hora exacta)
         if (fechaActual < fechaHoraCita) {
-           
-            //mensaje 
-            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
+            const mensaje = `📢 Recuerdo: Tienes una cita programada el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia aquí: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
 
             // Mostrar la notificación en pantalla con Toastify
             Toastify({
@@ -445,8 +444,9 @@ function mostrarNotificacion() {
     }
 }
 
-// Iniciar las notificaciones automáticas cada 5 segundos
-setInterval(mostrarNotificacion, 5000);
+// Iniciar las notificaciones automáticas cada 5 minutos
+setInterval(mostrarNotificacion, 300000);
+
 
 
 
