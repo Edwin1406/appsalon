@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     calendar.render();
-    setInterval(() => calendar.refetchEvents(), 60000); // Actualizar cada 60 segundos
+    setInterval(() => calendar.refetchEvents(), 40000); // Actualizar cada 60 segundos
 
     cerrarModal.addEventListener('click', function() {
         modal.style.display = 'none';
