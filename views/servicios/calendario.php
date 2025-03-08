@@ -406,6 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 // Función para mostrar la notificación de forma automática
 function mostrarNotificacion() {
     const eventos = calendar.getEvents();
@@ -415,6 +416,7 @@ function mostrarNotificacion() {
         const fechaCita = evento.start.toISOString().split('T')[0]; // Obtener fecha de la cita
         const horaCita = evento.extendedProps.hora; // Hora en formato "HH:mm"
         const nota = evento.extendedProps.nota; // Nota de la cita
+        const asunto = evento.extendedProps.asunto; // Asunto de la cita
 
         // Convertir la fecha y hora de la cita a un objeto Date
         const fechaHoraCita = new Date(`${fechaCita}T${horaCita}`);
@@ -422,11 +424,13 @@ function mostrarNotificacion() {
         // Verificar si la hora actual está antes de la cita, pero no después
         if (fechaActual < fechaHoraCita && (fechaHoraCita - fechaActual) <= 60 * 60 * 1000) {
 
-            //mensaje de la notificacion tienes una cita en 1 hora
+            // Obtener el color correspondiente al asunto, o un color por defecto si no está en la lista
+            const colorNotificacion = colorPorAsunto[asunto] || "#17a2b8"; 
 
+            // Mensaje de la notificación
             const tituloSeparado = evento.title.split("- ");
             const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
-            const mensaje = `CITA AGENDADA HOY A LAS  ${horaCita}, CON EL PACIENTE: ${nombre},  NOTA: ${nota}`;
+            const mensaje = `CITA AGENDADA HOY A LAS ${horaCita}, CON EL PACIENTE: ${nombre}, NOTA: ${nota}`;
 
             // Mostrar la notificación en pantalla con Toastify
             Toastify({
@@ -435,7 +439,7 @@ function mostrarNotificacion() {
                 close: true,
                 gravity: "top",
                 position: "right",
-                backgroundColor: "#28a745",
+                backgroundColor: colorNotificacion,
                 stopOnFocus: true,
                 style: {
                     borderRadius: "8px",
@@ -448,7 +452,6 @@ function mostrarNotificacion() {
 
 // Iniciar las notificaciones automáticas cada 5 minutos
 setInterval(mostrarNotificacion, 5000);
-
 
 
 
