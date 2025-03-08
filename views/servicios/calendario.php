@@ -339,6 +339,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+            if (info.event.extendedProps.nota)
+            {
             
             Toastify({
                 text: `Nota: ${info.event.extendedProps.nota}`   ,
@@ -354,6 +356,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 onClick: function(){ window.open("https://www.google.com", "_blank"); } 
             }).showToast();
         
+            }else 
+            {
+                Toastify({
+                text: `No hay notas para esta cita`,
+                duration: 3000,
+                gravity: "top", // top, bottom
+                position: "right", // left, right, center
+                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                stopOnFocus: true, 
+                style: {
+                    borderRadius: "8px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)"
+                },
+                onClick: function(){ window.open("https://www.google.com", "_blank"); } 
+            }).showToast();
+            }
+
 
 
             modal.style.display = 'flex';
