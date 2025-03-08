@@ -421,21 +421,11 @@ function mostrarNotificacion() {
         // Verificar si la hora actual está antes de la cita, pero no después
         if (fechaActual < fechaHoraCita && (fechaHoraCita - fechaActual) <= 60 * 60 * 1000) {
 
-            // Crear el mensaje de la notificación y mostrar el modal con los detalles de la cita modalInfoCita 
-            document.getElementById('nombre_paciente_info').textContent = evento.title;
-            document.getElementById('fecha_info').textContent = fechaCita;
-            document.getElementById('hora_info').textContent = horaCita;
-            document.getElementById('telefono_info').textContent = evento.extendedProps.telefono;
-            document.getElementById('doctor_info').textContent = evento.extendedProps.doctor;
-            document.getElementById('asunto_info').textContent = evento.extendedProps.asunto;
-            document.getElementById('estado_info').textContent = evento.extendedProps.estado;
-            // se agrego nota
-            document.getElementById('nota_info').textContent = evento.extendedProps.nota;
             //mensaje de la notificacion tienes una cita en 1 hora
 
             const tituloSeparado = evento.title.split("- ");
             const nombre = tituloSeparado.length > 1 ? tituloSeparado[1].trim() : tituloSeparado[0].trim();
-            const mensaje = `Hola, ${nombre}, Te saluda Dental Álvarez. Te recordamos tu cita el día ${fechaCita} a las ${horaCita}. Confirma tu asistencia en el siguiente enlace: https://odonto.megawebsistem.com/aceptar?id=${evento.id}`;
+            const mensaje = `NOTIFICACION: CITA AGENDADA HOY A LAS  ${horaCita}, CON EL PACIENTE: ${nombre}`;
 
             
 
