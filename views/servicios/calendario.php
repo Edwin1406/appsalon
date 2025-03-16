@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                     const eventos = data.map(cita => ({
-                 
+                        
                         id: cita.cita_id,
                         title: `${cita.hora.substring(0,5)}- ${cita.nombrecliente} ${cita.apellidocliente}- ${cita.nota}- ${cita.usuarioId}`,
                         start: cita.fecha, 
@@ -307,7 +307,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             asunto: cita.nombreservicio.trim(),
                             estado: cita.estado.trim(),
                             // se agrego nota
-                            nota: cita.nota.trim()
+                            nota: cita.nota.trim(),
+                            usuarioId: cita.usuarioId.trim()
+
 
                         },
                         backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
