@@ -395,15 +395,19 @@ class ServicioController{
     public static function historial(Router $router){
         session_start();
         isAdmin();
-        $usuarioId = $_SESSION['id'];
-        $citas = CitaServicio::obtenerCitas();
-        debuguear($citas);
+        $usuarioId= $_GET['id'] ?? '';
+        $usuarioId= filter_var($usuarioId,FILTER_VALIDATE_INT);
 
-        debuguear($citas);
+        if(!$usuarioId){
+            header('Location: /');
+        }
+
+        $users = Usuario::find($usuarioId);
+
         // debuguear($citas);
         $router->render('servicios/historial',[
-            'citas' => $citas,
-            'nombre' => $_SESSION['nombre']
+            'nombre' => $_SESSION['nombre'],
+            'users' => $users
         ]);
     }
 
