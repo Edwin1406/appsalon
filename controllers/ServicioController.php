@@ -396,6 +396,8 @@ class ServicioController{
         session_start();
         isAdmin();
         $citas = Citas::all();
+
+        debuguear($citas);
         // debuguear($citas);
         $router->render('servicios/historial',[
             'citas' => $citas,
