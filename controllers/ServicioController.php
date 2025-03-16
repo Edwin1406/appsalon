@@ -403,12 +403,13 @@ class ServicioController{
         }
 
         $users = Usuario::find($usuarioId);
-        debuguear($users);
+        // debuguear($users);
 
         // debuguear($citas);
         $router->render('servicios/historial',[
             'nombre' => $_SESSION['nombre'],
-            'users' => $users
+            'users' => $users,
+
         ]);
     }
 

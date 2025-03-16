@@ -10,7 +10,7 @@
         <?php
         $idCita = 0;
         foreach ($users as $key => $cita):
-            // debuguear($cita);
+            debuguear($cita);
 
             if ($idCita != $cita->id):
                 $total = 0;
