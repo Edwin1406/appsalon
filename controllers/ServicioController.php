@@ -392,6 +392,16 @@ class ServicioController{
         ]);
     }
 
+    public static function historial(Router $router){
+        session_start();
+        isAdmin();
+        $citas = Citas::all();
+        // debuguear($citas);
+        $router->render('servicios/historial',[
+            'citas' => $citas,
+        ]);
+    }
+
     
     
     
