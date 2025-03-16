@@ -399,6 +399,7 @@ class ServicioController{
         // debuguear($citas);
         $router->render('servicios/historial',[
             'citas' => $citas,
+            'nombre' => $_SESSION['nombre']
         ]);
     }
 
