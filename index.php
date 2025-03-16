@@ -94,6 +94,8 @@ $router->post('/aceptar', [ServicioController::class, 'aceptar']);
 // Rutas de error
 // $router->get('/mensaje', [ServicioController::class, 'mensaje']);
 
+// Rutas de historial
+$router->get('/admin/servicios/historial', [ServicioController::class, 'historial']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
