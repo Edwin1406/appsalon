@@ -296,9 +296,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                     const eventos = data.map(cita => ({
-                        
+                 
                         id: cita.cita_id,
-                        title: `${cita.hora.substring(0,5)}- ${cita.nombrecliente} ${cita.apellidocliente}- ${cita.nota}- ${cita.usuarioId}`,
+                        title: `${cita.hora.substring(0,5)}- ${cita.nombrecliente} ${cita.apellidocliente}- ${cita.nota}`,
                         start: cita.fecha, 
                         extendedProps: {
                             hora: cita.hora,
@@ -308,13 +308,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             estado: cita.estado.trim(),
                             // se agrego nota
                             nota: cita.nota.trim(),
-                           
+                            usuarioid: cita.usuarioid // **Aquí agregamos usuarioid**
 
 
                         },
                         backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
-                        borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
-                        usuarioId: cita.usuarioId.trim()
+                        borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
                     }));
 
                     mostrarNotificacion();
