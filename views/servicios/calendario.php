@@ -248,6 +248,12 @@ document.addEventListener('DOMContentLoaded', function() {
     whatsappButton.style.marginTop = '10px';
     document.querySelector('.modal_contenido').appendChild(whatsappButton);
 
+    const botonverhistorial = document.createElement('button');
+    botonverhistorial.textContent = 'Ver Historial';
+    botonverhistorial.id = 'botonverhistorial';
+    botonverhistorial.style.marginTop = '10px';
+    document.querySelector('.modal_contenido').appendChild(botonverhistorial);
+
     const colorPorAsunto = {
         'Odontología General': '#007bff', 
         'Ortodoncia': '#28a745',      
@@ -340,6 +346,11 @@ document.addEventListener('DOMContentLoaded', function() {
             whatsappButton.onclick = function() {
                 const whatsappURL = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
                 window.open(whatsappURL, '_blank');
+            };
+
+            botonverhistorial.onclick = function() {
+                const historialURL = `https://odonto.megawebsistem.com/admin/servicios/historial?id=${info.event.id}`;
+                window.open(historialURL, '_blank');
             };
 
 
