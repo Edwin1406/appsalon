@@ -9,7 +9,7 @@
     <ul class="citas">
         <?php
         $idCita = 0;
-        foreach ($citas as $key => $cita):
+        foreach ($users as $key => $cita):
             // debuguear($cita);
 
             if ($idCita != $cita->id):
