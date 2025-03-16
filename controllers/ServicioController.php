@@ -395,7 +395,9 @@ class ServicioController{
     public static function historial(Router $router){
         session_start();
         isAdmin();
-        $citas = Citas::all();
+        $usuarioId = $_SESSION['id'];
+        $citas = CitaServicio::obtenerCitas();
+        debuguear($citas);
 
         debuguear($citas);
         // debuguear($citas);
