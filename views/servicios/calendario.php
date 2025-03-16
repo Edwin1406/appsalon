@@ -308,12 +308,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             estado: cita.estado.trim(),
                             // se agrego nota
                             nota: cita.nota.trim(),
-                            usuarioId: cita.usuarioId.trim()
+                           
 
 
                         },
                         backgroundColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
-                        borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro']
+                        borderColor: colorPorAsunto[cita.nombreservicio.trim()] || colorPorAsunto['Otro'],
+                        usuarioId: cita.usuarioId.trim()
                     }));
 
                     mostrarNotificacion();
