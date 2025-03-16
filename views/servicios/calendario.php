@@ -355,9 +355,14 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             botonverhistorial.onclick = function() {
-                const historialURL = `https://odonto.megawebsistem.com/admin/servicios/historial?id=${info.event.id}`;
-                window.open(historialURL, '_blank');
-            };
+    const usuarioId = info.event.extendedProps.usuarioid; // Obtener el usuarioid
+    if (usuarioId) {
+        const historialURL = `https://odonto.megawebsistem.com/admin/servicios/historial?id=${usuarioId}`;
+        window.open(historialURL, '_blank');
+    } else {
+        console.error('No se encontró usuarioid en la cita seleccionada.');
+    }
+};
 
 
 
