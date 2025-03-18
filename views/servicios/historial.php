@@ -8,8 +8,10 @@
 <head>
     <meta charset="utf-8" />
     <title>Odontograma con html5</title>
-    <script src='js/jquery-1.7.2.min.js'></script>
+    <script src='/cdn/js/jquery-1.7.2.min.js'></script>
     <link type="text/css" href="css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.13/themes/base/jquery-ui.css">
+
     <script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
     <style>
       #myCanvas {
