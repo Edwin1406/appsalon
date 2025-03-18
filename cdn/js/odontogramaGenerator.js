@@ -121,7 +121,7 @@ OdontogramaGenerator.prototype.prepareOdontogramaAdult = function (odontograma,
             self.updateLoad();
         };
 
-        image.src = "images/dentadura-sup-" + i + ".png";
+        image.src = "/cdn/images/dentadura-sup-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -191,7 +191,7 @@ OdontogramaGenerator.prototype.prepareOdontogramaAdult = function (odontograma,
             self.updateLoad();
         };
 
-        image.src = "images/dentadura-sup-" + i + ".png";
+        image.src = "/cdn/images/dentadura-sup-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -257,7 +257,7 @@ OdontogramaGenerator.prototype.prepareOdontogramaAdult = function (odontograma,
             self.updateLoad();
         };
 
-        image.src = "images/dentadura-inf-" + i + ".png";
+        image.src = "/cdn/images/dentadura-inf-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -326,7 +326,7 @@ OdontogramaGenerator.prototype.prepareOdontogramaAdult = function (odontograma,
             self.updateLoad();
         };
 
-        image.src = "images/dentadura-inf-" + i + ".png";
+        image.src = "/cdn/images/dentadura-inf-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -410,7 +410,7 @@ spaces, canvas) {
 
         var image = new Image();
 
-        image.src = "images/dentadura-sup-" + i + ".png";
+        image.src = "/cdn/images/dentadura-sup-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -474,7 +474,7 @@ spaces, canvas) {
 
         var image = new Image;
 
-        image.src = "images/dentadura-sup-" + i + ".png";
+        image.src = "/cdn/images/dentadura-sup-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -539,7 +539,7 @@ spaces, canvas) {
 
         var image = new Image();
 
-        image.src = "images/dentadura-inf-" + i + ".png";
+        image.src = "/cdn/images/dentadura-inf-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
@@ -603,7 +603,7 @@ spaces, canvas) {
 
         var image = new Image();
 
-        image.src = "images/dentadura-inf-" + i + ".png";
+        image.src = "/cdn/images/dentadura-inf-" + i + ".png";
 
         tooth.id = i;
         tooth.image = image;
