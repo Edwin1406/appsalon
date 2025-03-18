@@ -10,16 +10,16 @@
  */
 
 // include the necessary scripts
-document.writeln("<script type='text/javascript' src='js/constants.js'></script>");
-document.writeln("<script type='text/javascript' src='js/settings.js'></script>");
-document.writeln("<script type='text/javascript' src='js/rect.js'></script>");
-document.writeln("<script type='text/javascript' src='js/damage.js'></script>");
-document.writeln("<script type='text/javascript' src='js/textBox.js'></script>");
-document.writeln("<script type='text/javascript' src='js/tooth.js'></script>");
-document.writeln("<script type='text/javascript' src='js/menuItem.js'></script>");
-document.writeln("<script type='text/javascript' src='js/renderer.js'></script>");
-document.writeln("<script type='text/javascript' src='js/odontogramaGenerator.js'></script>");
-document.writeln("<script type='text/javascript' src='js/collisionHandler.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/constants.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/settings.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/rect.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/damage.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/textBox.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/tooth.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/menuItem.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/renderer.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/odontogramaGenerator.js'></script>");
+document.writeln("<script type='text/javascript' src='/cdn/js/collisionHandler.js'></script>");
 
 function Engine() {
     "use strict";
