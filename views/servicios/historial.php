@@ -12,7 +12,7 @@
     <link type="text/css" href="css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.13/themes/base/jquery-ui.css">
 
-    <script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+    <script type="text/javascript" src="/cdn/js/jquery-ui-1.8.13.custom.min.js"></script>
     <style>
       #myCanvas {
         border: 1px solid #9C9898;
