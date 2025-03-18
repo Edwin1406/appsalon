@@ -16,7 +16,7 @@
             padding: 0px;
         }
     </style>
-    <script src="js/engine.js" type="text/javascript"></script>
+    <script src="/cdn/js/engine.js" type="text/javascript"></script>
 </head>
 
 <body oncontextmenu="return false;">
