@@ -54,6 +54,14 @@ $router->get('/admin/servicios', [ServicioController::class, 'index']);
 $router->get('/admin/servicios/crear', [ServicioController::class, 'crear']);
 $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 
+
+
+// vista de clientes
+$router->get('/admin/servicios/verclientes', [ServicioController::class, 'verclientes']);
+
+
+
+
 // crear odontologo
 $router->get('/admin/servicios/odontologo', [ServicioController::class, 'odontologo']);
 $router->post('/admin/servicios/odontologo', [ServicioController::class, 'odontologo']);

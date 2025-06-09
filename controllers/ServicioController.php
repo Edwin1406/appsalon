@@ -413,6 +413,20 @@ class ServicioController{
         ]);
     }
 
+
+
+
+    public static function verclientes(Router $router){
+        session_start();
+        isAdmin();
+        $clientes = Cliente::allDesc('DESC');
+        // debuguear($usuarios);
+        $router->render('servicios/verclientes',[
+            'nombre' => $_SESSION['nombre'],
+            'clientes' => $clientes
+        ]);
+    }
+
     
     
     
