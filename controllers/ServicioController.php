@@ -450,7 +450,7 @@ class ServicioController{
             }
 
         }
-        $router->render('servicios/actualizarcliente',[
+        $router->render('servicios/actualizarCliente',[
             'nombre' => $_SESSION['nombre'],
             'cliente' => $cliente,
             'alertas' => $alertas
