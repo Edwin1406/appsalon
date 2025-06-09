@@ -10,6 +10,17 @@ include_once __DIR__. '/../templates/alertas.php';
 ?>
 
 
+<div class="contenido_ir">
+
+    <div class="dashboard__contenedor-boton">
+        <a class="dashboard__boton" href="/admin/servicios/verclientes">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            VER CLIENTE
+        </a>
+        
+    </div>
+
+
 <form action="/admin/servicios/cliente" method="POST" class="formulario">
             
 
