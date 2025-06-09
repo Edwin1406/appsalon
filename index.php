@@ -59,6 +59,9 @@ $router->post('/admin/servicios/crear', [ServicioController::class, 'crear']);
 // vista de clientes
 $router->get('/admin/servicios/verclientes', [ServicioController::class, 'verclientes']);
 
+// actualizar clientes
+$router->get('/admin/servicios/actualizarcliente', [ServicioController::class, 'actualizarcliente']);
+
 
 
 

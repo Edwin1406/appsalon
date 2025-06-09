@@ -428,6 +428,34 @@ class ServicioController{
     }
 
     
+
+    public static function actualizarcliente(Router $router){
+        session_start();
+        isAdmin();
+
+        if(!is_numeric($_GET['id'])) return;
+        // debuguear($id);
+        $cliente = Cliente::find($_GET['id']);
+        $alertas = [];
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            
+
+            $cliente->sincronizar($_POST);
+            $alertas = $cliente->validar();
+            // debuguear($_POST);
+            if(empty($alertas)){
+                $cliente->guardar();
+                header('Location: /admin/servicios/verclientes');
+            }
+
+        }
+        $router->render('servicios/actualizarcliente',[
+            'nombre' => $_SESSION['nombre'],
+            'cliente' => $cliente,
+            'alertas' => $alertas
+        ]);
+    }
     
     
     
