@@ -19,6 +19,7 @@ include_once __DIR__. '/../templates/alertas.php';
         </a>
         
     </div>
+</div>
 
 
 <form action="/admin/servicios/cliente" method="POST" class="formulario">
