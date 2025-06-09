@@ -61,6 +61,7 @@ $router->get('/admin/servicios/verclientes', [ServicioController::class, 'vercli
 
 // actualizar clientes
 $router->get('/admin/servicios/actualizarcliente', [ServicioController::class, 'actualizarcliente']);
+$router->post('/admin/servicios/actualizarcliente', [ServicioController::class, 'actualizarcliente']);
 
 
 

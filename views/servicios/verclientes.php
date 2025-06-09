@@ -9,7 +9,7 @@
             <p> Nombre : <span> <?php echo $cliente->nombre?></span></p>
             
             <div class="acciones">
-                <a  class="boton" href="/admin/servicios/actualizar?id=<?php echo $cliente->id ?>">Actualizar</a>
+                <a  class="boton" href="/admin/servicios/actualizarcliente?id=<?php echo $cliente->id ?>">Actualizar</a>
 
             <form action="/admin/servicios/eliminar" method="POST">
                 <input type="hidden" name="id" value="<?php echo $cliente->id?>">
